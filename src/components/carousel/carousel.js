@@ -62,7 +62,7 @@ const Carousel = ({ datas }) => {
                         </Typography>
 
                         <Box className="read-more">
-                            <Link href="">
+                            <Link to="/">
                                 <Typography color="primary" style={{ fontWeight: 600 }}>
                                     Selengkapnya di blog
                                 </Typography>
