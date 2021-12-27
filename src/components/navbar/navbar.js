@@ -72,13 +72,13 @@ const ResponsiveAppBar = () => {
                 <Box>
                   <Box sx={{ display: 'flex' }}>
                     {linksName && linksName.map(linkName => (
-                      <Link to={linkName[0]} className='text-link' key={linkName[1]}>
+                      <a href={linkName[0]} className='text-link' key={linkName[1]}>
                         <MenuItem>
                           <Typography textAlign="center">
                             {linkName[1]}
                           </Typography>
                         </MenuItem>
-                      </Link>
+                      </a>
                     ))}
 
                     <Stack direction="row" spacing={2}>
@@ -122,9 +122,9 @@ const ResponsiveAppBar = () => {
                                   >
                                     {subLinksName.map(subLink => (
                                       <>
-                                        <Link to={subLink[0]} className='text-link'>
+                                        <a href={subLink[0]} className='text-link'>
                                           <MenuItem onClick={handleClose} className='menulink'>{subLink[1]}</MenuItem>
-                                        </Link>
+                                        </a>
                                         {subLink[1] === 'FAQ' ? '' : <hr />}
                                       </>
                                     ))}
@@ -140,9 +140,9 @@ const ResponsiveAppBar = () => {
                   </Box>
                 </Box>
                 <div className='container-btn'>
-                  <Link to='https://landx.id/pendaftaran-perusahaan.html' className='btn-text'>
+                  <a href='https://landx.id/pendaftaran-perusahaan.html' className='btn-text'>
                     <Button color="success">PENDAFTARAN PERUSAHAAN</Button>
-                  </Link>
+                  </a>
                 </div>
               </>
               :
@@ -158,13 +158,13 @@ const ResponsiveAppBar = () => {
             <div>
               {linksName && linksName.map(linkName => (
                 <List component="nav" aria-label="mailbox folders">
-                  <Link to={linkName[0]} className='text-link' key={linkName[1]}>
+                  <a href={linkName[0]} className='text-link' key={linkName[1]}>
                     <MenuItem>
                       <Typography textAlign="center">
                         {linkName[1]}
                       </Typography>
                     </MenuItem>
-                  </Link>
+                  </a>
                 </List>
               ))}
             </div>
@@ -189,9 +189,9 @@ const ResponsiveAppBar = () => {
               {mobileNavSubMenu
                 ? subLinksName.map(subLink => (
                   <>
-                    <Link to={subLink[0]} className='text-link'>
+                    <a href={subLink[0]} className='text-link'>
                       <MenuItem onClick={handleClose} className='menulink'>{subLink[1]}</MenuItem>
-                    </Link>
+                    </a>
                     <hr />
                   </>
                 ))
@@ -199,9 +199,9 @@ const ResponsiveAppBar = () => {
             </Container>
 
             <div className='container-btn'>
-              <Link to='https://landx.id/pendaftaran-perusahaan.html' className='btn-text'>
+              <a href='https://landx.id/pendaftaran-perusahaan.html' className='btn-text'>
                 <Button color="success">PENDAFTARAN PERUSAHAAN</Button>
-              </Link>
+              </a>
             </div>
           </div>
           : ''
