@@ -8,7 +8,7 @@ import "../../assets/styling/style.scss"
 
 const PrivacyPolicy = () => (
   <Layout>
-    	<Seo title="Term & Condition" />
+    	<Seo title="Privacy Policy" />
 
 			<Container style={{ marginTop:`10rem` }}>
 				<Grid xs={12} md={12}>

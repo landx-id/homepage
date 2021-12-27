@@ -145,10 +145,10 @@ const Footer = () => {
                 <Link to='/service-level-agreement'>Service Level Agreement</Link>
               </MenuItem>
               <MenuItem>
-                <Link to='/kebijakan-isms'>Kebijakan ISMS</Link>
+                <Link to='/isms'>Kebijakan ISMS</Link>
               </MenuItem>
               <MenuItem>
-                <Link to='/mitigasi-risiko'>Mitigasi Risiko</Link>
+                <Link to='/risk-mitigation'>Mitigasi Risiko</Link>
               </MenuItem>
               <MenuItem>
                 <Link href="https://landx.id/blog/faq-landx/">FAQ</Link>
