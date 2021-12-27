@@ -1,6 +1,6 @@
 import * as React from "react"
 import { Link } from "gatsby"
-import { Container, Grid, Typography, Card, CardContent, ListItemText, List, ListItem } from '@mui/material';
+import { Container, Grid, Typography } from '@mui/material';
 
 import Layout from "../../components/layout/layout"
 import Seo from "../../components/seo/seo"
