@@ -85,7 +85,7 @@ const Carousel = ({ datas, type }) => {
                 ))
                 : 
 									dummyTesti.map(data => (  
-										<Box className="card-border">
+										<Box className="card-border" key={data.name}>
 											<Box style={{ borderRadius:`12px`, padding:`15px 15px`, textAlign:`-webkit-center`}}>
 												<img 
 													src={ data.img } 
