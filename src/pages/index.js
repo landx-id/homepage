@@ -9,7 +9,7 @@ import Seo from "../components/seo/seo"
 import Carousel from "../components/carousel/carousel"
 import './index.scss';
 import CardProject from "../components/Card/CardProject/CardProject";
-import Slider from 'react-slick';
+import XMLParser from "react-xml-parser";
 
 export const CardWhyLandx = ({ title, content, logo }) => {
   return (
@@ -77,22 +77,33 @@ export const ValueInvestor = ({ number, content }) => {
 
 const IndexPage = () => {
 
-  // Client-side Runtime Data Fetching
-  // const [starsCount, setStarsCount] = useState([])
+  // useEffect(() => {
+  //   fetch("https://landx.id/blog/rss/")
+  //       .then(res => res.text())
+  //       .then(data => {
+  //           var xml = new XMLParser().parseFromString(data); 
+  //           console.log(xml)
+  //       })
+  //       .catch(err => console.log(err));
+  // }, [])
+
   useEffect(() => {
     // get data from GitHub api
     fetch(`https://landx.id/blog/rss/`, {
       mode: "no-cors",
-      headers: {
-        'Accept': 'application/xml; charset=utf-8',
-        'Access-Control-Allow-Origin': '*',
-      }
-    }).then(response => response.text())
-      // .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
+      // headers: {
+      //   'Accept': 'application/xml',
+      //   // 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+      //   'Access-Control-Allow-Origin': '*',
+      // }
+    })
+      .then(response => response.text())
       .then(data => {
+        // const parser = new DOMParser();
+        // const doc = parser.parseFromString(data, 'text/html');  
+        // var xml = new XMLParser().parseFromString(data); 
         console.log(data)
-        // setStarsCount(resultData)
-      }) // set data for the number of stars
+      })
   }, [])
 
   const settings = {
