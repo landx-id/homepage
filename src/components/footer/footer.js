@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { Box, Typography, Link, Container, Grid, MenuList, MenuItem } from '@mui/material';
+import { Link } from "gatsby"
+import { Box, Typography, Container, Grid, MenuList, MenuItem } from '@mui/material';
 import { AnchorLink } from "gatsby-plugin-anchor-links"
 
 import "./footer.scss";
@@ -18,14 +19,14 @@ const Footer = () => {
               Unduh aplikasi LandX sekarang!
             </Typography>
             <Grid item md={12} xs={12} style={{ paddingBottom: 25 }}>
-              <Link href="https://play.google.com/store/apps/details?id=store.numoney.landxapp">
+              <Link to="https://play.google.com/store/apps/details?id=store.numoney.landxapp">
                 <img
                   src="./images/LandX-PlayStore.webp"
                   alt="Play Store"
                   title="Play Store"
                 />
               </Link>
-              <Link href="https://apps.apple.com/id/app/landx/id1453823676">
+              <Link to="https://apps.apple.com/id/app/landx/id1453823676">
                 <img
                   src="./images/LandX-AppStore.webp"
                   alt="App Store"
@@ -123,7 +124,7 @@ const Footer = () => {
                 <Link to='/contact'>Kontak</Link>
               </MenuItem>
               <MenuItem>
-                <Link href="https://landx.id/blog/">Blog</Link>
+                <Link to="https://landx.id/blog/">Blog</Link>
               </MenuItem>
             </MenuList>
           </Grid>
@@ -132,10 +133,10 @@ const Footer = () => {
             <Typography color="secondary" className="footer-menu-title">Perusahaan</Typography>
             <MenuList>
               <MenuItem>
-                <Link to='/blog/jobs-at-landx/'>Karir</Link>
+                <Link to='https://landx.id/blog/jobs-at-landx/'>Karir</Link>
               </MenuItem>
               <MenuItem>
-                <Link to='/syarat-dan-ketentuan'>Syarat & Ketentuan</Link>
+                <Link to='/term-and-condition'>Syarat & Ketentuan</Link>
               </MenuItem>
               <MenuItem>
                 <Link to='/privacy-policy'>Kebijakan Privasi</Link>
@@ -144,10 +145,10 @@ const Footer = () => {
                 <Link to='/service-level-agreement'>Service Level Agreement</Link>
               </MenuItem>
               <MenuItem>
-                <Link to='/kebijakan-isms'>Kebijakan ISMS</Link>
+                <Link to='/isms'>Kebijakan ISMS</Link>
               </MenuItem>
               <MenuItem>
-                <Link to='/mitigasi-risiko'>Mitigasi Risiko</Link>
+                <Link to='/risk-mitigation'>Mitigasi Risiko</Link>
               </MenuItem>
               <MenuItem>
                 <Link href="https://landx.id/blog/faq-landx/">FAQ</Link>
@@ -155,7 +156,7 @@ const Footer = () => {
             </MenuList>
           </Grid>
           <Grid item xs={12} md={6} className="ml-1" style={{ textAlignLast: `left` }}>
-            <Link href="https://id.linkedin.com/company/landx-id?trk=public_profile_topcard_current_company" className="footer-icon-link">
+            <Link to="https://id.linkedin.com/company/landx-id?trk=public_profile_topcard_current_company" className="footer-icon-link">
               <img
                 src="./images/LandX-Linkedin.svg"
                 alt="LandX LinkedIn"
@@ -163,7 +164,7 @@ const Footer = () => {
                 width={32}
               />
             </Link>
-            <Link href="https://www.facebook.com/landx.id" className="footer-icon-link">
+            <Link to="https://www.facebook.com/landx.id" className="footer-icon-link">
               <img
                 src="./images/LandX-Facebook.svg"
                 alt="LandX Facebook"
@@ -171,7 +172,7 @@ const Footer = () => {
                 width={32}
               />
             </Link>
-            <Link href="https://www.instagram.com/landx.id/" className="footer-icon-link">
+            <Link to="https://www.instagram.com/landx.id/" className="footer-icon-link">
               <img
                 src="./images/LandX-Instagram.svg"
                 alt="LandX Instagram"

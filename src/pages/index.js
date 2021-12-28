@@ -1,16 +1,17 @@
-import * as React from "react"
+import React, { useEffect } from "react"
 import '../assets/styling/cssReset.scss';
 import Slider from 'react-slick'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Link } from "gatsby"
-import { Container, Grid, Typography, Card, CardContent } from '@mui/material';
+import { Container, Grid, Typography, Card, CardContent, Button } from '@mui/material';
 import Layout from "../components/layout/layout"
 import Seo from "../components/seo/seo"
 import Carousel from "../components/carousel/carousel"
 import './index.scss';
 import CardProject from "../components/Card/CardProject/CardProject";
 import { FetchLimitData } from "../utils/common";
+import XMLParser from "react-xml-parser";
 
 export const CardWhyLandx = ({ title, content, logo }) => {
   return (
@@ -285,6 +286,26 @@ const IndexPage = () => {
               <hr className='divider' />
             </Grid>
           </Grid>
+
+          {/* TODO: Get data from API LandX */}
+          <Carousel type="artikel" />
+
+          <Grid container sx={{ display: 'flex', justifyContent: 'center' }}>
+            <Grid item>
+              <Link href="https://landx.id/blog/" style={{ textDecoration: `none` }}>
+                <Button style={{ fontWeight: 600, marginTop: `3rem`, marginBottom: `3rem` }}>
+                  KUNJUNGI BLOG LANDX
+                </Button>
+              </Link>
+            </Grid>
+          </Grid>
+
+        </Container>
+      </section>
+
+      <hr />
+      <section style={{ padding: '30px', display: 'flex', alignItems: 'center' }}>
+        <Container style={{ paddingLeft: 0, paddingRight: 0 }}>
 
           {/* TODO: Get data from API LandX */}
           <Carousel />

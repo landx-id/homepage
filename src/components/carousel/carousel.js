@@ -9,7 +9,7 @@ import "./carousel.scss"
 import { Link } from "gatsby"
 
 
-const Carousel = ({ datas }) => {
+const Carousel = ({ datas, type }) => {
 
     const dummy = [
         {
@@ -29,13 +29,24 @@ const Carousel = ({ datas }) => {
         }
     ];
 
-    // var names = ['Jake', 'Jon', 'Thruster'];
+    const dummyTesti = [
+        {
+            'img': "./images/testimonyProfilePicture2.webp",
+            'name': "Valerie",
+            'testimony': "Akhirnya ada solusi untuk investasi properti bagi yang tidak punya waktu. Layanan LandX sangat baik, kinerja investasi sangat memuaskan, aplikasi mudah digunakan, plus saya dapat memeriksa investasi saya kapan saja!"
+        },
+        {
+            'img': "./images/testimonyProfilePicture.webp",
+            'name': "Herbert",
+            'testimony': "Walaupun sempat ARA di awal IPO (Initial Public Offering), saham Bukalapak kini terus mengalami ARB, membuat banyak investor merasa dirugikan oleh hal ini."
+        }
+    ];
 
     const settings = {
         dots: true,
-        arrows: false,
-        slidesToShow: 3,
-        autoplay: false,
+        arrows: type === 'artikel' ? false : true,
+        slidesToShow: type === 'artikel' ? 3 : 1,
+        autoplay: type === 'artikel' ? false : true,
         responsive: [
             {
                 breakpoint: 768,
@@ -48,39 +59,65 @@ const Carousel = ({ datas }) => {
 
     return (
         <Slider {...settings}>
-            {dummy.map(data => (
-                <Box className="card-border" key={data.tag}>
-                    <Box className="card-body">
-                        <Typography color="secondary" style={{ fontSize: `11px` }}>
-                            {data.tag}
-                        </Typography>
-                        <Typography color="secondary" className="article-title">
-                            {data.title}
-                        </Typography>
-                        <Typography color="secondary">
-                            {data.description}
-                        </Typography>
+            {type === 'artikel' ?
+                dummy.map(data => (
+                    <Box className="card-border" key={data.tag}>
+                        <Box className="card-body">
+                            <Typography color="secondary" style={{ fontSize: `11px` }}>
+                                {data.tag}
+                            </Typography>
+                            <Typography color="secondary" className="article-title">
+                                {data.title}
+                            </Typography>
+                            <Typography color="secondary" style={{ height: `9rem` }}>
+                                {data.description}
+                            </Typography>
 
-                        <Box className="read-more">
-                            <Link to="/">
-                                <Typography color="primary" style={{ fontWeight: 600 }}>
-                                    Selengkapnya di blog
-                                </Typography>
-                            </Link>
+                            <Box className="read-more">
+                                <Link href="">
+                                    <Typography color="primary" style={{ fontWeight: 600 }}>
+                                        Selengkapnya di blog
+                                    </Typography>
+                                </Link>
+                            </Box>
                         </Box>
                     </Box>
-                </Box>
-            ))}
+                ))
+                :
+                dummyTesti.map(data => (
+                    <Box className="card-border" key={data.name}>
+                        <Box style={{ borderRadius: `12px`, padding: `15px 15px`, textAlign: `-webkit-center` }}>
+                            <img
+                                src={data.img}
+                                alt="Review keuntungan jangka panjang investasi di LandX"
+                                title="Review keuntungan jangka panjang investasi di LandX"
+                                style={{ width: `96px` }}
+                            />
+
+                            <Box>
+                                <Typography color="secondary" style={{ fontWeight: 600 }}>
+                                    {data.name}
+                                </Typography>
+                                <Typography color="secondary">
+                                    {data.testimony}
+                                </Typography>
+                            </Box>
+                        </Box>
+                    </Box>
+                ))
+            }
         </Slider>
     )
 }
 
 Carousel.defaultProps = {
-    datas: []
+    datas: [],
+    type: ``
 }
 
 Carousel.propTypes = {
     datas: PropTypes.array,
+    type: PropTypes.string
 }
 
 export default Carousel
