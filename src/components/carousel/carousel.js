@@ -27,20 +27,20 @@ const Carousel = ({ datas, type }) => {
             'title': "Mau Mulai Investasi Saham? Yuk Cek Saham Blue Chip untuk Pemula",
             'description': "Apabila kamu pemula yang masih bingung cara berinvestasi ke dalam saham seperti apa yang bisa memberikan keuntungan, maka saham bluechip bisa jadi pilihan"
         }
-		];
-		
-		const dummyTesti = [
-			{
-					'img': "./images/testimonyProfilePicture2.webp",
-					'name': "Valerie",
-					'testimony': "Akhirnya ada solusi untuk investasi properti bagi yang tidak punya waktu. Layanan LandX sangat baik, kinerja investasi sangat memuaskan, aplikasi mudah digunakan, plus saya dapat memeriksa investasi saya kapan saja!"
-			},
-			{
-					'img': "./images/testimonyProfilePicture.webp",
-					'name': "Herbert",
-					'testimony': "Walaupun sempat ARA di awal IPO (Initial Public Offering), saham Bukalapak kini terus mengalami ARB, membuat banyak investor merasa dirugikan oleh hal ini."
-			}
-	];
+    ];
+
+    const dummyTesti = [
+        {
+            'img': "./images/testimonyProfilePicture2.webp",
+            'name': "Valerie",
+            'testimony': "Akhirnya ada solusi untuk investasi properti bagi yang tidak punya waktu. Layanan LandX sangat baik, kinerja investasi sangat memuaskan, aplikasi mudah digunakan, plus saya dapat memeriksa investasi saya kapan saja!"
+        },
+        {
+            'img': "./images/testimonyProfilePicture.webp",
+            'name': "Herbert",
+            'testimony': "Walaupun sempat ARA di awal IPO (Initial Public Offering), saham Bukalapak kini terus mengalami ARB, membuat banyak investor merasa dirugikan oleh hal ini."
+        }
+    ];
 
     const settings = {
         dots: true,
@@ -59,17 +59,17 @@ const Carousel = ({ datas, type }) => {
 
     return (
         <Slider {...settings}>
-            {type === 'artikel' ? 
-                dummy.map(data => (  
+            {type === 'artikel' ?
+                dummy.map(data => (
                     <Box className="card-border" key={data.tag}>
                         <Box className="card-body">
-                            <Typography color="secondary" style={{ fontSize: `11px`}}>
+                            <Typography color="secondary" style={{ fontSize: `11px` }}>
                                 {data.tag}
                             </Typography>
                             <Typography color="secondary" className="article-title">
                                 {data.title}
                             </Typography>
-                            <Typography color="secondary" style={{ height:`9rem` }}>
+                            <Typography color="secondary" style={{ height: `9rem` }}>
                                 {data.description}
                             </Typography>
 
@@ -83,28 +83,28 @@ const Carousel = ({ datas, type }) => {
                         </Box>
                     </Box>
                 ))
-                : 
-									dummyTesti.map(data => (  
-										<Box className="card-border" key={data.name}>
-											<Box style={{ borderRadius:`12px`, padding:`15px 15px`, textAlign:`-webkit-center`}}>
-												<img 
-													src={ data.img } 
-													alt="Review keuntungan jangka panjang investasi di LandX" 
-													title="Review keuntungan jangka panjang investasi di LandX" 
-													style={{ width:`96px` }}
-												/>
+                :
+                dummyTesti.map(data => (
+                    <Box className="card-border" key={data.name}>
+                        <Box style={{ borderRadius: `12px`, padding: `15px 15px`, textAlign: `-webkit-center` }}>
+                            <img
+                                src={data.img}
+                                alt="Review keuntungan jangka panjang investasi di LandX"
+                                title="Review keuntungan jangka panjang investasi di LandX"
+                                style={{ width: `96px` }}
+                            />
 
-												<Box>
-													<Typography color="secondary" style={{ fontWeight: 600 }}>
-														{ data.name }
-													</Typography>
-													<Typography color="secondary">
-														{ data.testimony }
-													</Typography>
-												</Box>
-											</Box>
-										</Box>
-									))
+                            <Box>
+                                <Typography color="secondary" style={{ fontWeight: 600 }}>
+                                    {data.name}
+                                </Typography>
+                                <Typography color="secondary">
+                                    {data.testimony}
+                                </Typography>
+                            </Box>
+                        </Box>
+                    </Box>
+                ))
             }
         </Slider>
     )
@@ -112,7 +112,7 @@ const Carousel = ({ datas, type }) => {
 
 Carousel.defaultProps = {
     datas: [],
-    type:``
+    type: ``
 }
 
 Carousel.propTypes = {

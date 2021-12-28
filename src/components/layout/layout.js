@@ -30,8 +30,8 @@ const Layout = ({ children }) => {
     <>
       <ThemeProvider theme={theme}>
         <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-          <main>{children}</main>
-        <Footer></Footer>
+        <main>{children}</main>
+        <Footer />
       </ThemeProvider>
     </>
   )

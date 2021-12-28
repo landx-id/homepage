@@ -1,95 +1,131 @@
-import React from 'react'
-import { Grid, Card, Chip, CardContent, CardMedia, LinearProgress, Button } from '@mui/material';
+import React, { useState, useEffect } from 'react'
+import { Grid, Card, Chip, CardContent, CardMedia, LinearProgress, Button, CircularProgress } from '@mui/material';
+import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Slider from 'react-slick';
 import './CardProject.scss'
+import { toIDR } from '../../../utils/currency';
+import { calculateRemainingDays } from '../../../utils/common';
 
-const CardProject = ({ settings }) => {
+const CardProject = ({ data }) => {
+  const [endDay, setEndDay] = useState('')
+
+  useEffect(() => {
+    handleEndDay()
+  }, [])
+
+  const handleEndDay = () => {
+    if (data.launchProgress === 1) {
+      setEndDay(0)
+    } else {
+      setEndDay(calculateRemainingDays(data.settlementDate))
+    }
+  }
+
+  const sliderOneImage = {
+    dots: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    fade: true,
+    autoplay: true,
+    speed: 5000,
+    autoplaySpeed: 5000,
+  };
+
+
   return (
     <>
-      <Slider {...settings}>
-        <Grid item xs={12} md={4}>
-          <Card className="card-project">
-            <CardMedia
-              component="img"
-              height="194"
-              image="/images/1.webp"
-              alt="Kapan Tongkang"
-            />
-            <CardContent>
-              <Grid container sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                <Grid item xs={9}>
-                </Grid>
-                <Grid item xs={3} className='btn-container-buy'>
-                  <Button variant="contained" className="btn-buy">
-                    <span className='f-buy'>BELI</span>
-                  </Button>
-                </Grid>
+      <Grid item xs={11} md={6} className='container-slider-center'>
+        <Card className="card-project">
+          <Slider {...sliderOneImage} className="container-slider-image">
+            {data.previewImages.length > 0 ? data.previewImages.map((img, i) => {
+              return (
+                <div style={{ height: '195px' }} key={i}>
+                  <img src={img} style={{ height: '195px' }} alt="preview" />
+                </div>
+              )
+            })
+              :
+              <div style={{ height: '195px' }}>
+                <CircularProgress color="success" />
+              </div>
+            }
+          </Slider>
+          <CardContent>
+            <Grid container sx={{ display: 'flex', justifyContent: 'space-between' }}>
+              <Grid item xs={9}>
               </Grid>
-
-              <div className="card-code">PMBB</div>
-              <h2 className="card-title">Padang Merdeka - PT Merdeka Bisnis Bersama</h2>
-              <Chip label="Restaurant" color="success" variant="outlined" className="chip-text" />
-
-              <Grid container sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                <Grid item xs={9} className='card-price'>
-                  Rp 3.750.000.000
-                </Grid>
-                <Grid item xs={3} className='card-price'>
-                  0
-                </Grid>
+              <Grid item xs={3} className='btn-container-buy'>
+                <Button variant="contained" className="btn-buy">
+                  <span className='f-buy'>BELI</span>
+                </Button>
               </Grid>
-              <Grid container>
-                <Grid item xs={9} className='card-text-detail'>
-                  dari Rp 3.750.000.000 Total Pendanaan
-                </Grid>
-                <Grid item xs={3} className='card-text-detail'>
-                  Hari Lagi
-                </Grid>
-              </Grid>
+            </Grid>
 
-              <LinearProgress variant="determinate" value={50} />
+            <div className="card-code">{data.token.symbol}</div>
+            <h2 className="card-title">{data.token.name}</h2>
+            <Chip label={data.category} color="success" variant="outlined" className="chip-text" />
 
-              <Grid container sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                <Grid item xs={6} className='card-text-detail'>
-                  <span>Harga Per Lot</span>
-                </Grid>
-                <Grid item xs={6} className='card-text-detail'>
-                  <span>Jumlah Lot</span>
-                </Grid>
+            <Grid container sx={{ display: 'flex', justifyContent: 'space-between' }}>
+              <Grid item xs={9} className='card-price'>
+                {toIDR(data.launchProgress * data.totalPurchasePrice)}
               </Grid>
+              <Grid item xs={3} className='card-price'>
+                {endDay}
+              </Grid>
+            </Grid>
+            <Grid container>
+              <Grid item xs={8} className='card-text-detail'>
+                dari {toIDR(data.totalPurchasePrice)} Total Pendanaan
+              </Grid>
+              <Grid item xs={3} className='card-text-detail'>
+                Hari Lagi
+              </Grid>
+            </Grid>
 
-              <Grid container sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                <Grid item xs={6} className='card-title'>
-                  <span>Rp. 1.000.000</span>
-                </Grid>
-                <Grid item xs={6} className='card-title'>
-                  <span>3750</span>
-                </Grid>
-              </Grid>
+            <LinearProgress variant="determinate" value={data.launchProgress * 100} />
 
-              <Grid container sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                <Grid item xs={6} className='card-text-detail'>
-                  <span>Periode Dividen</span>
-                </Grid>
-                <Grid item xs={6} className='card-text-detail'>
-                  <span>Estimasi Dividen</span>
-                </Grid>
+            <Grid container sx={{ display: 'flex', justifyContent: 'space-between' }}>
+              <Grid item xs={6} className='card-text-detail'>
+                <span>Harga Per Lot</span>
               </Grid>
+              <Grid item xs={6} className='card-text-detail'>
+                <span>Jumlah Lot</span>
+              </Grid>
+            </Grid>
 
-              <Grid container sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                <Grid item xs={6} className='card-title'>
-                  <span>Per 3 bulan</span>
-                </Grid>
-                <Grid item xs={6}>
-                  <span className='card-title'>10-20%</span> <span className='card-text-detail-2'>Per Tahun</span>
-                </Grid>
+            <Grid container sx={{ display: 'flex', justifyContent: 'space-between' }}>
+              <Grid item xs={6} className='card-title'>
+                <span>{toIDR(data.initialTokenPrice)}</span>
               </Grid>
-            </CardContent>
-          </Card>
-        </Grid>
-      </Slider>
+              <Grid item xs={6} className='card-title'>
+                <span>{parseInt(data.tokenSupply, 10)}</span>
+              </Grid>
+            </Grid>
+
+            <Grid container sx={{ display: 'flex', justifyContent: 'space-between' }}>
+              <Grid item xs={6} className='card-text-detail'>
+                <span>Periode Dividen</span>
+              </Grid>
+              <Grid item xs={6} className='card-text-detail'>
+                <span>Estimasi Dividen</span>
+              </Grid>
+            </Grid>
+
+            <Grid container sx={{ display: 'flex', justifyContent: 'space-between' }}>
+              <Grid item xs={6} className='card-title'>
+                <span>{data.dividendSchedule}</span>
+              </Grid>
+              <Grid item xs={6}>
+                <span className='card-title'>{parseFloat(data.annualRentYield) * 100}-{parseFloat(data.annualRentYieldUpper) * 100}%</span> <span className='card-text-detail-2'>Per Tahun</span>
+              </Grid>
+            </Grid>
+          </CardContent>
+        </Card>
+      </Grid>
     </>
   )
 }

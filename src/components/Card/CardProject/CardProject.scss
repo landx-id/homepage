@@ -6,7 +6,7 @@
 
   .btn-container-buy {
     justify-content: flex-end;
-    margin-top: -65px;
+    margin-top: -45px;
 
     .btn-buy {
       padding: 0;
@@ -63,9 +63,32 @@
     font-size: 14px;
     color: #5e798d;
   }
+
+  .container-slider-image {
+    .slick-list {
+      min-height: 194px !important;
+      max-height: 195px !important;
+      padding-left: 0;
+    }
+  }
 }
 
-// .slick-slider .slick-track,
-// .slick-slider .slick-list {
-//   height: 560px;
+// #ongoing-projects {
+//   .slick-list {
+//     min-height: 590px;
+//     padding-left: 5px;
+//   }
+
+//   .slick-dots {
+//     bottom: 0;
+//   }
 // }
+
+@media screen and (max-width: 900px) {
+  .container-slider-center {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: flex !important;
+    justify-content: center;
+  }
+}
