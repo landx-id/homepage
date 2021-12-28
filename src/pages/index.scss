@@ -1,6 +1,10 @@
 .homepage {
-  background-image: url(../../static/images/header_background.webp);
-  height: 752px;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.44),
+      rgba(255, 255, 255, 0.44)
+    ),
+    url(../../static/images/header_background.webp);
+  min-height: 752px;
   width: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -34,6 +38,7 @@
   font-weight: 600 !important;
   color: #5e798d;
   margin-bottom: 8px;
+  text-align: center;
 }
 
 .divider {
@@ -48,37 +53,66 @@
   margin: 20px auto;
 }
 
-.card-why-landx {
-  min-height: 295px;
-  width: 100%;
-  background-image: linear-gradient(#fff, #d8ffeb);
+.section-why-landx {
+  background-color: #f8f8f8;
+  padding: 30px;
+  min-height: 500px;
   display: flex;
-  justify-content: center;
-  text-align: center;
-  box-shadow: 0 8px 10px 1px rgb(0 0 0 / 14%);
+  align-items: center;
 
-  .container-img {
-    height: 120px;
+  .card-why-landx {
+    min-height: 295px;
+    width: 100%;
+    background-image: linear-gradient(#fff, #d8ffeb);
     display: flex;
-    align-items: center;
     justify-content: center;
-  }
+    text-align: center;
+    box-shadow: 0 8px 10px 1px rgb(0 0 0 / 14%);
 
-  .card-icon {
-    display: block;
-    height: 72px;
-    width: 72px;
-    margin: 0 auto;
-  }
+    .container-img {
+      height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-  .title-icon {
-    font-size: 16px;
-    font-weight: 700;
-    color: #5e798d;
-    margin-bottom: 10px;
+    .card-icon {
+      display: block;
+      height: 72px;
+      width: 72px;
+      margin: 0 auto;
+    }
+
+    .title-icon {
+      font-size: 16px;
+      font-weight: 700;
+      color: #5e798d;
+      margin-bottom: 10px;
+    }
   }
 }
 
+.container-card-projects {
+  .slick-list {
+    min-height: 600px;
+    padding-left: 5px;
+  }
+
+  .slick-dots {
+    bottom: 10px;
+  }
+
+  .slick-track {
+    margin-right: 0;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+#how-it-works {
+  .slick-list {
+    height: 360px;
+  }
+}
 .card-landx-work {
   text-align: center;
   width: 100%;
@@ -108,5 +142,91 @@
 .container-value-investor {
   .num-value {
     color: #2dbe60;
+  }
+}
+
+.container-yt {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  height: 100%;
+  width: 100%;
+
+  .banner-yt {
+    height: 315px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .container-slider-center {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: flex;
+    justify-content: center;
+  }
+
+  .slider-ValueInvestor {
+    text-align: center;
+
+    .slick-dots {
+      bottom: 0;
+    }
+  }
+
+  .container-card-projects {
+    .slick-track {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container-banner {
+    flex-direction: column-reverse !important;
+  }
+
+  .section-why-landx {
+    padding: 0;
+
+    .slick-slide {
+      height: 320px;
+    }
+  }
+
+  .container-yt {
+    margin-top: 300px;
+    justify-content: center;
+  }
+
+  .homepage {
+    text-align: center;
+    background-image: #dee4e9;
+
+    .heroTitle {
+      font-size: 22px;
+    }
+
+    .container-logo-ojk {
+      width: 100%;
+
+      .logo-ojk {
+        width: 165px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+      }
+    }
+
+    .container-cta {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      width: 100%;
+
+      .cta-image {
+        width: 130px;
+      }
+    }
   }
 }
