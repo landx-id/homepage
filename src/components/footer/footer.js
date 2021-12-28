@@ -19,14 +19,14 @@ const Footer = () => {
               Unduh aplikasi LandX sekarang!
             </Typography>
             <Grid item md={12} xs={12} style={{ paddingBottom: 25 }}>
-              <Link to="https://play.google.com/store/apps/details?id=store.numoney.landxapp">
+              <Link href="https://play.google.com/store/apps/details?id=store.numoney.landxapp">
                 <img
                   src="./images/LandX-PlayStore.webp"
                   alt="Play Store"
                   title="Play Store"
                 />
               </Link>
-              <Link to="https://apps.apple.com/id/app/landx/id1453823676">
+              <Link href="https://apps.apple.com/id/app/landx/id1453823676">
                 <img
                   src="./images/LandX-AppStore.webp"
                   alt="App Store"
@@ -124,7 +124,7 @@ const Footer = () => {
                 <Link to='/contact'>Kontak</Link>
               </MenuItem>
               <MenuItem>
-                <Link to="https://landx.id/blog/">Blog</Link>
+                <Link href="https://landx.id/blog/">Blog</Link>
               </MenuItem>
             </MenuList>
           </Grid>
@@ -133,7 +133,7 @@ const Footer = () => {
             <Typography color="secondary" className="footer-menu-title">Perusahaan</Typography>
             <MenuList>
               <MenuItem>
-                <Link to='https://landx.id/blog/jobs-at-landx/'>Karir</Link>
+                <Link href='https://landx.id/blog/jobs-at-landx/'>Karir</Link>
               </MenuItem>
               <MenuItem>
                 <Link to='/term-and-condition'>Syarat & Ketentuan</Link>
@@ -156,7 +156,7 @@ const Footer = () => {
             </MenuList>
           </Grid>
           <Grid item xs={12} md={6} className="ml-1" style={{ textAlignLast: `left` }}>
-            <Link to="https://id.linkedin.com/company/landx-id?trk=public_profile_topcard_current_company" className="footer-icon-link">
+            <Link href="https://id.linkedin.com/company/landx-id?trk=public_profile_topcard_current_company" className="footer-icon-link">
               <img
                 src="./images/LandX-Linkedin.svg"
                 alt="LandX LinkedIn"
@@ -164,7 +164,7 @@ const Footer = () => {
                 width={32}
               />
             </Link>
-            <Link to="https://www.facebook.com/landx.id" className="footer-icon-link">
+            <Link href="https://www.facebook.com/landx.id" className="footer-icon-link">
               <img
                 src="./images/LandX-Facebook.svg"
                 alt="LandX Facebook"
@@ -172,7 +172,7 @@ const Footer = () => {
                 width={32}
               />
             </Link>
-            <Link to="https://www.instagram.com/landx.id/" className="footer-icon-link">
+            <Link href="https://www.instagram.com/landx.id/" className="footer-icon-link">
               <img
                 src="./images/LandX-Instagram.svg"
                 alt="LandX Instagram"

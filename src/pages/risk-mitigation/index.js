@@ -1,5 +1,4 @@
 import * as React from "react"
-import { Link } from "gatsby"
 import { Container, Grid, Typography } from '@mui/material';
 
 import Layout from "../../components/layout/layout"
