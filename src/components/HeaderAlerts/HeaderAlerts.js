@@ -5,9 +5,10 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
 const HeaderAlerts = () => {
   const [open, setOpen] = useState(true);
-  const [windowDimension, setwindowDimension] = useState(window.innerWidth)
+  const [windowDimension, setwindowDimension] = useState('')
 
   useEffect(() => {
+    setwindowDimension(window.innerWidth)
     window.addEventListener('resize', () => {
       setwindowDimension(window.innerWidth)
       handleAlert(windowDimension)

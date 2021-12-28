@@ -1,5 +1,6 @@
 import * as React from "react"
 import '../assets/styling/cssReset.scss';
+import Slider from 'react-slick'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Link } from "gatsby"
@@ -9,9 +10,6 @@ import Seo from "../components/seo/seo"
 import Carousel from "../components/carousel/carousel"
 import './index.scss';
 import CardProject from "../components/Card/CardProject/CardProject";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Slider from 'react-slick';
 import { FetchLimitData } from "../utils/common";
 
 export const CardWhyLandx = ({ title, content, logo }) => {
@@ -79,10 +77,11 @@ export const ValueInvestor = ({ number, content }) => {
 }
 
 const IndexPage = () => {
-  const [widthWindows, setWidthWindows] = React.useState(window.innerWidth)
+  const [widthWindows, setWidthWindows] = React.useState('')
   const [dataProject, setDataProject] = React.useState(null)
 
   React.useEffect(() => {
+    setWidthWindows(window.innerWidth)
     window.addEventListener("resize", () => {
       setWidthWindows(window.innerWidth)
     })
@@ -99,19 +98,23 @@ const IndexPage = () => {
     slidesToShow: 3,
     slidesToScroll: 3,
     arrows: false,
+    initialSlide: 0,
+    useTransform: false,
     responsive: [
       {
         breakpoint: 1200,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 2
+          slidesToScroll: 2,
+          useTransform: false,
         }
       },
       {
         breakpoint: 830,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1
+          slidesToScroll: 1,
+          useTransform: false,
         }
       }
     ]
@@ -153,7 +156,7 @@ const IndexPage = () => {
 
 
   const getLimitCardProject = () => {
-    FetchLimitData('https://api.landx.id/').then(data => {
+    FetchLimitData('https://api.landx.id/', 5, 1).then(data => {
       setDataProject(data.data.currencies)
     })
   }
@@ -240,13 +243,13 @@ const IndexPage = () => {
         <Container id='ongoing-projects'>
           <TitleSection title='Pendanaan yang Sedang Berlangsung' />
 
-          <Slider {...cardProject}>
-            {dataProject && dataProject.map((dataProject) => {
-              console.log(dataProject.landXProperty);
-              return <CardProject cardProject={cardProject} data={dataProject.landXProperty} key={dataProject.landXProperty.id} />
-            })}
-          </Slider>
-
+          {dataProject &&
+            <Slider {...cardProject} className='container-card-projects'>
+              {dataProject && dataProject.map((dataProject) => {
+                return <CardProject cardProject={cardProject} data={dataProject.landXProperty} key={dataProject.landXProperty.id} />
+              })}
+            </Slider>
+          }
         </Container>
       </section>
 

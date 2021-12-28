@@ -6,7 +6,7 @@
 
   .btn-container-buy {
     justify-content: flex-end;
-    margin-top: -65px;
+    margin-top: -45px;
 
     .btn-buy {
       padding: 0;
@@ -62,6 +62,14 @@
   .card-text-detail-2 {
     font-size: 14px;
     color: #5e798d;
+  }
+
+  .container-slider-image {
+    .slick-list {
+      min-height: 194px !important;
+      max-height: 195px !important;
+      padding-left: 0;
+    }
   }
 }
 

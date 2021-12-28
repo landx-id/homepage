@@ -9,10 +9,11 @@ const ResponsiveAppBar = () => {
   const [open, setOpen] = React.useState(false);
   const [mobileNav, setMobileNav] = React.useState(false);
   const [mobileNavSubMenu, setMobileNavSubMenu] = React.useState(false);
-  const [widthWindows, setWidthWindows] = React.useState(window.innerWidth)
+  const [widthWindows, setWidthWindows] = React.useState('')
   const anchorRef = React.useRef(null);
 
   React.useEffect(() => {
+    setWidthWindows(window.innerWidth)
     window.addEventListener("resize", () => {
       setWidthWindows(window.innerWidth)
     })

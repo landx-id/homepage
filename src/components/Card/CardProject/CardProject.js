@@ -23,12 +23,16 @@ const CardProject = ({ data }) => {
   }
 
   const sliderOneImage = {
-    dots: false,
+    dots: true,
     infinite: false,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
+    fade: true,
+    autoplay: true,
+    speed: 5000,
+    autoplaySpeed: 5000,
   };
 
 
@@ -36,10 +40,10 @@ const CardProject = ({ data }) => {
     <>
       <Grid item xs={11} md={6} className='container-slider-center'>
         <Card className="card-project">
-          <Slider {...sliderOneImage}>
-            {data.previewImages.length > 0 ? data.previewImages.map(img => {
+          <Slider {...sliderOneImage} className="container-slider-image">
+            {data.previewImages.length > 0 ? data.previewImages.map((img, i) => {
               return (
-                <div style={{ height: '195px' }}>
+                <div style={{ height: '195px' }} key={i}>
                   <img src={img} style={{ height: '195px' }} alt="preview" />
                 </div>
               )
