@@ -141,9 +141,9 @@ const ResponsiveAppBar = () => {
                   </Box>
                 </Box>
                 <div className='container-btn'>
-                  <a href='https://landx.id/pendaftaran-perusahaan.html' className='btn-text'>
+                  <Link to='/pendaftaran-perusahaan' className='btn-text'>
                     <Button color="success">PENDAFTARAN PERUSAHAAN</Button>
-                  </a>
+                  </Link>
                 </div>
               </>
               :
