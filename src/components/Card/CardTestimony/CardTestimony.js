@@ -10,12 +10,11 @@ const CardTestimony = () => {
   const sliderOneCard = {
     dots: true,
     infinite: true,
-    speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
     autoplay: true,
-    speed: 5000,
+    speed: 500,
     autoplaySpeed: 5000,
   };
 
@@ -35,9 +34,9 @@ const CardTestimony = () => {
   return (
     <>
       <Slider {...sliderOneCard} className='container-testimony'>
-        {dummyTesti && dummyTesti.map(data => {
+        {dummyTesti && dummyTesti.map((data, i) => {
           return (
-            <Grid item xs={12} className="container-slider-center">
+            <Grid item xs={12} className="container-slider-center" key={i}>
               <Card className='card-testimony'>
                 <div className="container-img">
                   <img src={data.img} alt={data.name} className='card-img' />

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react"
-import PropTypes from "prop-types"
-import { Box, Button, CardActions, CardContent, Typography, Grid } from '@mui/material'
+import { Button, CardContent, Typography, Grid } from '@mui/material'
 import Slider from "react-slick"
 
 import "slick-carousel/slick/slick.css"
@@ -23,10 +22,10 @@ const CardArticel = () => {
       .then(data => {
         const items = data.querySelectorAll("item");
         items.forEach((e, i) => {
-          let title = e.getElementsByTagName("title")[0] != undefined ? e.getElementsByTagName("title")[0].childNodes[0].nodeValue : "";
-          let description = e.getElementsByTagName("description")[0] != undefined ? e.getElementsByTagName("description")[0].childNodes[0].nodeValue : "";
-          let link = e.getElementsByTagName("link")[0] != undefined ? e.getElementsByTagName("link")[0].childNodes[0].nodeValue : "";
-          let category = e.getElementsByTagName("category")[0] != undefined ? e.getElementsByTagName("category")[0].childNodes[0].nodeValue : "LandX";
+          let title = e.getElementsByTagName("title")[0] !== undefined ? e.getElementsByTagName("title")[0].childNodes[0].nodeValue : "";
+          let description = e.getElementsByTagName("description")[0] !== undefined ? e.getElementsByTagName("description")[0].childNodes[0].nodeValue : "";
+          let link = e.getElementsByTagName("link")[0] !== undefined ? e.getElementsByTagName("link")[0].childNodes[0].nodeValue : "";
+          let category = e.getElementsByTagName("category")[0] !== undefined ? e.getElementsByTagName("category")[0].childNodes[0].nodeValue : "LandX";
 
           setDataBlogs((prevArr) => [...prevArr, { title: title, desc: description, category: category, link: link }])
         })
@@ -37,16 +36,13 @@ const CardArticel = () => {
     dots: true,
     arrows: false,
     slidesToShow: 3,
-    autoplay: false,
+    autoplay: true,
+    speed: 2000,
+    autoplaySpeed: 7000,
+    cssEase: "linear",
     responsive: [
       {
         breakpoint: 1200,
-        settings: {
-          slidesToShow: 2
-        }
-      },
-      {
-        breakpoint: 1100,
         settings: {
           slidesToShow: 1
         }
@@ -54,40 +50,34 @@ const CardArticel = () => {
     ]
   };
 
-  console.log('title', dataBlogs);
-
   return (
     <>
-      <Slider {...settings} className='container-article'>
-        <Grid item xs={11} md={6} lg={11} className='container-slider-center'>
-          <CardContent className='card-body'>
-            <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom className="card-tag">
-              category
-            </Typography>
-            <Typography variant="h5" component="h2" className='card-title'>
-              title
-            </Typography>
-            <Typography sx={{ mb: 1.5 }} color="text.secondary" className="card-description">
-              desc
-            </Typography>
-            <Link href='/' className="text-link">
-              <Button variant="text" size="small">SELENGKAPNYA DI BLOG</Button>
-            </Link>
-          </CardContent>
-        </Grid>
-      </Slider>
+      {dataBlogs &&
+        <Slider {...settings} className='container-article'>
+          {dataBlogs.length > 0 && dataBlogs.slice(0, 5).map(data => {
+            return (
+              <Grid item xs={11} md={6} lg={11} className='container-slider-center' key={data.title}>
+                <CardContent className='card-body'>
+                  <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom className="card-tag">
+                    {data.category}
+                  </Typography>
+                  <Typography variant="h5" component="h2" className='card-title'>
+                    {data.title}
+                  </Typography>
+                  <Typography sx={{ mb: 1.5 }} color="text.secondary" className="card-description">
+                    {data.desc}
+                  </Typography>
+                  <Link href='/' className="text-link">
+                    <Button variant="text" size="small">SELENGKAPNYA DI BLOG</Button>
+                  </Link>
+                </CardContent>
+              </Grid>
+            )
+          })}
+        </Slider>
+      }
     </>
   )
-}
-
-CardArticel.defaultProps = {
-  datas: [],
-  type: ``
-}
-
-CardArticel.propTypes = {
-  datas: PropTypes.array,
-  type: PropTypes.string
 }
 
 export default CardArticel

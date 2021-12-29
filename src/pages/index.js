@@ -1,83 +1,22 @@
 import React from "react"
 import { Link } from "gatsby"
+import { Container, Grid, Typography, Button } from '@mui/material';
+import Layout from "../components/layout/layout"
+import Seo from "../components/seo/seo"
+import { FetchLimitData } from "../utils/common";
+import CardArticel from "../components/Card/CardArticel/CardArticel"
+import CardProject from "../components/Card/CardProject/CardProject";
+import CardTestimony from "../components/Card/CardTestimony/CardTestimony";
+import CardWhyLandx from "../components/Card/CardWhyLandx/CardWhyLandx";
+import CardTitleSection from "../components/Card/CardTitleSection/CardTitleSection";
+import CardLandxWork from "../components/Card/CardLandxWork/CardLandxWork";
+import CardValueInvestor from "../components/Card/CardValueInvestor/CardValueInvestor";
+
 import '../assets/styling/cssReset.scss';
 import Slider from 'react-slick'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
-import { Container, Grid, Typography, Card, CardContent, Button } from '@mui/material';
-import Layout from "../components/layout/layout"
-import Seo from "../components/seo/seo"
-import CardArticel from "../components/Card/CardArticel/CardArticel"
 import './index.scss';
-import CardProject from "../components/Card/CardProject/CardProject";
-import { FetchLimitData } from "../utils/common";
-import XMLParser from "react-xml-parser";
-import CardTestimony from "../components/Card/CardTestimony/CardTestimony";
-
-export const CardWhyLandx = ({ title, content, logo }) => {
-  return (
-    <Grid item xs={11} md={6} lg={4} className="container-slider-center">
-      <Card className='card-why-landx'>
-        <div>
-          <div style={{ height: '120px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <img src={logo} alt={title} className="card-icon" />
-          </div>
-          <CardContent>
-            <h2 className="title-icon">
-              {title}
-            </h2>
-            <Typography variant="body2" color="text.secondary">
-              {content}
-            </Typography>
-          </CardContent>
-        </div>
-      </Card>
-    </Grid>
-  )
-}
-
-export const TitleSection = ({ title }) => {
-  return (
-    <Grid container sx={{ display: 'flex', justifyContent: 'center' }}>
-      <Grid item>
-        <h2 className='title-section'>
-          {title}
-        </h2>
-        <hr className='divider' />
-      </Grid>
-    </Grid>
-  )
-}
-
-export const CardLandxWork = ({ img, title, content, height = '72px', width = '72px' }) => {
-  return (
-    <Grid item xs={11} md={6} lg={3} className="container-slider-center">
-      <Card className='card-landx-work'>
-        <div className="container-img">
-          <img src={img} alt={title} className='card-img' height={height} width={width} />
-        </div>
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2" className="card-title">
-            {title}
-          </Typography>
-          <Typography variant="body2" className='card-content'>
-            {content}
-          </Typography>
-        </CardContent>
-      </Card>
-    </Grid>
-  )
-}
-
-export const ValueInvestor = ({ number, content }) => {
-  return (
-    <Grid item className="container-value-investor">
-      <Typography variant='h4' className="num-value" sx={{ marginBottom: '5px' }}>{number}</Typography>
-      <p>{content}</p>
-    </Grid>
-  )
-}
 
 const IndexPage = () => {
   const [widthWindows, setWidthWindows] = React.useState('')
@@ -175,10 +114,10 @@ const IndexPage = () => {
                   <img src="./images/logo_OJK.webp" alt="logo OJK" className="logo-ojk" />
                 </Grid>
                 <Grid item className='container-cta' sm={11} xl={12}>
-                  <Link to='https://play.google.com/store/apps/details?id=store.numoney.landxapp' target='_blank'>
+                  <Link href='https://play.google.com/store/apps/details?id=store.numoney.landxapp' target='_blank'>
                     <img src="./images/PlayStore.webp" alt="PlayStore" className='playstoreLogo cta-image' />
                   </Link>
-                  <Link to='https://apps.apple.com/id/app/landx/id1453823676' target='_blank'>
+                  <Link href='https://apps.apple.com/id/app/landx/id1453823676' target='_blank'>
                     <img src="./images/AppStore.webp" alt="AppStore" className='cta-image' />
                   </Link>
                 </Grid>
@@ -196,17 +135,17 @@ const IndexPage = () => {
         <Container>
           {widthWindows < 750 ?
             <Slider {...sliderValueInvestor} className="slider-ValueInvestor">
-              <ValueInvestor number='71.811' content='Investor Terdaftar' />
-              <ValueInvestor number='26' content='Perusahaan Penerbit' />
-              <ValueInvestor number='153,18 Miliar' content='Investasi Tersalurkan' />
-              <ValueInvestor number='2,48 Miliar' content='Dividen Dibagikan' />
+              <CardValueInvestor number='71.811' content='Investor Terdaftar' />
+              <CardValueInvestor number='26' content='Perusahaan Penerbit' />
+              <CardValueInvestor number='153,18 Miliar' content='Investasi Tersalurkan' />
+              <CardValueInvestor number='2,48 Miliar' content='Dividen Dibagikan' />
             </Slider>
             :
             <Grid container sx={{ display: 'flex', justifyContent: 'space-between', textAlign: 'center', margin: '40px 0' }}>
-              <ValueInvestor number='71.811' content='Investor Terdaftar' />
-              <ValueInvestor number='26' content='Perusahaan Penerbit' />
-              <ValueInvestor number='153,18 Miliar' content='Investasi Tersalurkan' />
-              <ValueInvestor number='2,48 Miliar' content='Dividen Dibagikan' />
+              <CardValueInvestor number='71.811' content='Investor Terdaftar' />
+              <CardValueInvestor number='26' content='Perusahaan Penerbit' />
+              <CardValueInvestor number='153,18 Miliar' content='Investasi Tersalurkan' />
+              <CardValueInvestor number='2,48 Miliar' content='Dividen Dibagikan' />
             </Grid>
           }
         </Container>
@@ -214,7 +153,7 @@ const IndexPage = () => {
 
       <section className='section-why-landx'>
         <Container id="why-landx">
-          <TitleSection title='Mengapa Memilih LandX' />
+          <CardTitleSection title='Mengapa Memilih LandX' />
 
           {widthWindows < 1200 ?
             <Slider {...sliderOneCard}>
@@ -234,7 +173,7 @@ const IndexPage = () => {
 
       <section>
         <Container id='ongoing-projects'>
-          <TitleSection title='Pendanaan yang Sedang Berlangsung' />
+          <CardTitleSection title='Pendanaan yang Sedang Berlangsung' />
 
           {dataProject &&
             <Slider {...cardProject} className='container-card-projects'>
@@ -248,7 +187,7 @@ const IndexPage = () => {
 
       <section>
         <Container id='how-it-works'>
-          <TitleSection title='Cara Kerja LandX' />
+          <CardTitleSection title='Cara Kerja LandX' />
 
           {widthWindows < 1200 ?
             <Slider {...sliderOneCard}>
