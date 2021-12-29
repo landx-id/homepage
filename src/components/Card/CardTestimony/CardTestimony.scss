@@ -1,0 +1,29 @@
+.container-testimony {
+  .card-img {
+    height: 96px;
+    width: 96px;
+  }
+
+  .card-title {
+    color: #5e798d;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .card-testimony {
+    text-align: center;
+    width: 100%;
+    min-height: 320px;
+
+    .container-img {
+      height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .css-bhp9pd-MuiPaper-root-MuiCard-root {
+    box-shadow: none;
+  }
+}

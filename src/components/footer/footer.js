@@ -2,6 +2,9 @@ import * as React from 'react';
 import { Link } from "gatsby"
 import { Box, Typography, Container, Grid, MenuList, MenuItem } from '@mui/material';
 import { AnchorLink } from "gatsby-plugin-anchor-links"
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import InstagramIcon from '@mui/icons-material/Instagram';
 
 import "./footer.scss";
 
@@ -19,14 +22,14 @@ const Footer = () => {
               Unduh aplikasi LandX sekarang!
             </Typography>
             <Grid item md={12} xs={12} style={{ paddingBottom: 25 }}>
-              <Link to="https://play.google.com/store/apps/details?id=store.numoney.landxapp">
+              <Link href="https://play.google.com/store/apps/details?id=store.numoney.landxapp">
                 <img
                   src="./images/LandX-PlayStore.webp"
                   alt="Play Store"
                   title="Play Store"
                 />
               </Link>
-              <Link to="https://apps.apple.com/id/app/landx/id1453823676">
+              <Link href="https://apps.apple.com/id/app/landx/id1453823676">
                 <img
                   src="./images/LandX-AppStore.webp"
                   alt="App Store"
@@ -124,7 +127,7 @@ const Footer = () => {
                 <Link to='/contact'>Kontak</Link>
               </MenuItem>
               <MenuItem>
-                <Link to="https://landx.id/blog/">Blog</Link>
+                <Link href="https://landx.id/blog/">Blog</Link>
               </MenuItem>
             </MenuList>
           </Grid>
@@ -133,7 +136,7 @@ const Footer = () => {
             <Typography color="secondary" className="footer-menu-title">Perusahaan</Typography>
             <MenuList>
               <MenuItem>
-                <Link to='https://landx.id/blog/jobs-at-landx/'>Karir</Link>
+                <Link href='https://landx.id/blog/jobs-at-landx/'>Karir</Link>
               </MenuItem>
               <MenuItem>
                 <Link to='/term-and-condition'>Syarat & Ketentuan</Link>
@@ -156,29 +159,14 @@ const Footer = () => {
             </MenuList>
           </Grid>
           <Grid item xs={12} md={6} className="ml-1" style={{ textAlignLast: `left` }}>
-            <Link to="https://id.linkedin.com/company/landx-id?trk=public_profile_topcard_current_company" className="footer-icon-link">
-              <img
-                src="./images/LandX-Linkedin.svg"
-                alt="LandX LinkedIn"
-                title="LandX LinkedIn"
-                width={32}
-              />
+            <Link href="https://id.linkedin.com/company/landx-id?trk=public_profile_topcard_current_company" className="footer-icon-link">
+              <LinkedInIcon sx={{ width: '32px', height: '32px', color: '#5e798d' }} />
             </Link>
-            <Link to="https://www.facebook.com/landx.id" className="footer-icon-link">
-              <img
-                src="./images/LandX-Facebook.svg"
-                alt="LandX Facebook"
-                title="LandX Facebook"
-                width={32}
-              />
+            <Link href="https://www.facebook.com/landx.id" className="footer-icon-link">
+              <FacebookIcon sx={{ width: '32px', height: '32px', color: '#5e798d' }} />
             </Link>
-            <Link to="https://www.instagram.com/landx.id/" className="footer-icon-link">
-              <img
-                src="./images/LandX-Instagram.svg"
-                alt="LandX Instagram"
-                title="LandX Instagram"
-                width={32}
-              />
+            <Link href="https://www.instagram.com/landx.id/" className="footer-icon-link">
+              <InstagramIcon sx={{ width: '32px', height: '32px', color: '#5e798d' }} />
             </Link>
             <Typography style={{ color: `#5e798d`, textAlignLast: `left`, marginTop: `2rem` }} display="block">
               © 2020 LandX Indonesia. All Rights Reserved.

@@ -5,9 +5,10 @@ import ResponsiveAppBar from "../navbar/navbar"
 import HeaderAlerts from "../HeaderAlerts/HeaderAlerts"
 
 const Header = ({ siteTitle }) => {
-  const [widthWindows, setWidthWindows] = React.useState(window.innerWidth)
+  const [widthWindows, setWidthWindows] = React.useState('')
 
   React.useEffect(() => {
+    setWidthWindows(window.innerWidth)
     window.addEventListener("resize", () => {
       setWidthWindows(window.innerWidth)
     })

@@ -1,81 +1,22 @@
-import React, { useEffect } from "react"
+import React from "react"
+import { Link } from "gatsby"
+import { Container, Grid, Typography, Button } from '@mui/material';
+import Layout from "../components/layout/layout"
+import Seo from "../components/seo/seo"
+import { FetchLimitData } from "../utils/common";
+import CardArticel from "../components/Card/CardArticel/CardArticel"
+import CardProject from "../components/Card/CardProject/CardProject";
+import CardTestimony from "../components/Card/CardTestimony/CardTestimony";
+import CardWhyLandx from "../components/Card/CardWhyLandx/CardWhyLandx";
+import CardTitleSection from "../components/Card/CardTitleSection/CardTitleSection";
+import CardLandxWork from "../components/Card/CardLandxWork/CardLandxWork";
+import CardValueInvestor from "../components/Card/CardValueInvestor/CardValueInvestor";
+
 import '../assets/styling/cssReset.scss';
 import Slider from 'react-slick'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Link } from "gatsby"
-import { Container, Grid, Typography, Card, CardContent, Button } from '@mui/material';
-import Layout from "../components/layout/layout"
-import Seo from "../components/seo/seo"
-import Carousel from "../components/carousel/carousel"
 import './index.scss';
-import CardProject from "../components/Card/CardProject/CardProject";
-import { FetchLimitData } from "../utils/common";
-import XMLParser from "react-xml-parser";
-
-export const CardWhyLandx = ({ title, content, logo }) => {
-  return (
-    <Grid item xs={11} md={6} lg={4} className="container-slider-center">
-      <Card className='card-why-landx'>
-        <div>
-          <div style={{ height: '120px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <img src={logo} alt={title} className="card-icon" />
-          </div>
-          <CardContent>
-            <h5 className="title-icon">
-              {title}
-            </h5>
-            <Typography variant="body2" color="text.secondary">
-              {content}
-            </Typography>
-          </CardContent>
-        </div>
-      </Card>
-    </Grid>
-  )
-}
-
-export const TitleSection = ({ title }) => {
-  return (
-    <Grid container sx={{ display: 'flex', justifyContent: 'center' }}>
-      <Grid item>
-        <h2 className='title-section'>
-          {title}
-        </h2>
-        <hr className='divider' />
-      </Grid>
-    </Grid>
-  )
-}
-
-export const CardLandxWork = ({ img, title, content, height = '72px', width = '72px' }) => {
-  return (
-    <Grid item xs={11} md={6} lg={3} className="container-slider-center">
-      <Card className='card-landx-work'>
-        <div className="container-img">
-          <img src={img} alt={title} className='card-img' height={height} width={width} />
-        </div>
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div" className="card-title">
-            {title}
-          </Typography>
-          <Typography variant="body2" className='card-content'>
-            {content}
-          </Typography>
-        </CardContent>
-      </Card>
-    </Grid>
-  )
-}
-
-export const ValueInvestor = ({ number, content }) => {
-  return (
-    <Grid item className="container-value-investor">
-      <Typography variant='h4' className="num-value" sx={{ marginBottom: '5px' }}>{number}</Typography>
-      <p>{content}</p>
-    </Grid>
-  )
-}
 
 const IndexPage = () => {
   const [widthWindows, setWidthWindows] = React.useState('')
@@ -100,22 +41,12 @@ const IndexPage = () => {
     slidesToScroll: 3,
     arrows: false,
     initialSlide: 0,
-    useTransform: false,
     responsive: [
       {
         breakpoint: 1200,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          useTransform: false,
-        }
-      },
-      {
-        breakpoint: 830,
-        settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          useTransform: false,
         }
       }
     ]
@@ -171,7 +102,7 @@ const IndexPage = () => {
           <Grid container className='container-banner'>
             <Grid item md={6}>
               <Grid container>
-                <Grid item>
+                <Grid item sm={11} xl={12}>
                   <Typography variant="h1" className="heroTitle">
                     Investasi dan Miliki Bisnis Menguntungkan Mulai dari Rp 1.000.000
                   </Typography>
@@ -179,14 +110,14 @@ const IndexPage = () => {
                     Investasi secara patungan online ke perusahaan-perusahaan UMKM di Indonesia pilihan kamu melalui platform securities crowdfunding LandX.
                   </p>
                 </Grid>
-                <Grid item className='container-logo-ojk'>
+                <Grid item className='container-logo-ojk' sm={11} xl={12}>
                   <img src="./images/logo_OJK.webp" alt="logo OJK" className="logo-ojk" />
                 </Grid>
-                <Grid item className='container-cta'>
-                  <Link to='https://play.google.com/store/apps/details?id=store.numoney.landxapp' target='_blank'>
+                <Grid item className='container-cta' sm={11} xl={12}>
+                  <Link href='https://play.google.com/store/apps/details?id=store.numoney.landxapp' target='_blank'>
                     <img src="./images/PlayStore.webp" alt="PlayStore" className='playstoreLogo cta-image' />
                   </Link>
-                  <Link to='https://apps.apple.com/id/app/landx/id1453823676' target='_blank'>
+                  <Link href='https://apps.apple.com/id/app/landx/id1453823676' target='_blank'>
                     <img src="./images/AppStore.webp" alt="AppStore" className='cta-image' />
                   </Link>
                 </Grid>
@@ -204,17 +135,17 @@ const IndexPage = () => {
         <Container>
           {widthWindows < 750 ?
             <Slider {...sliderValueInvestor} className="slider-ValueInvestor">
-              <ValueInvestor number='71.811' content='Investor Terdaftar' />
-              <ValueInvestor number='26' content='Perusahaan Penerbit' />
-              <ValueInvestor number='153,18 Miliar' content='Investasi Tersalurkan' />
-              <ValueInvestor number='2,48 Miliar' content='Dividen Dibagikan' />
+              <CardValueInvestor number='71.811' content='Investor Terdaftar' />
+              <CardValueInvestor number='26' content='Perusahaan Penerbit' />
+              <CardValueInvestor number='153,18 Miliar' content='Investasi Tersalurkan' />
+              <CardValueInvestor number='2,48 Miliar' content='Dividen Dibagikan' />
             </Slider>
             :
             <Grid container sx={{ display: 'flex', justifyContent: 'space-between', textAlign: 'center', margin: '40px 0' }}>
-              <ValueInvestor number='71.811' content='Investor Terdaftar' />
-              <ValueInvestor number='26' content='Perusahaan Penerbit' />
-              <ValueInvestor number='153,18 Miliar' content='Investasi Tersalurkan' />
-              <ValueInvestor number='2,48 Miliar' content='Dividen Dibagikan' />
+              <CardValueInvestor number='71.811' content='Investor Terdaftar' />
+              <CardValueInvestor number='26' content='Perusahaan Penerbit' />
+              <CardValueInvestor number='153,18 Miliar' content='Investasi Tersalurkan' />
+              <CardValueInvestor number='2,48 Miliar' content='Dividen Dibagikan' />
             </Grid>
           }
         </Container>
@@ -222,9 +153,9 @@ const IndexPage = () => {
 
       <section className='section-why-landx'>
         <Container id="why-landx">
-          <TitleSection title='Mengapa Memilih LandX' />
+          <CardTitleSection title='Mengapa Memilih LandX' />
 
-          {widthWindows < 1000 ?
+          {widthWindows < 1200 ?
             <Slider {...sliderOneCard}>
               <CardWhyLandx logo='./images/star.webp' title='Bisnis-bisnis Terbaik' content='Pengguna LandX mendapatkan akses ke bisnis-bisnis yang teruji dan sudah diseleksi secara ketat' />
               <CardWhyLandx logo='./images/time.webp' title='Investasi Bagi Hasil' content='Laporan keuangan tepat waktu dan pembagian hasil investasi transaparan' />
@@ -242,7 +173,7 @@ const IndexPage = () => {
 
       <section>
         <Container id='ongoing-projects'>
-          <TitleSection title='Pendanaan yang Sedang Berlangsung' />
+          <CardTitleSection title='Pendanaan yang Sedang Berlangsung' />
 
           {dataProject &&
             <Slider {...cardProject} className='container-card-projects'>
@@ -256,9 +187,9 @@ const IndexPage = () => {
 
       <section>
         <Container id='how-it-works'>
-          <TitleSection title='Cara Kerja LandX' />
+          <CardTitleSection title='Cara Kerja LandX' />
 
-          {widthWindows < 1000 ?
+          {widthWindows < 1200 ?
             <Slider {...sliderOneCard}>
               <CardLandxWork img='../images/icon_pilih_bisnis.webp' title="Pilih Proyek Pendanaan" content="Pilih bisnis yang sesuai dengan profil investasimu" width="63px" />
               <CardLandxWork img='../images/icon_menjadi_investor.webp' title='Beli Saham' content='Beli saham, obligasi, atau sukuk dari proyek pendanaan tersebut' width='94px' />
@@ -287,8 +218,7 @@ const IndexPage = () => {
             </Grid>
           </Grid>
 
-          {/* TODO: Get data from API LandX */}
-          <Carousel type="artikel" />
+          <CardArticel />
 
           <Grid container sx={{ display: 'flex', justifyContent: 'center' }}>
             <Grid item>
@@ -306,10 +236,7 @@ const IndexPage = () => {
       <hr />
       <section style={{ padding: '30px', display: 'flex', alignItems: 'center' }}>
         <Container style={{ paddingLeft: 0, paddingRight: 0 }}>
-
-          {/* TODO: Get data from API LandX */}
-          <Carousel />
-
+          <CardTestimony />
         </Container>
       </section>
     </Layout >
