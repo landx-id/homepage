@@ -11,7 +11,7 @@ import "../../assets/styling/style.scss"
 
 const Contact = () => (
   <Layout>
-    	<Seo title="Risk Mitigation" />
+    	<Seo title="Kontak" />
 
 			<Container style={{ marginTop:`10rem` }}>
 				<Grid item xs={12} md={12}>
