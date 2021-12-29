@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Container, Grid, Box, Typography } from '@mui/material';
+import { Container, Grid, Typography } from '@mui/material';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import PhoneInTalkIcon from '@mui/icons-material/PhoneInTalk';
@@ -79,7 +79,7 @@ const Contact = () => (
             </Grid>
           </Grid>
           <Grid item xs={12} md={6}>
-            <iframe className="responsive-iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.8385216442557!2d106.88995741559607!3d-6.1523756955455955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f54172c3c55b%3A0xaac8e4c79c6ae74!2sLandX!5e0!3m2!1sen!2sid!4v1591602410328!5m2!1sen!2sid" width="540" height="300"></iframe>  
+            <iframe className="responsive-iframe" title="Maps LandX" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.8385216442557!2d106.88995741559607!3d-6.1523756955455955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f54172c3c55b%3A0xaac8e4c79c6ae74!2sLandX!5e0!3m2!1sen!2sid!4v1591602410328!5m2!1sen!2sid" width="540" height="300"></iframe>  
           </Grid>
         </Grid>  
         
