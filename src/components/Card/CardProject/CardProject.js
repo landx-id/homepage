@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Grid, Card, Chip, CardContent, CardMedia, LinearProgress, Button, CircularProgress } from '@mui/material';
+import { Grid, Card, Chip, CardContent, LinearProgress, Button, CircularProgress } from '@mui/material';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -24,14 +24,13 @@ const CardProject = ({ data }) => {
 
   const sliderOneImage = {
     dots: true,
-    infinite: false,
-    speed: 500,
+    infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
     fade: true,
     autoplay: true,
-    speed: 5000,
+    speed: 500,
     autoplaySpeed: 5000,
   };
 
@@ -43,7 +42,11 @@ const CardProject = ({ data }) => {
           <Slider {...sliderOneImage} className="container-slider-image">
             {data.previewImages.length > 0 ? data.previewImages.map((img, i) => {
               return (
-                <div style={{ height: '195px' }} key={i}>
+                <div style={{ height: '195px', position: 'relative' }} key={i}>
+                  {data.launchProgress === 1 ?
+                    <img src="./images/habis-terjual.webp" alt="sold out" style={{ position: 'absolute', left: '-2px', top: '-2px' }} />
+                    :
+                    ''}
                   <img src={img} style={{ height: '195px' }} alt="preview" />
                 </div>
               )
@@ -59,9 +62,12 @@ const CardProject = ({ data }) => {
               <Grid item xs={9}>
               </Grid>
               <Grid item xs={3} className='btn-container-buy'>
-                <Button variant="contained" className="btn-buy">
-                  <span className='f-buy'>BELI</span>
-                </Button>
+                {data.launchProgress < 1 ?
+                  <Button variant="contained" className="btn-buy">
+                    <span className='f-buy'>BELI</span>
+                  </Button>
+                  :
+                  ''}
               </Grid>
             </Grid>
 
