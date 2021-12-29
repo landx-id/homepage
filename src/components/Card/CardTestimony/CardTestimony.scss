@@ -13,7 +13,7 @@
   .card-testimony {
     text-align: center;
     width: 100%;
-    min-height: 320px;
+    min-height: 230px;
 
     .container-img {
       height: 120px;
@@ -25,5 +25,11 @@
 
   .css-bhp9pd-MuiPaper-root-MuiCard-root {
     box-shadow: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container-article .card-body {
+    min-height: 375px;
   }
 }

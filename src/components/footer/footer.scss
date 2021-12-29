@@ -34,48 +34,89 @@
 }
 
 .footer-icon-link {
-    margin-right: 1rem !important;
+  margin-right: 1rem !important;
 }
 
 .footer-menu-one a {
-    text-decoration: none;
-    color: #5e798d;
-    font-weight: 700;
+  text-decoration: none;
+  color: #5e798d;
+  font-weight: 700;
 }
 
 .footer-menu-two a {
-    text-decoration: none;
-    color: #5e798d;
-    font-weight: 500;
+  text-decoration: none;
+  color: #5e798d;
+  font-weight: 500;
 }
 
 .footer-menu-title {
-    font-weight: 700 !important;
-    text-align-last: left !important;
-    margin-left: 1rem !important;
-    margin-top: 12px !important;
+  font-weight: 700 !important;
+  text-align-last: left !important;
+  margin-left: 1rem !important;
+  margin-top: 12px !important;
 }
 
+.text-copyright {
+  color: #5e798d;
+  text-align: left;
+  margin-top: 2rem !important;
+  display: block;
+}
+
+.container-icon-copyright {
+  margin-top: 12px;
+  text-align-last: left;
+}
+
+.rule-landx {
+  padding-left: 1rem !important;
+  margin-top: 7.5rem !important;
+}
+
+.app-store {
+  margin-left: 20px;
+}
 
 /* If the screen size is 600px wide or less, hide the element */
 @media only screen and (max-width: 600px) {
-    .footer-CTA-move {
-        text-align: center;
-    }
-
-    .mt-4 {
-        margin-top: 4rem !important;
-    }
-
-    .mb-3 {
-        margin-bottom: 3rem !important;
-    }
-
-    .ml-1 {
-        margin-left: 1rem !important;
-    }
-
-    .footer-font {
-        font-size: 21px !important;
-    }
+  .footer-CTA-move {
+    text-align: center;
   }
+
+  .mt-4 {
+    margin-top: 4rem !important;
+  }
+
+  .mb-3 {
+    margin-bottom: 3rem !important;
+  }
+
+  .ml-1 {
+    margin-left: 1rem !important;
+  }
+
+  .footer-font {
+    font-size: 21px !important;
+  }
+
+  .container-icon-copyright {
+    text-align-last: center;
+  }
+
+  .text-copyright {
+    width: 100%;
+    font-size: 14px;
+    margin-top: 20px !important;
+    text-align: center;
+  }
+
+  .rule-landx {
+    margin-top: 30px !important;
+  }
+
+  .app-store {
+    margin-top: 10px;
+    width: 203px;
+    margin-left: 0;
+  }
+}

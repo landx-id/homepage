@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Link } from 'gatsby';
-import { AppBar, Container, Toolbar, Button, Box, MenuItem, Typography, Stack, Paper, Popper, MenuList, Grow, ClickAwayListener, List, ListItem, ListItemText, getDividerUtilityClass } from '@mui/material';
+import { AppBar, Container, Toolbar, Button, Box, MenuItem, Typography, Stack, Paper, Popper, MenuList, Grow, ClickAwayListener, List } from '@mui/material';
 import { ExpandLess, ExpandMore } from '@mui/icons-material';
 import MenuIcon from '@mui/icons-material/Menu';
 import "./navbar.scss"
@@ -141,9 +141,9 @@ const ResponsiveAppBar = () => {
                   </Box>
                 </Box>
                 <div className='container-btn'>
-                  <a href='https://landx.id/pendaftaran-perusahaan.html' className='btn-text'>
+                  <Link to='/pendaftaran-perusahaan' className='btn-text'>
                     <Button color="success">PENDAFTARAN PERUSAHAAN</Button>
-                  </a>
+                  </Link>
                 </div>
               </>
               :

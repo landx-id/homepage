@@ -90,11 +90,15 @@
       margin-bottom: 10px;
     }
   }
+
+  .slick-track {
+    height: 320px;
+  }
 }
 
 .container-card-projects {
   .slick-list {
-    min-height: 600px;
+    min-height: 550px;
     padding-left: 5px;
   }
 
@@ -139,12 +143,6 @@
   }
 }
 
-.container-value-investor {
-  .num-value {
-    color: #2dbe60;
-  }
-}
-
 .container-yt {
   display: flex;
   align-items: center;
@@ -158,6 +156,16 @@
   }
 }
 
+.container-logo-ojk {
+  margin-bottom: 30px;
+}
+
+.container-cta {
+  .appstoreLogo {
+    height: 60px;
+  }
+}
+
 @media screen and (max-width: 1200px) {
   .container-slider-center {
     margin-left: auto !important;
@@ -168,10 +176,6 @@
 
   .slider-ValueInvestor {
     text-align: center;
-
-    .slick-dots {
-      bottom: 0;
-    }
   }
 
   .container-card-projects {
@@ -181,9 +185,15 @@
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
   .container-banner {
     flex-direction: column-reverse !important;
+  }
+
+  .container-cta {
+    .appstoreLogo {
+      height: 38px;
+    }
   }
 
   .section-why-landx {
@@ -205,10 +215,12 @@
 
     .heroTitle {
       font-size: 22px;
+      margin-top: 20px;
     }
 
     .container-logo-ojk {
       width: 100%;
+      margin-bottom: 30px;
 
       .logo-ojk {
         width: 165px;
@@ -228,5 +240,11 @@
         width: 130px;
       }
     }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container-value-investor {
+    height: 75px;
   }
 }
