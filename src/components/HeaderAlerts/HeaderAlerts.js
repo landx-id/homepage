@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react'
-import { Alert, Box, Collapse } from '@mui/material';
+import { Alert, Collapse } from '@mui/material';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
 const HeaderAlerts = () => {

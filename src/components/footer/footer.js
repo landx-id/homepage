@@ -34,6 +34,7 @@ const Footer = () => {
                   src="./images/LandX-AppStore.webp"
                   alt="App Store"
                   title="App Store"
+                  className="app-store"
                 />
               </Link>
             </Grid>
@@ -99,7 +100,7 @@ const Footer = () => {
               PT Numex Teknologi Indonesia (“LandX” atau “Penyelenggara”) hadir dalam rangka mendukung program pemerintah di bidang perumahan dengan mengembangkan bisnis layanan urun dana bersama, dengan mempertemukan Pemodal dan pihak pengembang properti (“Penerbit”) (selanjutnya Pemodal dan Penerbit disebut bersama-sama sebagai “Pengguna”). Pada layanan urun dana ini, timbulnya hubungan perdata terjadi apabila Pemodal sepakat untuk membeli saham yang ditawarkan oleh Penerbit, sehingga segala risiko yang timbul dari hubungan tersebut akan menjadi tanggung jawab masing-masing pihak. Risiko yang timbul dari hak sebagai Pemodal untuk menerima dividen dari Penerbit merupakan risiko yang wajib ditanggung oleh Pemodal sesuai kebijakan dividen Penerbit. LandX hanya bertindak sebagai layanan urun dana yang mempertemukan antara Pemodal dengan Penerbit, dan tidak bertindak sebagai pelaku usaha yang menjalankan usaha untuk mengumpulkan dana terkait atau pengelola investasi (Penerbit). Sesuai dengan Pasal 23 Peraturan Otoritas Jasa Keuangan No. 37 Tahun 2018 tentang Layanan Urun Dana melalui Penawaran Saham Berbasis Teknologi Informasi atau Equity Crowdfunding (“POJK 37/2018”), kami menyatakan bahwa:
             </Typography>
           </Grid>
-          <Grid item xs={12} md={6} className="mt-4" style={{ paddingLeft: `1rem`, marginTop: `7.5rem` }}>
+          <Grid item xs={12} md={6} className="rule-landx">
             <Typography style={{ color: `#5e798d` }} display="block">
               a.  OTORITAS JASA KEUANGAN TIDAK MEMBERIKAN PERNYATAAN MENYETUJUI ATAU TIDAK MENYETUJUI EFEK INI, TIDAK JUGA MENYATAKAN KEBENARAN ATAU KECUKUPAN INFORMASI DALAM LAYANAN URUN DANA INI. SETIAP PERNYATAAN YANG BERTENTANGAN DENGAN HAL TERSEBUT ADALAH PERBUATAN MELANGGAR HUKUM.
               <br /> <br />
@@ -158,19 +159,24 @@ const Footer = () => {
               </MenuItem>
             </MenuList>
           </Grid>
-          <Grid item xs={12} md={6} className="ml-1" style={{ textAlignLast: `left` }}>
-            <Link href="https://id.linkedin.com/company/landx-id?trk=public_profile_topcard_current_company" className="footer-icon-link">
-              <LinkedInIcon sx={{ width: '32px', height: '32px', color: '#5e798d' }} />
-            </Link>
-            <Link href="https://www.facebook.com/landx.id" className="footer-icon-link">
-              <FacebookIcon sx={{ width: '32px', height: '32px', color: '#5e798d' }} />
-            </Link>
-            <Link href="https://www.instagram.com/landx.id/" className="footer-icon-link">
-              <InstagramIcon sx={{ width: '32px', height: '32px', color: '#5e798d' }} />
-            </Link>
-            <Typography style={{ color: `#5e798d`, textAlignLast: `left`, marginTop: `2rem` }} display="block">
-              © 2020 LandX Indonesia. All Rights Reserved.
-            </Typography>
+          <Grid item xs={12} md={6} className="ml-1 container-icon-copyright">
+            <Grid item xs={12}>
+              <Link href="https://id.linkedin.com/company/landx-id?trk=public_profile_topcard_current_company" className="footer-icon-link">
+                <LinkedInIcon sx={{ width: '32px', height: '32px', color: '#5e798d' }} />
+              </Link>
+              <Link href="https://www.facebook.com/landx.id" className="footer-icon-link">
+                <FacebookIcon sx={{ width: '32px', height: '32px', color: '#5e798d' }} />
+              </Link>
+              <Link href="https://www.instagram.com/landx.id/" className="footer-icon-link">
+                <InstagramIcon sx={{ width: '32px', height: '32px', color: '#5e798d' }} />
+              </Link>
+            </Grid>
+
+            <Grid item xs={12}>
+              <Typography className="text-copyright">
+                © 2020 LandX Indonesia. All Rights Reserved.
+              </Typography>
+            </Grid>
           </Grid>
         </Grid>
       </Container>
