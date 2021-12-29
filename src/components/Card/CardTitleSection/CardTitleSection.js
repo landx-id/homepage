@@ -4,7 +4,7 @@ import React from 'react'
 const CardTitleSection = ({ title }) => {
   return (
     <div>
-      <Grid container sx={{ display: 'flex', justifyContent: 'center' }}>
+      <Grid container sx={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
         <Grid item>
           <h2 className='title-section'>
             {title}

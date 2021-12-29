@@ -53,12 +53,14 @@ const IndexPage = () => {
   };
 
   const sliderValueInvestor = {
-    dots: true,
+    dots: false,
     infinite: false,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 3,
     arrows: false,
+    autoplay: true,
+    autoplaySpeed: 5000,
     responsive: [
       {
         breakpoint: 1200,
@@ -118,7 +120,7 @@ const IndexPage = () => {
                     <img src="./images/PlayStore.webp" alt="PlayStore" className='playstoreLogo cta-image' />
                   </Link>
                   <Link href='https://apps.apple.com/id/app/landx/id1453823676' target='_blank'>
-                    <img src="./images/AppStore.webp" alt="AppStore" className='cta-image' />
+                    <img src="./images/AppStore.webp" alt="AppStore" className='cta-image appstoreLogo' />
                   </Link>
                 </Grid>
               </Grid>
@@ -132,7 +134,7 @@ const IndexPage = () => {
 
 
       <section>
-        <Container>
+        <Container className="container-value-investor">
           {widthWindows < 750 ?
             <Slider {...sliderValueInvestor} className="slider-ValueInvestor">
               <CardValueInvestor number='71.811' content='Investor Terdaftar' />
