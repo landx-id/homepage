@@ -7,7 +7,7 @@ import "../../assets/styling/style.scss"
 
 const Isms = () => (
   <Layout>
-    	<Seo title="ISMS" />
+    	<Seo title="Kebijakan ISMS" />
 
 			<Container style={{ marginTop:`10rem` }}>
 				<Grid xs={12} md={12}>

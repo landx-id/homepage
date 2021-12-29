@@ -7,7 +7,7 @@ import "../../assets/styling/style.scss"
 
 const RiskMitigation = () => (
   <Layout>
-    	<Seo title="Risk Mitigation" />
+    	<Seo title="Mitigasi Risiko" />
 
 			<Container style={{ marginTop:`10rem` }}>
 				<Grid xs={12} md={12}>

@@ -8,7 +8,7 @@ import "../../assets/styling/style.scss"
 
 const TermAndCondition = () => (
   <Layout>
-    	<Seo title="Term & Condition" />
+    	<Seo title="Syarat dan Ketentuan" />
 
 			<Container style={{ marginTop:`10rem` }}>
 				<Grid xs={12} md={12}>
