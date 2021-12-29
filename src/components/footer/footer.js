@@ -2,6 +2,9 @@ import * as React from 'react';
 import { Link } from "gatsby"
 import { Box, Typography, Container, Grid, MenuList, MenuItem } from '@mui/material';
 import { AnchorLink } from "gatsby-plugin-anchor-links"
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import InstagramIcon from '@mui/icons-material/Instagram';
 
 import "./footer.scss";
 
@@ -157,28 +160,13 @@ const Footer = () => {
           </Grid>
           <Grid item xs={12} md={6} className="ml-1" style={{ textAlignLast: `left` }}>
             <Link href="https://id.linkedin.com/company/landx-id?trk=public_profile_topcard_current_company" className="footer-icon-link">
-              <img
-                src="./images/LandX-Linkedin.svg"
-                alt="LandX LinkedIn"
-                title="LandX LinkedIn"
-                width={32}
-              />
+              <LinkedInIcon sx={{ width: '32px', height: '32px', color: '#5e798d' }} />
             </Link>
             <Link href="https://www.facebook.com/landx.id" className="footer-icon-link">
-              <img
-                src="./images/LandX-Facebook.svg"
-                alt="LandX Facebook"
-                title="LandX Facebook"
-                width={32}
-              />
+              <FacebookIcon sx={{ width: '32px', height: '32px', color: '#5e798d' }} />
             </Link>
             <Link href="https://www.instagram.com/landx.id/" className="footer-icon-link">
-              <img
-                src="./images/LandX-Instagram.svg"
-                alt="LandX Instagram"
-                title="LandX Instagram"
-                width={32}
-              />
+              <InstagramIcon sx={{ width: '32px', height: '32px', color: '#5e798d' }} />
             </Link>
             <Typography style={{ color: `#5e798d`, textAlignLast: `left`, marginTop: `2rem` }} display="block">
               © 2020 LandX Indonesia. All Rights Reserved.
