@@ -9,7 +9,7 @@ import Layout from "../../components/layout/layout"
 import Seo from "../../components/seo/seo"
 import "../../assets/styling/style.scss"
 
-const RiskMitigation = () => (
+const Contact = () => (
   <Layout>
     	<Seo title="Risk Mitigation" />
 
@@ -87,4 +87,4 @@ const RiskMitigation = () => (
   </Layout>
 )
 
-export default RiskMitigation
+export default Contact
