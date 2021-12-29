@@ -11,6 +11,7 @@ import CardWhyLandx from "../components/Card/CardWhyLandx/CardWhyLandx";
 import CardTitleSection from "../components/Card/CardTitleSection/CardTitleSection";
 import CardLandxWork from "../components/Card/CardLandxWork/CardLandxWork";
 import CardValueInvestor from "../components/Card/CardValueInvestor/CardValueInvestor";
+import CardListing from "../components/Card/CardListing/CardListing";
 
 import '../assets/styling/cssReset.scss';
 import Slider from 'react-slick'
@@ -177,13 +178,21 @@ const IndexPage = () => {
         <Container id='ongoing-projects'>
           <CardTitleSection title='Pendanaan yang Sedang Berlangsung' />
 
+
           {dataProject &&
             <Slider {...cardProject} className='container-card-projects'>
+              <CardListing />
               {dataProject && dataProject.map((dataProject) => {
                 return <CardProject cardProject={cardProject} data={dataProject.landXProperty} key={dataProject.landXProperty.id} />
               })}
             </Slider>
           }
+
+          <Grid cotainer>
+            <Grid item style={{ justifyContent: 'center', display: 'flex', margin: '20px 0' }}>
+              <Button color='success'>Semua Proyek</Button>
+            </Grid>
+          </Grid>
         </Container>
       </section>
 
