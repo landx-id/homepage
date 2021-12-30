@@ -140,7 +140,7 @@ const Footer = () => {
                 <Link href='https://landx.id/blog/jobs-at-landx/'>Karir</Link>
               </MenuItem>
               <MenuItem>
-                <Link to='/term-and-condition'>Syarat & Ketentuan</Link>
+                <Link to='/syarat-dan-ketentuan'>Syarat & Ketentuan</Link>
               </MenuItem>
               <MenuItem>
                 <Link to='/privacy-policy'>Kebijakan Privasi</Link>
@@ -149,10 +149,10 @@ const Footer = () => {
                 <Link to='/service-level-agreement'>Service Level Agreement</Link>
               </MenuItem>
               <MenuItem>
-                <Link to='/isms'>Kebijakan ISMS</Link>
+                <Link to='/kebijakan-isms'>Kebijakan ISMS</Link>
               </MenuItem>
               <MenuItem>
-                <Link to='/risk-mitigation'>Mitigasi Risiko</Link>
+                <Link to='/mitigasi-risiko'>Mitigasi Risiko</Link>
               </MenuItem>
               <MenuItem>
                 <Link href="https://landx.id/blog/faq-landx/">FAQ</Link>
