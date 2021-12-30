@@ -188,7 +188,7 @@ const IndexPage = () => {
             </Slider>
           }
 
-          <Grid cotainer>
+          <Grid container>
             <Grid item style={{ justifyContent: 'center', display: 'flex', margin: '20px 0' }}>
               <Button color='success'>Semua Proyek</Button>
             </Grid>
