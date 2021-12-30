@@ -8,9 +8,9 @@ import "../../assets/styling/style.scss"
 
 const CompanyRegistration = () => (
   <Layout>
-    	<Seo title="Risk Mitigation" />
+    	<Seo title="Pendaftaran Perusahaan" />
 
-			<Container style={{ marginTop:`10rem` }}>
+			<Container className="menu-mt">
 				<Grid item xs={12} md={12}>
 					<Typography color="primary" className="menu-title">
             Pendaftaran Perusahaan
@@ -40,7 +40,7 @@ const CompanyRegistration = () => (
               </Typography>
             </Grid>
             <Grid item xs={12} md={6}>
-              <Typography color="primary" paragraph={true} style={{ fontWeight:`600` }}>
+              <Typography color="primary" paragraph={true} className="menu-register-fee">
                 Biaya
               </Typography>
               <Typography color="secondary">
@@ -63,7 +63,7 @@ const CompanyRegistration = () => (
               </Typography>
             </Grid>
             <Grid item xs={12} md={6}>
-              <Typography color="primary" paragraph={true} style={{ fontWeight:`600` }}>
+              <Typography color="primary" paragraph={true} className="menu-register-fee">
                 Biaya
               </Typography>
               <Typography color="secondary">
@@ -83,7 +83,7 @@ const CompanyRegistration = () => (
               </Typography>
             </Grid>
             <Grid item xs={12} md={6}>
-              <Typography color="primary" paragraph={true} style={{ fontWeight:`600` }}>
+              <Typography color="primary" paragraph={true} className="menu-register-fee">
                 Biaya
               </Typography>
               <Typography color="secondary">
@@ -141,7 +141,7 @@ const CompanyRegistration = () => (
                 </ul>
               </Grid>
             </Grid>
-            <Grid item xs={12} md={6} style={{ alignSelf:`center` }}>
+            <Grid item xs={12} md={6} style={{ alignSelf:`center`, marginTop:`2rem` }}>
               <Box style={{ display:`flex`, justifyContent:`center`, alignItems:`center` }}>
                 <Button>HUBUNGI KAMI</Button>
               </Box>

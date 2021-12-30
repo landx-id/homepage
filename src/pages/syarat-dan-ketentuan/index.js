@@ -1,6 +1,5 @@
 import * as React from "react"
-import { Link } from "gatsby"
-import { Container, Grid, Typography } from '@mui/material';
+import { Container, Grid, Typography, Link } from '@mui/material';
 
 import Layout from "../../components/layout/layout"
 import Seo from "../../components/seo/seo"
@@ -10,8 +9,8 @@ const TermAndCondition = () => (
   <Layout>
     	<Seo title="Syarat dan Ketentuan" />
 
-    <Container style={{ marginTop: `10rem` }}>
-      <Grid xs={12} md={12}>
+    <Container className="menu-mt">
+      <Grid item xs={12} md={12}>
         <Typography color="primary" className="menu-title">
           Syarat & Ketentuan
         </Typography>
@@ -20,7 +19,7 @@ const TermAndCondition = () => (
         </Typography>
       </Grid>
 
-      <Grid xs={12} md={8} className="menu-description">
+      <Grid item xs={12} md={8} className="menu-description">
         <Typography color="secondary">
           LandX <b>(“Platform”)</b> dan LandX.id dikelola oleh PT NUMEX TEKNOLOGI INDONESIA <b>("kami")</b>.
         </Typography>
@@ -42,7 +41,7 @@ const TermAndCondition = () => (
         </Typography>
       </Grid>
 
-      <Grid xs={12} md={8} className="menu-description" style={{ marginTop: `3rem` }}>
+      <Grid item xs={12} md={8} className="menu-description" style={{ marginTop: `3rem` }}>
         <Typography color="secondary" className="menu-title">
           KETENTUAN UMUM
         </Typography>

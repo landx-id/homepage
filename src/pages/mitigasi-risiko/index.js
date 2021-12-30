@@ -9,14 +9,14 @@ const RiskMitigation = () => (
   <Layout>
     	<Seo title="Mitigasi Risiko" />
 
-    <Container style={{ marginTop: `10rem` }}>
-      <Grid xs={12} md={12}>
+    <Container className="menu-mt">
+      <Grid item xs={12} md={12}>
         <Typography color="primary" className="menu-title">
           Mitigasi Risiko
         </Typography>
       </Grid>
 
-      <Grid xs={12} md={8} className="menu-description" style={{ marginTop: `3rem` }}>
+      <Grid item xs={12} md={8} className="menu-description" style={{ marginTop: `3rem` }}>
         <Typography color="secondary" variant="h5" paragraph={true} style={{ fontWeight: `600`, marginTop: `3rem` }}>
           Mitigasi Risiko
         </Typography>

@@ -9,8 +9,8 @@ const ServiceLevelAgreement = () => (
   <Layout>
     	<Seo title="Service Level Agreement" />
 
-			<Container style={{ marginTop:`10rem` }}>
-        <Grid xs={12} md={8} className="menu-description" style={{ marginTop:`3rem`}}>
+			<Container className="menu-mt">
+        <Grid item xs={12} md={8} className="menu-description" style={{ marginTop:`3rem`}}>
           <Typography color="secondary" variant="h5" paragraph={true} style={{ fontWeight:`600`, marginTop:`3rem` }}>
             PEMANGKU KEPENTINGAN
           </Typography>

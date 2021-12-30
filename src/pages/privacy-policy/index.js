@@ -9,8 +9,8 @@ const PrivacyPolicy = () => (
   <Layout>
     <Seo title="Privacy Policy" />
 
-    <Container style={{ marginTop: `10rem` }}>
-      <Grid xs={12} md={12}>
+    <Container className="menu-mt">
+      <Grid item xs={12} md={12}>
         <Typography color="primary" className="menu-title">
           Kebijakan Privasi
         </Typography>
@@ -19,13 +19,13 @@ const PrivacyPolicy = () => (
         </Typography>
       </Grid>
 
-      <Grid xs={12} md={8} className="menu-description">
+      <Grid item xs={12} md={8} className="menu-description">
         <Typography color="secondary" style={{ fontWeight: `700` }}>
           INFORMASI DALAM LAYANAN URUN DANA INI PENTING DAN PERLU MENDAPAT PERHATIAN SEGERA. APABILA TERDAPAT KERAGUAN PADA TINDAKAN YANG AKAN DIAMBIL, SEBAIKNYA BERKONSULTASI DENGAN PENYELENGGARA
         </Typography>
       </Grid>
 
-      <Grid xs={12} md={8} className="menu-description" style={{ marginTop: `3rem` }}>
+      <Grid item xs={12} md={8} className="menu-description" style={{ marginTop: `3rem` }}>
         <Typography color="secondary" variant="h5" paragraph={true} style={{ fontWeight: `600`, marginTop: `3rem` }}>
           DEFINISI
         </Typography>
