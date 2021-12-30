@@ -1,9 +1,9 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
 import { Container, Grid, Typography, Button } from '@mui/material';
 import Layout from "../components/layout/layout"
 import Seo from "../components/seo/seo"
-import { FetchLimitData } from "../utils/common";
+import { FetchLimitData, numberValueInvestor, numberWithCommas } from "../utils/common";
 import CardArticel from "../components/Card/CardArticel/CardArticel"
 import CardProject from "../components/Card/CardProject/CardProject";
 import CardTestimony from "../components/Card/CardTestimony/CardTestimony";
@@ -20,18 +20,25 @@ import "slick-carousel/slick/slick-theme.css";
 import './index.scss';
 
 const IndexPage = () => {
-  const [widthWindows, setWidthWindows] = React.useState('')
-  const [dataProject, setDataProject] = React.useState(null)
+  const [widthWindows, setWidthWindows] = useState('')
+  const [dataProject, setDataProject] = useState(null)
+  const [dataListing, setDataListing] = useState('')
+  const [dataInvestors, setDataInvestors] = useState(null)
 
-  React.useEffect(() => {
+  useEffect(() => {
     setWidthWindows(window.innerWidth)
     window.addEventListener("resize", () => {
       setWidthWindows(window.innerWidth)
     })
   }, [widthWindows])
 
-  React.useEffect(() => {
+  useEffect(() => {
     getLimitCardProject()
+  }, [])
+
+  useEffect(() => {
+    handleListing()
+    handleInvestors()
   }, [])
 
   const cardProject = {
@@ -55,7 +62,7 @@ const IndexPage = () => {
 
   const sliderValueInvestor = {
     dots: false,
-    infinite: false,
+    infinite: true,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 3,
@@ -95,6 +102,23 @@ const IndexPage = () => {
       setDataProject(data.data.currencies)
     })
   }
+
+  const handleListing = () => {
+    fetch('https://landx.id/lottie/upcoming.json')
+      .then(r => r.json())
+      .then(data => {
+        setDataListing((prevData) => [...prevData, data.upcoming])
+      })
+  }
+
+  const handleInvestors = () => {
+    fetch('https://web-api.landx.id/mobile/landing_data')
+      .then(r => r.json())
+      .then(data => {
+        setDataInvestors({ dividend_payout: data.dividend_payout, property_count: data.property_count, raised_fund: data.raised_fund, registered_users: data.registered_users })
+      })
+  }
+
 
   return (
     <Layout>
@@ -136,19 +160,25 @@ const IndexPage = () => {
 
       <section>
         <Container className="container-value-investor">
-          {widthWindows < 750 ?
-            <Slider {...sliderValueInvestor} className="slider-ValueInvestor">
-              <CardValueInvestor number='71.811' content='Investor Terdaftar' />
-              <CardValueInvestor number='26' content='Perusahaan Penerbit' />
-              <CardValueInvestor number='153,18 Miliar' content='Investasi Tersalurkan' />
-              <CardValueInvestor number='2,48 Miliar' content='Dividen Dibagikan' />
-            </Slider>
+          {dataInvestors && widthWindows < 750 ?
+            <>
+              <Slider {...sliderValueInvestor} className="slider-ValueInvestor">
+                <CardValueInvestor number={numberWithCommas(dataInvestors.registered_users)} content='Investor Terdaftar' />
+                <CardValueInvestor number={numberWithCommas(dataInvestors.property_count)} content='Perusahaan Penerbit' />
+                <CardValueInvestor number={`${numberValueInvestor(dataInvestors.raised_fund)} Miliar`} content='Investasi Tersalurkan' />
+                <CardValueInvestor number={`${numberValueInvestor(dataInvestors.dividend_payout)} Miliar`} content='Dividen Dibagikan' />
+              </Slider>
+            </>
             :
             <Grid container sx={{ display: 'flex', justifyContent: 'space-between', textAlign: 'center', margin: '40px 0' }}>
-              <CardValueInvestor number='71.811' content='Investor Terdaftar' />
-              <CardValueInvestor number='26' content='Perusahaan Penerbit' />
-              <CardValueInvestor number='153,18 Miliar' content='Investasi Tersalurkan' />
-              <CardValueInvestor number='2,48 Miliar' content='Dividen Dibagikan' />
+              {dataInvestors !== null &&
+                <>
+                  <CardValueInvestor number={numberWithCommas(dataInvestors.registered_users)} content='Investor Terdaftar' />
+                  <CardValueInvestor number={numberWithCommas(dataInvestors.property_count)} content='Perusahaan Penerbit' />
+                  <CardValueInvestor number={`${numberValueInvestor(dataInvestors.raised_fund)} Miliar`} content='Investasi Tersalurkan' />
+                  <CardValueInvestor number={`${numberValueInvestor(dataInvestors.dividend_payout)} Miliar`} content='Dividen Dibagikan' />
+                </>
+              }
             </Grid>
           }
         </Container>
@@ -178,10 +208,21 @@ const IndexPage = () => {
         <Container id='ongoing-projects'>
           <CardTitleSection title='Pendanaan yang Sedang Berlangsung' />
 
-
           {dataProject &&
             <Slider {...cardProject} className='container-card-projects'>
-              <CardListing />
+
+              {dataListing && dataListing.map((data, i) => {
+                if (data[i] !== undefined && data[i] !== null && i >= 0) {
+                  return Object.entries(data[i]).map(data => {
+                    let listingAt = new Date(data[1].listing_at).getTime()
+                    let now = Date.now()
+                    if (listingAt > now) {
+                      return <CardListing code={data[0]} data={data[1]} />
+                    }
+                  })
+                }
+              })}
+
               {dataProject && dataProject.map((dataProject) => {
                 return <CardProject cardProject={cardProject} data={dataProject.landXProperty} key={dataProject.landXProperty.id} />
               })}
@@ -190,7 +231,9 @@ const IndexPage = () => {
 
           <Grid cotainer>
             <Grid item style={{ justifyContent: 'center', display: 'flex', margin: '20px 0' }}>
-              <Button color='success'>Semua Proyek</Button>
+              <Link to='/detail-project'>
+                <Button color='success'>Semua Proyek</Button>
+              </Link>
             </Grid>
           </Grid>
         </Container>

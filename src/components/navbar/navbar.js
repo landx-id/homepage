@@ -45,17 +45,17 @@ const ResponsiveAppBar = () => {
     ['#why-landx', 'Mengapa Landx'],
     ['#ongoing-projects', 'Proyek'],
     ['#how-it-works', 'Cara Kerja'],
-    ['https://landx.id/contact.html', 'Kontak'],
+    ['/contact', 'Kontak'],
     ['https://landx.id/blog', 'Blog']
   ]
 
   const subLinksName = [
     ['https://landx.id/blog/jobs-at-landx', 'Karir'],
-    ['https://landx.id/syarat-dan-ketentuan.html', 'Syarat & Ketentuan'],
-    ['https://landx.id/privacy-policy.html', 'Kebijakan Privasi'],
-    ['https://landx.id/service-level-agreement.html', 'Service Level Agreement'],
-    ['https://landx.id/kebijakan-isms.html', 'Kebijakan ISMS'],
-    ['https://landx.id/mitigasi-risiko.html', 'Mitigasi Resiko'],
+    ['/syarat-dan-ketentuan', 'Syarat & Ketentuan'],
+    ['/privacy-policy', 'Kebijakan Privasi'],
+    ['/service-level-agreement', 'Service Level Agreement'],
+    ['/kebijakan-isms', 'Kebijakan ISMS'],
+    ['/mitigasi-risiko', 'Mitigasi Resiko'],
     ['https://landx.id/blog/faq-landx', 'FAQ'],
   ]
 

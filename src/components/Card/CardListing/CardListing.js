@@ -5,7 +5,9 @@ import testThumbnail from '../../../../project/images/CAPT/thumbnail.webp'
 import './CardListing.scss'
 
 
-const CardListing = () => {
+const CardListing = ({ code, data }) => {
+  console.log('LISTs');
+  console.log('LISTING', data);
   return (
     <div>
       <Grid item xs={11} className='container-slider-center'>
