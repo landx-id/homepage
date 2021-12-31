@@ -1,10 +1,12 @@
 import { Grid } from '@mui/material'
 import React from 'react'
 
+import './CardTitleSection.scss'
+
 const CardTitleSection = ({ title }) => {
   return (
     <div>
-      <Grid container sx={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
+      <Grid container class='container-title-section'>
         <Grid item>
           <h2 className='title-section'>
             {title}

@@ -45,24 +45,24 @@ const ResponsiveAppBar = () => {
     ['#why-landx', 'Mengapa Landx'],
     ['#ongoing-projects', 'Proyek'],
     ['#how-it-works', 'Cara Kerja'],
-    ['https://landx.id/contact.html', 'Kontak'],
+    ['/contact', 'Kontak'],
     ['https://landx.id/blog', 'Blog']
   ]
 
   const subLinksName = [
     ['https://landx.id/blog/jobs-at-landx', 'Karir'],
-    ['https://landx.id/syarat-dan-ketentuan.html', 'Syarat & Ketentuan'],
-    ['https://landx.id/privacy-policy.html', 'Kebijakan Privasi'],
-    ['https://landx.id/service-level-agreement.html', 'Service Level Agreement'],
-    ['https://landx.id/kebijakan-isms.html', 'Kebijakan ISMS'],
-    ['https://landx.id/mitigasi-risiko.html', 'Mitigasi Resiko'],
+    ['/syarat-dan-ketentuan', 'Syarat & Ketentuan'],
+    ['/privacy-policy', 'Kebijakan Privasi'],
+    ['/service-level-agreement', 'Service Level Agreement'],
+    ['/kebijakan-isms', 'Kebijakan ISMS'],
+    ['/mitigasi-risiko', 'Mitigasi Resiko'],
     ['https://landx.id/blog/faq-landx', 'FAQ'],
   ]
 
 
   return (
     <>
-      <AppBar position={widthWindows < 1055 ? "relative" : "static"} sx={{ backgroundColor: '#fff', color: '#000', boxShadow: 'none' }}>
+      <AppBar position={widthWindows < 1055 ? "relative" : "static"} sx={{ backgroundColor: '#fff', color: '#000', boxShadow: 'none' }} className='container-navbar'>
         <Container>
           <Toolbar style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingLeft: '0', paddingRight: '0' }}>
             <Link to='/'>
@@ -200,9 +200,9 @@ const ResponsiveAppBar = () => {
             </Container>
 
             <div className='container-btn'>
-              <a href='https://landx.id/pendaftaran-perusahaan.html' className='btn-text'>
+              <Link to='/pendaftaran-perusahaan' className='btn-text'>
                 <Button color="success">PENDAFTARAN PERUSAHAAN</Button>
-              </a>
+              </Link>
             </div>
           </div>
           : ''

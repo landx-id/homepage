@@ -72,13 +72,20 @@
   padding-left: 1rem !important;
   margin-top: 7.5rem !important;
 }
+.display-f-center {
+  display: flex;
+  align-items: center;
+}
 
-.app-store {
-  margin-left: 20px;
+.display-fj-start {
+  justify-content: start;
+}
+.display-fj-end {
+  justify-content: end;
 }
 
 /* If the screen size is 600px wide or less, hide the element */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 599px) {
   .footer-CTA-move {
     text-align: center;
   }
@@ -118,5 +125,9 @@
     margin-top: 10px;
     width: 203px;
     margin-left: 0;
+  }
+
+  .display-f-center {
+    justify-content: center !important;
   }
 }

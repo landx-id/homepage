@@ -30,6 +30,10 @@
 	color: #2DBE60;
 }
 
+.menu-mt {
+	margin-top: 10rem;
+}
+
 .table-sla thead th {
 	vertical-align: bottom;
 	border-bottom: 2px solid #dee2e6;
@@ -61,4 +65,30 @@
 	width: 80%;
 	display: block;
 	background-color: #f8f8f8;
+}
+
+.menu-register-fee {
+	font-weight: 600 !important;
+}
+
+.menu-contact-maps {
+	height: 20rem;
+}
+
+@media screen and (max-width: 600px) {
+	.menu-mt {
+		margin-top: 3rem;
+	}
+
+	.menu-title {
+		font-size: 24px !important;
+	}
+
+	.menu-register {
+		width: 100%;
+	}
+
+	.menu-register-fee {
+    margin-top: 3rem;
+	}
 }

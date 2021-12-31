@@ -9,14 +9,14 @@ const Isms = () => (
   <Layout>
     	<Seo title="Kebijakan ISMS" />
 
-			<Container style={{ marginTop:`10rem` }}>
+			<Container className="menu-mt">
 				<Grid xs={12} md={12}>
 					<Typography color="primary" className="menu-title">
             Kebijakan Information Security Management System (ISMS)
 					</Typography>
 				</Grid>
 
-        <Grid xs={12} md={8} className="menu-description" style={{ marginTop:`3rem`}}>
+        <Grid item xs={12} md={8} className="menu-description" style={{ marginTop:`3rem`}}>
           <Typography color="secondary" paragraph={true}>
             Komitmen Kebijakan ISMS diatur sesuai dengan karakteristik layanan khususnya Crowdfunding LandX dan operasional yang digunakan, bisnis perusahaan dengan mempertimbangkan regulasi bisnis dan undang-undang atau persyaratan yang mengatur kewajiban dan keamanan sesuai dengan kontrak yang dipersyaratkan, maupun bilamana terjadi insiden pada organisasi, dan perbaikan sistem kelangsungan bisnis perusahaan.
           </Typography>
