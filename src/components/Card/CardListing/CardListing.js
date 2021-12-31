@@ -6,8 +6,6 @@ import './CardListing.scss'
 
 
 const CardListing = ({ code, data }) => {
-  console.log('LISTs');
-  console.log('LISTING', data);
   return (
     <div>
       <Grid item xs={11} className='container-slider-center'>
