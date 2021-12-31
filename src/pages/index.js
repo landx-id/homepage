@@ -127,7 +127,7 @@ const IndexPage = () => {
       <div className="homepage">
         <Container>
           <Grid container className='container-banner'>
-            <Grid item xl={12} md={6}>
+            <Grid item xs={12} md={6}>
               <Grid container>
                 <Grid item sm={11} xl={12}>
                   <Typography variant="h1" className="heroTitle">
@@ -150,7 +150,7 @@ const IndexPage = () => {
                 </Grid>
               </Grid>
             </Grid>
-            <Grid item xl={12} md={6} className='container-yt'>
+            <Grid item xs={12} md={6} className='container-yt'>
               <iframe className='banner-yt' src="https://www.youtube.com/embed/Y03A0VgY_ug" title="Landx" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen loading='lazy'></iframe>
             </Grid>
           </Grid>
