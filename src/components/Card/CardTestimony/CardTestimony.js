@@ -36,7 +36,7 @@ const CardTestimony = () => {
       <Slider {...sliderOneCard} className='container-testimony'>
         {dummyTesti && dummyTesti.map((data, i) => {
           return (
-            <Grid item xs={12} sm={6} md={12} className="container-slider-center" key={i}>
+            <Grid item xs={12} className="container-slider-center" key={i}>
               <Card className='card-testimony'>
                 <div className="container-img">
                   <img src={data.img} alt={data.name} className='card-img' />

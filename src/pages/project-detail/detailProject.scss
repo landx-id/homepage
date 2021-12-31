@@ -1,0 +1,17 @@
+.container-project-detail {
+  margin-top: 150px;
+  width: 100%;
+
+  .back-to-project {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 500;
+    color: #5e798d;
+  }
+
+  .arrow-back {
+    width: 24px;
+    height: 24px;
+  }
+}

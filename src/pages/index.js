@@ -127,7 +127,7 @@ const IndexPage = () => {
       <div className="homepage">
         <Container>
           <Grid container className='container-banner'>
-            <Grid item md={6}>
+            <Grid item xl={12} md={6}>
               <Grid container>
                 <Grid item sm={11} xl={12}>
                   <Typography variant="h1" className="heroTitle">
@@ -150,7 +150,7 @@ const IndexPage = () => {
                 </Grid>
               </Grid>
             </Grid>
-            <Grid item md={6} className='container-yt'>
+            <Grid item xl={12} md={6} className='container-yt'>
               <iframe className='banner-yt' src="https://www.youtube.com/embed/Y03A0VgY_ug" title="Landx" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen loading='lazy'></iframe>
             </Grid>
           </Grid>
@@ -158,8 +158,8 @@ const IndexPage = () => {
       </div>
 
 
-      <section>
-        <Container className="container-value-investor">
+      <section className="container-value-investor">
+        <Container>
           {dataInvestors && widthWindows < 750 ?
             <>
               <Slider {...sliderValueInvestor} className="slider-ValueInvestor">
@@ -205,7 +205,7 @@ const IndexPage = () => {
       </section>
 
       <section>
-        <Container id='ongoing-projects'>
+        <Container id='ongoing-projects' className='container-ongoing-projects pt-40'>
           <CardTitleSection title='Pendanaan yang Sedang Berlangsung' />
 
           {dataProject &&
@@ -231,7 +231,7 @@ const IndexPage = () => {
 
           <Grid cotainer>
             <Grid item style={{ justifyContent: 'center', display: 'flex', margin: '20px 0' }}>
-              <Link to='/detail-project'>
+              <Link to='/project-detail' style={{ textDecoration: 'none' }}>
                 <Button color='success'>Semua Proyek</Button>
               </Link>
             </Grid>
@@ -240,7 +240,7 @@ const IndexPage = () => {
       </section>
 
       <section>
-        <Container id='how-it-works'>
+        <Container id='how-it-works' className="container-how-it-works pt-40">
           <CardTitleSection title='Cara Kerja LandX' />
 
           {widthWindows < 1200 ?
@@ -261,15 +261,10 @@ const IndexPage = () => {
         </Container>
       </section>
 
-      <section style={{ padding: '30px', minHeight: '500px', display: 'flex', alignItems: 'center' }}>
-        <Container style={{ paddingLeft: 0, paddingRight: 0 }}>
+      <section style={{ minHeight: '500px', display: 'flex', alignItems: 'center' }}>
+        <Container style={{ paddingLeft: 0, paddingRight: 0 }} className="container-article pt-40">
           <Grid container sx={{ display: 'flex', justifyContent: 'center' }}>
-            <Grid item>
-              <Typography variant="h2" color="secondary" className='title-section'>
-                Artikel Pilihan
-              </Typography>
-              <hr className='divider' />
-            </Grid>
+            <CardTitleSection title=' Artikel Pilihan' />
           </Grid>
 
           <CardArticel />

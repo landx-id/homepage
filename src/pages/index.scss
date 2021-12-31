@@ -96,27 +96,30 @@
   }
 }
 
-.container-card-projects {
-  .slick-list {
-    min-height: 550px;
-    padding-left: 5px;
-  }
+.container-ongoing-projects {
+  .container-card-projects {
+    .slick-list {
+      min-height: 550px;
+      padding-left: 5px;
+    }
 
-  .slick-dots {
-    bottom: 10px;
-  }
+    .slick-dots {
+      bottom: 10px;
+    }
 
-  .slick-track {
-    margin-right: 0;
-    transform: translate3d(0, 0, 0);
+    .slick-track {
+      margin-right: 0;
+      transform: translate3d(0, 0, 0);
+    }
   }
 }
 
-#how-it-works {
+.container-how-it-works {
   .slick-list {
     height: 360px;
   }
 }
+
 .card-landx-work {
   text-align: center;
   width: 100%;
@@ -161,9 +164,19 @@
 }
 
 .container-cta {
+  margin-top: 20px !important;
+
   .appstoreLogo {
     height: 60px;
   }
+}
+
+.container-value-investor {
+  padding: 20px 0;
+}
+
+.pt-40 {
+  padding-top: 40px;
 }
 
 @media screen and (max-width: 1200px) {
@@ -223,7 +236,7 @@
       margin-bottom: 30px;
 
       .logo-ojk {
-        width: 165px;
+        width: 280px;
         margin-left: auto;
         margin-right: auto;
         display: block;
@@ -237,14 +250,15 @@
       width: 100%;
 
       .cta-image {
-        width: 130px;
+        width: 150px;
+      }
+
+      .appstoreLogo {
+        height: 46px;
       }
     }
   }
 }
 
-@media screen and (max-width: 600px) {
-  .container-value-investor {
-    height: 75px;
-  }
+@media screen and (max-width: 599px) {
 }

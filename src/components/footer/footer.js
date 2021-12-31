@@ -21,22 +21,26 @@ const Footer = () => {
               <br />
               Unduh aplikasi LandX sekarang!
             </Typography>
-            <Grid item md={12} xs={12} style={{ paddingBottom: 25 }}>
-              <Link href="https://play.google.com/store/apps/details?id=store.numoney.landxapp">
-                <img
-                  src="./images/LandX-PlayStore.webp"
-                  alt="Play Store"
-                  title="Play Store"
-                />
-              </Link>
-              <Link href="https://apps.apple.com/id/app/landx/id1453823676">
-                <img
-                  src="./images/LandX-AppStore.webp"
-                  alt="App Store"
-                  title="App Store"
-                  className="app-store"
-                />
-              </Link>
+            <Grid container spacing={2} style={{ paddingBottom: 25 }}>
+              <Grid item xs={12} sm={6} className='display-f-center display-fj-end'>
+                <Link href="https://play.google.com/store/apps/details?id=store.numoney.landxapp">
+                  <img
+                    src="./images/LandX-PlayStore.webp"
+                    alt="Play Store"
+                    title="Play Store"
+                  />
+                </Link>
+              </Grid>
+              <Grid item xs={12} sm={6} className='display-f-center display-fj-start'>
+                <Link href="https://apps.apple.com/id/app/landx/id1453823676">
+                  <img
+                    src="./images/LandX-AppStore.webp"
+                    alt="App Store"
+                    title="App Store"
+                    className="app-store"
+                  />
+                </Link>
+              </Grid>
             </Grid>
           </Box>
         </Container>
