@@ -17,7 +17,7 @@ const HeaderAlerts = () => {
   }, [windowDimension])
 
   const handleAlert = (windowDimension) => {
-    if (windowDimension > 1160) {
+    if (windowDimension > 1170) {
       return <span style={{ display: 'flex', alignItems: 'center' }}>Hati-hati dengan segala jenis penipuan. LandX tidak memiliki grup Telegram! Akun resmi Customer Service LandX adalah <span style={{ margin: '3px 5px 0' }}><WhatsAppIcon /></span> 0811 9562 878</span>
     }
     else {
