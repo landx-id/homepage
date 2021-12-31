@@ -14,4 +14,60 @@
     width: 24px;
     height: 24px;
   }
+
+  .code {
+    color: #2dbe60;
+    letter-spacing: 1.65px;
+    font-size: 14px;
+  }
+
+  .text-title {
+    font-weight: bold;
+    font-size: 24px;
+    color: #5e798d;
+  }
+
+  .chip-text {
+    font-size: 12px;
+    margin: 10px 0;
+  }
+
+  .text-green-price {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2dbe60;
+  }
+
+  .text-price {
+    font-size: 24px;
+    font-weight: bold;
+    color: #5e798d;
+  }
+
+  .text-secon {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.71;
+    letter-spacing: 0.1px;
+    color: #9e9e9e;
+    margin: 10px 0;
+  }
+
+  .progress-bar {
+    height: 8px;
+    border-radius: 10px;
+  }
+
+  .icon-info {
+    height: 24px;
+    width: 24px;
+  }
+
+  .container-btn {
+    margin-top: 30px;
+
+    .btn-buy {
+      margin-right: 20px;
+    }
+  }
 }

@@ -35,57 +35,57 @@ const DetailProject = () => (
           </Typography>
           <Chip label='MARITIM' color="success" variant="outlined" className="chip-text" />
           <Grid container>
-            <Grid item className='text-green-price' component='h3'>
+            <Grid item xs={6} className='text-green-price' component='h3'>
               Rp 4.888.000.000
             </Grid>
-            <Grid item className='text-green-price' component='h3'>
+            <Grid item xs={6} className='text-green-price' component='h3'>
               41
             </Grid>
           </Grid>
           <Grid container>
-            <Grid item className='text-secon'>
+            <Grid item xs={6} className='text-secon'>
               dari Rp 9.000.000.000
             </Grid>
-            <Grid item className='text-secon'>
+            <Grid item xs={6} className='text-secon'>
               Hari Lagi
             </Grid>
           </Grid>
-          <LinearProgress variant="determinate" value='50' />
+          <LinearProgress variant="determinate" value='50' className="progress-bar" />
           <Grid container>
-            <Grid item className='text-secon'>
+            <Grid item xs={6} className='text-secon'>
               Harga Per Lot
             </Grid>
-            <Grid item className='text-secon'>
+            <Grid item xs={6} className='text-secon'>
               Jumlah Lot
             </Grid>
           </Grid>
           <Grid container>
-            <Grid item className='text-price'>
+            <Grid item xs={6} className='text-price'>
               Rp. 1.000.000
             </Grid>
-            <Grid item className='text-price'>
+            <Grid item xs={6} className='text-price'>
               9000
             </Grid>
           </Grid>
           <Grid container>
-            <Grid item className='text-secon'>
-              Periode Dividen <InfoOutlinedIcon color='success' />
+            <Grid item xs={6} className='text-secon'>
+              Periode Dividen <InfoOutlinedIcon color='success' className="icon-info" />
             </Grid>
-            <Grid item className='text-secon'>
-              Estimasi Dividen <InfoOutlinedIcon color='success' />
+            <Grid item xs={6} className='text-secon'>
+              Estimasi Dividen <InfoOutlinedIcon color='success' className="icon-info" />
             </Grid>
           </Grid>
           <Grid container>
-            <Grid item className='text-price'>
+            <Grid item xs={6} className='text-price'>
               Per 3 bulan
             </Grid>
-            <Grid item className='text-price'>
+            <Grid item xs={6} className='text-price'>
               10 - 20% Per Tahun
             </Grid>
           </Grid>
-          <Grid container>
+          <Grid container className='container-btn-project'>
             <Grid item>
-              <Button variant="contained" color='success'>BELI VIA APP</Button>
+              <Button variant="contained" color='success' className='btn-buy'>BELI VIA APP</Button>
             </Grid>
             <Grid item>
               <Button variant="outlined" color='success'>SHOW PROSPEKTUS</Button>
