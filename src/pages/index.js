@@ -230,8 +230,8 @@ const IndexPage = () => {
           }
 
           <Grid container>
-            <Grid item style={{ justifyContent: 'center', display: 'flex', margin: '20px 0' }}>
-              <Link to='/project-detail' style={{ textDecoration: 'none' }}>
+            <Grid xs={12} item style={{ justifyContent: 'center', display: 'flex', margin: '20px 0' }}>
+              <Link to='/project' style={{ textDecoration: 'none' }}>
                 <Button color='success'>Semua Proyek</Button>
               </Link>
             </Grid>

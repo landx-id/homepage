@@ -1,5 +1,4 @@
 .container-testimony {
-  box-shadow: none;
   .card-img {
     height: 96px;
     width: 96px;
@@ -15,6 +14,7 @@
     text-align: center;
     width: 100%;
     min-height: 230px;
+    box-shadow: none;
 
     .container-img {
       height: 120px;
