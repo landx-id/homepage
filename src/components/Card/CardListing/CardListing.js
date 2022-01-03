@@ -1,5 +1,5 @@
-import { Card, Grid, Typography } from '@mui/material'
 import React from 'react'
+import { Card, Grid, Typography } from '@mui/material'
 import testThumbnail from '../../../../project/images/CAPT/thumbnail.webp'
 
 import './CardListing.scss'

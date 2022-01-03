@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import './CardProject.scss'
 import { toIDR } from '../../../utils/currency';
 import { calculateRemainingDays } from '../../../utils/common';
+import { navigate } from 'gatsby';
 
 const CardProject = ({ data }) => {
   const [endDay, setEndDay] = useState('')
@@ -47,7 +48,7 @@ const CardProject = ({ data }) => {
                     <img src="./images/habis-terjual.webp" alt="sold out" style={{ position: 'absolute', left: '-2px', top: '-2px' }} />
                     :
                     ''}
-                  <img src={img} style={{ height: '195px' }} alt="preview" />
+                  <img src={img} style={{ height: '195px' }} className='c-pointer' alt="preview" onClick={() => navigate(`/project/${data.token.symbol.toLowerCase()}`)} />
                 </div>
               )
             })
@@ -63,7 +64,7 @@ const CardProject = ({ data }) => {
               </Grid>
               <Grid item xs={3} className='btn-container-buy'>
                 {data.launchProgress < 1 ?
-                  <Button variant="contained" className="btn-buy">
+                  <Button variant="contained" className="btn-buy" onClick={() => navigate(`/project/${data.token.symbol.toLowerCase()}`)}>
                     <span className='f-buy'>BELI</span>
                   </Button>
                   :
@@ -71,8 +72,8 @@ const CardProject = ({ data }) => {
               </Grid>
             </Grid>
 
-            <div className="card-code">{data.token.symbol}</div>
-            <h2 className="card-title">{data.token.name}</h2>
+            <div className="card-code c-pointer" onClick={() => navigate(`/project/${data.token.symbol.toLowerCase()}`)}>{data.token.symbol}</div>
+            <h2 className="card-title c-pointer" onClick={() => navigate(`/project/${data.token.symbol.toLowerCase()}`)}>{data.token.name}</h2>
             <Chip label={data.category} color="success" variant="outlined" className="chip-text" />
 
             <Grid container sx={{ display: 'flex', justifyContent: 'space-between' }}>

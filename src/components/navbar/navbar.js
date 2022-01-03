@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Link } from 'gatsby';
 import { AppBar, Container, Toolbar, Button, Box, MenuItem, Typography, Stack, Paper, Popper, MenuList, Grow, ClickAwayListener, List } from '@mui/material';
 import { ExpandLess, ExpandMore } from '@mui/icons-material';
+import { AnchorLink } from "gatsby-plugin-anchor-links"
 import MenuIcon from '@mui/icons-material/Menu';
 import "./navbar.scss"
 
@@ -41,25 +42,6 @@ const ResponsiveAppBar = () => {
     }
   }
 
-  const linksName = [
-    ['#why-landx', 'Mengapa Landx'],
-    ['#ongoing-projects', 'Proyek'],
-    ['#how-it-works', 'Cara Kerja'],
-    ['/contact', 'Kontak'],
-    ['https://landx.id/blog', 'Blog']
-  ]
-
-  const subLinksName = [
-    ['https://landx.id/blog/jobs-at-landx', 'Karir'],
-    ['/syarat-dan-ketentuan', 'Syarat & Ketentuan'],
-    ['/privacy-policy', 'Kebijakan Privasi'],
-    ['/service-level-agreement', 'Service Level Agreement'],
-    ['/kebijakan-isms', 'Kebijakan ISMS'],
-    ['/mitigasi-risiko', 'Mitigasi Resiko'],
-    ['https://landx.id/blog/faq-landx', 'FAQ'],
-  ]
-
-
   return (
     <>
       <AppBar position={widthWindows < 1055 ? "relative" : "static"} sx={{ backgroundColor: '#fff', color: '#000', boxShadow: 'none' }} className='container-navbar'>
@@ -72,15 +54,41 @@ const ResponsiveAppBar = () => {
               <>
                 <Box>
                   <Box sx={{ display: 'flex' }}>
-                    {linksName && linksName.map(linkName => (
-                      <a href={linkName[0]} className='text-link' key={linkName[1]}>
-                        <MenuItem>
-                          <Typography textAlign="center">
-                            {linkName[1]}
-                          </Typography>
-                        </MenuItem>
-                      </a>
-                    ))}
+                    <AnchorLink to='/#why-landx' className='text-link'>
+                      <MenuItem>
+                        <Typography textAlign="center">
+                          Mengapa Landx
+                        </Typography>
+                      </MenuItem>
+                    </AnchorLink>
+                    <AnchorLink to='/#ongoing-projects' className='text-link'>
+                      <MenuItem>
+                        <Typography textAlign="center">
+                          Proyek
+                        </Typography>
+                      </MenuItem>
+                    </AnchorLink>
+                    <AnchorLink to='/#how-it-works' className='text-link'>
+                      <MenuItem>
+                        <Typography textAlign="center">
+                          Cara Kerja
+                        </Typography>
+                      </MenuItem>
+                    </AnchorLink>
+                    <Link to='/contact' className='text-link'>
+                      <MenuItem>
+                        <Typography textAlign="center">
+                          Kontak
+                        </Typography>
+                      </MenuItem>
+                    </Link>
+                    <Link href='https://landx.id/blog' className='text-link'>
+                      <MenuItem>
+                        <Typography textAlign="center">
+                          Blog
+                        </Typography>
+                      </MenuItem>
+                    </Link>
 
                     <Stack direction="row" spacing={2}>
                       <div>
@@ -121,14 +129,34 @@ const ResponsiveAppBar = () => {
                                     aria-labelledby="composition-button"
                                     onKeyDown={handleListKeyDown}
                                   >
-                                    {subLinksName.map(subLink => (
-                                      <>
-                                        <a href={subLink[0]} className='text-link'>
-                                          <MenuItem onClick={handleClose} className='menulink'>{subLink[1]}</MenuItem>
-                                        </a>
-                                        {subLink[1] === 'FAQ' ? '' : <hr />}
-                                      </>
-                                    ))}
+                                    <Link href='https://landx.id/blog/jobs-at-landx' className='text-link'>
+                                      <MenuItem onClick={handleClose} className='menulink'>Karir</MenuItem>
+                                    </Link>
+                                    <hr />
+                                    <Link to='/syarat-dan-ketentuan'
+                                      className='text-link'>
+                                      <MenuItem onClick={handleClose} className='menulink'>Syarat & Ketentuan</MenuItem>
+                                    </Link>
+                                    <hr />
+                                    <Link to='/privacy-policy' className='text-link'>
+                                      <MenuItem onClick={handleClose} className='menulink'>Kebijakan Privasi</MenuItem>
+                                    </Link>
+                                    <hr />
+                                    <Link to='/service-level-agreement' className='text-link'>
+                                      <MenuItem onClick={handleClose} className='menulink'>Service Level Agreement</MenuItem>
+                                    </Link>
+                                    <hr />
+                                    <Link to='/kebijakan-isms' className='text-link'>
+                                      <MenuItem onClick={handleClose} className='menulink'>Kebijakan ISMS</MenuItem>
+                                    </Link>
+                                    <hr />
+                                    <Link to='/mitigasi-risiko' className='text-link'>
+                                      <MenuItem onClick={handleClose} className='menulink'>Mitigasi Resiko</MenuItem>
+                                    </Link>
+                                    <hr />
+                                    <Link href='https://landx.id/blog/faq-landx' className='text-link'>
+                                      <MenuItem onClick={handleClose} className='menulink'>FAQ</MenuItem>
+                                    </Link>
                                   </MenuList>
                                 </ClickAwayListener>
                               </Paper>
@@ -157,17 +185,51 @@ const ResponsiveAppBar = () => {
         {mobileNav && widthWindows < 1055 ?
           <div>
             <div>
-              {linksName && linksName.map(linkName => (
-                <List component="nav" aria-label="mailbox folders">
-                  <a href={linkName[0]} className='text-link' key={linkName[1]}>
-                    <MenuItem>
-                      <Typography textAlign="center">
-                        {linkName[1]}
-                      </Typography>
-                    </MenuItem>
-                  </a>
-                </List>
-              ))}
+              <List component="nav" aria-label="mailbox folders">
+                <AnchorLink to='/#why-landx' className='text-link'>
+                  <MenuItem>
+                    <Typography textAlign="center">
+                      Mengapa Landx
+                    </Typography>
+                  </MenuItem>
+                </AnchorLink>
+              </List>
+              <List component="nav" aria-label="mailbox folders">
+                <AnchorLink to='/#ongoing-projects' className='text-link'>
+                  <MenuItem>
+                    <Typography textAlign="center">
+                      Proyek
+                    </Typography>
+                  </MenuItem>
+                </AnchorLink>
+              </List>
+              <List component="nav" aria-label="mailbox folders">
+                <AnchorLink to='/#how-it-works' className='text-link'>
+                  <MenuItem>
+                    <Typography textAlign="center">
+                      Cara Kerja
+                    </Typography>
+                  </MenuItem>
+                </AnchorLink>
+              </List>
+              <List component="nav" aria-label="mailbox folders">
+                <Link to='/contact' className='text-link'>
+                  <MenuItem>
+                    <Typography textAlign="center">
+                      Kontak
+                    </Typography>
+                  </MenuItem>
+                </Link>
+              </List>
+              <List component="nav" aria-label="mailbox folders">
+                <Link href='https://landx.id/blog' className='text-link'>
+                  <MenuItem>
+                    <Typography textAlign="center">
+                      Blog
+                    </Typography>
+                  </MenuItem>
+                </Link>
+              </List>
             </div>
 
             <div>
@@ -187,15 +249,36 @@ const ResponsiveAppBar = () => {
             </div>
 
             <Container>
-              {mobileNavSubMenu
-                ? subLinksName.map(subLink => (
-                  <>
-                    <a href={subLink[0]} className='text-link'>
-                      <MenuItem onClick={handleClose} className='menulink'>{subLink[1]}</MenuItem>
-                    </a>
-                    <hr />
-                  </>
-                ))
+              {mobileNavSubMenu ?
+                <><Link href='https://landx.id/blog/jobs-at-landx' className='text-link'>
+                  <MenuItem onClick={handleClose} className='menulink'>Karir</MenuItem>
+                </Link>
+                  <hr />
+                  <Link to='/syarat-dan-ketentuan'
+                    className='text-link'>
+                    <MenuItem onClick={handleClose} className='menulink'>Syarat & Ketentuan</MenuItem>
+                  </Link>
+                  <hr />
+                  <Link to='/privacy-policy' className='text-link'>
+                    <MenuItem onClick={handleClose} className='menulink'>Kebijakan Privasi</MenuItem>
+                  </Link>
+                  <hr />
+                  <Link to='/service-level-agreement' className='text-link'>
+                    <MenuItem onClick={handleClose} className='menulink'>Service Level Agreement</MenuItem>
+                  </Link>
+                  <hr />
+                  <Link to='/kebijakan-isms' className='text-link'>
+                    <MenuItem onClick={handleClose} className='menulink'>Kebijakan ISMS</MenuItem>
+                  </Link>
+                  <hr />
+                  <Link to='/mitigasi-risiko' className='text-link'>
+                    <MenuItem onClick={handleClose} className='menulink'>Mitigasi Resiko</MenuItem>
+                  </Link>
+                  <hr />
+                  <Link href='https://landx.id/blog/faq-landx' className='text-link'>
+                    <MenuItem onClick={handleClose} className='menulink'>FAQ</MenuItem>
+                  </Link>
+                </>
                 : ''}
             </Container>
 

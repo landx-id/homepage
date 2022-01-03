@@ -4,9 +4,9 @@ import Layout from "../../components/layout/layout"
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 
-import './detailProject.scss'
+import './detailProjects.scss'
 
-const DetailProject = () => (
+const DetailProjects = () => (
   <Layout>
     <Container className="container-project-detail">
       <Grid container>
@@ -84,10 +84,10 @@ const DetailProject = () => (
             </Grid>
           </Grid>
           <Grid container className='container-btn-project'>
-            <Grid item>
+            <Grid item xs={6}>
               <Button variant="contained" color='success' className='btn-buy'>BELI VIA APP</Button>
             </Grid>
-            <Grid item>
+            <Grid item xs={6}>
               <Button variant="outlined" color='success'>SHOW PROSPEKTUS</Button>
             </Grid>
           </Grid>
@@ -97,4 +97,4 @@ const DetailProject = () => (
   </Layout>
 )
 
-export default DetailProject
+export default DetailProjects

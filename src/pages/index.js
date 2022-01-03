@@ -127,7 +127,7 @@ const IndexPage = () => {
       <div className="homepage">
         <Container>
           <Grid container className='container-banner'>
-            <Grid item xl={12} md={6}>
+            <Grid item xs={12} md={6}>
               <Grid container>
                 <Grid item sm={11} xl={12}>
                   <Typography variant="h1" className="heroTitle">
@@ -138,19 +138,19 @@ const IndexPage = () => {
                   </p>
                 </Grid>
                 <Grid item className='container-logo-ojk' sm={11} xl={12}>
-                  <img src="./images/logo_OJK.webp" alt="logo OJK" className="logo-ojk" />
+                  <img src="./images/logo_ojk_02.webp" alt="logo OJK" className="logo-ojk" />
                 </Grid>
                 <Grid item className='container-cta' sm={11} xl={12}>
                   <Link href='https://play.google.com/store/apps/details?id=store.numoney.landxapp' target='_blank'>
-                    <img src="./images/PlayStore.webp" alt="PlayStore" className='playstoreLogo cta-image' />
+                    <img src="./images/logo_playstore.webp" alt="PlayStore" className='playstoreLogo cta-image' />
                   </Link>
                   <Link href='https://apps.apple.com/id/app/landx/id1453823676' target='_blank'>
-                    <img src="./images/AppStore.webp" alt="AppStore" className='cta-image appstoreLogo' />
+                    <img src="./images/logo_appstore.webp" alt="AppStore" className='cta-image appstoreLogo' />
                   </Link>
                 </Grid>
               </Grid>
             </Grid>
-            <Grid item xl={12} md={6} className='container-yt'>
+            <Grid item xs={12} md={6} className='container-yt'>
               <iframe className='banner-yt' src="https://www.youtube.com/embed/Y03A0VgY_ug" title="Landx" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen loading='lazy'></iframe>
             </Grid>
           </Grid>
@@ -190,15 +190,15 @@ const IndexPage = () => {
 
           {widthWindows < 1200 ?
             <Slider {...sliderOneCard}>
-              <CardWhyLandx logo='./images/star.webp' title='Bisnis-bisnis Terbaik' content='Pengguna LandX mendapatkan akses ke bisnis-bisnis yang teruji dan sudah diseleksi secara ketat' />
-              <CardWhyLandx logo='./images/time.webp' title='Investasi Bagi Hasil' content='Laporan keuangan tepat waktu dan pembagian hasil investasi transaparan' />
-              <CardWhyLandx logo='./images/jewely.webp' title='Investasi Aman untuk Pemula' content='Sebagian besar bisnis yang terdaftar memiliki aset dasar properti yang bernilai tinggi, sehingga dapat melindungi investor apabila terjadi risiko kegagalan bisnis.' />
+              <CardWhyLandx logo='./images/icon_star.webp' title='Bisnis-bisnis Terbaik' content='Pengguna LandX mendapatkan akses ke bisnis-bisnis yang teruji dan sudah diseleksi secara ketat' />
+              <CardWhyLandx logo='./images/icon_time.webp' title='Investasi Bagi Hasil' content='Laporan keuangan tepat waktu dan pembagian hasil investasi transaparan' />
+              <CardWhyLandx logo='./images/icon_jewely.webp' title='Investasi Aman untuk Pemula' content='Sebagian besar bisnis yang terdaftar memiliki aset dasar properti yang bernilai tinggi, sehingga dapat melindungi investor apabila terjadi risiko kegagalan bisnis.' />
             </Slider>
             :
             <Grid container spacing={4}>
-              <CardWhyLandx logo='./images/star.webp' title='Bisnis-bisnis Terbaik' content='Pengguna LandX mendapatkan akses ke bisnis-bisnis yang teruji dan sudah diseleksi secara ketat' />
-              <CardWhyLandx logo='./images/time.webp' title='Investasi Bagi Hasil' content='Laporan keuangan tepat waktu dan pembagian hasil investasi transaparan' />
-              <CardWhyLandx logo='./images/jewely.webp' title='Investasi Aman untuk Pemula' content='Sebagian besar bisnis yang terdaftar memiliki aset dasar properti yang bernilai tinggi, sehingga dapat melindungi investor apabila terjadi risiko kegagalan bisnis.' />
+              <CardWhyLandx logo='./images/icon_star.webp' title='Bisnis-bisnis Terbaik' content='Pengguna LandX mendapatkan akses ke bisnis-bisnis yang teruji dan sudah diseleksi secara ketat' />
+              <CardWhyLandx logo='./images/icon_time.webp' title='Investasi Bagi Hasil' content='Laporan keuangan tepat waktu dan pembagian hasil investasi transaparan' />
+              <CardWhyLandx logo='./images/icon_jewely.webp' title='Investasi Aman untuk Pemula' content='Sebagian besar bisnis yang terdaftar memiliki aset dasar properti yang bernilai tinggi, sehingga dapat melindungi investor apabila terjadi risiko kegagalan bisnis.' />
             </Grid>
           }
         </Container>
@@ -230,8 +230,8 @@ const IndexPage = () => {
           }
 
           <Grid container>
-            <Grid item style={{ justifyContent: 'center', display: 'flex', margin: '20px 0' }}>
-              <Link to='/project-detail' style={{ textDecoration: 'none' }}>
+            <Grid xs={12} item style={{ justifyContent: 'center', display: 'flex', margin: '20px 0' }}>
+              <Link to='/project' style={{ textDecoration: 'none' }}>
                 <Button color='success'>Semua Proyek</Button>
               </Link>
             </Grid>
