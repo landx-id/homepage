@@ -138,14 +138,14 @@ const IndexPage = () => {
                   </p>
                 </Grid>
                 <Grid item className='container-logo-ojk' sm={11} xl={12}>
-                  <img src="./images/logo_OJK.webp" alt="logo OJK" className="logo-ojk" />
+                  <img src="./images/logo_ojk_02.webp" alt="logo OJK" className="logo-ojk" />
                 </Grid>
                 <Grid item className='container-cta' sm={11} xl={12}>
                   <Link href='https://play.google.com/store/apps/details?id=store.numoney.landxapp' target='_blank'>
-                    <img src="./images/PlayStore.webp" alt="PlayStore" className='playstoreLogo cta-image' />
+                    <img src="./images/logo_playstore.webp" alt="PlayStore" className='playstoreLogo cta-image' />
                   </Link>
                   <Link href='https://apps.apple.com/id/app/landx/id1453823676' target='_blank'>
-                    <img src="./images/AppStore.webp" alt="AppStore" className='cta-image appstoreLogo' />
+                    <img src="./images/logo_appstore.webp" alt="AppStore" className='cta-image appstoreLogo' />
                   </Link>
                 </Grid>
               </Grid>
@@ -190,15 +190,15 @@ const IndexPage = () => {
 
           {widthWindows < 1200 ?
             <Slider {...sliderOneCard}>
-              <CardWhyLandx logo='./images/star.webp' title='Bisnis-bisnis Terbaik' content='Pengguna LandX mendapatkan akses ke bisnis-bisnis yang teruji dan sudah diseleksi secara ketat' />
-              <CardWhyLandx logo='./images/time.webp' title='Investasi Bagi Hasil' content='Laporan keuangan tepat waktu dan pembagian hasil investasi transaparan' />
-              <CardWhyLandx logo='./images/jewely.webp' title='Investasi Aman untuk Pemula' content='Sebagian besar bisnis yang terdaftar memiliki aset dasar properti yang bernilai tinggi, sehingga dapat melindungi investor apabila terjadi risiko kegagalan bisnis.' />
+              <CardWhyLandx logo='./images/icon_star.webp' title='Bisnis-bisnis Terbaik' content='Pengguna LandX mendapatkan akses ke bisnis-bisnis yang teruji dan sudah diseleksi secara ketat' />
+              <CardWhyLandx logo='./images/icon_time.webp' title='Investasi Bagi Hasil' content='Laporan keuangan tepat waktu dan pembagian hasil investasi transaparan' />
+              <CardWhyLandx logo='./images/icon_jewely.webp' title='Investasi Aman untuk Pemula' content='Sebagian besar bisnis yang terdaftar memiliki aset dasar properti yang bernilai tinggi, sehingga dapat melindungi investor apabila terjadi risiko kegagalan bisnis.' />
             </Slider>
             :
             <Grid container spacing={4}>
-              <CardWhyLandx logo='./images/star.webp' title='Bisnis-bisnis Terbaik' content='Pengguna LandX mendapatkan akses ke bisnis-bisnis yang teruji dan sudah diseleksi secara ketat' />
-              <CardWhyLandx logo='./images/time.webp' title='Investasi Bagi Hasil' content='Laporan keuangan tepat waktu dan pembagian hasil investasi transaparan' />
-              <CardWhyLandx logo='./images/jewely.webp' title='Investasi Aman untuk Pemula' content='Sebagian besar bisnis yang terdaftar memiliki aset dasar properti yang bernilai tinggi, sehingga dapat melindungi investor apabila terjadi risiko kegagalan bisnis.' />
+              <CardWhyLandx logo='./images/icon_star.webp' title='Bisnis-bisnis Terbaik' content='Pengguna LandX mendapatkan akses ke bisnis-bisnis yang teruji dan sudah diseleksi secara ketat' />
+              <CardWhyLandx logo='./images/icon_time.webp' title='Investasi Bagi Hasil' content='Laporan keuangan tepat waktu dan pembagian hasil investasi transaparan' />
+              <CardWhyLandx logo='./images/icon_jewely.webp' title='Investasi Aman untuk Pemula' content='Sebagian besar bisnis yang terdaftar memiliki aset dasar properti yang bernilai tinggi, sehingga dapat melindungi investor apabila terjadi risiko kegagalan bisnis.' />
             </Grid>
           }
         </Container>
