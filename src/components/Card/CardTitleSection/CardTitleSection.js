@@ -5,8 +5,8 @@ import './CardTitleSection.scss'
 
 const CardTitleSection = ({ title }) => {
   return (
-    <div>
-      <Grid container class='container-title-section'>
+    <div className='container-title-section'>
+      <Grid container className='title-center'>
         <Grid item>
           <h2 className='title-section'>
             {title}

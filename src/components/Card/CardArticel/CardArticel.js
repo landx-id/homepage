@@ -67,7 +67,7 @@ const CardArticel = () => {
                   <Typography sx={{ mb: 1.5 }} color="text.secondary" className="card-description">
                     {data.desc}
                   </Typography>
-                  <Link href='/' className="text-link">
+                  <Link href={data.link} className="text-link">
                     <Button variant="text" size="small">SELENGKAPNYA DI BLOG</Button>
                   </Link>
                 </CardContent>
