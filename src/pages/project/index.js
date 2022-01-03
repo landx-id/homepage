@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button, Container, Grid } from '@mui/material'
-import Layout from '../../components/layout/layout'
+import Layout from "../../components/layout/layout"
 import './ShowAllProject.scss'
 
 const ShowAllProject = () => {
