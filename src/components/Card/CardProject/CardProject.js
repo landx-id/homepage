@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import './CardProject.scss'
 import { toIDR } from '../../../utils/currency';
 import { calculateRemainingDays } from '../../../utils/common';
-import { Link, navigate } from 'gatsby';
+import { navigate } from 'gatsby';
 
 const CardProject = ({ data }) => {
   const [endDay, setEndDay] = useState('')

@@ -2,6 +2,7 @@ import React from 'react'
 import { Button, Card, Container, Typography } from '@mui/material';
 import CancelOutlinedIcon from '@mui/icons-material/CancelOutlined';
 import Seo from '../../components/seo/seo';
+import { Link } from 'gatsby';
 
 const PaymentError = () => {
   return (
@@ -21,12 +22,16 @@ const PaymentError = () => {
             <Typography component='p'>
               Segera hubungi Admin kami untuk keterangan lebih lanjut.
             </Typography>
-            <Button variant='contained' color='success' className='btn-project'>
-              WA Customer 1
-            </Button>
-            <Button variant='contained' color='success' className='btn-project'>
-              WA Customer 2
-            </Button>
+            <Link href='https://wa.me/628119562878' style={{ textDecoration: 'none' }}>
+              <Button variant='contained' color='success' className='btn-project'>
+                WA Customer 1
+              </Button>
+            </Link>
+            <Link href='https:/wa.me/6281381862878' style={{ textDecoration: 'none' }}>
+              <Button variant='contained' color='success' className='btn-project'>
+                WA Customer 2
+              </Button>
+            </Link>
           </Card>
         </Container>
       </div>
