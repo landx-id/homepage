@@ -1,4 +1,4 @@
-import * as React from "react"
+import React, { useEffect, useState } from "react"
 import { ThemeProvider } from '@mui/material/styles';
 import { themeconfig } from '../../assets/styling/themeConfig';
 import { Container, Grid, Typography, Button, Box } from '@mui/material';
@@ -9,10 +9,7 @@ import CardLandxWork from "../../components/Card/CardLandxWork/CardLandxWork";
 
 import Seo from "../../components/seo/seo"
 import Footer from "../../components/footer/footer";
-import Slider from 'react-slick'
 
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import "../../assets/styling/style.scss"
 import "./index.scss"
 
@@ -20,27 +17,51 @@ import "./index.scss"
 const theme = themeconfig
 
 const DragonHotPot = () => {
-  const [widthWindows, setWidthWindows] = React.useState('')
-
-  React.useEffect(() => {
-    setWidthWindows(window.innerWidth)
-    window.addEventListener("resize", () => {
-      setWidthWindows(window.innerWidth)
-    })
-  }, [widthWindows])
-
-  const sliderOneCard = {
-    dots: true,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: false,
-  };
+  
+  // Client-side Runtime Data Fetching
+  const [starsCount, setStarsCount] = useState(0)
+  useEffect(() => {
+    fetch("https://api.landx.id/", {
+    method: "POST",
+    // mode: "cors",
+    headers: {
+      "Content-Type": "application/json",
+      "Accept": "application/json",
+    },
+    body: JSON.stringify({query: `{
+      currencies {
+        landXProperty {
+          address
+          annualRentYield
+          annualRentYieldUpper
+          category
+          dividendSchedule
+          id
+          initialTokenPrice
+          launchProgress
+          mapImageUrl
+          name
+          previewImages
+          propertyPrice
+          settlementDate
+          tokenSupply
+          totalPurchasePrice
+          token {
+            symbol
+            name
+          }
+        }
+      }
+    }`})
+  })
+  .then(r => r.json())
+  .then(data => console.log(data)
+  )
+  }, [])
   
   return (
     <ThemeProvider theme={theme}>
-    <Seo title="Mitigasi Risiko" />
+    <Seo title="LandX" />
     <body style={{ backgroundColor:`#f8f8f8` }}>
 
     <section style={{ padding: '30px', alignItems: 'center' }} className="dragon-hot-header">
@@ -53,7 +74,7 @@ const DragonHotPot = () => {
       </Box>
       <Box className="dragon-hot-title dragon-hot-mt">
         <Typography variant="h3" align="center">
-          Hot Pot #1 di Melbourne
+          Hot Pot #1 di Melbourne {starsCount}
         </Typography>
         <Typography variant="h3" align="center">
           hadir di Indonesia!
@@ -91,10 +112,34 @@ const DragonHotPot = () => {
           </Grid>
         </Grid>
       </Box>
+      <Box style={{ marginLeft:`5rem`, marginTop:`3rem` }}>
+        <Grid container className="dragon-hot-title">
+          <Grid item xs={12} md={3}>
+            &nbsp;
+          </Grid>
+          <Grid item xs={12} md={7}>
+            <Box className="dragon-hot-capital-average">
+              <Typography paragraph={true}>
+                Rata-rata Balik Modal
+              </Typography>
+              <Typography paragraph={true} style={{ marginBottom:`2rem`, fontSize:`34px`, fontWeight:`600` }}>
+                15-18 Bulan per Cabang
+              </Typography>
+            </Box>
+          </Grid>
+        </Grid>
+      </Box>
+      <Box className="dragon-hot-bowl2">
+          <img 
+            src="./images/dhp_header_image_03.png" 
+            id="bowl" 
+            alt=""
+          />
+      </Box>
     </section>  
     
     <section style={{ padding: '30px', display: 'flex', alignItems: 'center', backgroundColor:`#fff` }}>
-      <Container>
+      <Container style={{ marginTop:`19rem`, marginBottom:`1rem` }}>
         <Grid item xs={12} md={12} className="dragon-hot-font">
           <Typography color="secondary" variant="h3" align="center">
             Sekarang Kamu Bisa Patungan untuk
@@ -118,44 +163,23 @@ const DragonHotPot = () => {
     <section style={{ padding: '30px', display: 'flex', alignItems: 'center' }}>
         <Grid item xs={12} md={12}>
           <CardTitleSection title='Bagaimana Cara Kerja LandX?' />
-
-          {widthWindows < 1200 ?
-            <Slider {...sliderOneCard}>
-              <CardLandxWork img='../images/icon_pilih_bisnis.webp' title="Pilih Proyek Pendanaan" content="Pilih bisnis yang sesuai dengan profil investasimu" width="63px" />
-              <CardLandxWork img='../images/icon_menjadi_investor.webp' title='Beli Saham' content='Beli saham, obligasi, atau sukuk dari proyek pendanaan tersebut' width='94px' />
-              <CardLandxWork img='../images/icon_terima_imbal_hasil.webp' title="Terima Imbal Hasil" content='Terima keuntungan sesuai kinerja perusahaan yang kamu miliki, atau bunga sesuai kesepakatan awal' width='96px' />
-              <CardLandxWork img='../images/icon_capital_gain.webp' title="Keuntungan Capital Gain" content='Dapatkan keuntungan dari kenaikan harga saham ketika dijual' />
-            </Slider>
-            :
-            <Grid container spacing={4}>
-              <CardLandxWork img='../images/icon_pilih_bisnis.webp' title="Pilih Proyek Pendanaan" content="Pilih bisnis yang sesuai dengan profil investasimu" width="63px" />
-              <CardLandxWork img='../images/icon_menjadi_investor.webp' title='Beli Saham' content='Beli saham, obligasi, atau sukuk dari proyek pendanaan tersebut' width='94px' />
-              <CardLandxWork img='../images/icon_terima_imbal_hasil.webp' title="Terima Imbal Hasil" content='Terima keuntungan sesuai kinerja perusahaan yang kamu miliki, atau bunga sesuai kesepakatan awal' width='96px' />
-              <CardLandxWork img='../images/icon_capital_gain.webp' title="Keuntungan Capital Gain" content='Dapatkan keuntungan dari kenaikan harga saham ketika dijual' />
-            </Grid>
-          }
+          <Grid container spacing={4} style={{ justifyContent:`center` }}>
+              <CardLandxWork img='../images/dhp_icon_pilih_bisnis.png' title="Pilih Bisnis" content="Pilih bisnis favoritmu yang sedang melakukan penggalangan dana" height="100" width="100" />
+              <CardLandxWork img='../images/dhp_icon_ikut_patungan.png' title='Ikut Patungan' content='Dengan ikut patungan, kamu turut memiliki saham di bisnis tersebut' height="100" width="100" />
+              <CardLandxWork img='../images/dhp_icon_terima_bagi_hasil.png' title="Terima Bagi Hasil" content='Pembagian keuntungan sesuai dengan kinerja bisnis yang kamu miliki' height="100" width="100" />
+          </Grid>
         </Grid>
-      </section>
+    </section>
 
       <section style={{ padding: '30px', display: 'flex', alignItems: 'center', backgroundColor:`#fff` }}>
         <Grid item xs={12} md={12}>
           <CardTitleSection title='Mengapa LandX?' />
-
-          {widthWindows < 1200 ?
-            <Slider {...sliderOneCard}>
-              <CardLandxWork img='../images/icon_pilih_bisnis.webp' title="Pilih Proyek Pendanaan" content="Pilih bisnis yang sesuai dengan profil investasimu" width="63px" />
-              <CardLandxWork img='../images/icon_menjadi_investor.webp' title='Beli Saham' content='Beli saham, obligasi, atau sukuk dari proyek pendanaan tersebut' width='94px' />
-              <CardLandxWork img='../images/icon_terima_imbal_hasil.webp' title="Terima Imbal Hasil" content='Terima keuntungan sesuai kinerja perusahaan yang kamu miliki, atau bunga sesuai kesepakatan awal' width='96px' />
-              <CardLandxWork img='../images/icon_capital_gain.webp' title="Keuntungan Capital Gain" content='Dapatkan keuntungan dari kenaikan harga saham ketika dijual' />
-            </Slider>
-            :
             <Grid container spacing={4}>
-              <CardLandxWork img='../images/icon_pilih_bisnis.webp' title="Pilih Proyek Pendanaan" content="Pilih bisnis yang sesuai dengan profil investasimu" width="63px" />
-              <CardLandxWork img='../images/icon_menjadi_investor.webp' title='Beli Saham' content='Beli saham, obligasi, atau sukuk dari proyek pendanaan tersebut' width='94px' />
-              <CardLandxWork img='../images/icon_terima_imbal_hasil.webp' title="Terima Imbal Hasil" content='Terima keuntungan sesuai kinerja perusahaan yang kamu miliki, atau bunga sesuai kesepakatan awal' width='96px' />
-              <CardLandxWork img='../images/icon_capital_gain.webp' title="Keuntungan Capital Gain" content='Dapatkan keuntungan dari kenaikan harga saham ketika dijual' />
+              <CardLandxWork img='../images/dhp_icon_perjanjian.png' title="Perjanjian kerjasama yang jelas" content="Patungan bisnis di LandX berdasarkan perjanjian yang sah secara hukum" height="100" width="100" />
+              <CardLandxWork img='../images/dhp_icon_bagi_hasil.png' title='Pembagian hasil bisnis sesuai kepemilikan saham' content='Hasil bisnis yang kamu terima sesuai dengan porsi saham yang kamu miliki' height="100" width="100" />
+              <CardLandxWork img='../images/dhp_icon_komunikasi.png' title="Komunikasi" content='Pengelola bisnis akan memberikan laporan berkala terkait pengembangan bisnis yang kamu miliki' height="100" width="100" />
+              <CardLandxWork img='../images/dhp_icon_profesional.png' title="Dikelola oleh profesional di bidangnya" content='Pembagian keuntungan sesuai dengan kinerja bisnis yang kamu miliki' height="100" width="100" />
             </Grid>
-          }
         </Grid>
       </section>
 
