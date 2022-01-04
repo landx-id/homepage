@@ -25,7 +25,7 @@ const Footer = () => {
               <Grid item xs={12} sm={6} className='display-f-center display-fj-end'>
                 <Link href="https://play.google.com/store/apps/details?id=store.numoney.landxapp">
                   <img
-                    src="./images/LandX-PlayStore.webp"
+                    src="/images/logo_playstore.webp"
                     alt="Play Store"
                     title="Play Store"
                   />
@@ -34,7 +34,7 @@ const Footer = () => {
               <Grid item xs={12} sm={6} className='display-f-center display-fj-start'>
                 <Link href="https://apps.apple.com/id/app/landx/id1453823676">
                   <img
-                    src="./images/LandX-AppStore.webp"
+                    src="/images/logo_appstore.webp"
                     alt="App Store"
                     title="App Store"
                     className="app-store"
@@ -51,7 +51,7 @@ const Footer = () => {
           BERIZIN & DIAWASI OLEH
         </Typography>
         <img
-          src="./images/LandX-OJK.webp"
+          src="/images/logo_ojk_01.webp"
           alt="LandX merupakan platform equity crowdfunding terpercaya di Indonesia yang telah terdaftar dan diawasi OJK"
           title="LandX merupakan platform equity crowdfunding terpercaya di Indonesia yang telah terdaftar dan diawasi OJK"
           style={{ marginBottom: `3rem` }}
@@ -64,7 +64,7 @@ const Footer = () => {
               TELAH TERDAFTAR OLEH KEMENTRIAN KOMUNIKASI DAN INFORMATIKA
             </Typography>
             <img
-              src="./images/LandX-Kemkominfo.webp"
+              src="/images/logo_kemkominfo.webp"
               alt="LandX TELAH TERDAFTAR OLEH KEMENTRIAN KOMUNIKASI DAN INFORMATIKA sehingga informasi dan investasi anda menjadi lebih aman"
               title="LandX TELAH TERDAFTAR OLEH KEMENTRIAN KOMUNIKASI DAN INFORMATIKA sehingga informasi dan investasi anda menjadi lebih aman"
               style={{ marginBottom: `3rem` }}
@@ -75,7 +75,7 @@ const Footer = () => {
               DIDUKUNG OLEH
             </Typography>
             <img
-              src="./images/LandX-ISO.webp"
+              src="/images/logo_iso.webp"
               alt="LandX telah memilki sertifikasi ISO 27001 sehingga investasi anda melalui equity crowdfunding menjadi lebih mudah"
               title="LandX telah memilki sertifikasi ISO 27001 sehingga investasi anda melalui equity crowdfunding menjadi lebih mudah"
               style={{ marginBottom: `3rem` }}
@@ -86,7 +86,7 @@ const Footer = () => {
               MEMBER OF
             </Typography>
             <img
-              src="./images/LandX-ALUDI.webp"
+              src="/images/logo_aludi.webp"
               alt="Landx merupakan salah satu board member dari Asosiasi Layanan Urun Dana Indonesia (ALUDI) yang ditujunjuk OJK untuk bertugas menjaga kestabilan ekosistem layanan urun dana atau equity crowdfunding di Indonesia"
               title="Landx merupakan salah satu board member dari Asosiasi Layanan Urun Dana Indonesia (ALUDI) yang ditujunjuk OJK untuk bertugas menjaga kestabilan ekosistem layanan urun dana atau equity crowdfunding di Indonesia"
               style={{ marginBottom: `3rem` }}

@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Arsenal:wght@400;700&display=swap');
+
+.dragon-hot-font p, .dragon-hot-font h3, .dragon-hot-font h5 {
+  color: #8e3825;
+}
+
+.dragon-hot-header {
+  background-image: url(../../../static/images/dhp_header_image_01.png), url(../../../static/images/dhp_header_background_image.png);
+  background-size: 970px 940px, cover;
+  background-position-x: center, center;
+  background-position-y: -300px, center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.dragon-hot-bowl img {
+  position: absolute;
+  margin-top: 42rem;
+  width: 735px;
+  height: 755px;
+  right: -275px;
+}
+
+.dragon-hot-bowl2 img {
+  position: absolute;
+  margin-top: -22rem;
+  width: 826px;
+  height: 790px;
+  left: -70px;
+}
+
+.dragon-hot-mt {
+  margin-top: 42rem;
+}
+
+.dragon-hot-title {
+  color: #8e3825;
+
+  h3 {
+    font-family: Arsenal !important;
+    font-weight: bold;
+    font-size: 60px;
+    line-height: 68px;
+    letter-spacing: -0.5px;
+  }
+
+  p {
+    font-family: Arsenal !important;
+    font-size: 24px;
+    letter-spacing: 0.1px;
+  }
+}
+
+.dragon-hot-icon {
+  margin-top: 107px;
+  width: 310px;
+  margin-left: 20px;
+}
+
+.dragon-hot-text-content li {
+  font-family: Arsenal !important;
+  font-size: 34px;
+  font-weight: bold;
+  letter-spacing: 0.25px;
+  color: #8e3825;
+}
+
+.dragon-hot-outlet {
+  -moz-column-count: 2;
+  -moz-column-gap: 0px;
+  -webkit-column-count: 2;
+  -webkit-column-gap: 0px;
+  column-count: 2;
+  column-gap: 0px;
+  list-style: none;
+  margin-top: 8px;
+}
+
+.dragon-hot-outlet li {
+  margin: 0 0 4rem 0 !important;
+}
+
+.dragon-hot-outlet li:before {
+  content: "🥘";
+}
+
+.dragon-hot-capital-average {
+  display: grid;
+  justify-content: center;
+  margin-top: 27px;
+  margin-bottom: 145px;
+}
+
+.dragon-hot-card {
+  width: auto;
+  float: none;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  border-radius: 14px;
+  border-color: #e5e5e5;
+  color: white;
+  width: 15rem;
+}
