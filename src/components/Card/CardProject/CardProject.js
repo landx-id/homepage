@@ -13,7 +13,7 @@ const CardProject = ({ data }) => {
 
   useEffect(() => {
     handleEndDay()
-  }, [])
+  }, [data.launchProgress])
 
   const handleEndDay = () => {
     if (data.launchProgress === 1) {
@@ -34,7 +34,6 @@ const CardProject = ({ data }) => {
     speed: 500,
     autoplaySpeed: 5000,
   };
-
 
   return (
     <>

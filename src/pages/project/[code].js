@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useState, useEffect } from "react"
 import { navigate } from "gatsby";
 import { Grid, Container, Typography, Chip, LinearProgress, Button } from "@mui/material"
 import Layout from "../../components/layout/layout"
@@ -8,6 +8,7 @@ import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import './detailProjects.scss'
 
 const DetailProjects = () => {
+  const [linkBtnLandx, setLinkBtnLandx] = useState('https://play.google.com/store/apps/details?id=store.numoney.landxapp')
   useEffect(() => {
     detectDevice()
   }, [])
@@ -17,19 +18,18 @@ const DetailProjects = () => {
 
     // Windows Phone must come first because its UA also contains "Android"
     if (/windows phone/i.test(userAgent)) {
-      return "Windows Phone";
+      return setLinkBtnLandx('https://play.google.com/store/apps/details?id=store.numoney.landxapp')
     }
 
     if (/android/i.test(userAgent)) {
-      return "Android";
+      return setLinkBtnLandx('https://play.google.com/store/apps/details?id=store.numoney.landxapp')
     }
 
-    // iOS detection from: http://stackoverflow.com/a/9039885/177710
     if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-      return "iOS";
+      return setLinkBtnLandx('https://apps.apple.com/id/app/landx-aplikasi-investasi/id1453823676?l=id')
     }
 
-    return "unknown";
+    return setLinkBtnLandx('https://play.google.com/store/apps/details?id=store.numoney.landxapp')
   }
 
   return (
@@ -114,7 +114,7 @@ const DetailProjects = () => {
               </Grid>
               <Grid container className='container-btn-project'>
                 <Grid item xs={6}>
-                  <Button variant="contained" color='success' className='btn-buy'>BELI VIA APP</Button>
+                  <Button variant="contained" color='success' className='btn-buy' onClick={() => window.location.href = `${linkBtnLandx}`}>BELI VIA APP</Button>
                 </Grid>
                 <Grid item xs={6}>
                   <Button variant="outlined" color='success'>SHOW PROSPEKTUS</Button>
