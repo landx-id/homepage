@@ -1,19 +1,20 @@
 import React, { useState, useEffect } from 'react'
 import { Grid, Card, Chip, CardContent, LinearProgress, Button, CircularProgress } from '@mui/material';
+import { toIDR } from '../../../utils/currency';
+import { calculateRemainingDays } from '../../../utils/common';
+import { navigate } from 'gatsby';
+
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './CardProject.scss'
-import { toIDR } from '../../../utils/currency';
-import { calculateRemainingDays } from '../../../utils/common';
-import { navigate } from 'gatsby';
 
 const CardProject = ({ data }) => {
   const [endDay, setEndDay] = useState('')
 
   useEffect(() => {
     handleEndDay()
-  }, [])
+  }, [data.launchProgress])
 
   const handleEndDay = () => {
     if (data.launchProgress === 1) {
@@ -34,7 +35,6 @@ const CardProject = ({ data }) => {
     speed: 500,
     autoplaySpeed: 5000,
   };
-
 
   return (
     <>
