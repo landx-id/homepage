@@ -2,79 +2,81 @@ import React, { useEffect, useState } from "react"
 import { ThemeProvider } from '@mui/material/styles';
 import { themeconfig } from '../../assets/styling/themeConfig';
 import { Container, Grid, Typography, Button, Box } from '@mui/material';
+import { Link } from "gatsby"
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
 import CardTitleSection from "../../components/Card/CardTitleSection/CardTitleSection";
 import CardLandxWork from "../../components/Card/CardLandxWork/CardLandxWork";
+import CardListing from "../../components/Card/CardListing/CardListing";
+import CardProject from "../../components/Card/CardProject/CardProject";
+
+import { FetchLimitData } from "../../utils/common";
 
 import Seo from "../../components/seo/seo"
 import Footer from "../../components/footer/footer";
+import Slider from 'react-slick'
 
 import "../../assets/styling/style.scss"
 import "./index.scss"
-
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const theme = themeconfig
-
 const DragonHotPot = () => {
   
-  // Client-side Runtime Data Fetching
-  const [starsCount, setStarsCount] = useState(0)
+  const [dataProject, setDataProject] = useState(null)
+  const [dataListing, setDataListing] = useState('')
+  
+
   useEffect(() => {
-    fetch("https://api.landx.id/", {
-    method: "POST",
-    // mode: "cors",
-    headers: {
-      "Content-Type": "application/json",
-      "Accept": "application/json",
-    },
-    body: JSON.stringify({query: `{
-      currencies {
-        landXProperty {
-          address
-          annualRentYield
-          annualRentYieldUpper
-          category
-          dividendSchedule
-          id
-          initialTokenPrice
-          launchProgress
-          mapImageUrl
-          name
-          previewImages
-          propertyPrice
-          settlementDate
-          tokenSupply
-          totalPurchasePrice
-          token {
-            symbol
-            name
-          }
+    getLimitCardProject()
+    handleListing()
+  }, [])
+
+  const cardProject = {
+    dots: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    arrows: false,
+    initialSlide: 0,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
         }
       }
-    }`})
-  })
-  .then(r => r.json())
-  .then(data => console.log(data)
-  )
-  }, [])
+    ]
+  };
   
+  const getLimitCardProject = () => {
+    FetchLimitData('https://api.landx.id/', 4, 1).then(data => {
+      setDataProject(data.data.currencies)
+    })
+  }
+
+  const handleListing = () => {
+    fetch('https://landx.id/lottie/upcoming.json')
+      .then(r => r.json())
+      .then(data => {
+        setDataListing((prevData) => [...prevData, data.upcoming])
+      })
+  }
+
   return (
     <ThemeProvider theme={theme}>
     <Seo title="LandX" />
     <body style={{ backgroundColor:`#f8f8f8` }}>
 
     <section style={{ padding: '30px', alignItems: 'center' }} className="dragon-hot-header">
-      <Box className="dragon-hot-bowl">
-          <img 
-            src="./images/dhp_header_image_02.png" 
-            id="bowl" 
-            alt=""
-          />
-      </Box>
+      {/* <Container> */} 
+      <Box className="dragon-hot-bowl one" style={{ float:`right` }}></Box>
       <Box className="dragon-hot-title dragon-hot-mt">
         <Typography variant="h3" align="center">
-          Hot Pot #1 di Melbourne {starsCount}
+          Hot Pot #1 di Melbourne
         </Typography>
         <Typography variant="h3" align="center">
           hadir di Indonesia!
@@ -136,6 +138,7 @@ const DragonHotPot = () => {
             alt=""
           />
       </Box>
+      {/* </Container> */}
     </section>  
     
     <section style={{ padding: '30px', display: 'flex', alignItems: 'center', backgroundColor:`#fff` }}>
@@ -183,12 +186,39 @@ const DragonHotPot = () => {
         </Grid>
       </section>
 
-      <section style={{ padding: '30px', display: 'flex', alignItems: 'center' }}>
-        <Grid item xs={12} md={12}>
+      <section>
+        <Container id='ongoing-projects' className='container-ongoing-projects pt-40'>
           <CardTitleSection title='Proyek yang Sedang Listing' />
 
-          {/* TODO: dynamic card listing */}
-        </Grid>
+          {dataProject &&
+            <Slider {...cardProject} className='container-card-projects'>
+
+              {dataListing && dataListing.map((data, i) => {
+                if (data[i] !== undefined && data[i] !== null && i >= 0) {
+                  return Object.entries(data[i]).map(data => {
+                    let listingAt = new Date(data[1].listing_at).getTime()
+                    let now = Date.now()
+                    if (listingAt > now) {
+                      return <CardListing code={data[0]} data={data[1]} />
+                    }
+                  })
+                }
+              })}
+
+              {dataProject && dataProject.map((dataProject) => {
+                return <CardProject cardProject={cardProject} data={dataProject.landXProperty} key={dataProject.landXProperty.id} />
+              })}
+            </Slider>
+          }
+
+          <Grid container>
+            <Grid xs={12} item style={{ justifyContent: 'center', display: 'flex', margin: '20px 0' }}>
+              <Link to='/project' style={{ textDecoration: 'none' }}>
+                <Button color='success'>INVESTASI SEKARANG</Button>
+              </Link>
+            </Grid>
+          </Grid>
+        </Container>
       </section>
 
         <section style={{ padding: '30px', minHeight: '500px', display: 'flex', alignItems: 'center', backgroundColor:`#fff` }}>

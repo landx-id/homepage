@@ -13,12 +13,19 @@
   position: relative;
 }
 
-.dragon-hot-bowl img {
-  position: absolute;
-  margin-top: 42rem;
-  width: 735px;
+.dragon-hot-bowl {
+  margin-top: 40.5rem;
+  width: 755px;
   height: 755px;
-  right: -275px;
+  background-image: url(../../../static/images/dhp_header_image_02.png);
+  background-size: 735px 755px;
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 0;
+}
+
+.one {
+  background-position: right -15rem bottom 10px;
 }
 
 .dragon-hot-bowl2 img {
@@ -100,4 +107,11 @@
   border-color: #e5e5e5;
   color: white;
   width: 15rem;
+}
+
+.bowl-hot {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
 }
