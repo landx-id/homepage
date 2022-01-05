@@ -41,12 +41,16 @@
   text-decoration: none;
   color: #5e798d;
   font-weight: 700;
+  width: 100% !important;
+  text-align-last:left;
 }
 
 .footer-menu-two a {
   text-decoration: none;
   color: #5e798d;
   font-weight: 500;
+  width: 100% !important;
+  text-align-last:left;
 }
 
 .footer-menu-title {
@@ -82,6 +86,27 @@
 }
 .display-fj-end {
   justify-content: end;
+}
+
+.sections span {
+  width: 32px;
+  height: 2px;
+  background-color: transparent;
+  bottom: 0;
+  top: auto !important;
+  left: 1rem !important;
+}
+
+.sections li:hover {
+  background-color: transparent !important;
+}
+
+.sections a:hover {
+  color: #2dbe60 !important;
+}
+
+.sections a:hover + span {
+  background-color: #2dbe60 !important;
 }
 
 /* If the screen size is 600px wide or less, hide the element */

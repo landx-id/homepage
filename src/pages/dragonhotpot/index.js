@@ -1,80 +1,163 @@
 import React, { useEffect, useState } from "react"
 import { ThemeProvider } from '@mui/material/styles';
 import { themeconfig } from '../../assets/styling/themeConfig';
-import { Container, Grid, Typography, Button, Box } from '@mui/material';
+import { Container, Grid, Typography, Button, Box, AppBar, Toolbar, Collapse, MenuList, MenuItem } from '@mui/material';
+import { navigate, Link } from "gatsby"
+import { AnchorLink } from "gatsby-plugin-anchor-links"
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
 import CardTitleSection from "../../components/Card/CardTitleSection/CardTitleSection";
 import CardLandxWork from "../../components/Card/CardLandxWork/CardLandxWork";
+import CardListing from "../../components/Card/CardListing/CardListing";
+import CardProject from "../../components/Card/CardProject/CardProject";
+
+import { FetchLimitData } from "../../utils/common";
 
 import Seo from "../../components/seo/seo"
 import Footer from "../../components/footer/footer";
+import Slider from 'react-slick'
 
 import "../../assets/styling/style.scss"
 import "./index.scss"
-
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const theme = themeconfig
-
 const DragonHotPot = () => {
   
-  // Client-side Runtime Data Fetching
-  const [starsCount, setStarsCount] = useState(0)
+  const [dataProject, setDataProject] = useState(null)
+  const [dataListing, setDataListing] = useState('')
+  
+
   useEffect(() => {
-    fetch("https://api.landx.id/", {
-    method: "POST",
-    // mode: "cors",
-    headers: {
-      "Content-Type": "application/json",
-      "Accept": "application/json",
-    },
-    body: JSON.stringify({query: `{
-      currencies {
-        landXProperty {
-          address
-          annualRentYield
-          annualRentYieldUpper
-          category
-          dividendSchedule
-          id
-          initialTokenPrice
-          launchProgress
-          mapImageUrl
-          name
-          previewImages
-          propertyPrice
-          settlementDate
-          tokenSupply
-          totalPurchasePrice
-          token {
-            symbol
-            name
-          }
+    getLimitCardProject()
+    handleListing()
+  }, [])
+
+  const cardProject = {
+    dots: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    arrows: false,
+    initialSlide: 0,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
         }
       }
-    }`})
-  })
-  .then(r => r.json())
-  .then(data => console.log(data)
-  )
-  }, [])
+    ]
+  };
   
+  const getLimitCardProject = () => {
+    FetchLimitData('https://api.landx.id/', 4, 1).then(data => {
+      setDataProject(data.data.currencies)
+    })
+  }
+
+  const handleListing = () => {
+    fetch('https://landx.id/lottie/upcoming.json')
+      .then(r => r.json())
+      .then(data => {
+        setDataListing((prevData) => [...prevData, data.upcoming])
+      })
+  }
+
+  const [checked, setChecked] = React.useState(false);
+
+  const handleChange = () => {
+    setChecked((prev) => !prev);
+  };
+
   return (
     <ThemeProvider theme={theme}>
     <Seo title="LandX" />
     <body style={{ backgroundColor:`#f8f8f8` }}>
 
+    <Box sx={{ flexGrow: 1 }}>
+      <AppBar position="static" className="dragon-hot-navbar">
+        <Toolbar>
+          <Box>
+            <img 
+              src="./images/hamburger_menu.svg" 
+              onClick={() => handleChange()}
+              style={{ cursor:`pointer` }}
+            />
+          </Box>
+          <Box className="dragon-hot-navbar-logo">
+            <Link to="/">
+              <img 
+                src="./images/landx_logo.png" 
+                className="dragon-hot-logo-landx"
+              />
+            </Link>
+          </Box>
+            
+          <Button variant="outlined" onClick={()=>{ navigate("/pendaftaran-perusahaan") }} style={{ fontWeight:`600` }}>PENDAFTARAN PERUSAHAAN</Button>
+        </Toolbar>
+      </AppBar>
+    </Box>
+
+      <Collapse in={checked}>
+        <Grid container spacing={2} className="dragon-hot-menu">
+          <Grid item xs={12} md={3} className="footer-menu-two mb-3">
+            <Typography color="primary" variant="h6" style={{ marginLeft:`1rem`, marginBottom:`2rem` }}>
+              PERUSAHAAN
+            </Typography>  
+            <MenuList className="dragon-hot-list-menu">
+              <MenuItem>
+                <Link href="https://landx.id/blog/">Blog</Link>
+              </MenuItem>
+              <MenuItem>
+                <AnchorLink to='/#why-landx'>Tentang LandX</AnchorLink>
+              </MenuItem>
+              <MenuItem>
+                <Link to='/syarat-dan-ketentuan'>Syarat & Ketentuan</Link>
+              </MenuItem>
+              <MenuItem>
+                <Link to='/privacy-policy'>Kebijakan Privasi</Link>
+              </MenuItem>
+              <MenuItem>
+                <Link to='/service-level-agreement'>Service Level Agreement</Link>
+              </MenuItem>
+              <MenuItem>
+              <Link to='/kebijakan-isms'>Kebijakan ISMS</Link>
+              </MenuItem>
+              <MenuItem>
+              <Link to='/mitigasi-risiko'>Mitigasi Risiko</Link>
+              </MenuItem>
+              <MenuItem>
+              <Link href="https://landx.id/blog/faq-landx/">FAQ</Link>
+              </MenuItem>
+            </MenuList>
+          </Grid>
+
+          <Grid item xs={12} md={3} className="footer-menu-two">
+            <Typography color="primary" variant="h6" style={{ marginLeft:`1rem`, marginBottom:`2rem` }}>
+              DUKUNGAN
+            </Typography>  
+            <MenuList>
+              <MenuItem>
+                <Link to='/contact'>Kontak</Link>
+              </MenuItem>
+              <MenuItem>
+                <Link href='mailto:hello@landx.id'>hello@landx.id</Link>
+              </MenuItem>
+            </MenuList>
+          </Grid>
+        </Grid>  
+      </Collapse>
+
     <section style={{ padding: '30px', alignItems: 'center' }} className="dragon-hot-header">
-      <Box className="dragon-hot-bowl">
-          <img 
-            src="./images/dhp_header_image_02.png" 
-            id="bowl" 
-            alt=""
-          />
-      </Box>
+      {/* <Container> */} 
+      <Box className="dragon-hot-bowl one" style={{ float:`right` }}></Box>
       <Box className="dragon-hot-title dragon-hot-mt">
         <Typography variant="h3" align="center">
-          Hot Pot #1 di Melbourne {starsCount}
+          Hot Pot #1 di Melbourne
         </Typography>
         <Typography variant="h3" align="center">
           hadir di Indonesia!
@@ -84,7 +167,7 @@ const DragonHotPot = () => {
         <img 
           src="./images/dhp_icon.png" 
           alt="DHP Icon" 
-          class="dragon-hot-icon" 
+          className="dragon-hot-icon" 
         />
       </Box>
       <Box style={{ marginLeft:`5rem`, marginTop:`3rem` }}>
@@ -136,15 +219,16 @@ const DragonHotPot = () => {
             alt=""
           />
       </Box>
+      {/* </Container> */}
     </section>  
     
     <section style={{ padding: '30px', display: 'flex', alignItems: 'center', backgroundColor:`#fff` }}>
-      <Container style={{ marginTop:`19rem`, marginBottom:`1rem` }}>
+      <Container style={{ marginTop:`27rem`, marginBottom:`1rem` }}>
         <Grid item xs={12} md={12} className="dragon-hot-font">
-          <Typography color="secondary" variant="h3" align="center">
+          <Typography color="secondary" variant="h2" align="center">
             Sekarang Kamu Bisa Patungan untuk
           </Typography>
-          <Typography color="secondary" variant="h3" align="center" paragraph={true}>
+          <Typography color="secondary" variant="h2" align="center" paragraph={true}>
             Punya Bisnis Dragon Hot Pot!
           </Typography>
           <Typography color="secondary" variant="h5" align="center" style={{ marginTop:`2rem` }}>
@@ -183,12 +267,37 @@ const DragonHotPot = () => {
         </Grid>
       </section>
 
-      <section style={{ padding: '30px', display: 'flex', alignItems: 'center' }}>
-        <Grid item xs={12} md={12}>
+      <section>
+        <Container id='ongoing-projects' className='container-ongoing-projects pt-40'>
           <CardTitleSection title='Proyek yang Sedang Listing' />
 
-          {/* TODO: dynamic card listing */}
-        </Grid>
+          {dataProject &&
+            <Slider {...cardProject} className='container-card-projects'>
+
+              {dataListing && dataListing.map((data, i) => {
+                if (data[i] !== undefined && data[i] !== null && i >= 0) {
+                  return Object.entries(data[i]).map(data => {
+                    let listingAt = new Date(data[1].listing_at).getTime()
+                    let now = Date.now()
+                    if (listingAt > now) {
+                      return <CardListing code={data[0]} data={data[1]} />
+                    }
+                  })
+                }
+              })}
+
+              {dataProject && dataProject.map((dataProject) => {
+                return <CardProject cardProject={cardProject} data={dataProject.landXProperty} key={dataProject.landXProperty.id} />
+              })}
+            </Slider>
+          }
+
+          <Grid container>
+            <Grid xs={12} item style={{ justifyContent: 'center', display: 'flex', margin: '20px 0' }}>
+              <Button onClick={()=>{navigate("/project")}}>INVESTASI SEKARANG</Button>
+            </Grid>
+          </Grid>
+        </Container>
       </section>
 
         <section style={{ padding: '30px', minHeight: '500px', display: 'flex', alignItems: 'center', backgroundColor:`#fff` }}>
@@ -202,7 +311,9 @@ const DragonHotPot = () => {
               </Typography>
             </Grid>
             <Grid item xs={12} md={12} align="center" style={{ marginBottom:`3rem` }}>
-              <Button>Booking Disini</Button>
+              <a href="https://forms.gle/b9N7KtBMCczZzFGH8" target="_blank" style={{ textDecoration:`none` }}>
+                <Button >Booking Disini</Button>
+               </a>
             </Grid>
           </Container>
         </section>
@@ -217,7 +328,7 @@ const DragonHotPot = () => {
             </Typography>
             <Grid container style={{ marginTop:`3rem`}}>
               <Grid item sx={5} md={5} align="right">
-                <Button variant="outlined">
+                <Button variant="outlined" onClick={()=>{ navigate("https://api.whatsapp.com/send?phone=6281381862878") }}>
                   <Typography>
                     <WhatsAppIcon />
                     WHATSAPP

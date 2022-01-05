@@ -118,7 +118,7 @@ const Footer = () => {
 
         <Grid container spacing={2} style={{ marginTop: `3rem` }}>
           <Grid item xs={12} md={3} className="footer-menu-one mb-3">
-            <MenuList>
+            <MenuList className="sections">
               <MenuItem>
                 <AnchorLink to='/#why-landx'>Mengapa LandX</AnchorLink>
               </MenuItem>
@@ -139,7 +139,7 @@ const Footer = () => {
 
           <Grid item xs={12} md={3} className="footer-menu-two">
             <Typography color="secondary" className="footer-menu-title">Perusahaan</Typography>
-            <MenuList>
+            <MenuList className="sections">
               <MenuItem>
                 <Link href='https://landx.id/blog/jobs-at-landx/'>Karir</Link>
               </MenuItem>
