@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Arsenal:wght@400;700&display=swap');
 
-.dragon-hot-font p, .dragon-hot-font h3, .dragon-hot-font h5 {
+.dragon-hot-font p, .dragon-hot-font h2, .dragon-hot-font h3, .dragon-hot-font h5 {
   color: #8e3825;
 }
 
@@ -114,4 +114,40 @@
   flex-wrap: wrap;
   margin-right: -15px;
   margin-left: -15px;
+}
+
+.dragon-hot-navbar {
+  padding: 32px;
+  height: 135px;
+  background-color: rgba(255, 255, 255, 0.900) !important;
+  border-bottom: #E7E7E7 solid 1px;
+  position: fixed !important;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
+
+.dragon-hot-navbar-logo {
+  display: flex;
+  text-align: center;
+  margin: auto;
+  padding-top: 0.3125rem;
+  padding-bottom: 0.3125rem;
+  font-size: 1.25rem;
+  line-height: inherit;
+  white-space: nowrap;
+  padding-left: 14rem;
+}
+
+.dragon-hot-logo-landx {
+  height: 48px;
+  margin-top: 4px;
+  margin-left: -15px;
+}
+
+.dragon-hot-menu {
+  margin-top: 9rem;
+  margin-left: 7rem;
+  margin-bottom: 2rem;
 }

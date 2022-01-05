@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react"
 import { ThemeProvider } from '@mui/material/styles';
 import { themeconfig } from '../../assets/styling/themeConfig';
-import { Container, Grid, Typography, Button, Box } from '@mui/material';
-import { Link } from "gatsby"
+import { Container, Grid, Typography, Button, Box, AppBar, Toolbar, Collapse, MenuList, MenuItem } from '@mui/material';
+import { navigate, Link } from "gatsby"
+import { AnchorLink } from "gatsby-plugin-anchor-links"
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
 import CardTitleSection from "../../components/Card/CardTitleSection/CardTitleSection";
@@ -66,10 +67,91 @@ const DragonHotPot = () => {
       })
   }
 
+  const [checked, setChecked] = React.useState(false);
+
+  const handleChange = () => {
+    setChecked((prev) => !prev);
+  };
+
   return (
     <ThemeProvider theme={theme}>
     <Seo title="LandX" />
     <body style={{ backgroundColor:`#f8f8f8` }}>
+
+    <Box sx={{ flexGrow: 1 }}>
+      <AppBar position="static" className="dragon-hot-navbar">
+        <Toolbar>
+          <Box>
+            <img 
+              src="./images/hamburger_menu.svg" 
+              onClick={() => handleChange()}
+              style={{ cursor:`pointer` }}
+            />
+          </Box>
+          <Box className="dragon-hot-navbar-logo">
+            <Link to="/">
+              <img 
+                src="./images/landx_logo.png" 
+                className="dragon-hot-logo-landx"
+              />
+            </Link>
+          </Box>
+            
+          <Button variant="outlined" onClick={()=>{ navigate("/pendaftaran-perusahaan") }} style={{ fontWeight:`600` }}>PENDAFTARAN PERUSAHAAN</Button>
+        </Toolbar>
+      </AppBar>
+    </Box>
+
+      <Collapse in={checked}>
+        <Grid container spacing={2} className="dragon-hot-menu">
+          <Grid item xs={12} md={3} className="footer-menu-one mb-3">
+            <MenuList>
+              <MenuItem>
+                <AnchorLink to='/#why-landx'>Mengapa LandX</AnchorLink>
+              </MenuItem>
+              <MenuItem>
+                <AnchorLink to='/#ongoing-projects'>Proyek</AnchorLink>
+              </MenuItem>
+              <MenuItem>
+                <AnchorLink to='/#how-it-works'>Cara Kerja</AnchorLink>
+              </MenuItem>
+              <MenuItem>
+                <Link to='/contact'>Kontak</Link>
+              </MenuItem>
+              <MenuItem>
+                <Link href="https://landx.id/blog/">Blog</Link>
+              </MenuItem>
+            </MenuList>
+          </Grid>
+
+          <Grid item xs={12} md={3} className="footer-menu-two">
+            <Typography color="secondary" className="footer-menu-title">Perusahaan</Typography>
+            <MenuList>
+              <MenuItem>
+                <Link href='https://landx.id/blog/jobs-at-landx/'>Karir</Link>
+              </MenuItem>
+              <MenuItem>
+                <Link to='/syarat-dan-ketentuan'>Syarat & Ketentuan</Link>
+              </MenuItem>
+              <MenuItem>
+                <Link to='/privacy-policy'>Kebijakan Privasi</Link>
+              </MenuItem>
+              <MenuItem>
+                <Link to='/service-level-agreement'>Service Level Agreement</Link>
+              </MenuItem>
+              <MenuItem>
+                <Link to='/kebijakan-isms'>Kebijakan ISMS</Link>
+              </MenuItem>
+              <MenuItem>
+                <Link to='/mitigasi-risiko'>Mitigasi Risiko</Link>
+              </MenuItem>
+              <MenuItem>
+                <Link href="https://landx.id/blog/faq-landx/">FAQ</Link>
+              </MenuItem>
+            </MenuList>
+          </Grid>
+        </Grid>  
+      </Collapse>
 
     <section style={{ padding: '30px', alignItems: 'center' }} className="dragon-hot-header">
       {/* <Container> */} 
@@ -86,7 +168,7 @@ const DragonHotPot = () => {
         <img 
           src="./images/dhp_icon.png" 
           alt="DHP Icon" 
-          class="dragon-hot-icon" 
+          className="dragon-hot-icon" 
         />
       </Box>
       <Box style={{ marginLeft:`5rem`, marginTop:`3rem` }}>
@@ -142,12 +224,12 @@ const DragonHotPot = () => {
     </section>  
     
     <section style={{ padding: '30px', display: 'flex', alignItems: 'center', backgroundColor:`#fff` }}>
-      <Container style={{ marginTop:`19rem`, marginBottom:`1rem` }}>
+      <Container style={{ marginTop:`27rem`, marginBottom:`1rem` }}>
         <Grid item xs={12} md={12} className="dragon-hot-font">
-          <Typography color="secondary" variant="h3" align="center">
+          <Typography color="secondary" variant="h2" align="center">
             Sekarang Kamu Bisa Patungan untuk
           </Typography>
-          <Typography color="secondary" variant="h3" align="center" paragraph={true}>
+          <Typography color="secondary" variant="h2" align="center" paragraph={true}>
             Punya Bisnis Dragon Hot Pot!
           </Typography>
           <Typography color="secondary" variant="h5" align="center" style={{ marginTop:`2rem` }}>
@@ -213,9 +295,7 @@ const DragonHotPot = () => {
 
           <Grid container>
             <Grid xs={12} item style={{ justifyContent: 'center', display: 'flex', margin: '20px 0' }}>
-              <Link to='/project' style={{ textDecoration: 'none' }}>
-                <Button color='success'>INVESTASI SEKARANG</Button>
-              </Link>
+              <Button onClick={()=>{navigate("/project")}}>INVESTASI SEKARANG</Button>
             </Grid>
           </Grid>
         </Container>
