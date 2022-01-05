@@ -104,31 +104,16 @@ const DragonHotPot = () => {
 
       <Collapse in={checked}>
         <Grid container spacing={2} className="dragon-hot-menu">
-          <Grid item xs={12} md={3} className="footer-menu-one mb-3">
-            <MenuList>
-              <MenuItem>
-                <AnchorLink to='/#why-landx'>Mengapa LandX</AnchorLink>
-              </MenuItem>
-              <MenuItem>
-                <AnchorLink to='/#ongoing-projects'>Proyek</AnchorLink>
-              </MenuItem>
-              <MenuItem>
-                <AnchorLink to='/#how-it-works'>Cara Kerja</AnchorLink>
-              </MenuItem>
-              <MenuItem>
-                <Link to='/contact'>Kontak</Link>
-              </MenuItem>
+          <Grid item xs={12} md={3} className="footer-menu-two mb-3">
+            <Typography color="primary" variant="h6" style={{ marginLeft:`1rem`, marginBottom:`2rem` }}>
+              PERUSAHAAN
+            </Typography>  
+            <MenuList className="dragon-hot-list-menu">
               <MenuItem>
                 <Link href="https://landx.id/blog/">Blog</Link>
               </MenuItem>
-            </MenuList>
-          </Grid>
-
-          <Grid item xs={12} md={3} className="footer-menu-two">
-            <Typography color="secondary" className="footer-menu-title">Perusahaan</Typography>
-            <MenuList>
               <MenuItem>
-                <Link href='https://landx.id/blog/jobs-at-landx/'>Karir</Link>
+                <AnchorLink to='/#why-landx'>Tentang LandX</AnchorLink>
               </MenuItem>
               <MenuItem>
                 <Link to='/syarat-dan-ketentuan'>Syarat & Ketentuan</Link>
@@ -140,13 +125,27 @@ const DragonHotPot = () => {
                 <Link to='/service-level-agreement'>Service Level Agreement</Link>
               </MenuItem>
               <MenuItem>
-                <Link to='/kebijakan-isms'>Kebijakan ISMS</Link>
+              <Link to='/kebijakan-isms'>Kebijakan ISMS</Link>
               </MenuItem>
               <MenuItem>
-                <Link to='/mitigasi-risiko'>Mitigasi Risiko</Link>
+              <Link to='/mitigasi-risiko'>Mitigasi Risiko</Link>
               </MenuItem>
               <MenuItem>
-                <Link href="https://landx.id/blog/faq-landx/">FAQ</Link>
+              <Link href="https://landx.id/blog/faq-landx/">FAQ</Link>
+              </MenuItem>
+            </MenuList>
+          </Grid>
+
+          <Grid item xs={12} md={3} className="footer-menu-two">
+            <Typography color="primary" variant="h6" style={{ marginLeft:`1rem`, marginBottom:`2rem` }}>
+              DUKUNGAN
+            </Typography>  
+            <MenuList>
+              <MenuItem>
+                <Link to='/contact'>Kontak</Link>
+              </MenuItem>
+              <MenuItem>
+                <Link href='mailto:hello@landx.id'>hello@landx.id</Link>
               </MenuItem>
             </MenuList>
           </Grid>
@@ -312,7 +311,9 @@ const DragonHotPot = () => {
               </Typography>
             </Grid>
             <Grid item xs={12} md={12} align="center" style={{ marginBottom:`3rem` }}>
-              <Button>Booking Disini</Button>
+              <a href="https://forms.gle/b9N7KtBMCczZzFGH8" target="_blank" style={{ textDecoration:`none` }}>
+                <Button >Booking Disini</Button>
+               </a>
             </Grid>
           </Container>
         </section>
@@ -327,7 +328,7 @@ const DragonHotPot = () => {
             </Typography>
             <Grid container style={{ marginTop:`3rem`}}>
               <Grid item sx={5} md={5} align="right">
-                <Button variant="outlined">
+                <Button variant="outlined" onClick={()=>{ navigate("https://api.whatsapp.com/send?phone=6281381862878") }}>
                   <Typography>
                     <WhatsAppIcon />
                     WHATSAPP
