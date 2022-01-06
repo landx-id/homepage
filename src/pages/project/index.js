@@ -71,11 +71,13 @@ const ShowAllProject = () => {
     if (dataProjects) {
       getCategory()
     }
+  }, [dataProjects])
 
+  useEffect(() => {
     if (categories) {
       setCategory(categories.filter((v, i) => categories.indexOf(v) === i))
     }
-  }, [dataProjects])
+  }, [categories])
 
   const getCategory = () => {
     dataProjects.map(data => {
@@ -174,7 +176,7 @@ const ShowAllProject = () => {
                         <option value="allCategory">Semua Kategori</option>
                         {category && category.map(data => {
                           return (
-                            <option value={data}>{capitalizeTheFirstLetterOfEachWord(data)}</option>
+                            <option key={data} value={data}>{capitalizeTheFirstLetterOfEachWord(data)}</option>
                           )
                         })
                         }
