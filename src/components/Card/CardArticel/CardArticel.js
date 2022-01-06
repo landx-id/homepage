@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { Button, CardContent, Typography, Grid } from '@mui/material'
+import { Button, CardContent, Typography, Grid, CircularProgress } from '@mui/material'
 import Slider from "react-slick"
 
 import "slick-carousel/slick/slick.css"
@@ -10,6 +10,7 @@ import { Link } from "gatsby"
 
 const CardArticel = () => {
   const [dataBlogs, setDataBlogs] = useState([])
+  const [loadArticle, setLoadArticle] = useState(true)
 
   useEffect(() => {
     getDataBlog()
@@ -29,6 +30,7 @@ const CardArticel = () => {
 
           setDataBlogs((prevArr) => [...prevArr, { title: title, desc: description, category: category, link: link }])
         })
+        setLoadArticle(false)
       })
   }
 
@@ -52,30 +54,34 @@ const CardArticel = () => {
 
   return (
     <>
-      {dataBlogs &&
-        <Slider {...settings} className='container-article'>
-          {dataBlogs.length > 0 && dataBlogs.slice(0, 5).map(data => {
-            return (
-              <Grid item xs={11} md={6} lg={11} className='container-slider-center' key={data.title}>
-                <CardContent className='card-body'>
-                  <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom className="card-tag">
-                    {data.category}
-                  </Typography>
-                  <Typography variant="h5" component="h2" className='card-title'>
-                    {data.title}
-                  </Typography>
-                  <Typography sx={{ mb: 1.5 }} color="text.secondary" className="card-description">
-                    {data.desc}
-                  </Typography>
-                  <Link href={data.link} className="text-link">
-                    <Button variant="text" size="small">SELENGKAPNYA DI BLOG</Button>
-                  </Link>
-                </CardContent>
-              </Grid>
-            )
-          })}
-        </Slider>
-      }
+      {loadArticle ?
+        <div className='container-load'><CircularProgress color="success" /></div>
+        : <>
+          {dataBlogs &&
+            <Slider {...settings} className='container-article'>
+              {dataBlogs.length > 0 && dataBlogs.slice(0, 5).map(data => {
+                return (
+                  <Grid item xs={11} md={6} lg={11} className='container-slider-center' key={data.title}>
+                    <CardContent className='card-body'>
+                      <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom className="card-tag">
+                        {data.category}
+                      </Typography>
+                      <Typography variant="h5" component="h2" className='card-title'>
+                        {data.title}
+                      </Typography>
+                      <Typography sx={{ mb: 1.5 }} color="text.secondary" className="card-description">
+                        {data.desc}
+                      </Typography>
+                      <Link href={data.link} className="text-link">
+                        <Button variant="text" size="small">SELENGKAPNYA DI BLOG</Button>
+                      </Link>
+                    </CardContent>
+                  </Grid>
+                )
+              })}
+            </Slider>
+          }
+        </>}
     </>
   )
 }

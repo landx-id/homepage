@@ -112,6 +112,22 @@
       transform: translate3d(0, 0, 0);
     }
   }
+
+  .container-load {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 350px;
+  }
+}
+
+.container-article {
+  .container-load {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 250px;
+  }
 }
 
 .container-how-it-works {
@@ -173,6 +189,12 @@
 
 .container-value-investor {
   padding: 20px 0;
+
+  .container-load {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .pt-40 {
