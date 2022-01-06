@@ -1,0 +1,95 @@
+.container-listing {
+  margin-top: 150px;
+  width: 100%;
+
+  .container-reminder {
+    margin-top: 20px;
+    background: rgb(17, 110, 49);
+    background: linear-gradient(
+      329deg,
+      rgba(17, 110, 49, 1) 0%,
+      rgba(53, 191, 101, 1) 100%
+    );
+    min-height: 104px;
+    width: 100%;
+    border-radius: 12px;
+  }
+
+  .text-time {
+    font-weight: 700;
+    font-size: 34px;
+    color: #fff;
+  }
+
+  .btn-remind {
+    background-color: #fff;
+    color: #2dbe60;
+    cursor: pointer;
+
+    &:hover,
+    &:hover .icon-remind {
+      color: #fff;
+      cursor: pointer;
+    }
+  }
+
+  .position-remind {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  .container-grid-remind {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 140px;
+  }
+
+  .container-text-remind {
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    justify-content: flex-end;
+  }
+
+  .container-btn-remind {
+    padding: 0 24px;
+    text-align: left;
+  }
+
+  .text-description p {
+    margin-bottom: 5px;
+    line-height: 20px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .container-listing {
+    .container-reminder {
+      padding: 24px 0;
+    }
+    .position-remind {
+      justify-content: center;
+    }
+
+    .container-text-remind {
+      justify-content: center;
+      flex-direction: column !important;
+      margin-bottom: 20px;
+    }
+
+    .container-btn-remind {
+      text-align: center;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container-listing {
+    .text-time {
+      font-size: 28px;
+    }
+  }
+}

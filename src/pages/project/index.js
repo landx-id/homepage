@@ -1,19 +1,26 @@
 import React, { useState, useEffect } from 'react'
-import { Box, Button, Container, FormControl, Grid, InputLabel, NativeSelect, OutlinedInput, Typography, InputBase, Slider as MuiSlider, Divider } from '@mui/material'
+import { Box, Button, Container, FormControl, Grid, InputLabel, NativeSelect, OutlinedInput, Typography, InputBase, Slider as MuiSlider, Divider, CircularProgress } from '@mui/material'
 import { styled } from '@mui/material/styles';
 import Layout from "../../components/layout/layout"
-import { FetchData } from '../../utils/common';
+import { capitalizeTheFirstLetterOfEachWord, FetchData } from '../../utils/common';
 import CardProject from '../../components/Card/CardProject/CardProject';
 
 import Slider from 'react-slick'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './ShowAllProject.scss'
+import { toIDR } from '../../utils/currency';
 
 const ShowAllProject = () => {
   const [dataProjects, setDataProjects] = useState('')
   const [numPrev, setNumPrev] = useState(0)
   const [numNext, setNumNext] = useState(9)
+  const [loadingCard, setLoadingCard] = useState(true)
+  const [minPrice, setMinPrice] = useState(1000000)
+  const [maxPrice, setMaxPrice] = useState(5000000)
+  const [categories, setCategories] = useState('')
+  const [category, setCategory] = useState('')
+  const [chooseCategory, setchooseCategory] = useState('allCategory')
 
   const BootstrapInput = styled(InputBase)(({ theme }) => ({
     '& .MuiInputBase-root': {
@@ -60,9 +67,33 @@ const ShowAllProject = () => {
     getDataProjects()
   }, [])
 
+  useEffect(() => {
+    if (dataProjects) {
+      getCategory()
+    }
+
+    if (categories) {
+      setCategory(categories.filter((v, i) => categories.indexOf(v) === i))
+    }
+  }, [dataProjects])
+
+  const getCategory = () => {
+    dataProjects.map(data => {
+      if (categories !== data.landXProperty.category) {
+        setCategories((prevArr) => [...prevArr, data.landXProperty.category])
+      }
+    })
+  }
+
+  const hendleReset = () => {
+    setMinPrice(1000000)
+    setMaxPrice(5000000)
+  }
+
   const getDataProjects = () => {
     FetchData('https://api.landx.id/').then(data => {
       setDataProjects(data.data.currencies)
+      setLoadingCard(false)
     })
   }
 
@@ -97,7 +128,7 @@ const ShowAllProject = () => {
                     <Typography className='text-label'>Minimum Price</Typography>
                     <Box component="form" noValidate autoComplete="off">
                       <FormControl className='form-control-price'>
-                        <OutlinedInput placeholder="Please enter text" style={{ border: '1px solid rgb(152 168 181' }} />
+                        <OutlinedInput placeholder="Min Price" value={toIDR(minPrice)} style={{ border: '1px solid rgb(152 168 181' }} />
                       </FormControl>
                     </Box>
                   </Grid>
@@ -105,7 +136,7 @@ const ShowAllProject = () => {
                     <Typography className='text-label'>Maximum Price</Typography>
                     <Box component="form" noValidate autoComplete="off">
                       <FormControl className='form-control-price'>
-                        <OutlinedInput placeholder="Please enter text" style={{ border: '1px solid rgb(152 168 181' }} />
+                        <OutlinedInput placeholder="Max Price" value={toIDR(maxPrice)} style={{ border: '1px solid rgb(152 168 181' }} />
                       </FormControl>
                     </Box>
                   </Grid>
@@ -114,7 +145,7 @@ const ShowAllProject = () => {
                   <Grid item xs={12}>
                     <Box className='container-muislider'>
                       <MuiSlider
-                        value={[20, 37]}
+                        value={[minPrice, maxPrice]}
                         // onChange={handleChange}
                         valueLabelDisplay="auto"
                       />
@@ -136,14 +167,17 @@ const ShowAllProject = () => {
                     <Typography className='text-label'>Kategori</Typography>
                     <FormControl variant="standard" style={{ minWidth: '100%' }}>
                       <NativeSelect
-                        value='20'
+                        value={chooseCategory}
                         // onChange={handleChange}
                         input={<BootstrapInput />}
                       >
-                        <option aria-label="None" value="" />
-                        <option value={10}>Ten</option>
-                        <option value={20}>Twenty</option>
-                        <option value={30}>Thirty</option>
+                        <option value="allCategory">Semua Kategori</option>
+                        {category && category.map(data => {
+                          return (
+                            <option value={data}>{capitalizeTheFirstLetterOfEachWord(data)}</option>
+                          )
+                        })
+                        }
                       </NativeSelect>
                     </FormControl>
                   </Grid>
@@ -151,14 +185,14 @@ const ShowAllProject = () => {
                     <Typography className='text-label'>Urutkan</Typography>
                     <FormControl variant="standard" style={{ minWidth: '100%' }}>
                       <NativeSelect
-                        value='20'
+                        value='settlementDate'
                         // onChange={handleChange}
                         input={<BootstrapInput />}
                       >
-                        <option aria-label="None" value="" />
-                        <option value={10}>Ten</option>
-                        <option value={20}>Twenty</option>
-                        <option value={30}>Thirty</option>
+                        <option value="settlementDate">Sisa Hari</option>
+                        <option value="name">Nama</option>
+                        <option value="symbol">Kode Saham</option>
+                        <option value="launchProgress">Perkembangan</option>
                       </NativeSelect>
                     </FormControl>
                   </Grid>
@@ -174,17 +208,23 @@ const ShowAllProject = () => {
           <Container>
             <Grid container>
               <Grid item xs={12} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '16px' }}>
-                <Typography>{dataProjects.length} Project sesuai Filter <span className='btn-reset'>RESET FILTER</span></Typography>
+                <Typography>{dataProjects.length} Project sesuai Filter <span className='btn-reset' onClick={() => hendleReset()}>RESET FILTER</span></Typography>
               </Grid>
-            </Grid>
-            {dataProjects &&
-              <Slider {...cardProject} className='container-card-projects'>
-                {dataProjects && dataProjects.slice(numPrev, numNext).map(dataProject => {
-                  return (
-                    <CardProject data={dataProject.landXProperty} key={dataProject.landXProperty.id} />
-                  )
-                })}
-              </Slider>}
+            </Grid>{
+              loadingCard ?
+                <div className='container-load'><CircularProgress color="success" /></div>
+                :
+                <>
+                  {dataProjects &&
+                    <Slider {...cardProject} className='container-card-projects'>
+                      {dataProjects && dataProjects.slice(numPrev, numNext).map(dataProject => {
+                        return (
+                          <CardProject data={dataProject.landXProperty} key={dataProject.landXProperty.id} />
+                        )
+                      })}
+                    </Slider>}
+                </>
+            }
             <Grid container>
               <Grid item xs={12} className='btn-next-prev' sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <Button variant="contained" color='success' onClick={() => handlePrev()}>Sebelumnya</Button>
