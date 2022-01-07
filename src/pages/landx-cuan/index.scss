@@ -1,4 +1,6 @@
 .cuan-header {
+  padding-top: 3rem;
+  align-items: center;
   background: radial-gradient( circle at center,rgba(115,224,139,1) 0%,rgba(0,163,38,1) 100% );
 }
 
@@ -84,6 +86,7 @@
   font-size: 56px !important;
   font-weight: 600 !important;
   margin-bottom: 64px;
+  line-height: 1 !important;
 }
 
 .cuan-qna {
@@ -99,9 +102,9 @@
   background: -webkit-linear-gradient( 270deg,rgba(122,204,140,1) 0%,rgba(4,117,30,1) 100% );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 56px;
-  font-weight: 600;
-  margin-bottom: 72px;
+  font-size: 56px !important;
+  font-weight: 600 !important;
+  margin-bottom: 3rem;
 }
 
 .cuan-title-02 {
@@ -110,4 +113,239 @@
   color: #fff;
 }
 
+.cuan-transition {
+  background-color:#e7f1ff !important;
+  border-radius: 15px !important;
+  box-shadow: inset 0 -1px 0 rgb(0 0 0 / 13%);
+}
 
+.cuan-icon {    
+  color: #00a339;
+  font-size: 30px !important;
+}
+
+.cuan-title-accordion {
+  font-weight: 700 !important;
+  font-size: 20px !important;
+  text-align: left !important; 
+  padding: 8px !important;
+}
+
+.cuan-detail-accordion {
+  text-align: left;
+  padding: 1rem 3rem !important;
+}
+
+.cuan-numstyle {
+  width: 24px;
+  height: 24px;
+  background-image: linear-gradient(#fff,#d8ffeb);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 5px;
+  padding: 8px;
+  font-weight: 500;
+}
+
+.cuan-cta {
+  width: 100%; 
+  margin-top: -7.5rem;
+}
+
+.cuan-cta-2 {
+  width: 100%; 
+  margin-top: -12rem;
+}
+
+.cuan-width-100 {
+  width: 100%;
+}
+
+.cuan-border-cta {
+  margin-top: -197px;
+  margin-bottom: 150px;
+}
+
+.cuan-new {
+  margin-top: 16rem;
+  margin-bottom: 1rem;
+}
+
+.cuan-mt-2 {
+  margin-top: 2rem;
+}
+
+@media screen and (max-width: 1200px) {
+
+}
+
+@media screen and (max-width: 900px) {
+  .cuan-h2-green {
+    font-size: 40px !important;
+  }
+
+  .cuan-h4-green {
+    font-size: 20px !important;
+  }
+
+  .cuan-qna {
+    font-size: 28px !important;
+  }
+
+  .cuan-cta {
+    margin-top: -4.5rem;
+  }
+
+  .cuan-title {
+    font-size: 40px !important;
+  }
+
+  .cuan-background {
+    width: 80% !important;
+    min-height: 365px;
+  }
+
+  .cuan-title-02 {
+    font-size: 24px !important;
+  }
+
+  .cuan-cta-2 {
+    margin-top: -4rem;
+  }
+
+  .cuan-btn-white, .cuan-btn-outline-white {
+    font-size: 16px;
+    width: 315px;
+  }
+
+  .cuan-box-video {
+    max-height: 500px;
+  }
+
+}
+
+@media screen and (max-width: 600px) {
+  .cuan-h4-green, .cuan-h2-green {
+    text-align: left !important;
+  }
+
+  .cuan-width-100 {
+    width: 100%;
+  }
+
+  .cuan-voucher {
+    width: 70%;
+    text-align: center;
+  }
+  
+  .cuan-cta {
+    margin-top: -23rem;
+  }
+
+  .cuan-pb {
+    padding-bottom: 30rem !important;
+  }
+
+  .cuan-why {
+    flex-direction: column-reverse !important;
+  }
+
+  .cuan-cta-2 {
+    margin-top: -6rem;
+  }
+
+  .cuan-background {
+    width: 85% !important;
+    margin-top: 200px;
+    padding-bottom: 5rem;
+  }
+
+  .cuan-btn-white, .cuan-btn-outline-white {
+    font-size: 16px;
+    width: 315px;
+  }
+
+  .cuan-new {
+    margin-top: 12rem;
+    margin-bottom: 1rem;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .cuan-banner {
+    width: 320px;
+    height: 500px;
+  }
+  
+  .cuan-btn-white, .cuan-btn-outline-white {
+    font-size: 13px;
+    width: 195px;
+    height: 30px;
+  }
+
+  .cuan-mt-6 {
+    margin-top: 6rem;
+  }
+
+  .cuan-box-video {
+    max-width: 328px;
+    height: 200px;
+    margin-bottom: -30%;
+  }
+
+  .cuan-border-cta {
+    margin-bottom: 70px;
+  }
+
+  .cuan-header {
+    padding-top: 1rem;
+    align-items: center;
+  }
+
+  .cuan-new {
+    margin-top: 10rem;
+  }
+
+  .cuan-voucher {
+    width: 100%;
+  }
+
+  .cuan-h4-green {
+    font-size: 11px !important;
+  }
+
+  .cuan-pb {
+    padding-bottom: 12rem !important;
+  }
+
+  .cuan-cta {
+    margin-top: -12rem;
+  }
+
+  .cuan-qna {
+    font-size: 43px !important;
+  }
+
+  .cuan-title-accordion {
+    font-size: 16px !important;
+  }
+
+  .cuan-detail-accordion {
+    text-align: left;
+    padding: 1rem 1rem !important;
+  }
+
+  .cuan-detail-accordion p, .cuan-detail-accordion span {
+    font-size: 14px;
+  }
+
+  .cuan-background {
+    margin-top: 135px;
+  }
+
+  .cuan-wa {
+    font-size: 13px !important;
+  }
+}
