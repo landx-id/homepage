@@ -77,6 +77,13 @@
   .c-pointer {
     cursor: pointer;
   }
+
+  .container-load-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 190px;
+  }
 }
 
 @media screen and (max-width: 1200px) {

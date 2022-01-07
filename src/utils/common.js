@@ -121,23 +121,125 @@ export function FetchData(url) {
     });
 }
 
-export function calculateRemainingDays(settlementDate) {
+export function FetchIDProjetDetail(url, codeProject) {
+  return fetch(url, {
+    method: "POST",
+    mode: "cors",
+    body: JSON.stringify({
+      'currency_id': codeProject
+    }),
+  })
+    .then(r => r.json())
+    .then((data) => {
+      return data
+    });
+}
+
+export function FetchDetailProject(url, id) {
+  let srcQuery = ``;
+
+  srcQuery = `{
+        node(id: "${id}") {
+            ... on Currency {
+              id
+              landXProperty {
+                ...propertyInfo
+                }
+            }
+      }
+    }
+
+      
+    fragment propertyInfo on LandXProperty {
+        id
+        acquisitionCost
+        address
+        annualRentYield
+      annualRentYieldUpper
+        cashReserved
+        description(language: "id")
+        facilities {
+            bathroom {
+                quantity
+            }
+            bedroom {
+                quantity
+            }
+            parking {
+                quantity
+            }
+        }
+        initialTokenPrice
+        launchMarket {
+            id
+            state
+            orderBook {
+                asks {
+                    amount
+                    price
+                }
+            }
+        }
+        category
+        launchProgress
+        dividendSchedule
+        mapImageUrl
+        mapUrl
+        previewImages
+        propertyPrice,
+        settlementDate
+        token {
+            id
+            name
+            symbol
+        }
+        tokenSupply
+        totalPurchasePrice
+    }`
+
+  return fetch(url, {
+    method: "POST",
+    mode: "cors",
+    headers: {
+      "Content-Type": "application/json",
+      "Accept": "application/json",
+    },
+    body: JSON.stringify({
+      query: srcQuery
+    })
+  })
+    .then(r => r.json())
+    .then((data) => {
+      return data;
+    });
+}
+
+export function CalculateRemainingDays(settlementDate) {
   const oneDay = 24 * 60 * 60 * 1000; // Hours * Minutes * Seconds * Milliseconds
   const today = new Date().getTime();
   return Math.floor((settlementDate - today) / oneDay);
 }
 
-export function numberWithCommas(num) {
+export function NumberWithCommas(num) {
   let parts = num.toString().split(".");
   parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ".");
   return parts.join(",");
 }
 
-export function numberValueInvestor(num) {
+export function NumberValueInvestor(num) {
   let numbers = num.toString().split("")
   let index = numbers.length - 9
   let number = numbers.splice(0, index).join('')
   let parts = number.toString().split(".");
   parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ".");
   return parts.join(",");
+}
+
+export function capitalizeTheFirstLetterOfEachWord(words) {
+  let separateWord = words.toLowerCase().split(' ');
+  for (let i = 0; i < separateWord.length; i++) {
+    separateWord[i] = separateWord[i].charAt(0).toUpperCase() +
+      separateWord[i].substring(1);
+  }
+  return separateWord.join(' ');
 }
