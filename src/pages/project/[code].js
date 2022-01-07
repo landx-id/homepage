@@ -138,7 +138,7 @@ const DetailProjects = () => {
                   Hari Lagi
                 </Grid>
               </Grid>
-              <LinearProgress variant="determinate" value='50' className="progress-bar" />
+              <LinearProgress variant="determinate" value={dataProject.launchProgress * 100} className="progress-bar" />
               <Grid container>
                 <Grid item xs={6} className='text-secon'>
                   Harga Per Lot

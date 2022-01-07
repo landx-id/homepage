@@ -4,12 +4,12 @@ import { styled } from '@mui/material/styles';
 import Layout from "../../components/layout/layout"
 import { capitalizeTheFirstLetterOfEachWord, FetchData } from '../../utils/common';
 import CardProject from '../../components/Card/CardProject/CardProject';
+import { toIDR, fromIDR } from '../../utils/currency';
 
 import Slider from 'react-slick'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './ShowAllProject.scss'
-import { toIDR } from '../../utils/currency';
 
 const ShowAllProject = () => {
   const [dataProjects, setDataProjects] = useState('')
@@ -21,6 +21,11 @@ const ShowAllProject = () => {
   const [categories, setCategories] = useState('')
   const [category, setCategory] = useState('')
   const [chooseCategory, setchooseCategory] = useState('allCategory')
+  const [valSort, setValSort] = useState('settlementDate')
+  const [resetFilter, setResetFilter] = useState(false)
+  const [minHis, setMinHis] = useState(1000000)
+  const [maxHis, setMaxHis] = useState(5000000)
+  const [categoryHis, setCategoryHis] = useState('allCategory')
 
   const BootstrapInput = styled(InputBase)(({ theme }) => ({
     '& .MuiInputBase-root': {
@@ -90,6 +95,9 @@ const ShowAllProject = () => {
   const hendleReset = () => {
     setMinPrice(1000000)
     setMaxPrice(5000000)
+    setchooseCategory('allCategory')
+    setValSort('settlementDate')
+    setResetFilter(true)
   }
 
   const getDataProjects = () => {
@@ -113,6 +121,36 @@ const ShowAllProject = () => {
     }
   }
 
+  const handleChangeSlider = (e, newValue) => {
+    setMinPrice(newValue[0])
+    setMaxPrice(newValue[1])
+  }
+
+  const handleFilter = () => {
+    let renderProjects = dataProjects.filter(property => {
+      return (
+        fromIDR(property.landXProperty['initialTokenPrice']) / 10 >= minPrice && fromIDR(property.landXProperty['initialTokenPrice']) / 10 <= maxPrice
+      )
+    })
+    if (chooseCategory !== 'allCategory') {
+      renderProjects = renderProjects.filter(property => {
+        return (
+          !chooseCategory.localeCompare(property.landXProperty["category"])
+        )
+      })
+    }
+    renderProjects = renderProjects.sort((a, b) => a[valSort] > b[valSort] ? -1 : 1)
+
+    setDataProjects(renderProjects)
+
+    setMinHis(minPrice)
+    setMaxHis(maxPrice)
+    setCategoryHis(chooseCategory)
+    if (minPrice < minHis || maxPrice > maxHis) {
+      getDataProjects()
+    }
+  }
+
   return (
     <>
       <Layout>
@@ -130,7 +168,7 @@ const ShowAllProject = () => {
                     <Typography className='text-label'>Minimum Price</Typography>
                     <Box component="form" noValidate autoComplete="off">
                       <FormControl className='form-control-price'>
-                        <OutlinedInput placeholder="Min Price" value={toIDR(minPrice)} style={{ border: '1px solid rgb(152 168 181' }} />
+                        <OutlinedInput placeholder="Min Price" value={toIDR(minPrice)} onChange={(e) => setMinPrice(fromIDR(e.target.value))} style={{ border: '1px solid rgb(152 168 181' }} />
                       </FormControl>
                     </Box>
                   </Grid>
@@ -138,7 +176,7 @@ const ShowAllProject = () => {
                     <Typography className='text-label'>Maximum Price</Typography>
                     <Box component="form" noValidate autoComplete="off">
                       <FormControl className='form-control-price'>
-                        <OutlinedInput placeholder="Max Price" value={toIDR(maxPrice)} style={{ border: '1px solid rgb(152 168 181' }} />
+                        <OutlinedInput placeholder="Max Price" value={toIDR(maxPrice)} onChange={(e) => setMaxPrice(fromIDR(e.target.value))} style={{ border: '1px solid rgb(152 168 181' }} />
                       </FormControl>
                     </Box>
                   </Grid>
@@ -148,8 +186,11 @@ const ShowAllProject = () => {
                     <Box className='container-muislider'>
                       <MuiSlider
                         value={[minPrice, maxPrice]}
-                        // onChange={handleChange}
+                        step={1000}
+                        onChange={handleChangeSlider}
                         valueLabelDisplay="auto"
+                        min={1000000}
+                        max={5000000}
                       />
                     </Box>
                     <div className="container-range">
@@ -170,7 +211,7 @@ const ShowAllProject = () => {
                     <FormControl variant="standard" style={{ minWidth: '100%' }}>
                       <NativeSelect
                         value={chooseCategory}
-                        // onChange={handleChange}
+                        onChange={e => setchooseCategory(e.target.value)}
                         input={<BootstrapInput />}
                       >
                         <option value="allCategory">Semua Kategori</option>
@@ -187,8 +228,8 @@ const ShowAllProject = () => {
                     <Typography className='text-label'>Urutkan</Typography>
                     <FormControl variant="standard" style={{ minWidth: '100%' }}>
                       <NativeSelect
-                        value='settlementDate'
-                        // onChange={handleChange}
+                        value={valSort}
+                        onChange={e => setValSort(e.target.value)}
                         input={<BootstrapInput />}
                       >
                         <option value="settlementDate">Sisa Hari</option>
@@ -200,7 +241,7 @@ const ShowAllProject = () => {
                   </Grid>
                   <Grid item xs={12} sm={4}>
                     <br />
-                    <Button className='filter-btn'>TERAPKAN FILTER</Button>
+                    <Button className='filter-btn' onClick={() => handleFilter()}>TERAPKAN FILTER</Button>
                   </Grid>
                 </Grid>
               </Grid>
