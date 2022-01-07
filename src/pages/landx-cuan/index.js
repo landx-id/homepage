@@ -52,7 +52,7 @@ const LandXCuan = () => {
     <ThemeProvider theme={theme}>
     <Seo title="LandX" />
       
-      <section style={{ paddingTop: `3rem`, alignItems: `center` }} className="cuan-header">
+      <section className="cuan-header">
         <Container> 
           <Grid item xs={12} md={12} align="center">
             <img 
@@ -62,9 +62,9 @@ const LandXCuan = () => {
             />
           </Grid>
 
-          <Grid container style={{ marginTop:`-197px`, marginBottom:`150px` }}>
+          <Grid container className="cuan-border-cta">
             <Grid item xs={12} md={12} align="center">
-              <a href="https://play.google.com/store/apps/details?id=store.numoney.landxapp" className="cuan-btn-white">
+              <a href="https://play.google.com/store/apps/details?id=store.numoney.landxapp" className="cuan-btn-white cuan-mt-6">
                 Download Via Playstore
               </a>
             </Grid>
@@ -75,7 +75,7 @@ const LandXCuan = () => {
             </Grid>
           </Grid>
 
-          <Grid item xs={12} md={12} className='container-yt'>
+          <Grid item xs={12} md={12}>
             <iframe 
               className="cuan-box-video" 
               src="https://www.youtube.com/embed/_LuP9UeDyYg" 
@@ -89,8 +89,8 @@ const LandXCuan = () => {
         </Container>
       </section>  
       
-      <section style={{ paddingBottom: '15rem', display: 'flex', alignItems: 'center' }} className="cuan-body">
-        <Container style={{ marginTop:`16rem`, marginBottom:`1rem` }}>
+      <section style={{ paddingBottom: '15rem', display: 'flex', alignItems: 'center' }} className="cuan-body cuan-pb">
+        <Container className="cuan-new">
           <Grid item xs={12} md={12}>
             <Typography align="center" className="cuan-h4-green" paragraph={true}>
               KHUSUS PENGGUNA BARU!
@@ -101,24 +101,24 @@ const LandXCuan = () => {
           </Grid>
 
           <Grid container spacing={2} justifyContent="center" style={{ marginTop:`2rem` }}>
-            <Grid item xs={12} md={4}>
+            <Grid item xs={12} md={4} className="cuan-voucher">
               <img 
                 src="./images/landx_cuan_card_3_lot.webp"
-                style={{ width:`100%` }}
+                className="cuan-width-100 cuan-voucher"
               />  
             </Grid>
-            <Grid item xs={12} md={4}>
+            <Grid item xs={12} md={4} className="cuan-voucher">
               <img 
                 src="./images/landx_cuan_card_10_lot.webp"
-                style={{ width:`100%` }}
+                className="cuan-width-100 cuan-voucher"
               />  
             </Grid>
           </Grid>
         </Container>
       </section>
 
-      <section style={{ display: 'flex', alignItems: 'center' }}>
-        <Grid container spacing={3} justifyContent="center" style={{ alignItems:`center` }}>
+      <section style={{ padding:`30px`, display: 'flex', alignItems: 'center' }}>
+        <Grid container spacing={3} justifyContent="center" style={{ alignItems:`center` }} className="cuan-why">
           <Grid item xs={12} md={5}>
             <Typography className="cuan-qna" paragraph={true}>
               Mengapa Harus Investasi di LandX?
@@ -136,7 +136,7 @@ const LandXCuan = () => {
           <Grid item xs={12} md={5}>
             <img 
               src="./images/landx_cuan_cta_01_desktop.webp"
-              style={{ width:`100%`, marginTop:`-7.5rem` }}
+              className="cuan-cta"
             />  
           </Grid>
         </Grid>
@@ -240,14 +240,14 @@ const LandXCuan = () => {
             <Grid item xs={12} md={6}>
               <img 
                 src="./images/landx_cuan_kv_03_cta_desktop.webp"
-                style={{ width:`100%`, marginTop:`-12rem` }}
+                className="cuan-cta-2"
               />  
             </Grid>
             <Grid item xs={12} md={6}>
               <Typography className="cuan-title-02" align="center" paragraph={true}>
-                Gabung Sekarang dan Ikutan CUAN-nya!
+                Gabung Sekarang dan <br/> Ikutan CUAN-nya!
               </Typography>  
-              <a href="https://play.google.com/store/apps/details?id=store.numoney.landxapp" className="cuan-btn-white cuan-btn">
+              <a href="https://play.google.com/store/apps/details?id=store.numoney.landxapp" style={{ width:`100%` }} className="cuan-btn-white cuan-btn">
                 Booking Lot Sekarang
               </a>
             </Grid>
@@ -257,7 +257,7 @@ const LandXCuan = () => {
 
       <section>
           <Grid item xs={12} md={12} align="center" style={{ paddingTop:`5rem` }}>
-            <Typography color="primary" paragraph={true}>
+            <Typography color="primary" paragraph={true} className="cuan-wa">
               Untuk bantuan lebih lanjut, hubungi kami via WhatsApp
             </Typography>
           </Grid>
