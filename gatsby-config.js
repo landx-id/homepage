@@ -21,6 +21,12 @@ module.exports = {
         name: `project`,
         path: `${__dirname}/project/images`,
       },
+    }, {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `prospektus`,
+        path: `${__dirname}/prospektus`,
+      },
     },
     {
       resolve: `gatsby-plugin-google-fonts`,

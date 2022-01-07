@@ -1,16 +1,14 @@
 import React, { useState, useEffect } from "react"
 import { navigate } from "gatsby";
-import { Grid, Container, Typography, Chip, LinearProgress, Button, Tooltip, ClickAwayListener } from "@mui/material"
+import { Grid, Container, Typography, Chip, LinearProgress, Button, Tooltip, ClickAwayListener, Dialog, DialogContent, DialogContentText } from "@mui/material"
 import Layout from "../../components/layout/layout"
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import { CalculateRemainingDays, FetchDetailProject, FetchIDProjetDetail } from '../../utils/common';
 import { toIDR } from "../../utils/currency";
 import { useLocation } from '@reach/router';
+import { MobilePDFReader } from 'react-read-pdf';
 
-import Slider from 'react-slick'
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import './detailProjects.scss'
 import CarouselSingleProject from "../../components/Carousel/CarouselSingleProject/CarouselSingleProject";
 
@@ -21,8 +19,7 @@ const DetailProjects = () => {
   const [endDay, setEndDay] = useState('')
   const [openTooltipDisc, setOpenTooltipDisc] = useState(false);
   const [openTooltipPeriode, setOpenTooltipPeriode] = useState(false)
-  const [caraousel1, setCaraousel1] = useState('')
-  const [caraousel2, setCaraousel2] = useState('')
+  const [openProspektus, setOpenProspektus] = useState(false)
 
   let location = useLocation()
   let codeProject = location.pathname.split('/')[2].toUpperCase()
@@ -94,6 +91,10 @@ const DetailProjects = () => {
 
       setOpenTooltipPeriode(true)
     }
+  };
+
+  const handleCloseProspektus = () => {
+    setOpenProspektus(false);
   };
 
   return (
@@ -217,7 +218,21 @@ const DetailProjects = () => {
                   <Button variant="contained" color='success' className='btn-buy' onClick={() => window.location.href = `${linkBtnLandx}`}>BELI VIA APP</Button>
                 </Grid>
                 <Grid item xs={12} sm={6}>
-                  <Button variant="outlined" color='success' className='btn-pros'>SHOW PROSPEKTUS</Button>
+                  <Button variant="outlined" color='success' className='btn-pros'
+                    onClick={() => setOpenProspektus(true)}
+                  >SHOW PROSPEKTUS</Button>
+                  <Dialog
+                    fullWidth={true}
+                    maxWidth='xl'
+                    open={openProspektus}
+                    onClose={handleCloseProspektus}
+                  >
+                    <DialogContent style={{ minHeight: '1000px' }}>
+                      <DialogContentText>
+                        <MobilePDFReader url={`/prospektus/${codeProject}.pdf`} overflow={'none'} scale={'auto'} isShowFooter={false} isShowHeader={false} />
+                      </DialogContentText>
+                    </DialogContent>
+                  </Dialog>
                 </Grid>
               </Grid>
             </Grid>
