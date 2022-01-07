@@ -1,17 +1,23 @@
-import React, { useEffect, useState } from "react"
+import React, { useState, useEffect } from "react"
 import { ThemeProvider } from '@mui/material/styles';
 import { themeconfig } from '../../assets/styling/themeConfig';
 import { AnchorLink } from "gatsby-plugin-anchor-links"
 import { Link } from "gatsby"
 
-import { Container, Grid, Typography, Button, Box, Toolbar, Collapse, MenuList, MenuItem } from '@mui/material';
+import { Container, Grid, Typography, Box, MenuList, MenuItem, Accordion, AccordionDetails, AccordionSummary } from '@mui/material';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
+import AddIcon from '@mui/icons-material/Add';
+import RemoveIcon from '@mui/icons-material/Remove';
 
 import CardWhyLandx from "../../components/Card/CardWhyLandx/CardWhyLandx";
 import Seo from "../../components/seo/seo"
+
+import Slider from 'react-slick'
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 import "../../assets/styling/style.scss"
 import "./index.scss"
@@ -19,10 +25,27 @@ import "./index.scss"
 const theme = themeconfig
 const LandXCuan = () => {
 
-  const [checked, setChecked] = React.useState(false);
+  const sliderOneCard = {
+    dots: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+  };
 
-  const handleChange = () => {
-    setChecked((prev) => !prev);
+  const [expanded, setExpanded] = useState(false);
+  const [widthWindows, setWidthWindows] = useState('')
+
+  useEffect(() => {
+    setWidthWindows(window.innerWidth)
+    window.addEventListener("resize", () => {
+      setWidthWindows(window.innerWidth)
+    })
+  }, [widthWindows])
+
+  const handleChange = (panel) => (event, isExpanded) => {
+    setExpanded(isExpanded ? panel : false);
   };
 
   return (
@@ -77,7 +100,7 @@ const LandXCuan = () => {
             </Typography>
           </Grid>
 
-          <Grid container spacing={2} justifyContent="center">
+          <Grid container spacing={2} justifyContent="center" style={{ marginTop:`2rem` }}>
             <Grid item xs={12} md={4}>
               <img 
                 src="./images/landx_cuan_card_3_lot.webp"
@@ -121,25 +144,97 @@ const LandXCuan = () => {
 
       <section className='section-why-landx' style={{ paddingTop: `3rem`, backgroundColor:`transparent` }}>
         <Container>
-          <Grid container spacing={4}>
-            <CardWhyLandx logo='./images/icon_star.webp' title='Bisnis-bisnis Terbaik' content='Pengguna LandX mendapatkan akses ke bisnis-bisnis yang teruji dan sudah diseleksi secara ketat' />
-            <CardWhyLandx logo='./images/icon_time.webp' title='Investasi Bagi Hasil' content='Laporan keuangan tepat waktu dan pembagian hasil investasi transaparan' />
-            <CardWhyLandx logo='./images/icon_jewely.webp' title='Investasi Aman untuk Pemula' content='Sebagian besar bisnis yang terdaftar memiliki aset dasar properti yang bernilai tinggi, sehingga dapat melindungi investor apabila terjadi risiko kegagalan bisnis.' />
-          </Grid>
+          {widthWindows < 1200 ?
+            <Slider {...sliderOneCard}>
+              <CardWhyLandx logo='./images/icon_star.webp' title='Bisnis-bisnis Terbaik' content='Pengguna LandX mendapatkan akses ke bisnis-bisnis yang teruji dan sudah diseleksi secara ketat' />
+              <CardWhyLandx logo='./images/icon_time.webp' title='Investasi Bagi Hasil' content='Laporan keuangan tepat waktu dan pembagian hasil investasi transaparan' />
+              <CardWhyLandx logo='./images/icon_jewely.webp' title='Investasi Aman untuk Pemula' content='Sebagian besar bisnis yang terdaftar memiliki aset dasar properti yang bernilai tinggi, sehingga dapat melindungi investor apabila terjadi risiko kegagalan bisnis.' />
+            </Slider>
+            :
+            <Grid container spacing={4}>
+              <CardWhyLandx logo='./images/icon_star.webp' title='Bisnis-bisnis Terbaik' content='Pengguna LandX mendapatkan akses ke bisnis-bisnis yang teruji dan sudah diseleksi secara ketat' />
+              <CardWhyLandx logo='./images/icon_time.webp' title='Investasi Bagi Hasil' content='Laporan keuangan tepat waktu dan pembagian hasil investasi transaparan' />
+              <CardWhyLandx logo='./images/icon_jewely.webp' title='Investasi Aman untuk Pemula' content='Sebagian besar bisnis yang terdaftar memiliki aset dasar properti yang bernilai tinggi, sehingga dapat melindungi investor apabila terjadi risiko kegagalan bisnis.' />
+            </Grid>
+            }
         </Container>
       </section>
 
-      <section className="cuan-body">
+      <section className="cuan-body" style={{ padding:`30px` }}>
         <Grid container spacing={3} justifyContent="center" style={{ alignItems:`center` }}>
-          <Grid item xs={12} md={12} align="center" style={{ paddingTop:`5rem` }}>
-            <Typography className="cuan-title" paragraph={true}>
+          <Grid item xs={12} md={12} align="center" style={{ paddingTop:`5rem`, marginBottom:`3rem` }}>
+            <Typography className="cuan-title">
               Cara Dapatin Cuan
             </Typography>
           </Grid>
         </Grid>
+
+        <Box style={{ textAlign:`-webkit-center` }}>
+          <Grid item xs={12} md={6}>
+            <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')} style={{ borderRadius:`15px` }}>
+              <AccordionSummary
+                expandIcon={expanded === 'panel1' ? <RemoveIcon className="cuan-icon" /> : <AddIcon className="cuan-icon" />}
+                aria-controls="panel1bh-content"
+                id="panel1bh-header"
+                className={expanded === 'panel1' ? "cuan-transition" : ""}
+              >
+                <Typography color="secondary" className="cuan-title-accordion">
+                  Syarat Promo
+                </Typography>
+              </AccordionSummary>
+              <AccordionDetails className="cuan-detail-accordion">
+                <Typography color="secondary" paragraph={true} sx={{ display:`flex`}}>
+                  <span class="cuan-numstyle">1</span> Untuk pembelian 3 lot akan mendapatkan voucher senilai Rp.25,000
+                </Typography>
+                <Typography color="secondary" paragraph={true} sx={{ display:`flex`}}>
+                  <span class="cuan-numstyle">2</span> Untuk pembelian 10 lot akan mendapatkan voucher senilai Rp.100,000
+                </Typography>
+                <Typography color="secondary" paragraph={true} sx={{ display:`flex`}}>
+                  <span class="cuan-numstyle">3</span> Cashback akan dikirimkan ke deposit pengguna aplikasi LandX terhitung 2x24 jam sejak melakukan pembelian lot
+                </Typography>
+                <Typography color="secondary" paragraph={true} sx={{ display:`flex`}}>
+                  <span class="cuan-numstyle">4</span> <span>
+                    Jika kamu memiliki pertanyaan, silahkan hubungi kami
+                    melalui call center kami <u>08119562878</u> atau <u>081381862878</u>, 
+                    email di <u>hello@landx.id</u> atau via Instagram di <u>landx.id</u>
+                  </span>
+                </Typography>
+              </AccordionDetails>
+            </Accordion>
+          </Grid>
+
+          <Grid item xs={12} md={6} style={{ marginTop:`1rem`}}>
+            <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')} style={{ borderRadius:`15px` }}>
+              <AccordionSummary
+                expandIcon={expanded === 'panel2' ? <RemoveIcon className="cuan-icon" /> : <AddIcon className="cuan-icon" />}
+                aria-controls="panel2bh-content"
+                id="panel2bh-header"
+                className={expanded === 'panel2' ? "cuan-transition" : ""}
+              >
+                <Typography color="secondary" className="cuan-title-accordion">
+                  Mekanisme Voucher
+                </Typography>
+              </AccordionSummary>
+              <AccordionDetails className="cuan-detail-accordion">
+                <Typography color="secondary" paragraph={true} sx={{ display:`flex`}}>
+                  <span class="cuan-numstyle">1</span> Tanggal promo: 20 Desember 2021 - 31 Desember 2021
+                </Typography>
+                <Typography color="secondary" paragraph={true} sx={{ display:`flex`}}>
+                  <span class="cuan-numstyle">2</span> Berlaku untuk pengguna baru LandX
+                </Typography>
+                <Typography color="secondary" paragraph={true} sx={{ display:`flex`}}>
+                  <span class="cuan-numstyle">3</span> Lakukan pembelian melalui aplikasi LandX
+                </Typography>
+                <Typography color="secondary" paragraph={true} sx={{ display:`flex`}}>
+                  <span class="cuan-numstyle">4</span> Pembelian berlaku untuk satu project dan tidak berlaku kelipatan
+                </Typography>
+              </AccordionDetails>
+            </Accordion>
+          </Grid>
+        </Box>
       </section>
 
-      <section style={{ display: 'flex', alignItems: 'center', paddingTop:`10rem` }}>
+      <section style={{ display: 'flex', alignItems: 'center' }}>
         <Container className="cuan-background">
           <Grid container spacing={3} justifyContent="center" style={{ alignItems:`center` }}>
             <Grid item xs={12} md={6}>

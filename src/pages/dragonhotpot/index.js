@@ -67,7 +67,7 @@ const DragonHotPot = () => {
       })
   }
 
-  const [checked, setChecked] = React.useState(false);
+  const [checked, setChecked] = useState(false);
 
   const handleChange = () => {
     setChecked((prev) => !prev);
