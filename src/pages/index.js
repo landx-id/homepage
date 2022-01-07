@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
-import { Container, Grid, Typography, Button } from '@mui/material';
+import { Container, Grid, Typography, Button, CircularProgress } from '@mui/material';
 import Layout from "../components/layout/layout"
 import Seo from "../components/seo/seo"
-import { FetchLimitData, numberValueInvestor, numberWithCommas } from "../utils/common";
+import { FetchLimitData, NumberValueInvestor, NumberWithCommas } from "../utils/common";
 import CardArticel from "../components/Card/CardArticel/CardArticel"
 import CardProject from "../components/Card/CardProject/CardProject";
 import CardTestimony from "../components/Card/CardTestimony/CardTestimony";
@@ -24,6 +24,8 @@ const IndexPage = () => {
   const [dataProject, setDataProject] = useState(null)
   const [dataListing, setDataListing] = useState('')
   const [dataInvestors, setDataInvestors] = useState(null)
+  const [loadProjects, setLoadProjects] = useState(true)
+  const [loadInvestor, setLoadInvestor] = useState(true)
 
   useEffect(() => {
     setWidthWindows(window.innerWidth)
@@ -100,6 +102,7 @@ const IndexPage = () => {
   const getLimitCardProject = () => {
     FetchLimitData('https://api.landx.id/', 5, 1).then(data => {
       setDataProject(data.data.currencies)
+      setLoadProjects(false)
     })
   }
 
@@ -116,6 +119,7 @@ const IndexPage = () => {
       .then(r => r.json())
       .then(data => {
         setDataInvestors({ dividend_payout: data.dividend_payout, property_count: data.property_count, raised_fund: data.raised_fund, registered_users: data.registered_users })
+        setLoadInvestor(false)
       })
   }
 
@@ -160,27 +164,32 @@ const IndexPage = () => {
 
       <section className="container-value-investor">
         <Container>
-          {dataInvestors && widthWindows < 750 ?
-            <>
-              <Slider {...sliderValueInvestor} className="slider-ValueInvestor">
-                <CardValueInvestor number={numberWithCommas(dataInvestors.registered_users)} content='Investor Terdaftar' />
-                <CardValueInvestor number={numberWithCommas(dataInvestors.property_count)} content='Perusahaan Penerbit' />
-                <CardValueInvestor number={`${numberValueInvestor(dataInvestors.raised_fund)} Miliar`} content='Investasi Tersalurkan' />
-                <CardValueInvestor number={`${numberValueInvestor(dataInvestors.dividend_payout)} Miliar`} content='Dividen Dibagikan' />
-              </Slider>
-            </>
+          {loadInvestor ?
+            <div className='container-load'><CircularProgress color="success" /></div>
             :
-            <Grid container sx={{ display: 'flex', justifyContent: 'space-between', textAlign: 'center', margin: '40px 0' }}>
-              {dataInvestors !== null &&
+            <>
+              {dataInvestors && widthWindows < 750 ?
                 <>
-                  <CardValueInvestor number={numberWithCommas(dataInvestors.registered_users)} content='Investor Terdaftar' />
-                  <CardValueInvestor number={numberWithCommas(dataInvestors.property_count)} content='Perusahaan Penerbit' />
-                  <CardValueInvestor number={`${numberValueInvestor(dataInvestors.raised_fund)} Miliar`} content='Investasi Tersalurkan' />
-                  <CardValueInvestor number={`${numberValueInvestor(dataInvestors.dividend_payout)} Miliar`} content='Dividen Dibagikan' />
+                  <Slider {...sliderValueInvestor} className="slider-ValueInvestor">
+                    <CardValueInvestor number={NumberWithCommas(dataInvestors.registered_users)} content='Investor Terdaftar' />
+                    <CardValueInvestor number={NumberWithCommas(dataInvestors.property_count)} content='Perusahaan Penerbit' />
+                    <CardValueInvestor number={`${NumberValueInvestor(dataInvestors.raised_fund)} Miliar`} content='Investasi Tersalurkan' />
+                    <CardValueInvestor number={`${NumberValueInvestor(dataInvestors.dividend_payout)} Miliar`} content='Dividen Dibagikan' />
+                  </Slider>
                 </>
+                :
+                <Grid container sx={{ display: 'flex', justifyContent: 'space-between', textAlign: 'center', margin: '40px 0' }}>
+                  {dataInvestors !== null &&
+                    <>
+                      <CardValueInvestor number={NumberWithCommas(dataInvestors.registered_users)} content='Investor Terdaftar' />
+                      <CardValueInvestor number={NumberWithCommas(dataInvestors.property_count)} content='Perusahaan Penerbit' />
+                      <CardValueInvestor number={`${NumberValueInvestor(dataInvestors.raised_fund)} Miliar`} content='Investasi Tersalurkan' />
+                      <CardValueInvestor number={`${NumberValueInvestor(dataInvestors.dividend_payout)} Miliar`} content='Dividen Dibagikan' />
+                    </>
+                  }
+                </Grid>
               }
-            </Grid>
-          }
+            </>}
         </Container>
       </section>
 
@@ -207,26 +216,30 @@ const IndexPage = () => {
       <section>
         <Container id='ongoing-projects' className='container-ongoing-projects pt-40'>
           <CardTitleSection title='Pendanaan yang Sedang Berlangsung' />
+          {loadProjects
+            ? <div className='container-load'><CircularProgress color="success" /></div>
+            : <>
+              {dataProject &&
+                <Slider {...cardProject} className='container-card-projects'>
 
-          {dataProject &&
-            <Slider {...cardProject} className='container-card-projects'>
-
-              {dataListing && dataListing.map((data, i) => {
-                if (data[i] !== undefined && data[i] !== null && i >= 0) {
-                  return Object.entries(data[i]).map(data => {
-                    let listingAt = new Date(data[1].listing_at).getTime()
-                    let now = Date.now()
-                    if (listingAt > now) {
-                      return <CardListing code={data[0]} data={data[1]} />
+                  {dataListing && dataListing.map((data, i) => {
+                    if (data[i] !== undefined && data[i] !== null && i >= 0) {
+                      return Object.entries(data[i]).map(data => {
+                        let listingAt = new Date(data[1].listing_at).getTime()
+                        let now = Date.now()
+                        if (listingAt > now) {
+                          return <CardListing code={data[0]} data={data[1]} timeUp={listingAt - Date.now()} />
+                        }
+                      })
                     }
-                  })
-                }
-              })}
+                  })}
 
-              {dataProject && dataProject.map((dataProject) => {
-                return <CardProject cardProject={cardProject} data={dataProject.landXProperty} key={dataProject.landXProperty.id} />
-              })}
-            </Slider>
+                  {dataProject && dataProject.map((dataProject) => {
+                    return <CardProject cardProject={cardProject} data={dataProject.landXProperty} key={dataProject.landXProperty.id} />
+                  })}
+                </Slider>
+              }
+            </>
           }
 
           <Grid container>

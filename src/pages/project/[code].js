@@ -1,17 +1,53 @@
 import React, { useState, useEffect } from "react"
 import { navigate } from "gatsby";
-import { Grid, Container, Typography, Chip, LinearProgress, Button } from "@mui/material"
+import { Grid, Container, Typography, Chip, LinearProgress, Button, Tooltip, ClickAwayListener } from "@mui/material"
 import Layout from "../../components/layout/layout"
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
+import { CalculateRemainingDays, FetchDetailProject, FetchIDProjetDetail } from '../../utils/common';
+import { toIDR } from "../../utils/currency";
+import { useLocation } from '@reach/router';
 
+import Slider from 'react-slick'
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import './detailProjects.scss'
+import CarouselSingleProject from "../../components/Carousel/CarouselSingleProject/CarouselSingleProject";
 
 const DetailProjects = () => {
   const [linkBtnLandx, setLinkBtnLandx] = useState('https://play.google.com/store/apps/details?id=store.numoney.landxapp')
+  const [idProject, setIdProject] = useState('')
+  const [dataProject, setDataProject] = useState('')
+  const [endDay, setEndDay] = useState('')
+  const [openTooltipDisc, setOpenTooltipDisc] = useState(false);
+  const [openTooltipPeriode, setOpenTooltipPeriode] = useState(false)
+  const [caraousel1, setCaraousel1] = useState('')
+  const [caraousel2, setCaraousel2] = useState('')
+
+  let location = useLocation()
+  let codeProject = location.pathname.split('/')[2].toUpperCase()
+
   useEffect(() => {
     detectDevice()
   }, [])
+
+  useEffect(() => {
+    handleEndDay()
+  }, [dataProject.launchProgress])
+
+  useEffect(() => {
+    FetchIDProjetDetail('https://api.landx.id/encode_currency_id', codeProject).then(data => {
+      setIdProject(data.result)
+    })
+  }, [codeProject])
+
+  useEffect(() => {
+    FetchDetailProject('https://api.landx.id/', idProject).then(data => {
+      if (data.data.node !== null && data.data.node !== undefined) {
+        setDataProject(data.data.node.landXProperty)
+      }
+    })
+  }, [idProject])
 
   const detectDevice = () => {
     var userAgent = navigator.userAgent || navigator.vendor || window.opera;
@@ -32,6 +68,34 @@ const DetailProjects = () => {
     return setLinkBtnLandx('https://play.google.com/store/apps/details?id=store.numoney.landxapp')
   }
 
+  const handleEndDay = () => {
+    if (dataProject.launchProgress === 1) {
+      setEndDay(0)
+    } else {
+      setEndDay(CalculateRemainingDays(dataProject.settlementDate))
+    }
+  }
+
+  const handleTooltipClose = (type) => {
+    if (type === 'disclaimer') {
+      setOpenTooltipDisc(false);
+    }
+    if (type === 'periode') {
+
+      setOpenTooltipPeriode(false)
+    }
+  };
+
+  const handleTooltipOpen = (type) => {
+    if (type === 'disclaimer') {
+      setOpenTooltipDisc(true);
+    }
+    if (type === 'periode') {
+
+      setOpenTooltipPeriode(true)
+    }
+  };
+
   return (
     <>
       <Layout>
@@ -39,47 +103,42 @@ const DetailProjects = () => {
           <Grid container>
             <Grid item xs={12} className="back-to-project">
               <Button variant="text" onClick={() => navigate(`/project`)} style={{ textDecoration: 'none', cursor: 'pointer', color: '#5e798d' }} startIcon={<ArrowBackIcon color="success" className="arrow-back" />}>
-                <span style={{ marginTop: '2px' }}>Kembali ke Semua Proyek</span>
+                <span className='text-back'>Kembali ke Semua Proyek</span>
               </Button>
             </Grid>
           </Grid>
           <Grid container spacing={2}>
-            <Grid item md={6}>
-              <Grid container>
-                <Grid item>
-                  <h1>Slider</h1>
-                </Grid>
-                <Grid item>
-                  <h1>Images</h1>
-                </Grid>
-              </Grid>
+            <Grid item xs={12} md={6}>
+
+              {dataProject && <CarouselSingleProject data={dataProject} />}
+
             </Grid>
 
-            <Grid item md={6}>
+            <Grid item xs={12} md={6}>
               <Typography className='code'>
-                CAPT
+                {dataProject && dataProject.token.symbol}
               </Typography>
               <Typography className='text-title' component='h1'>
-                Kapal Tug & Barge - PT. Samudera Rezeki Mulia
+                {dataProject && dataProject.token.name}
               </Typography>
-              <Chip label='MARITIM' color="success" variant="outlined" className="chip-text" />
+              <Chip label={dataProject && dataProject.category} color="success" variant="outlined" className="chip-text" />
               <Grid container>
                 <Grid item xs={6} className='text-green-price' component='h3'>
-                  Rp 4.888.000.000
+                  {dataProject && toIDR(dataProject.launchProgress * dataProject.totalPurchasePrice)}
                 </Grid>
                 <Grid item xs={6} className='text-green-price' component='h3'>
-                  41
+                  {dataProject && endDay}
                 </Grid>
               </Grid>
               <Grid container>
                 <Grid item xs={6} className='text-secon'>
-                  dari Rp 9.000.000.000
+                  dari {dataProject && toIDR(dataProject.totalPurchasePrice)}
                 </Grid>
                 <Grid item xs={6} className='text-secon'>
                   Hari Lagi
                 </Grid>
               </Grid>
-              <LinearProgress variant="determinate" value='50' className="progress-bar" />
+              <LinearProgress variant="determinate" value={dataProject.launchProgress * 100} className="progress-bar" />
               <Grid container>
                 <Grid item xs={6} className='text-secon'>
                   Harga Per Lot
@@ -90,34 +149,75 @@ const DetailProjects = () => {
               </Grid>
               <Grid container>
                 <Grid item xs={6} className='text-price'>
-                  Rp. 1.000.000
+                  {dataProject && toIDR(dataProject.initialTokenPrice)}
                 </Grid>
                 <Grid item xs={6} className='text-price'>
-                  9000
+                  {dataProject && parseInt(dataProject.tokenSupply, 10)}
                 </Grid>
               </Grid>
               <Grid container>
                 <Grid item xs={6} className='text-secon'>
-                  Periode Dividen <InfoOutlinedIcon color='success' className="icon-info" />
+                  Periode Dividen
+                  <ClickAwayListener onClickAway={() => handleTooltipClose('periode')}>
+                    <div>
+                      <Tooltip
+                        PopperProps={{
+                          disablePortal: true,
+                          zIndex: 100
+                        }}
+                        onClose={() => handleTooltipClose('periode')}
+                        open={openTooltipPeriode}
+                        disableFocusListener
+                        disableHoverListener
+                        disableTouchListener
+                        title="Periode dividen aktual akan tetap mengacu pada laporan keuangan dan persetujuan Rapat Umum Pemegang Saham (RUPS)."
+                      >
+                        <InfoOutlinedIcon color='success' className="icon-info" onClick={() => handleTooltipOpen('periode')} />
+                      </Tooltip>
+                    </div>
+                  </ClickAwayListener>
                 </Grid>
+
                 <Grid item xs={6} className='text-secon'>
-                  Estimasi Dividen <InfoOutlinedIcon color='success' className="icon-info" />
+                  Estimasi Dividen
+
+                  <ClickAwayListener onClickAway={() => handleTooltipClose('disclaimer')}>
+                    <div>
+                      <Tooltip
+                        PopperProps={{
+                          disablePortal: true,
+                          zIndex: 100
+                        }}
+                        onClose={() => handleTooltipClose('disclaimer')}
+                        open={openTooltipDisc}
+                        disableFocusListener
+                        disableHoverListener
+                        disableTouchListener
+                        title="Disclaimer: Kinerja masa lalu bukan merupakan indikasi kinerja masa depan.
+                        Estimasi dividen adalah ilustrasi berdasarkan proyeksi konservatif, dividen aktual akan tetap mengacu pada kinerja penerbit dan persetujuan Rapat Umum Pemegang Saham (RUPS). 
+                        Estimasi dividen belum termasuk potensi capital gain dari kenaikan harga saham."
+                      >
+                        <InfoOutlinedIcon color='success' className="icon-info" onClick={() => handleTooltipOpen('disclaimer')} />
+                      </Tooltip>
+                    </div>
+                  </ClickAwayListener>
+
                 </Grid>
               </Grid>
               <Grid container>
                 <Grid item xs={6} className='text-price'>
-                  Per 3 bulan
+                  {dataProject && dataProject.dividendSchedule}
                 </Grid>
                 <Grid item xs={6} className='text-price'>
-                  10 - 20% Per Tahun
+                  {dataProject && parseFloat(dataProject.annualRentYield) * 100}-{dataProject && parseFloat(dataProject.annualRentYieldUpper) * 100}% Per Tahun
                 </Grid>
               </Grid>
               <Grid container className='container-btn-project'>
-                <Grid item xs={6}>
+                <Grid item xs={12} sm={6}>
                   <Button variant="contained" color='success' className='btn-buy' onClick={() => window.location.href = `${linkBtnLandx}`}>BELI VIA APP</Button>
                 </Grid>
-                <Grid item xs={6}>
-                  <Button variant="outlined" color='success'>SHOW PROSPEKTUS</Button>
+                <Grid item xs={12} sm={6}>
+                  <Button variant="outlined" color='success' className='btn-pros'>SHOW PROSPEKTUS</Button>
                 </Grid>
               </Grid>
             </Grid>

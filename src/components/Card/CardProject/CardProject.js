@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Grid, Card, Chip, CardContent, LinearProgress, Button, CircularProgress } from '@mui/material';
 import { toIDR } from '../../../utils/currency';
-import { calculateRemainingDays } from '../../../utils/common';
+import { CalculateRemainingDays } from '../../../utils/common';
 import { navigate } from 'gatsby';
 
 import Slider from "react-slick";
@@ -11,16 +11,28 @@ import './CardProject.scss'
 
 const CardProject = ({ data }) => {
   const [endDay, setEndDay] = useState('')
+  const [loadImg, setLoadImg] = useState(true)
 
   useEffect(() => {
     handleEndDay()
   }, [data.launchProgress])
 
+  useEffect(() => {
+    {/* Script dibawah untuk handle loader image */ }
+    data.previewImages.length > 0 && data.previewImages.map((img, i) => {
+      setLoadImg(false)
+      return (
+        <img src={img} style={{ display: 'none' }} alt="preview" onLoad={() => setLoadImg(true), console.log(loadImg)} key={i} />
+      )
+    })
+
+  }, [loadImg])
+
   const handleEndDay = () => {
     if (data.launchProgress === 1) {
       setEndDay(0)
     } else {
-      setEndDay(calculateRemainingDays(data.settlementDate))
+      setEndDay(CalculateRemainingDays(data.settlementDate))
     }
   }
 
@@ -40,24 +52,30 @@ const CardProject = ({ data }) => {
     <>
       <Grid item xs={11} md={6} className='container-slider-center'>
         <Card className="card-project">
-          <Slider {...sliderOneImage} className="container-slider-image">
-            {data.previewImages.length > 0 ? data.previewImages.map((img, i) => {
-              return (
-                <div style={{ height: '195px', position: 'relative' }} key={i}>
-                  {data.launchProgress === 1 ?
-                    <img src="./images/habis-terjual.webp" alt="sold out" style={{ position: 'absolute', left: '-2px', top: '-2px' }} />
-                    :
-                    ''}
-                  <img src={img} style={{ height: '195px' }} className='c-pointer' alt="preview" onClick={() => navigate(`/project/${data.token.symbol.toLowerCase()}`)} />
-                </div>
-              )
-            })
-              :
-              <div style={{ height: '195px' }}>
-                <CircularProgress color="success" />
-              </div>
-            }
-          </Slider>
+          {loadImg ? <div className='container-load-img'><CircularProgress color="success" /></div>
+            :
+            <Slider {...sliderOneImage} className="container-slider-image">
+              {data.previewImages.length > 0 && data.previewImages.map((img, i) => {
+                return (
+                  <div style={{ height: '195px', position: 'relative' }} key={i}>
+                    {data.launchProgress === 1 ?
+                      <img src="./images/habis-terjual.webp" alt="sold out" style={{ position: 'absolute', left: '-2px', top: '-2px' }} />
+                      :
+                      ''}
+                    <img src={img} style={{ height: '195px' }} className='c-pointer' alt="preview" onClick={() => navigate(`/project/${data.token.symbol.toLowerCase()}`)} onLoad={() => setLoadImg(false)} />
+                  </div>
+                )
+              })
+              }
+            </Slider>
+          }
+
+          {data.previewImages.length > 0 && data.previewImages.map((img, i) => {
+            return (
+              <img src={img} style={{ display: 'none' }} alt="preview" onLoad={() => setLoadImg(false)} key={i} />
+            )
+          })}
+
           <CardContent>
             <Grid container sx={{ display: 'flex', justifyContent: 'space-between' }}>
               <Grid item xs={9}>
