@@ -9,7 +9,6 @@ const DetailProjects = () => {
   const [listingAt, setListingAt] = useState(null)
 
   let location = useLocation()
-  let A = 'CAPT'
 
   useEffect(() => {
     handleListing()
