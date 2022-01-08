@@ -164,8 +164,8 @@ const ProjectDetail = () => {
                       <Tooltip
                         PopperProps={{
                           disablePortal: true,
-                          zIndex: 100
                         }}
+                        style={{ zIndex: 100 }}
                         onClose={() => handleTooltipClose('periode')}
                         open={openTooltipPeriode}
                         disableFocusListener
@@ -187,8 +187,8 @@ const ProjectDetail = () => {
                       <Tooltip
                         PopperProps={{
                           disablePortal: true,
-                          zIndex: 100
                         }}
+                        style={{ zIndex: 100 }}
                         onClose={() => handleTooltipClose('disclaimer')}
                         open={openTooltipDisc}
                         disableFocusListener

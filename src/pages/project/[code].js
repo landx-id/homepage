@@ -1,20 +1,28 @@
 import React, { useEffect, useState } from "react"
 import ListingProjects from "../../components/listing/listing"
 import ProjectDetail from "../../components/project-detail/project-detail"
+import { useLocation } from '@reach/router';
 
 const DetailProjects = () => {
   const [dataListing, setDataListing] = useState('')
+  const [codeSaham, setCodeSaham] = useState('')
   const [listingAt, setListingAt] = useState(null)
+
+  let location = useLocation()
+  let A = 'CAPT'
 
   useEffect(() => {
     handleListing()
+    setCodeSaham(location.pathname.split('/')[2].toUpperCase())
   }, [])
 
   useEffect(() => {
     if (dataListing) {
       dataListing.map(datas => {
         datas.map(data => {
-          setListingAt(new Date(data.CAPT['listing_at']).getTime())
+          if (codeSaham === Object.keys(data)[0]) {
+            setListingAt(new Date(data[codeSaham]['listing_at']).getTime())
+          }
         })
       })
     }
