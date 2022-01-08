@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Container, Button, Grid, Typography, Box } from '@mui/material';
 import { navigate } from "gatsby";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import Layout from '../../../components/layout/layout';
+import Layout from '../layout/layout';
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import { useLocation } from '@reach/router';
 
@@ -21,7 +21,7 @@ const ListingProjects = () => {
   let listingAt = new Date(dataProject.listing_at).getTime() - Date.now()
 
   let location = useLocation()
-  let codeProject = location.pathname.split('/')[3].toUpperCase()
+  let codeProject = location.pathname.split('/')[2].toUpperCase()
 
   useEffect(() => {
     handleListing()
