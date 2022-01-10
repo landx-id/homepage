@@ -99,7 +99,7 @@ const ListingProjects = (props) => {
               <div className='container-reminder'>
                 <Grid container spacing={2} className='container-grid-remind'>
                   <Grid item xs={12} md={7} className='container-text-remind'><img src="/images/ic_calendar.webp" alt="ic_calendar" /> <Typography component='p' className='text-time'>{listingAt && days} Hari : {listingAt && hours} Jam</Typography></Grid>
-                  <Grid item xs={12} md={5} className='container-btn-remind'><Button variant="contained" className='btn-remind'><NotificationsNoneIcon className='icon-remind' style={{ marginRight: '5px' }} /> <span style={{ marginTop: '2px' }}>REMIND ME</span></Button></Grid>
+                  <Grid item xs={12} md={5} className='container-btn-remind'><Button variant="contained" onClick={() => navigate('https://sendy.landx.id/subscription?f=7MlPrs1pHK3LfJpBLI1sWShWyK3Xk7Z4SEPV9wlXzQ4pslSRKeKURXQ6kzpt763NN33JFc35AS73709XS4P8mXqQ')} className='btn-remind'><NotificationsNoneIcon className='icon-remind' style={{ marginRight: '5px' }} /> <span style={{ marginTop: '2px' }}>REMIND ME</span></Button></Grid>
                 </Grid>
               </div>
             </Grid>
