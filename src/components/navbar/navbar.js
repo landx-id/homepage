@@ -92,14 +92,14 @@ const ResponsiveAppBar = () => {
 
                     <Stack direction="row" spacing={2}>
                       <div>
-                        <MenuItem onClick={handleToggle}>
+                        <MenuItem onClick={handleToggle} className="text-btn-link">
                           <Typography textAlign="center"
                             ref={anchorRef}
                             id="composition-button"
                             aria-controls={open ? 'composition-menu' : undefined}
                             aria-expanded={open ? 'true' : undefined}
                             aria-haspopup="true"
-                            className='text-link'
+                            className='text-link text-btn-link'
                           >
                             Perusahaan
                           </Typography>
@@ -129,32 +129,32 @@ const ResponsiveAppBar = () => {
                                     aria-labelledby="composition-button"
                                     onKeyDown={handleListKeyDown}
                                   >
-                                    <Link href='https://landx.id/blog/jobs-at-landx' className='text-link'>
+                                    <Link href='https://landx.id/blog/jobs-at-landx' className='text-link-company'>
                                       <MenuItem onClick={handleClose} className='menulink'>Karir</MenuItem>
                                     </Link>
                                     <hr />
                                     <Link to='/syarat-dan-ketentuan'
-                                      className='text-link'>
+                                      className='text-link-company'>
                                       <MenuItem onClick={handleClose} className='menulink'>Syarat & Ketentuan</MenuItem>
                                     </Link>
                                     <hr />
-                                    <Link to='/privacy-policy' className='text-link'>
+                                    <Link to='/privacy-policy' className='text-link-company'>
                                       <MenuItem onClick={handleClose} className='menulink'>Kebijakan Privasi</MenuItem>
                                     </Link>
                                     <hr />
-                                    <Link to='/service-level-agreement' className='text-link'>
+                                    <Link to='/service-level-agreement' className='text-link-company'>
                                       <MenuItem onClick={handleClose} className='menulink'>Service Level Agreement</MenuItem>
                                     </Link>
                                     <hr />
-                                    <Link to='/kebijakan-isms' className='text-link'>
+                                    <Link to='/kebijakan-isms' className='text-link-company'>
                                       <MenuItem onClick={handleClose} className='menulink'>Kebijakan ISMS</MenuItem>
                                     </Link>
                                     <hr />
-                                    <Link to='/mitigasi-risiko' className='text-link'>
+                                    <Link to='/mitigasi-risiko' className='text-link-company'>
                                       <MenuItem onClick={handleClose} className='menulink'>Mitigasi Resiko</MenuItem>
                                     </Link>
                                     <hr />
-                                    <Link href='https://landx.id/blog/faq-landx' className='text-link'>
+                                    <Link href='https://landx.id/blog/faq-landx' className='text-link-company'>
                                       <MenuItem onClick={handleClose} className='menulink'>FAQ</MenuItem>
                                     </Link>
                                   </MenuList>

@@ -1,5 +1,12 @@
 .container-navbar {
+  border-bottom: #e7e7e7 solid 1px;
+
   .text-link {
+    color: #5e798d;
+    text-decoration: none;
+  }
+
+  .text-link-company {
     color: #5e798d;
     text-decoration: none;
   }
@@ -31,5 +38,18 @@
     width: 33px;
     height: 33px;
     cursor: pointer;
+  }
+
+  .text-btn-link:hover {
+    text-decoration: none !important;
+    background-color: transparent;
+  }
+
+  .text-link:hover {
+    text-decoration: underline;
+  }
+
+  .text-link li:hover {
+    background-color: transparent;
   }
 }
