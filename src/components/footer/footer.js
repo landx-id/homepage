@@ -23,23 +23,23 @@ const Footer = () => {
             </Typography>
             <Grid container spacing={2} style={{ paddingBottom: 25 }}>
               <Grid item xs={12} sm={6} className='display-f-center display-fj-end'>
-                <Link href="https://play.google.com/store/apps/details?id=store.numoney.landxapp">
+                <a href="https://play.google.com/store/apps/details?id=store.numoney.landxapp">
                   <img
                     src="/images/logo_playstore.webp"
                     alt="Play Store"
                     title="Play Store"
                   />
-                </Link>
+                </a>
               </Grid>
               <Grid item xs={12} sm={6} className='display-f-center display-fj-start'>
-                <Link href="https://apps.apple.com/id/app/landx/id1453823676">
+                <a href="https://apps.apple.com/id/app/landx/id1453823676">
                   <img
                     src="/images/logo_appstore.webp"
                     alt="App Store"
                     title="App Store"
                     className="app-store"
                   />
-                </Link>
+                </a>
               </Grid>
             </Grid>
           </Box>
@@ -132,7 +132,7 @@ const Footer = () => {
                 <Link to='/contact'>Kontak</Link>
               </MenuItem>
               <MenuItem>
-                <Link href="https://landx.id/blog/">Blog</Link>
+                <a href="https://landx.id/blog/">Blog</a>
               </MenuItem>
             </MenuList>
           </Grid>
@@ -141,7 +141,7 @@ const Footer = () => {
             <Typography color="secondary" className="footer-menu-title">Perusahaan</Typography>
             <MenuList className="sections">
               <MenuItem>
-                <Link href='https://landx.id/blog/jobs-at-landx/'>Karir</Link>
+                <a href='https://landx.id/blog/jobs-at-landx/'>Karir</a>
               </MenuItem>
               <MenuItem>
                 <Link to='/syarat-dan-ketentuan'>Syarat & Ketentuan</Link>
@@ -159,21 +159,21 @@ const Footer = () => {
                 <Link to='/mitigasi-risiko'>Mitigasi Risiko</Link>
               </MenuItem>
               <MenuItem>
-                <Link href="https://landx.id/blog/faq-landx/">FAQ</Link>
+                <a href="https://landx.id/blog/faq-landx/">FAQ</a>
               </MenuItem>
             </MenuList>
           </Grid>
           <Grid item xs={12} md={6} className="ml-1 container-icon-copyright">
             <Grid item xs={12}>
-              <Link href="https://id.linkedin.com/company/landx-id?trk=public_profile_topcard_current_company" className="footer-icon-link">
+              <a href="https://id.linkedin.com/company/landx-id?trk=public_profile_topcard_current_company" className="footer-icon-link">
                 <LinkedInIcon sx={{ width: '32px', height: '32px', color: '#5e798d' }} />
-              </Link>
-              <Link href="https://www.facebook.com/landx.id" className="footer-icon-link">
+              </a>
+              <a href="https://www.facebook.com/landx.id" className="footer-icon-link">
                 <FacebookIcon sx={{ width: '32px', height: '32px', color: '#5e798d' }} />
-              </Link>
-              <Link href="https://www.instagram.com/landx.id/" className="footer-icon-link">
+              </a>
+              <a href="https://www.instagram.com/landx.id/" className="footer-icon-link">
                 <InstagramIcon sx={{ width: '32px', height: '32px', color: '#5e798d' }} />
-              </Link>
+              </a>
             </Grid>
 
             <Grid item xs={12}>

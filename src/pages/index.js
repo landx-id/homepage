@@ -261,15 +261,15 @@ const IndexPage = () => {
 
             {widthWindows < 1200 ?
               <Slider {...sliderOneCard}>
-                <CardLandxWork img='../images/icon_pilih_bisnis.webp' title="Pilih Proyek Pendanaan" content="Pilih bisnis yang sesuai dengan profil investasimu" width="63px" />
-                <CardLandxWork img='../images/icon_menjadi_investor.webp' title='Beli Saham' content='Beli saham, obligasi, atau sukuk dari proyek pendanaan tersebut' width='94px' />
+                <CardLandxWork img='../images/icon_pilih_bisnis.webp' title="Pilih Bisnis" content="Pilih bisnis yang sesuai dengan profil investasimu" width="63px" />
+                <CardLandxWork img='../images/icon_menjadi_investor.webp' title='Menjadi Investor' content='Beli saham, obligasi, atau sukuk dari proyek pendanaan tersebut' width='94px' />
                 <CardLandxWork img='../images/icon_terima_imbal_hasil.webp' title="Terima Imbal Hasil" content='Terima keuntungan sesuai kinerja perusahaan yang kamu miliki, atau bunga sesuai kesepakatan awal' width='96px' />
                 <CardLandxWork img='../images/icon_capital_gain.webp' title="Keuntungan Capital Gain" content='Dapatkan keuntungan dari kenaikan harga saham ketika dijual' />
               </Slider>
               :
               <Grid container spacing={4}>
-                <CardLandxWork img='../images/icon_pilih_bisnis.webp' title="Pilih Proyek Pendanaan" content="Pilih bisnis yang sesuai dengan profil investasimu" width="63px" />
-                <CardLandxWork img='../images/icon_menjadi_investor.webp' title='Beli Saham' content='Beli saham, obligasi, atau sukuk dari proyek pendanaan tersebut' width='94px' />
+                <CardLandxWork img='../images/icon_pilih_bisnis.webp' title="Pilih Bisnis" content="Pilih bisnis yang sesuai dengan profil investasimu" width="63px" />
+                <CardLandxWork img='../images/icon_menjadi_investor.webp' title='Menjadi Investor' content='Beli saham, obligasi, atau sukuk dari proyek pendanaan tersebut' width='94px' />
                 <CardLandxWork img='../images/icon_terima_imbal_hasil.webp' title="Terima Imbal Hasil" content='Terima keuntungan sesuai kinerja perusahaan yang kamu miliki, atau bunga sesuai kesepakatan awal' width='96px' />
                 <CardLandxWork img='../images/icon_capital_gain.webp' title="Keuntungan Capital Gain" content='Dapatkan keuntungan dari kenaikan harga saham ketika dijual' />
               </Grid>
