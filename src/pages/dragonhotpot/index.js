@@ -86,7 +86,7 @@ const DragonHotPot = () => {
     
     <Box style={{ backgroundColor:`#f8f8f8` }}>
       <Box sx={{ flexGrow: 1 }}>
-        <AppBar className="dragon-hot-navbar">
+        <AppBar position="static" className="dragon-hot-navbar">
           <Toolbar>
             <Box>
               <img 
