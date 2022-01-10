@@ -55,11 +55,19 @@ const LandXCuan = () => {
       <section className="cuan-header">
         <Container>
           <Grid item xs={12} md={12} align="center">
-            <img
-              src="./images/landx_cuan_desktop_KV.webp"
-              alt="LandX cuan"
-              className="cuan-banner"
-            />
+            {widthWindows > 365 ?
+              <img
+                src="./images/landx_cuan_desktop_KV.webp"
+                alt="LandX cuan"
+                className="cuan-banner"
+              />
+              :
+              <img
+                src="./images/Mobile-KV-360.webp"
+                alt="LandX cuan"
+                className="cuan-banner"
+              />
+            }
           </Grid>
 
           <Grid container className="cuan-border-cta">
@@ -265,7 +273,7 @@ const LandXCuan = () => {
           </Typography>
         </Grid>
         <Grid item xs={12} md={12} align="center">
-          <a href="https://apps.apple.com/id/app/landx-aplikasi-investasi/id1453823676?l=id"
+          <a href="https://bit.ly/3Ed3dTV"
             className="cuan-btn-outline-white cuan-btn-wa"
             style={{ color: `#2DBE60`, border: `1px solid #2DBE60` }}
           >
@@ -274,7 +282,7 @@ const LandXCuan = () => {
           </a>
         </Grid>
         <Grid item xs={12} md={12} align="center">
-          <a href="https://apps.apple.com/id/app/landx-aplikasi-investasi/id1453823676?l=id"
+          <a href="https://bit.ly/32coLTQ"
             className="cuan-btn-outline-white cuan-btn-wa"
             style={{ color: `#2DBE60`, border: `1px solid #2DBE60` }}
           >

@@ -22,7 +22,7 @@ const CardProject = ({ data }) => {
     data.previewImages.length > 0 && data.previewImages.map((img, i) => {
       setLoadImg(false)
       return (
-        <img src={img} style={{ display: 'none' }} alt="preview" onLoad={() => setLoadImg(true), console.log(loadImg)} key={i} />
+        <img src={img} style={{ display: 'none' }} alt="preview" onLoad={() => setLoadImg(true)} key={i} />
       )
     })
 

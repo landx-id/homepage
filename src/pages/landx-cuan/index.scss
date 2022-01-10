@@ -1,18 +1,31 @@
 .cuan-header {
   padding-top: 3rem;
   align-items: center;
-  background: radial-gradient( circle at center,rgba(115,224,139,1) 0%,rgba(0,163,38,1) 100% );
+  background: radial-gradient(
+    circle at center,
+    rgba(115, 224, 139, 1) 0%,
+    rgba(0, 163, 38, 1) 100%
+  );
 }
 
 .cuan-body {
-  background: linear-gradient( 329deg,rgba(45,190,96,1) 0%,rgba(185,255,176,1) 20% )
+  background: linear-gradient(
+    329deg,
+    rgba(45, 190, 96, 1) 0%,
+    rgba(185, 255, 176, 1) 20%
+  );
 }
 
 .cuan-background {
-  background: radial-gradient( circle at center,rgba(115,224,139,1) 0%,rgba(0,163,38,1) 100% );
+  background: radial-gradient(
+    circle at center,
+    rgba(115, 224, 139, 1) 0%,
+    rgba(0, 163, 38, 1) 100%
+  );
   border-radius: 22px;
   min-height: 500px;
   margin-top: 251px;
+  padding-bottom: 30px;
 }
 
 .cuan-banner {
@@ -22,7 +35,7 @@
 
 .cuan-btn:hover {
   background-color: #eee;
-  color: rgba(0,0,0,.6);
+  color: rgba(0, 0, 0, 0.6);
 }
 
 .cuan-btn-wa:hover {
@@ -80,7 +93,11 @@
 }
 
 .cuan-h2-green {
-  background: -webkit-linear-gradient(102deg,rgba(122,204,140,1) 0%,rgba(4,117,30,1) 75% );
+  background: -webkit-linear-gradient(
+    102deg,
+    rgba(122, 204, 140, 1) 0%,
+    rgba(4, 117, 30, 1) 75%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 56px !important;
@@ -92,14 +109,22 @@
 .cuan-qna {
   font-weight: 600 !important;
   font-size: 56px !important;
-  background: -webkit-linear-gradient( 102deg,rgba(122,204,140,1) 0%,rgba(4,117,30,1) 75% );
+  background: -webkit-linear-gradient(
+    102deg,
+    rgba(122, 204, 140, 1) 0%,
+    rgba(4, 117, 30, 1) 75%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   line-height: 1.2 !important;
 }
 
-.cuan-title { 
-  background: -webkit-linear-gradient( 270deg,rgba(122,204,140,1) 0%,rgba(4,117,30,1) 100% );
+.cuan-title {
+  background: -webkit-linear-gradient(
+    270deg,
+    rgba(122, 204, 140, 1) 0%,
+    rgba(4, 117, 30, 1) 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 56px !important;
@@ -114,12 +139,12 @@
 }
 
 .cuan-transition {
-  background-color:#e7f1ff !important;
+  background-color: #e7f1ff !important;
   border-radius: 15px !important;
   box-shadow: inset 0 -1px 0 rgb(0 0 0 / 13%);
 }
 
-.cuan-icon {    
+.cuan-icon {
   color: #00a339;
   font-size: 30px !important;
 }
@@ -127,7 +152,7 @@
 .cuan-title-accordion {
   font-weight: 700 !important;
   font-size: 20px !important;
-  text-align: left !important; 
+  text-align: left !important;
   padding: 8px !important;
 }
 
@@ -139,7 +164,7 @@
 .cuan-numstyle {
   width: 24px;
   height: 24px;
-  background-image: linear-gradient(#fff,#d8ffeb);
+  background-image: linear-gradient(#fff, #d8ffeb);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -150,12 +175,12 @@
 }
 
 .cuan-cta {
-  width: 100%; 
+  width: 100%;
   margin-top: -7.5rem;
 }
 
 .cuan-cta-2 {
-  width: 100%; 
+  width: 100%;
   margin-top: -12rem;
 }
 
@@ -178,7 +203,6 @@
 }
 
 @media screen and (max-width: 1200px) {
-
 }
 
 @media screen and (max-width: 900px) {
@@ -215,7 +239,8 @@
     margin-top: -4rem;
   }
 
-  .cuan-btn-white, .cuan-btn-outline-white {
+  .cuan-btn-white,
+  .cuan-btn-outline-white {
     font-size: 16px;
     width: 315px;
   }
@@ -223,11 +248,11 @@
   .cuan-box-video {
     max-height: 500px;
   }
-
 }
 
 @media screen and (max-width: 600px) {
-  .cuan-h4-green, .cuan-h2-green {
+  .cuan-h4-green,
+  .cuan-h2-green {
     text-align: left !important;
   }
 
@@ -239,7 +264,7 @@
     width: 70%;
     text-align: center;
   }
-  
+
   .cuan-cta {
     margin-top: -23rem;
   }
@@ -262,9 +287,10 @@
     padding-bottom: 5rem;
   }
 
-  .cuan-btn-white, .cuan-btn-outline-white {
+  .cuan-btn-white,
+  .cuan-btn-outline-white {
     font-size: 16px;
-    width: 315px;
+    width: 260px;
   }
 
   .cuan-new {
@@ -273,13 +299,29 @@
   }
 }
 
+@media screen and (max-width: 400px) {
+  .cuan-title {
+    font-size: 30px !important;
+  }
+
+  .cuan-title-accordion {
+    font-size: 16px !important;
+  }
+  .cuan-detail-accordion {
+    .cuan-text-acc {
+      font-size: 12px;
+    }
+  }
+}
+
 @media screen and (max-width: 320px) {
   .cuan-banner {
     width: 320px;
     height: 500px;
   }
-  
-  .cuan-btn-white, .cuan-btn-outline-white {
+
+  .cuan-btn-white,
+  .cuan-btn-outline-white {
     font-size: 13px;
     width: 195px;
     height: 30px;
@@ -337,7 +379,8 @@
     padding: 1rem 1rem !important;
   }
 
-  .cuan-detail-accordion p, .cuan-detail-accordion span {
+  .cuan-detail-accordion p,
+  .cuan-detail-accordion span {
     font-size: 14px;
   }
 
