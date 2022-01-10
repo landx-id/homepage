@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import { navigate } from "gatsby";
+import { navigate, useStaticQuery, graphql } from "gatsby";
 import { Grid, Container, Typography, Chip, LinearProgress, Button, Tooltip, ClickAwayListener, Dialog, DialogContent, DialogContentText } from "@mui/material"
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
@@ -45,6 +45,23 @@ const ProjectDetails = (props) => {
       }
     })
   }, [idProject])
+
+  const data = useStaticQuery(graphql`
+  query {
+    allFile(
+      filter: {sourceInstanceName: {eq: "prospektus"}, relativePath: {eq: "${codeProject}"}}
+    ) {
+      edges {
+        node {
+          relativePath
+          publicURL
+        }
+      }
+    }
+  }
+`)
+
+  console.log('data', data);
 
   const detectDevice = () => {
     var userAgent = navigator.userAgent || navigator.vendor || window.opera;

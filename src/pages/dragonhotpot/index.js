@@ -25,9 +25,16 @@ import "slick-carousel/slick/slick-theme.css";
 const theme = themeconfig
 const DragonHotPot = () => {
   
+  const [widthWindows, setWidthWindows] = useState('')
   const [dataProject, setDataProject] = useState(null)
   const [dataListing, setDataListing] = useState('')
   
+  useEffect(() => {
+    setWidthWindows(window.innerWidth)
+    window.addEventListener("resize", () => {
+      setWidthWindows(window.innerWidth)
+    })
+  }, [widthWindows])
 
   useEffect(() => {
     getLimitCardProject()
@@ -96,15 +103,19 @@ const DragonHotPot = () => {
                 />
               </Link>
             </Box>
-              
-            <Button variant="outlined" onClick={()=>{ navigate("/pendaftaran-perusahaan") }} style={{ fontWeight:`600` }}>PENDAFTARAN PERUSAHAAN</Button>
+            { widthWindows >= 1200 ?
+              <Button variant="outlined" onClick={()=>{ navigate("/pendaftaran-perusahaan") }} style={{ fontWeight:`600` }}>PENDAFTARAN PERUSAHAAN</Button>
+              :
+              ''
+            }
           </Toolbar>
         </AppBar>
       </Box>
 
         <Collapse in={checked}>
           <Grid container spacing={2} className="dragon-hot-menu">
-            <Grid item xs={12} md={3} className="footer-menu-two mb-3">
+            {/* <Grid item xs={3} md={3}>< */}
+            <Grid item xs={3} md={3} className="footer-menu-two mb-3">
               <Typography color="primary" variant="h6" style={{ marginLeft:`1rem`, marginBottom:`2rem` }}>
                 PERUSAHAAN
               </Typography>  
@@ -136,7 +147,7 @@ const DragonHotPot = () => {
               </MenuList>
             </Grid>
 
-            <Grid item xs={12} md={3} className="footer-menu-two">
+            <Grid item xs={3} md={3} className="footer-menu-two">
               <Typography color="primary" variant="h6" style={{ marginLeft:`1rem`, marginBottom:`2rem` }}>
                 DUKUNGAN
               </Typography>  
@@ -149,7 +160,15 @@ const DragonHotPot = () => {
                 </MenuItem>
               </MenuList>
             </Grid>
-          </Grid>  
+
+            <Grid item xs={3} md={3}>
+              { widthWindows < 1200 ?
+                <Button variant="outlined" onClick={()=>{ navigate("/pendaftaran-perusahaan") }} style={{ fontWeight:`600` }}>PENDAFTARAN PERUSAHAAN</Button>
+                :
+                ''
+              }
+            </Grid>
+          </Grid>   
         </Collapse>
 
       <section style={{ padding: '30px', alignItems: 'center' }} className="dragon-hot-header">
@@ -176,7 +195,7 @@ const DragonHotPot = () => {
               <Typography paragraph={true}>
                 Dikelola Oleh
               </Typography>
-              <Typography paragraph={true} style={{ fontSize:`34px`, fontWeight:`bold` }}>
+              <Typography paragraph={true} className="dragon-pt">
                 Yamatoten Abura Soba Group
               </Typography>
             </Grid>
@@ -205,7 +224,7 @@ const DragonHotPot = () => {
                 <Typography paragraph={true}>
                   Rata-rata Balik Modal
                 </Typography>
-                <Typography paragraph={true} style={{ marginBottom:`2rem`, fontSize:`34px`, fontWeight:`600` }}>
+                <Typography paragraph={true} className="dragon-deviden">
                   15-18 Bulan per Cabang
                 </Typography>
               </Box>
@@ -223,21 +242,21 @@ const DragonHotPot = () => {
       </section>  
       
       <section style={{ padding: '30px', display: 'flex', alignItems: 'center', backgroundColor:`#fff` }}>
-        <Container style={{ marginTop:`27rem`, marginBottom:`1rem` }}>
+        <Container className="dragon-next">
           <Grid item xs={12} md={12} className="dragon-hot-font">
             <Typography color="secondary" variant="h2" align="center">
               Sekarang Kamu Bisa Patungan untuk
             </Typography>
-            <Typography color="secondary" variant="h2" align="center" paragraph={true}>
+            <Typography color="secondary" variant="h2" align="center" paragraph={true} className="dragon-next-title ">
               Punya Bisnis Dragon Hot Pot!
             </Typography>
-            <Typography color="secondary" variant="h5" align="center" style={{ marginTop:`2rem` }}>
+            <Typography color="secondary" variant="h5" align="center" style={{ marginTop:`2rem` }} className="dragon-next-desc">
               Ingin buka bisnis restoran, carwash, kos-kosan, atau bisnis-bisnis lainnya
             </Typography>
-            <Typography color="secondary" variant="h5" align="center" paragraph={true}>
+            <Typography color="secondary" variant="h5" align="center" paragraph={true} className="dragon-next-desc">
               tapi modal masih belum cukup? Jangan khawatir karena sekarang ada LandX!
             </Typography>
-            <Typography color="secondary" variant="h5" align="center" paragraph={true}>
+            <Typography color="secondary" variant="h5" align="center" paragraph={true} className="dragon-next-desc-2">
               Kamu bisa punya bisnis yang dikelola secara profesional mulai dari <b>Rp. 1.000.000</b> aja!
             </Typography>
         </Grid>
@@ -303,14 +322,14 @@ const DragonHotPot = () => {
           <section style={{ padding: '30px', minHeight: '500px', display: 'flex', alignItems: 'center', backgroundColor:`#fff` }}>
             <Container className="menu-mt">
               <Grid item xs={12} md={12}>
-                <Typography color="primary" align="center" style={{ fontSize:`64px` }}>
+                <Typography color="primary" align="center" className="dragon-emot">
                   &#128532;
                 </Typography>
-                <Typography color="secondary" variant="h4" align="center" paragraph={true}>
+                <Typography color="secondary" variant="h4" align="center" paragraph={true} className="dragon-emot-desc">
                   Brand favoritmu sudah terdanai? Tenang, kamu bisa booking dulu agar tidak ketinggalan pendanaan cabang selanjutnya!
                 </Typography>
               </Grid>
-              <Grid item xs={12} md={12} align="center" style={{ marginBottom:`3rem` }}>
+              <Grid item xs={12} md={12} align="center" style={{ marginTop:`3rem`, marginBottom:`3rem` }}>
                 <a href="https://forms.gle/b9N7KtBMCczZzFGH8" target="_blank" style={{ textDecoration:`none` }}>
                   <Button >Booking Disini</Button>
                 </a>
@@ -318,18 +337,18 @@ const DragonHotPot = () => {
             </Container>
           </section>
 
-          <section style={{ paddingTop: '100px', display: 'flex', alignItems: 'center' }}>
+          <section style={{ paddingTop: '50px', display: 'flex', alignItems: 'center' }}>
             <Grid item xs={12} md={12}>
-              <Typography color="primary" align="center" style={{ fontSize:`64px` }}>
+              <Typography color="primary" align="center" className="dragon-emot">
                 &#129300;
               </Typography>
-              <Typography color="secondary" variant="h4" align="center">
+              <Typography color="secondary" variant="h4" align="center" className="dragon-emot-desc">
                 Punya pertanyaan? Hubungi kami di
               </Typography>
               <Grid container style={{ marginTop:`3rem`}}>
                 <Grid item xs={5} md={5} align="right">
                   <Button variant="outlined" onClick={()=>{ navigate("https://api.whatsapp.com/send?phone=6281381862878") }}>
-                    <Typography>
+                    <Typography style={{ fontWeight:`600` }}>
                       <WhatsAppIcon />
                       WHATSAPP
                     </Typography>
