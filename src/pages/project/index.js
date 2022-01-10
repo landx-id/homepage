@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Box, Button, Container, FormControl, Grid, InputLabel, NativeSelect, OutlinedInput, Typography, InputBase, Slider as MuiSlider, Divider, CircularProgress } from '@mui/material'
 import { styled } from '@mui/material/styles';
 import Layout from "../../components/layout/layout"
+import Seo from '../../components/seo/seo';
 import { capitalizeTheFirstLetterOfEachWord, FetchData } from '../../utils/common';
 import CardProject from '../../components/Card/CardProject/CardProject';
 import { toIDR, fromIDR } from '../../utils/currency';
@@ -154,6 +155,7 @@ const ShowAllProject = () => {
   return (
     <>
       <Layout>
+        <Seo title="Project" />
         <div className="container-all-project">
           <Container>
             <Grid container>

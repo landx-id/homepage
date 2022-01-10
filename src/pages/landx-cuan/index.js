@@ -55,11 +55,19 @@ const LandXCuan = () => {
       <section className="cuan-header">
         <Container>
           <Grid item xs={12} md={12} align="center">
-            <img
-              src="./images/landx_cuan_desktop_KV.webp"
-              alt="LandX cuan"
-              className="cuan-banner"
-            />
+            {widthWindows > 365 ?
+              <img
+                src="./images/landx_cuan_desktop_KV.webp"
+                alt="LandX cuan"
+                className="cuan-banner"
+              />
+              :
+              <img
+                src="./images/Mobile-KV-360.webp"
+                alt="LandX cuan"
+                className="cuan-banner"
+              />
+            }
           </Grid>
 
           <Grid container className="cuan-border-cta">
@@ -183,16 +191,16 @@ const LandXCuan = () => {
                 </Typography>
               </AccordionSummary>
               <AccordionDetails className="cuan-detail-accordion">
-                <Typography color="secondary" paragraph={true} sx={{ display: `flex` }}>
+                <Typography color="secondary" paragraph={true} sx={{ display: `flex` }} className='cuan-text-acc'>
                   <span class="cuan-numstyle">1</span> Untuk pembelian 3 lot akan mendapatkan voucher senilai Rp.25,000
                 </Typography>
-                <Typography color="secondary" paragraph={true} sx={{ display: `flex` }}>
+                <Typography color="secondary" paragraph={true} sx={{ display: `flex` }} className='cuan-text-acc'>
                   <span class="cuan-numstyle">2</span> Untuk pembelian 10 lot akan mendapatkan voucher senilai Rp.100,000
                 </Typography>
-                <Typography color="secondary" paragraph={true} sx={{ display: `flex` }}>
+                <Typography color="secondary" paragraph={true} sx={{ display: `flex` }} className='cuan-text-acc'>
                   <span class="cuan-numstyle">3</span> Cashback akan dikirimkan ke deposit pengguna aplikasi LandX terhitung 2x24 jam sejak melakukan pembelian lot
                 </Typography>
-                <Typography color="secondary" paragraph={true} sx={{ display: `flex` }}>
+                <Typography color="secondary" paragraph={true} sx={{ display: `flex` }} className='cuan-text-acc'>
                   <span class="cuan-numstyle">4</span> <span>
                     Jika kamu memiliki pertanyaan, silahkan hubungi kami
                     melalui call center kami <u>08119562878</u> atau <u>081381862878</u>,
@@ -216,16 +224,16 @@ const LandXCuan = () => {
                 </Typography>
               </AccordionSummary>
               <AccordionDetails className="cuan-detail-accordion">
-                <Typography color="secondary" paragraph={true} sx={{ display: `flex` }}>
+                <Typography color="secondary" paragraph={true} sx={{ display: `flex` }} className='cuan-text-acc'>
                   <span class="cuan-numstyle">1</span> Tanggal promo: 20 Desember 2021 - 31 Desember 2021
                 </Typography>
-                <Typography color="secondary" paragraph={true} sx={{ display: `flex` }}>
+                <Typography color="secondary" paragraph={true} sx={{ display: `flex` }} className='cuan-text-acc'>
                   <span class="cuan-numstyle">2</span> Berlaku untuk pengguna baru LandX
                 </Typography>
-                <Typography color="secondary" paragraph={true} sx={{ display: `flex` }}>
+                <Typography color="secondary" paragraph={true} sx={{ display: `flex` }} className='cuan-text-acc'>
                   <span class="cuan-numstyle">3</span> Lakukan pembelian melalui aplikasi LandX
                 </Typography>
-                <Typography color="secondary" paragraph={true} sx={{ display: `flex` }}>
+                <Typography color="secondary" paragraph={true} sx={{ display: `flex` }} className='cuan-text-acc'>
                   <span class="cuan-numstyle">4</span> Pembelian berlaku untuk satu project dan tidak berlaku kelipatan
                 </Typography>
               </AccordionDetails>
@@ -265,7 +273,7 @@ const LandXCuan = () => {
           </Typography>
         </Grid>
         <Grid item xs={12} md={12} align="center">
-          <a href="https://apps.apple.com/id/app/landx-aplikasi-investasi/id1453823676?l=id"
+          <a href="https://bit.ly/3Ed3dTV"
             className="cuan-btn-outline-white cuan-btn-wa"
             style={{ color: `#2DBE60`, border: `1px solid #2DBE60` }}
           >
@@ -274,7 +282,7 @@ const LandXCuan = () => {
           </a>
         </Grid>
         <Grid item xs={12} md={12} align="center">
-          <a href="https://apps.apple.com/id/app/landx-aplikasi-investasi/id1453823676?l=id"
+          <a href="https://bit.ly/32coLTQ"
             className="cuan-btn-outline-white cuan-btn-wa"
             style={{ color: `#2DBE60`, border: `1px solid #2DBE60` }}
           >
