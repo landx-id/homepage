@@ -86,7 +86,7 @@ const Footer = () => {
               MEMBER OF
             </Typography>
             <img
-              src="/images/LOGO_ALUDI.webp"
+              src="/images/Logo_ALUDI.webp"
               alt="Landx merupakan salah satu board member dari Asosiasi Layanan Urun Dana Indonesia (ALUDI) yang ditujunjuk OJK untuk bertugas menjaga kestabilan ekosistem layanan urun dana atau equity crowdfunding di Indonesia"
               title="Landx merupakan salah satu board member dari Asosiasi Layanan Urun Dana Indonesia (ALUDI) yang ditujunjuk OJK untuk bertugas menjaga kestabilan ekosistem layanan urun dana atau equity crowdfunding di Indonesia"
               style={{ marginBottom: `3rem` }}
