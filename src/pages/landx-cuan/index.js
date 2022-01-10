@@ -184,16 +184,16 @@ const LandXCuan = () => {
               </AccordionSummary>
               <AccordionDetails className="cuan-detail-accordion">
                 <Typography color="secondary" paragraph={true} sx={{ display: `flex` }}>
-                  <span class="cuan-numstyle">1</span> Untuk pembelian 3 lot akan mendapatkan voucher senilai Rp.25,000
+                  <span className="cuan-numstyle">1</span> Untuk pembelian 3 lot akan mendapatkan voucher senilai Rp.25,000
                 </Typography>
                 <Typography color="secondary" paragraph={true} sx={{ display: `flex` }}>
-                  <span class="cuan-numstyle">2</span> Untuk pembelian 10 lot akan mendapatkan voucher senilai Rp.100,000
+                  <span className="cuan-numstyle">2</span> Untuk pembelian 10 lot akan mendapatkan voucher senilai Rp.100,000
                 </Typography>
                 <Typography color="secondary" paragraph={true} sx={{ display: `flex` }}>
-                  <span class="cuan-numstyle">3</span> Cashback akan dikirimkan ke deposit pengguna aplikasi LandX terhitung 2x24 jam sejak melakukan pembelian lot
+                  <span className="cuan-numstyle">3</span> Cashback akan dikirimkan ke deposit pengguna aplikasi LandX terhitung 2x24 jam sejak melakukan pembelian lot
                 </Typography>
                 <Typography color="secondary" paragraph={true} sx={{ display: `flex` }}>
-                  <span class="cuan-numstyle">4</span> <span>
+                  <span className="cuan-numstyle">4</span> <span>
                     Jika kamu memiliki pertanyaan, silahkan hubungi kami
                     melalui call center kami <u>08119562878</u> atau <u>081381862878</u>,
                     email di <u>hello@landx.id</u> atau via Instagram di <u>landx.id</u>
@@ -217,16 +217,16 @@ const LandXCuan = () => {
               </AccordionSummary>
               <AccordionDetails className="cuan-detail-accordion">
                 <Typography color="secondary" paragraph={true} sx={{ display: `flex` }}>
-                  <span class="cuan-numstyle">1</span> Tanggal promo: 20 Desember 2021 - 31 Desember 2021
+                  <span className="cuan-numstyle">1</span> Tanggal promo: 20 Desember 2021 - 31 Desember 2021
                 </Typography>
                 <Typography color="secondary" paragraph={true} sx={{ display: `flex` }}>
-                  <span class="cuan-numstyle">2</span> Berlaku untuk pengguna baru LandX
+                  <span className="cuan-numstyle">2</span> Berlaku untuk pengguna baru LandX
                 </Typography>
                 <Typography color="secondary" paragraph={true} sx={{ display: `flex` }}>
-                  <span class="cuan-numstyle">3</span> Lakukan pembelian melalui aplikasi LandX
+                  <span className="cuan-numstyle">3</span> Lakukan pembelian melalui aplikasi LandX
                 </Typography>
                 <Typography color="secondary" paragraph={true} sx={{ display: `flex` }}>
-                  <span class="cuan-numstyle">4</span> Pembelian berlaku untuk satu project dan tidak berlaku kelipatan
+                  <span className="cuan-numstyle">4</span> Pembelian berlaku untuk satu project dan tidak berlaku kelipatan
                 </Typography>
               </AccordionDetails>
             </Accordion>
@@ -302,7 +302,7 @@ const LandXCuan = () => {
                   <Link to='/contact'>Kontak</Link>
                 </MenuItem>
                 <MenuItem>
-                  <Link href="https://landx.id/blog/">Blog</Link>
+                  <a href="https://landx.id/blog/">Blog</a>
                 </MenuItem>
               </MenuList>
             </Grid>
@@ -311,7 +311,7 @@ const LandXCuan = () => {
               <Typography color="secondary" className="footer-menu-title">Perusahaan</Typography>
               <MenuList className="sections">
                 <MenuItem>
-                  <Link href='https://landx.id/blog/jobs-at-landx/'>Karir</Link>
+                  <a href='https://landx.id/blog/jobs-at-landx/'>Karir</a>
                 </MenuItem>
                 <MenuItem>
                   <Link to='/syarat-dan-ketentuan'>Syarat & Ketentuan</Link>
@@ -329,21 +329,21 @@ const LandXCuan = () => {
                   <Link to='/mitigasi-risiko'>Mitigasi Risiko</Link>
                 </MenuItem>
                 <MenuItem>
-                  <Link href="https://landx.id/blog/faq-landx/">FAQ</Link>
+                  <a href="https://landx.id/blog/faq-landx/">FAQ</a>
                 </MenuItem>
               </MenuList>
             </Grid>
             <Grid item xs={12} md={6} className="ml-1 container-icon-copyright">
               <Grid item xs={12}>
-                <Link href="https://id.linkedin.com/company/landx-id?trk=public_profile_topcard_current_company" className="footer-icon-link">
+                <a href="https://id.linkedin.com/company/landx-id?trk=public_profile_topcard_current_company" className="footer-icon-link">
                   <LinkedInIcon sx={{ width: '32px', height: '32px', color: '#5e798d' }} />
-                </Link>
-                <Link href="https://www.facebook.com/landx.id" className="footer-icon-link">
+                </a>
+                <a href="https://www.facebook.com/landx.id" className="footer-icon-link">
                   <FacebookIcon sx={{ width: '32px', height: '32px', color: '#5e798d' }} />
-                </Link>
-                <Link href="https://www.instagram.com/landx.id/" className="footer-icon-link">
+                </a>
+                <a href="https://www.instagram.com/landx.id/" className="footer-icon-link">
                   <InstagramIcon sx={{ width: '32px', height: '32px', color: '#5e798d' }} />
-                </Link>
+                </a>
               </Grid>
 
               <Grid item xs={12}>
