@@ -68,6 +68,10 @@ function Seo({ description, lang, meta, title }) {
           name: `twitter:description`,
           content: metaDescription,
         },
+        {
+          name: "facebook-domain-verification",
+          content: "f7kayy7mhaddcpu6xbwde08hlvsdfm",
+        },
       ].concat(meta)}
     />
   )

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Box, Button, Container, FormControl, Grid, InputLabel, NativeSelect, OutlinedInput, Typography, InputBase, Slider as MuiSlider, Divider, CircularProgress } from '@mui/material'
+import { Box, Button, Container, FormControl, Grid, NativeSelect, OutlinedInput, Typography, InputBase, Slider as MuiSlider, Divider, CircularProgress } from '@mui/material'
 import { styled } from '@mui/material/styles';
 import Layout from "../../components/layout/layout"
 import Seo from '../../components/seo/seo';
@@ -23,10 +23,8 @@ const ShowAllProject = () => {
   const [category, setCategory] = useState('')
   const [chooseCategory, setchooseCategory] = useState('allCategory')
   const [valSort, setValSort] = useState('settlementDate')
-  const [resetFilter, setResetFilter] = useState(false)
   const [minHis, setMinHis] = useState(1000000)
   const [maxHis, setMaxHis] = useState(5000000)
-  const [categoryHis, setCategoryHis] = useState('allCategory')
 
   const BootstrapInput = styled(InputBase)(({ theme }) => ({
     '& .MuiInputBase-root': {
@@ -98,7 +96,6 @@ const ShowAllProject = () => {
     setMaxPrice(5000000)
     setchooseCategory('allCategory')
     setValSort('settlementDate')
-    setResetFilter(true)
   }
 
   const getDataProjects = () => {
@@ -146,8 +143,7 @@ const ShowAllProject = () => {
 
     setMinHis(minPrice)
     setMaxHis(maxPrice)
-    setCategoryHis(chooseCategory)
-    if (minPrice < minHis || maxPrice > maxHis) {
+    if (minPrice < minHis || maxPrice > maxHis || chooseCategory === 'allCategory' || valSort === 'settlementDate') {
       getDataProjects()
     }
   }
