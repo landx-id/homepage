@@ -147,7 +147,7 @@ const ShowAllProject = () => {
     setMinHis(minPrice)
     setMaxHis(maxPrice)
     setCategoryHis(chooseCategory)
-    if (minPrice < minHis || maxPrice > maxHis) {
+    if (minPrice < minHis || maxPrice > maxHis || chooseCategory === 'allCategory' || valSort === 'settlementDate') {
       getDataProjects()
     }
   }

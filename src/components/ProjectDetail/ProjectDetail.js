@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import { navigate, useStaticQuery, graphql } from "gatsby";
+import { navigate } from "gatsby";
 import { Grid, Container, Typography, Chip, LinearProgress, Button, Tooltip, ClickAwayListener, Dialog, DialogContent, DialogContentText } from "@mui/material"
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
