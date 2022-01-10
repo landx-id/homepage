@@ -86,11 +86,12 @@ const DragonHotPot = () => {
     
     <Box style={{ backgroundColor:`#f8f8f8` }}>
       <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="static" className="dragon-hot-navbar">
+        <AppBar className="dragon-hot-navbar">
           <Toolbar>
             <Box>
               <img 
                 src="./images/hamburger_menu.svg" 
+                alt="menu hamburger"
                 onClick={() => handleChange()}
                 style={{ cursor:`pointer` }}
               />
@@ -99,6 +100,7 @@ const DragonHotPot = () => {
               <Link to="/">
                 <img 
                   src="./images/landx_logo.png" 
+                  alt="logo"
                   className="dragon-hot-logo-landx"
                 />
               </Link>
@@ -113,15 +115,15 @@ const DragonHotPot = () => {
       </Box>
 
         <Collapse in={checked}>
+        { widthWindows < 600 ?
           <Grid container spacing={2} className="dragon-hot-menu">
-            {/* <Grid item xs={3} md={3}>< */}
-            <Grid item xs={3} md={3} className="footer-menu-two mb-3">
+            <Grid item xs={12} md={12} className="footer-menu-two mb-3">
               <Typography color="primary" variant="h6" style={{ marginLeft:`1rem`, marginBottom:`2rem` }}>
                 PERUSAHAAN
               </Typography>  
               <MenuList className="dragon-hot-list-menu sections">
                 <MenuItem>
-                  <Link href="https://landx.id/blog/">Blog</Link>
+                  <a href="https://landx.id/blog/">Blog</a>
                 </MenuItem>
                 <MenuItem>
                   <AnchorLink to='/about-landx'>Tentang LandX</AnchorLink>
@@ -142,7 +144,64 @@ const DragonHotPot = () => {
                 <Link to='/mitigasi-risiko'>Mitigasi Risiko</Link>
                 </MenuItem>
                 <MenuItem>
-                <Link href="https://landx.id/blog/faq-landx/">FAQ</Link>
+                <a href="https://landx.id/blog/faq-landx/">FAQ</a>
+                </MenuItem>
+              </MenuList>
+            </Grid>
+
+            <Grid item xs={12} md={12} className="footer-menu-two">
+              <Typography color="primary" variant="h6" style={{ marginLeft:`1rem`, marginBottom:`2rem` }}>
+                DUKUNGAN
+              </Typography>  
+              <MenuList className="sections">
+                <MenuItem>
+                  <Link to='/contact'>Kontak</Link>
+                </MenuItem>
+                <MenuItem>
+                  <a href='mailto:hello@landx.id'>hello@landx.id</a>
+                </MenuItem>
+              </MenuList>
+            </Grid>
+
+            <Grid item xs={12} md={12}>
+              { widthWindows < 1200 ?
+                <Button variant="outlined" onClick={()=>{ navigate("/pendaftaran-perusahaan") }} style={{ fontWeight:`600` }}>PENDAFTARAN PERUSAHAAN</Button>
+                :
+                ''
+              }
+            </Grid>
+          </Grid>   
+          :
+          <Grid container spacing={2} className="dragon-hot-menu">
+            {/* <Grid item xs={3} md={3}>< */}
+            <Grid item xs={3} md={3} className="footer-menu-two mb-3">
+              <Typography color="primary" variant="h6" style={{ marginLeft:`1rem`, marginBottom:`2rem` }}>
+                PERUSAHAAN
+              </Typography>  
+              <MenuList className="dragon-hot-list-menu sections">
+                <MenuItem>
+                  <a href="https://landx.id/blog/">Blog</a>
+                </MenuItem>
+                <MenuItem>
+                  <AnchorLink to='/about-landx'>Tentang LandX</AnchorLink>
+                </MenuItem>
+                <MenuItem>
+                  <Link to='/syarat-dan-ketentuan'>Syarat & Ketentuan</Link>
+                </MenuItem>
+                <MenuItem>
+                  <Link to='/privacy-policy'>Kebijakan Privasi</Link>
+                </MenuItem>
+                <MenuItem>
+                  <Link to='/service-level-agreement'>Service Level Agreement</Link>
+                </MenuItem>
+                <MenuItem>
+                <Link to='/kebijakan-isms'>Kebijakan ISMS</Link>
+                </MenuItem>
+                <MenuItem>
+                <Link to='/mitigasi-risiko'>Mitigasi Risiko</Link>
+                </MenuItem>
+                <MenuItem>
+                <a href="https://landx.id/blog/faq-landx/">FAQ</a>
                 </MenuItem>
               </MenuList>
             </Grid>
@@ -156,7 +215,7 @@ const DragonHotPot = () => {
                   <Link to='/contact'>Kontak</Link>
                 </MenuItem>
                 <MenuItem>
-                  <Link href='mailto:hello@landx.id'>hello@landx.id</Link>
+                  <a href='mailto:hello@landx.id'>hello@landx.id</a>
                 </MenuItem>
               </MenuList>
             </Grid>
@@ -169,6 +228,7 @@ const DragonHotPot = () => {
               }
             </Grid>
           </Grid>   
+            }
         </Collapse>
 
       <section style={{ padding: '30px', alignItems: 'center' }} className="dragon-hot-header">
@@ -189,7 +249,7 @@ const DragonHotPot = () => {
             className="dragon-hot-icon" 
           />
         </Box>
-        <Box style={{ marginLeft:`5rem`, marginTop:`3rem` }}>
+        <Box className="dragon-box-pt">
           <Grid container spacing={2} className="dragon-hot-title">
             <Grid item xs={12} md={5}>
               <Typography paragraph={true}>
@@ -214,7 +274,7 @@ const DragonHotPot = () => {
             </Grid>
           </Grid>
         </Box>
-        <Box style={{ marginLeft:`5rem`, marginTop:`3rem` }}>
+        <Box className="dragon-box-pt">
           <Grid container className="dragon-hot-title">
             <Grid item xs={12} md={3}>
               &nbsp;
@@ -330,7 +390,7 @@ const DragonHotPot = () => {
                 </Typography>
               </Grid>
               <Grid item xs={12} md={12} align="center" style={{ marginTop:`3rem`, marginBottom:`3rem` }}>
-                <a href="https://forms.gle/b9N7KtBMCczZzFGH8" target="_blank" style={{ textDecoration:`none` }}>
+                <a href="https://forms.gle/b9N7KtBMCczZzFGH8" rel="noreferrer" target="_blank" style={{ textDecoration:`none` }}>
                   <Button >Booking Disini</Button>
                 </a>
               </Grid>
@@ -360,7 +420,7 @@ const DragonHotPot = () => {
                     </Typography>
                 </Grid>
                 <Grid item xs={6} md={6}>
-                    <Typography variant="h4" color="secondary" style={{ fontWeight:`600` }}>
+                    <Typography variant="h4" color="secondary" className="dragon-telp">
                       +62 813 8186 2878
                     </Typography>
                 </Grid>
