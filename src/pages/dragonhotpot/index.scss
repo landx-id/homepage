@@ -137,7 +137,7 @@
   font-size: 1.25rem;
   line-height: inherit;
   white-space: nowrap;
-  padding-left: 14rem;
+  // padding-left: 14rem;
 }
 
 .dragon-hot-logo-landx {
@@ -176,14 +176,37 @@
   font-size: 64px;
 }
 
+.dragon-telp {
+  font-weight: 600 !important;
+}
+
+.dragon-box-pt {
+  margin-left: 5rem;
+  margin-top: 3rem;
+}
+
 @media screen and (max-width: 1200px) {
-  .dragon-hot-navbar-logo {
-    padding-left: 0;
-    margin-left: 18rem;
-  }
+  // .dragon-hot-navbar-logo {
+  //   padding-left: 0;
+  //   margin-left: 18rem;
+  // }
   
   .dragon-hot-menu {
     margin-top: 9rem !important;
+  }
+
+  .dragon-hot-bowl {
+    margin-top: 28rem;
+    background-size: 500px 500px;
+  }
+
+  .dragon-hot-text-content li {
+    font-size: 20px;
+  }
+
+  .dragon-hot-bowl2 img {
+    width: 726px;
+    height: 700px;
   }
 }
 
@@ -252,19 +275,20 @@
     margin-top: 9rem !important;
   }
 
-  .dragon-hot-navbar-logo {
-    padding-left: 0;
-    margin-left: 18rem;
-  }
+  // .dragon-hot-navbar-logo {
+  //   padding-left: 0;
+  //   margin-left: 18rem;
+  // }
 }
 
 @media screen and (max-width: 600px) {
   .one {
-    margin-top: 22rem;
+    margin-top: 17rem;
   }
 
   .dragon-hot-icon {
-    width: 150px;
+    width: 120px;
+    margin-top: 55px;
   }
 
   .dragon-hot-outlet {
@@ -279,8 +303,43 @@
     margin-top: -160px;
     left: -123px;
   }
+
+  .dragon-hot-title h3 {
+    font-size: 24px;
+  }
+
+  .dragon-hot-bowl {
+    background-size: 250px auto;
+  }
+
+  .dragon-next h2 {
+    font-size: 35px;
+  }
+
+  .dragon-emot-desc {
+    font-size: 28px;
+  }
+
+  .dragon-telp {
+    font-size: 21px;
+  }
+
+  .dragon-hot-menu {
+    margin-left: 1rem !important;
+  }
+  // .dragon-hot-navbar-logo {
+  //   padding-left: 0;
+  //   margin-left: 18rem;
+  // }
+  .dragon-box-pt {
+    margin-left: 1rem;
+    margin-top: 3rem; 
+  }
 }
 
 @media screen and (max-width: 320px) {
-  
+  .dragon-box-pt {
+    margin-left: 1rem;
+    margin-top: 3rem; 
+  }
 }

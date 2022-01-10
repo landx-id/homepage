@@ -113,12 +113,14 @@ const LandXCuan = () => {
               <img
                 src="./images/landx_cuan_card_3_lot.webp"
                 className="cuan-width-100 cuan-voucher"
+                alt="landx voucher"
               />
             </Grid>
             <Grid item xs={12} md={4} className="cuan-voucher">
               <img
                 src="./images/landx_cuan_card_10_lot.webp"
                 className="cuan-width-100 cuan-voucher"
+                alt="landx voucher"
               />
             </Grid>
           </Grid>
@@ -145,6 +147,7 @@ const LandXCuan = () => {
             <img
               src="./images/landx_cuan_cta_01_desktop.webp"
               className="cuan-cta"
+              alt="landx cta"
             />
           </Grid>
         </Grid>
@@ -249,6 +252,7 @@ const LandXCuan = () => {
               <img
                 src="./images/landx_cuan_kv_03_cta_desktop.webp"
                 className="cuan-cta-2"
+                alt="landx cta"
               />
             </Grid>
             <Grid item xs={12} md={6}>
