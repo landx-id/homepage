@@ -1,18 +1,17 @@
 import React, { useEffect, useState } from "react"
+import Layout from '../../components/layout/layout';
+import Seo from "../../components/seo/seo";
 import ListingProjects from "../../components/listing/listing"
-import ProjectDetail from "../../components/project-detail/project-detail"
-import { useLocation } from '@reach/router';
+import ProjectDetail from "../../components/ProjectDetail/ProjectDetail"
 
-const DetailProjects = () => {
+const DetailProjects = (props) => {
   const [dataListing, setDataListing] = useState('')
   const [codeSaham, setCodeSaham] = useState('')
   const [listingAt, setListingAt] = useState(null)
 
-  let location = useLocation()
-
   useEffect(() => {
     handleListing()
-    setCodeSaham(location.pathname.split('/')[2].toUpperCase())
+    setCodeSaham(props.params.code.toUpperCase())
   }, [])
 
   useEffect(() => {
@@ -37,11 +36,14 @@ const DetailProjects = () => {
 
   return (
     <>
-      {listingAt > Date.now() ?
-        <ListingProjects />
-        :
-        <ProjectDetail />
-      }
+      <Layout>
+        <Seo title="Project" />
+        {listingAt > Date.now() ?
+          <ListingProjects codeSaham={props.params.code} />
+          :
+          <ProjectDetail codeSaham={props.params.code} />
+        }
+      </Layout>
     </>
   )
 }
