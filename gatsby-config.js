@@ -11,6 +11,13 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `prospektus`,
+        path: `${__dirname}/prospektus/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: `images`,
         path: `${__dirname}/static/`,
       },
@@ -19,13 +26,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `project`,
-        path: `${__dirname}/project/images`,
-      },
-    }, {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `prospektus`,
-        path: `${__dirname}/prospektus`,
+        path: `${__dirname}/project/`,
       },
     },
     {
