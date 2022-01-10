@@ -46,23 +46,6 @@ const ProjectDetails = (props) => {
     })
   }, [idProject])
 
-  const data = useStaticQuery(graphql`
-  query {
-    allFile(
-      filter: {sourceInstanceName: {eq: "prospektus"}, relativePath: {eq: "${codeProject}"}}
-    ) {
-      edges {
-        node {
-          relativePath
-          publicURL
-        }
-      }
-    }
-  }
-`)
-
-  console.log('data', data);
-
   const detectDevice = () => {
     var userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
