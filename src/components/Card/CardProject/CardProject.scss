@@ -15,7 +15,7 @@
       box-shadow: 0px 0px 9px -1px rgba(0, 0, 0, 0.75);
       -webkit-box-shadow: 0px 0px 9px -1px rgba(0, 0, 0, 0.75);
       -moz-box-shadow: 0px 0px 9px -1px rgba(0, 0, 0, 0.75);
-      width: 54px;
+      min-width: 54px;
       height: 54px;
       color: #2dbe60;
       display: flex;
@@ -25,7 +25,7 @@
       .f-buy {
         font-size: 14px;
         color: #fff;
-        font-weight: 500;
+        font-weight: 600;
       }
     }
   }

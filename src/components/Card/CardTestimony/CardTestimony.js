@@ -45,7 +45,7 @@ const CardTestimony = () => {
                   <Typography gutterBottom variant="h5" component="h2" className="card-title">
                     {data.name}
                   </Typography>
-                  <Typography variant="body2" className='card-content'>
+                  <Typography variant="body2" color="secondary" className='card-content'>
                     {data.testimony}
                   </Typography>
                 </CardContent>
