@@ -11,7 +11,7 @@ const CardListing = ({ code, data, timeUp }) => {
 
   useEffect(() => {
     handleTime()
-  }, [days, hours])
+  }, [timeUp])
 
   const handleTime = () => {
     setDays(Math.floor((timeUp) / (1000 * 60 * 60 * 24)))
