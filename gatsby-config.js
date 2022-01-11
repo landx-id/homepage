@@ -16,13 +16,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `project`,
-        path: `${__dirname}/project/`,
-      },
-    },
-    {
       resolve: "gatsby-plugin-google-tagmanager",
       options: {
         id: "GTM-5P9LT23",
