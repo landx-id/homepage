@@ -22,18 +22,16 @@ const CardListing = ({ code, data, timeUp }) => {
           <Card className="card-listing">
             <img src={data.thumbnail} alt="thumbnail" className='listing-img' />
             <img src="/images/soon-listing.webp" alt="soon listing" className='listing-soon' />
-            <div className="text-contianer">
-              <a href={data.link} style={{ textDecoration: 'none' }}>
+            <a href={data.link} style={{ textDecoration: 'none' }}>
+              <div className="text-contianer">
                 <Typography className="text-time" componen='h2'>
                   {days} Hari : {hours} Jam
                 </Typography>
-              </a>
-              <a href={data.link} style={{ textDecoration: 'none' }}>
                 <Typography className="text-read-more" componen='h2'>
                   Pelajari Lebih Lanjut
                 </Typography>
-              </a>
-            </div>
+              </div>
+            </a>
           </Card>
         </div>
       </Grid>
