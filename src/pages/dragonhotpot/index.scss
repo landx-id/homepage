@@ -148,7 +148,7 @@
 
 .dragon-hot-menu {
   margin-top: 6rem !important;
-  margin-left: 7rem !important;
+  padding-left: 7rem !important;
   margin-bottom: 2rem;
 }
 
@@ -325,12 +325,13 @@
   }
 
   .dragon-hot-menu {
-    margin-left: 1rem !important;
+    padding-left: 2rem !important;
   }
-  // .dragon-hot-navbar-logo {
-  //   padding-left: 0;
-  //   margin-left: 18rem;
-  // }
+
+  .dragon-hot-navbar-logo {
+    padding-left: 0;
+  }
+
   .dragon-box-pt {
     margin-left: 1rem;
     margin-top: 3rem; 

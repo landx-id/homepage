@@ -82,28 +82,6 @@ const DragonHotPot = () => {
 
   return (
     <ThemeProvider theme={theme}>
-<<<<<<< HEAD
-    <Seo title="LandX" />
-    
-    <Box style={{ backgroundColor:`#f8f8f8` }}>
-      <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="static" className="dragon-hot-navbar">
-          <Toolbar>
-            <Box>
-              <img 
-                src="./images/hamburger_menu.svg" 
-                alt="menu hamburger"
-                onClick={() => handleChange()}
-                style={{ cursor:`pointer` }}
-              />
-            </Box>
-            <Box className="dragon-hot-navbar-logo">
-              <Link to="/">
-                <img 
-                  src="./images/landx_logo.png" 
-                  alt="logo"
-                  className="dragon-hot-logo-landx"
-=======
       <Seo title="LandX" />
 
       <Box style={{ backgroundColor: `#f8f8f8` }}>
@@ -112,16 +90,15 @@ const DragonHotPot = () => {
             <Toolbar>
               <Box>
                 <img
-                  src="./images/hamburger_menu.svg"
+                  src="/images/hamburger_menu.svg"
                   onClick={() => handleChange()}
                   style={{ cursor: `pointer` }}
->>>>>>> fraza/homepage
                 />
               </Box>
               <Box className="dragon-hot-navbar-logo">
                 <Link to="/">
                   <img
-                    src="./images/landx_logo.png"
+                    src="/images/landx_logo.png"
                     className="dragon-hot-logo-landx"
                   />
                 </Link>
@@ -138,14 +115,8 @@ const DragonHotPot = () => {
         <Collapse in={checked}>
         { widthWindows < 600 ?
           <Grid container spacing={2} className="dragon-hot-menu">
-<<<<<<< HEAD
             <Grid item xs={12} md={12} className="footer-menu-two mb-3">
-              <Typography color="primary" variant="h6" style={{ marginLeft:`1rem`, marginBottom:`2rem` }}>
-=======
-            {/* <Grid item xs={3} md={3}>< */}
-            <Grid item xs={3} md={3} className="footer-menu-two mb-3">
               <Typography color="primary" variant="h6" style={{ marginLeft: `1rem`, marginBottom: `2rem` }}>
->>>>>>> fraza/homepage
                 PERUSAHAAN
               </Typography>
               <MenuList className="dragon-hot-list-menu sections">
@@ -171,7 +142,6 @@ const DragonHotPot = () => {
                   <Link to='/mitigasi-risiko'>Mitigasi Risiko</Link>
                 </MenuItem>
                 <MenuItem>
-<<<<<<< HEAD
                 <a href="https://landx.id/blog/faq-landx/">FAQ</a>
                 </MenuItem>
               </MenuList>
@@ -201,7 +171,6 @@ const DragonHotPot = () => {
           </Grid>   
           :
           <Grid container spacing={2} className="dragon-hot-menu">
-            {/* <Grid item xs={3} md={3}>< */}
             <Grid item xs={3} md={3} className="footer-menu-two mb-3">
               <Typography color="primary" variant="h6" style={{ marginLeft:`1rem`, marginBottom:`2rem` }}>
                 PERUSAHAAN
@@ -230,9 +199,6 @@ const DragonHotPot = () => {
                 </MenuItem>
                 <MenuItem>
                 <a href="https://landx.id/blog/faq-landx/">FAQ</a>
-=======
-                  <Link href="https://landx.id/blog/faq-landx/">FAQ</Link>
->>>>>>> fraza/homepage
                 </MenuItem>
               </MenuList>
             </Grid>
@@ -258,43 +224,8 @@ const DragonHotPot = () => {
                 ''
               }
             </Grid>
-<<<<<<< HEAD
-          </Grid>   
-            }
-        </Collapse>
-
-      <section style={{ padding: '30px', alignItems: 'center' }} className="dragon-hot-header">
-        {/* <Container> */} 
-        <Box className="dragon-hot-bowl one" style={{ float:`right` }}></Box>
-        <Box className="dragon-hot-title dragon-hot-mt">
-          <Typography variant="h3" align="center">
-            Hot Pot #1 di Melbourne
-          </Typography>
-          <Typography variant="h3" align="center">
-            hadir di Indonesia!
-          </Typography>
-        </Box>
-        <Box style={{ justifyContent:`center`, display:`flex` }}>
-          <img 
-            src="./images/dhp_icon.png" 
-            alt="DHP Icon" 
-            className="dragon-hot-icon" 
-          />
-        </Box>
-        <Box className="dragon-box-pt">
-          <Grid container spacing={2} className="dragon-hot-title">
-            <Grid item xs={12} md={5}>
-              <Typography paragraph={true}>
-                Dikelola Oleh
-              </Typography>
-              <Typography paragraph={true} className="dragon-pt">
-                Yamatoten Abura Soba Group
-              </Typography>
-            </Grid>
-            <Grid item xs={12} md={7}>
-              <Typography paragraph={true} style={{ marginBottom:`2rem`}}>
-=======
           </Grid>
+          }
         </Collapse>
 
         <section style={{ padding: '30px', alignItems: 'center' }} className="dragon-hot-header">
@@ -310,7 +241,7 @@ const DragonHotPot = () => {
           </Box>
           <Box style={{ justifyContent: `center`, display: `flex` }}>
             <img
-              src="./images/dhp_icon.png"
+              src="/images/dhp_icon.png"
               alt="DHP Icon"
               className="dragon-hot-icon"
             />
@@ -327,7 +258,6 @@ const DragonHotPot = () => {
               </Grid>
               <Grid item xs={12} md={7}>
                 <Typography paragraph={true} style={{ marginBottom: `2rem` }}>
->>>>>>> fraza/homepage
                   Outlet Saat Ini
                 </Typography>
                 <ul className="dragon-hot-text-content dragon-hot-outlet">
@@ -340,14 +270,6 @@ const DragonHotPot = () => {
                 </ul>
               </Grid>
             </Grid>
-<<<<<<< HEAD
-          </Grid>
-        </Box>
-        <Box className="dragon-box-pt">
-          <Grid container className="dragon-hot-title">
-            <Grid item xs={12} md={3}>
-              &nbsp;
-=======
           </Box>
           <Box style={{ marginLeft: `5rem`, marginTop: `3rem` }}>
             <Grid container className="dragon-hot-title">
@@ -364,12 +286,11 @@ const DragonHotPot = () => {
                   </Typography>
                 </Box>
               </Grid>
->>>>>>> fraza/homepage
             </Grid>
           </Box>
           <Box className="dragon-hot-bowl2">
             <img
-              src="./images/dhp_header_image_03.png"
+              src="/images/dhp_header_image_03.png"
               id="bowl"
               alt=""
             />
@@ -455,30 +376,8 @@ const DragonHotPot = () => {
           </Container>
         </section>
 
-<<<<<<< HEAD
-          <section style={{ padding: '30px', minHeight: '500px', display: 'flex', alignItems: 'center', backgroundColor:`#fff` }}>
-            <Container className="menu-mt">
-              <Grid item xs={12} md={12}>
-                <Typography color="primary" align="center" className="dragon-emot">
-                  &#128532;
-                </Typography>
-                <Typography color="secondary" variant="h4" align="center" paragraph={true} className="dragon-emot-desc">
-                  Brand favoritmu sudah terdanai? Tenang, kamu bisa booking dulu agar tidak ketinggalan pendanaan cabang selanjutnya!
-                </Typography>
-              </Grid>
-              <Grid item xs={12} md={12} align="center" style={{ marginTop:`3rem`, marginBottom:`3rem` }}>
-                <a href="https://forms.gle/b9N7KtBMCczZzFGH8" rel="noreferrer" target="_blank" style={{ textDecoration:`none` }}>
-                  <Button >Booking Disini</Button>
-                </a>
-              </Grid>
-            </Container>
-          </section>
-
-          <section style={{ paddingTop: '50px', display: 'flex', alignItems: 'center' }}>
-=======
         <section style={{ padding: '30px', minHeight: '500px', display: 'flex', alignItems: 'center', backgroundColor: `#fff` }}>
           <Container className="menu-mt">
->>>>>>> fraza/homepage
             <Grid item xs={12} md={12}>
               <Typography color="primary" align="center" className="dragon-emot">
                 &#128532;
@@ -486,27 +385,6 @@ const DragonHotPot = () => {
               <Typography color="secondary" variant="h4" align="center" paragraph={true} className="dragon-emot-desc">
                 Brand favoritmu sudah terdanai? Tenang, kamu bisa booking dulu agar tidak ketinggalan pendanaan cabang selanjutnya!
               </Typography>
-<<<<<<< HEAD
-              <Grid container style={{ marginTop:`3rem`}}>
-                <Grid item xs={5} md={5} align="right">
-                  <Button variant="outlined" onClick={()=>{ navigate("https://api.whatsapp.com/send?phone=6281381862878") }}>
-                    <Typography style={{ fontWeight:`600` }}>
-                      <WhatsAppIcon />
-                      WHATSAPP
-                    </Typography>
-                  </Button>
-                </Grid>
-                <Grid item xs={1} md={1}>
-                    <Typography color="secondary" align="center">
-                      atau
-                    </Typography>
-                </Grid>
-                <Grid item xs={6} md={6}>
-                    <Typography variant="h4" color="secondary" className="dragon-telp">
-                      +62 813 8186 2878
-                    </Typography>
-                </Grid>
-=======
             </Grid>
             <Grid item xs={12} md={12} align="center" style={{ marginTop: `3rem`, marginBottom: `3rem` }}>
               <a href="https://forms.gle/b9N7KtBMCczZzFGH8" target="_blank" style={{ textDecoration: `none` }}>
@@ -542,7 +420,6 @@ const DragonHotPot = () => {
                 <Typography variant="h4" color="secondary" style={{ fontWeight: `600` }}>
                   +62 813 8186 2878
                 </Typography>
->>>>>>> fraza/homepage
               </Grid>
             </Grid>
           </Grid>

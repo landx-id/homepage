@@ -57,13 +57,13 @@ const LandXCuan = () => {
           <Grid item xs={12} md={12} align="center">
             {widthWindows > 365 ?
               <img
-                src="./images/landx_cuan_desktop_KV.webp"
+                src="/images/landx_cuan_desktop_KV.webp"
                 alt="LandX cuan"
                 className="cuan-banner"
               />
               :
               <img
-                src="./images/Mobile-KV-360.webp"
+                src="/images/Mobile-KV-360.webp"
                 alt="LandX cuan"
                 className="cuan-banner"
               />
@@ -111,14 +111,14 @@ const LandXCuan = () => {
           <Grid container spacing={2} justifyContent="center" style={{ marginTop: `2rem` }}>
             <Grid item xs={12} md={4} className="cuan-voucher">
               <img
-                src="./images/landx_cuan_card_3_lot.webp"
+                src="/images/landx_cuan_card_3_lot.webp"
                 className="cuan-width-100 cuan-voucher"
                 alt="landx voucher"
               />
             </Grid>
             <Grid item xs={12} md={4} className="cuan-voucher">
               <img
-                src="./images/landx_cuan_card_10_lot.webp"
+                src="/images/landx_cuan_card_10_lot.webp"
                 className="cuan-width-100 cuan-voucher"
                 alt="landx voucher"
               />
@@ -145,7 +145,7 @@ const LandXCuan = () => {
           </Grid>
           <Grid item xs={12} md={5}>
             <img
-              src="./images/landx_cuan_cta_01_desktop.webp"
+              src="/images/landx_cuan_cta_01_desktop.webp"
               className="cuan-cta"
               alt="landx cta"
             />
@@ -157,15 +157,15 @@ const LandXCuan = () => {
         <Container>
           {widthWindows < 1200 ?
             <Slider {...sliderOneCard}>
-              <CardWhyLandx logo='./images/icon_star.webp' title='Bisnis-bisnis Terbaik' content='Pengguna LandX mendapatkan akses ke bisnis-bisnis yang teruji dan sudah diseleksi secara ketat' />
-              <CardWhyLandx logo='./images/icon_time.webp' title='Investasi Bagi Hasil' content='Laporan keuangan tepat waktu dan pembagian hasil investasi transaparan' />
-              <CardWhyLandx logo='./images/icon_jewely.webp' title='Investasi Aman untuk Pemula' content='Sebagian besar bisnis yang terdaftar memiliki aset dasar properti yang bernilai tinggi, sehingga dapat melindungi investor apabila terjadi risiko kegagalan bisnis.' />
+              <CardWhyLandx logo='/images/icon_star.webp' title='Bisnis-bisnis Terbaik' content='Pengguna LandX mendapatkan akses ke bisnis-bisnis yang teruji dan sudah diseleksi secara ketat' />
+              <CardWhyLandx logo='/images/icon_time.webp' title='Investasi Bagi Hasil' content='Laporan keuangan tepat waktu dan pembagian hasil investasi transaparan' />
+              <CardWhyLandx logo='/images/icon_jewely.webp' title='Investasi Aman untuk Pemula' content='Sebagian besar bisnis yang terdaftar memiliki aset dasar properti yang bernilai tinggi, sehingga dapat melindungi investor apabila terjadi risiko kegagalan bisnis.' />
             </Slider>
             :
             <Grid container spacing={4}>
-              <CardWhyLandx logo='./images/icon_star.webp' title='Bisnis-bisnis Terbaik' content='Pengguna LandX mendapatkan akses ke bisnis-bisnis yang teruji dan sudah diseleksi secara ketat' />
-              <CardWhyLandx logo='./images/icon_time.webp' title='Investasi Bagi Hasil' content='Laporan keuangan tepat waktu dan pembagian hasil investasi transaparan' />
-              <CardWhyLandx logo='./images/icon_jewely.webp' title='Investasi Aman untuk Pemula' content='Sebagian besar bisnis yang terdaftar memiliki aset dasar properti yang bernilai tinggi, sehingga dapat melindungi investor apabila terjadi risiko kegagalan bisnis.' />
+              <CardWhyLandx logo='/images/icon_star.webp' title='Bisnis-bisnis Terbaik' content='Pengguna LandX mendapatkan akses ke bisnis-bisnis yang teruji dan sudah diseleksi secara ketat' />
+              <CardWhyLandx logo='/images/icon_time.webp' title='Investasi Bagi Hasil' content='Laporan keuangan tepat waktu dan pembagian hasil investasi transaparan' />
+              <CardWhyLandx logo='/images/icon_jewely.webp' title='Investasi Aman untuk Pemula' content='Sebagian besar bisnis yang terdaftar memiliki aset dasar properti yang bernilai tinggi, sehingga dapat melindungi investor apabila terjadi risiko kegagalan bisnis.' />
             </Grid>
           }
         </Container>
@@ -250,7 +250,7 @@ const LandXCuan = () => {
           <Grid container spacing={3} justifyContent="center" style={{ alignItems: `center` }}>
             <Grid item xs={12} md={6}>
               <img
-                src="./images/landx_cuan_kv_03_cta_desktop.webp"
+                src="/images/landx_cuan_kv_03_cta_desktop.webp"
                 className="cuan-cta-2"
                 alt="landx cta"
               />
