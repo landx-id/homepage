@@ -26,7 +26,7 @@ const ListingProjects = (props) => {
   }, [dataListing])
 
   const handleListing = () => {
-    fetch('https://landx.id/lottie/upcoming.json')
+    fetch('/project/lottie/upcoming.json')
       .then(r => r.json())
       .then(datas => {
         datas.upcoming.map(data => {
