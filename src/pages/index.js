@@ -108,7 +108,7 @@ const IndexPage = () => {
   }
 
   const handleListing = () => {
-    fetch('https://landx.id/lottie/upcoming.json')
+    fetch('/project/lottie/upcoming.json')
       .then(r => r.json())
       .then(data => {
         setDataListing((prevData) => [...prevData, data.upcoming])
@@ -145,14 +145,14 @@ const IndexPage = () => {
                     </p>
                   </Grid>
                   <Grid item className='container-logo-ojk' sm={11} xl={12}>
-                    <img src="./images/logo_ojk_02.webp" alt="logo OJK" className="logo-ojk" />
+                    <img src="./images/Logo_ojk_02.webp" alt="logo OJK" className="logo-ojk" />
                   </Grid>
                   <Grid item className='container-cta' sm={11} xl={12}>
                     <Link href='https://play.google.com/store/apps/details?id=store.numoney.landxapp' target='_blank'>
-                      <img src="./images/logo_playstore.webp" alt="PlayStore" className='playstoreLogo cta-image' />
+                      <img src="/images/logo_playstore.webp" alt="PlayStore" className='playstoreLogo cta-image' />
                     </Link>
                     <Link href='https://apps.apple.com/id/app/landx/id1453823676' target='_blank'>
-                      <img src="./images/logo_appstore.webp" alt="AppStore" className='cta-image appstoreLogo' />
+                      <img src="/images/logo_appstore.webp" alt="AppStore" className='cta-image appstoreLogo' />
                     </Link>
                   </Grid>
                 </Grid>
@@ -226,13 +226,15 @@ const IndexPage = () => {
                   <Slider {...cardProject} className='container-card-projects'>
 
                     {dataListing && dataListing.map((data, i) => {
-                      if (data[i] !== undefined && data[i] !== null && i >= 0) {
-                        return Object.entries(data[i]).map(data => {
-                          let listingAt = new Date(data[1].listing_at).getTime()
-                          let now = Date.now()
-                          if (listingAt > now) {
-                            return <CardListing code={data[0]} data={data[1]} timeUp={listingAt - Date.now()} />
-                          }
+                      if (data !== undefined && data !== null && i >= 0) {
+                        return data.map(d => {
+                          return Object.entries(d).map(data => {
+                            let listingAt = new Date(data[1].listing_at).getTime()
+                            let now = Date.now()
+                            if (listingAt > now) {
+                              return <CardListing code={data[0]} data={data[1]} timeUp={listingAt - Date.now()} />
+                            }
+                          })
                         })
                       }
                     })}

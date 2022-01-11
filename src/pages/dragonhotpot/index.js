@@ -24,11 +24,11 @@ import "slick-carousel/slick/slick-theme.css";
 
 const theme = themeconfig
 const DragonHotPot = () => {
-  
+
   const [widthWindows, setWidthWindows] = useState('')
   const [dataProject, setDataProject] = useState(null)
   const [dataListing, setDataListing] = useState('')
-  
+
   useEffect(() => {
     setWidthWindows(window.innerWidth)
     window.addEventListener("resize", () => {
@@ -59,7 +59,7 @@ const DragonHotPot = () => {
       }
     ]
   };
-   
+
   const getLimitCardProject = () => {
     FetchLimitData('https://api.landx.id/', 4, 1).then(data => {
       setDataProject(data.data.currencies)
@@ -82,43 +82,43 @@ const DragonHotPot = () => {
 
   return (
     <ThemeProvider theme={theme}>
-    <Seo title="LandX" />
-    
-    <Box style={{ backgroundColor:`#f8f8f8` }}>
-      <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="static" className="dragon-hot-navbar">
-          <Toolbar>
-            <Box>
-              <img 
-                src="./images/hamburger_menu.svg" 
-                onClick={() => handleChange()}
-                style={{ cursor:`pointer` }}
-              />
-            </Box>
-            <Box className="dragon-hot-navbar-logo">
-              <Link to="/">
-                <img 
-                  src="./images/landx_logo.png" 
-                  className="dragon-hot-logo-landx"
+      <Seo title="LandX" />
+
+      <Box style={{ backgroundColor: `#f8f8f8` }}>
+        <Box sx={{ flexGrow: 1 }}>
+          <AppBar position="static" className="dragon-hot-navbar">
+            <Toolbar>
+              <Box>
+                <img
+                  src="./images/hamburger_menu.svg"
+                  onClick={() => handleChange()}
+                  style={{ cursor: `pointer` }}
                 />
-              </Link>
-            </Box>
-            { widthWindows >= 1200 ?
-              <Button variant="outlined" onClick={()=>{ navigate("/pendaftaran-perusahaan") }} style={{ fontWeight:`600` }}>PENDAFTARAN PERUSAHAAN</Button>
-              :
-              ''
-            }
-          </Toolbar>
-        </AppBar>
-      </Box>
+              </Box>
+              <Box className="dragon-hot-navbar-logo">
+                <Link to="/">
+                  <img
+                    src="./images/landx_logo.png"
+                    className="dragon-hot-logo-landx"
+                  />
+                </Link>
+              </Box>
+              {widthWindows >= 1200 ?
+                <Button variant="outlined" onClick={() => { navigate("/pendaftaran-perusahaan") }} style={{ fontWeight: `600` }}>PENDAFTARAN PERUSAHAAN</Button>
+                :
+                ''
+              }
+            </Toolbar>
+          </AppBar>
+        </Box>
 
         <Collapse in={checked}>
           <Grid container spacing={2} className="dragon-hot-menu">
             {/* <Grid item xs={3} md={3}>< */}
             <Grid item xs={3} md={3} className="footer-menu-two mb-3">
-              <Typography color="primary" variant="h6" style={{ marginLeft:`1rem`, marginBottom:`2rem` }}>
+              <Typography color="primary" variant="h6" style={{ marginLeft: `1rem`, marginBottom: `2rem` }}>
                 PERUSAHAAN
-              </Typography>  
+              </Typography>
               <MenuList className="dragon-hot-list-menu sections">
                 <MenuItem>
                   <Link href="https://landx.id/blog/">Blog</Link>
@@ -136,21 +136,21 @@ const DragonHotPot = () => {
                   <Link to='/service-level-agreement'>Service Level Agreement</Link>
                 </MenuItem>
                 <MenuItem>
-                <Link to='/kebijakan-isms'>Kebijakan ISMS</Link>
+                  <Link to='/kebijakan-isms'>Kebijakan ISMS</Link>
                 </MenuItem>
                 <MenuItem>
-                <Link to='/mitigasi-risiko'>Mitigasi Risiko</Link>
+                  <Link to='/mitigasi-risiko'>Mitigasi Risiko</Link>
                 </MenuItem>
                 <MenuItem>
-                <Link href="https://landx.id/blog/faq-landx/">FAQ</Link>
+                  <Link href="https://landx.id/blog/faq-landx/">FAQ</Link>
                 </MenuItem>
               </MenuList>
             </Grid>
 
             <Grid item xs={3} md={3} className="footer-menu-two">
-              <Typography color="primary" variant="h6" style={{ marginLeft:`1rem`, marginBottom:`2rem` }}>
+              <Typography color="primary" variant="h6" style={{ marginLeft: `1rem`, marginBottom: `2rem` }}>
                 DUKUNGAN
-              </Typography>  
+              </Typography>
               <MenuList className="sections">
                 <MenuItem>
                   <Link to='/contact'>Kontak</Link>
@@ -162,127 +162,127 @@ const DragonHotPot = () => {
             </Grid>
 
             <Grid item xs={3} md={3}>
-              { widthWindows < 1200 ?
-                <Button variant="outlined" onClick={()=>{ navigate("/pendaftaran-perusahaan") }} style={{ fontWeight:`600` }}>PENDAFTARAN PERUSAHAAN</Button>
+              {widthWindows < 1200 ?
+                <Button variant="outlined" onClick={() => { navigate("/pendaftaran-perusahaan") }} style={{ fontWeight: `600` }}>PENDAFTARAN PERUSAHAAN</Button>
                 :
                 ''
               }
             </Grid>
-          </Grid>   
+          </Grid>
         </Collapse>
 
-      <section style={{ padding: '30px', alignItems: 'center' }} className="dragon-hot-header">
-        {/* <Container> */} 
-        <Box className="dragon-hot-bowl one" style={{ float:`right` }}></Box>
-        <Box className="dragon-hot-title dragon-hot-mt">
-          <Typography variant="h3" align="center">
-            Hot Pot #1 di Melbourne
-          </Typography>
-          <Typography variant="h3" align="center">
-            hadir di Indonesia!
-          </Typography>
-        </Box>
-        <Box style={{ justifyContent:`center`, display:`flex` }}>
-          <img 
-            src="./images/dhp_icon.png" 
-            alt="DHP Icon" 
-            className="dragon-hot-icon" 
-          />
-        </Box>
-        <Box style={{ marginLeft:`5rem`, marginTop:`3rem` }}>
-          <Grid container spacing={2} className="dragon-hot-title">
-            <Grid item xs={12} md={5}>
-              <Typography paragraph={true}>
-                Dikelola Oleh
-              </Typography>
-              <Typography paragraph={true} className="dragon-pt">
-                Yamatoten Abura Soba Group
-              </Typography>
-            </Grid>
-            <Grid item xs={12} md={7}>
-              <Typography paragraph={true} style={{ marginBottom:`2rem`}}>
+        <section style={{ padding: '30px', alignItems: 'center' }} className="dragon-hot-header">
+          {/* <Container> */}
+          <Box className="dragon-hot-bowl one" style={{ float: `right` }}></Box>
+          <Box className="dragon-hot-title dragon-hot-mt">
+            <Typography variant="h3" align="center">
+              Hot Pot #1 di Melbourne
+            </Typography>
+            <Typography variant="h3" align="center">
+              hadir di Indonesia!
+            </Typography>
+          </Box>
+          <Box style={{ justifyContent: `center`, display: `flex` }}>
+            <img
+              src="./images/dhp_icon.png"
+              alt="DHP Icon"
+              className="dragon-hot-icon"
+            />
+          </Box>
+          <Box style={{ marginLeft: `5rem`, marginTop: `3rem` }}>
+            <Grid container spacing={2} className="dragon-hot-title">
+              <Grid item xs={12} md={5}>
+                <Typography paragraph={true}>
+                  Dikelola Oleh
+                </Typography>
+                <Typography paragraph={true} className="dragon-pt">
+                  Yamatoten Abura Soba Group
+                </Typography>
+              </Grid>
+              <Grid item xs={12} md={7}>
+                <Typography paragraph={true} style={{ marginBottom: `2rem` }}>
                   Outlet Saat Ini
                 </Typography>
                 <ul className="dragon-hot-text-content dragon-hot-outlet">
-                    <li> Jakarta</li>
-                    <li> Grand Indonesia</li>
-                    <li> Lippo Mall Puri</li>
-                    <li> Lippo Mall Kemang</li>
-                    <li> Kelapa Gading</li>
-                    <li> Bandung</li>
+                  <li> Jakarta</li>
+                  <li> Grand Indonesia</li>
+                  <li> Lippo Mall Puri</li>
+                  <li> Lippo Mall Kemang</li>
+                  <li> Kelapa Gading</li>
+                  <li> Bandung</li>
                 </ul>
+              </Grid>
             </Grid>
-          </Grid>
-        </Box>
-        <Box style={{ marginLeft:`5rem`, marginTop:`3rem` }}>
-          <Grid container className="dragon-hot-title">
-            <Grid item xs={12} md={3}>
-              &nbsp;
+          </Box>
+          <Box style={{ marginLeft: `5rem`, marginTop: `3rem` }}>
+            <Grid container className="dragon-hot-title">
+              <Grid item xs={12} md={3}>
+                &nbsp;
+              </Grid>
+              <Grid item xs={12} md={7}>
+                <Box className="dragon-hot-capital-average">
+                  <Typography paragraph={true}>
+                    Rata-rata Balik Modal
+                  </Typography>
+                  <Typography paragraph={true} className="dragon-deviden">
+                    15-18 Bulan per Cabang
+                  </Typography>
+                </Box>
+              </Grid>
             </Grid>
-            <Grid item xs={12} md={7}>
-              <Box className="dragon-hot-capital-average">
-                <Typography paragraph={true}>
-                  Rata-rata Balik Modal
-                </Typography>
-                <Typography paragraph={true} className="dragon-deviden">
-                  15-18 Bulan per Cabang
-                </Typography>
-              </Box>
-            </Grid>
-          </Grid>
-        </Box>
-        <Box className="dragon-hot-bowl2">
-            <img 
-              src="./images/dhp_header_image_03.png" 
-              id="bowl" 
+          </Box>
+          <Box className="dragon-hot-bowl2">
+            <img
+              src="./images/dhp_header_image_03.png"
+              id="bowl"
               alt=""
             />
-        </Box>
-        {/* </Container> */}
-      </section>  
-      
-      <section style={{ padding: '30px', display: 'flex', alignItems: 'center', backgroundColor:`#fff` }}>
-        <Container className="dragon-next">
-          <Grid item xs={12} md={12} className="dragon-hot-font">
-            <Typography color="secondary" variant="h2" align="center">
-              Sekarang Kamu Bisa Patungan untuk
-            </Typography>
-            <Typography color="secondary" variant="h2" align="center" paragraph={true} className="dragon-next-title ">
-              Punya Bisnis Dragon Hot Pot!
-            </Typography>
-            <Typography color="secondary" variant="h5" align="center" style={{ marginTop:`2rem` }} className="dragon-next-desc">
-              Ingin buka bisnis restoran, carwash, kos-kosan, atau bisnis-bisnis lainnya
-            </Typography>
-            <Typography color="secondary" variant="h5" align="center" paragraph={true} className="dragon-next-desc">
-              tapi modal masih belum cukup? Jangan khawatir karena sekarang ada LandX!
-            </Typography>
-            <Typography color="secondary" variant="h5" align="center" paragraph={true} className="dragon-next-desc-2">
-              Kamu bisa punya bisnis yang dikelola secara profesional mulai dari <b>Rp. 1.000.000</b> aja!
-            </Typography>
-        </Grid>
-        </Container>
-      </section>
+          </Box>
+          {/* </Container> */}
+        </section>
 
-      <section style={{ padding: '30px', display: 'flex', alignItems: 'center' }}>
+        <section style={{ padding: '30px', display: 'flex', alignItems: 'center', backgroundColor: `#fff` }}>
+          <Container className="dragon-next">
+            <Grid item xs={12} md={12} className="dragon-hot-font">
+              <Typography color="secondary" variant="h2" align="center">
+                Sekarang Kamu Bisa Patungan untuk
+              </Typography>
+              <Typography color="secondary" variant="h2" align="center" paragraph={true} className="dragon-next-title ">
+                Punya Bisnis Dragon Hot Pot!
+              </Typography>
+              <Typography color="secondary" variant="h5" align="center" style={{ marginTop: `2rem` }} className="dragon-next-desc">
+                Ingin buka bisnis restoran, carwash, kos-kosan, atau bisnis-bisnis lainnya
+              </Typography>
+              <Typography color="secondary" variant="h5" align="center" paragraph={true} className="dragon-next-desc">
+                tapi modal masih belum cukup? Jangan khawatir karena sekarang ada LandX!
+              </Typography>
+              <Typography color="secondary" variant="h5" align="center" paragraph={true} className="dragon-next-desc-2">
+                Kamu bisa punya bisnis yang dikelola secara profesional mulai dari <b>Rp. 1.000.000</b> aja!
+              </Typography>
+            </Grid>
+          </Container>
+        </section>
+
+        <section style={{ padding: '30px', display: 'flex', alignItems: 'center' }}>
           <Grid item xs={12} md={12}>
             <CardTitleSection title='Bagaimana Cara Kerja LandX?' />
-            <Grid container spacing={4} style={{ justifyContent:`center` }}>
-                <CardLandxWork img='../images/dhp_icon_pilih_bisnis.png' title="Pilih Bisnis" content="Pilih bisnis favoritmu yang sedang melakukan penggalangan dana" height="100" width="100" />
-                <CardLandxWork img='../images/dhp_icon_ikut_patungan.png' title='Ikut Patungan' content='Dengan ikut patungan, kamu turut memiliki saham di bisnis tersebut' height="100" width="100" />
-                <CardLandxWork img='../images/dhp_icon_terima_bagi_hasil.png' title="Terima Bagi Hasil" content='Pembagian keuntungan sesuai dengan kinerja bisnis yang kamu miliki' height="100" width="100" />
+            <Grid container spacing={4} style={{ justifyContent: `center` }}>
+              <CardLandxWork img='../images/dhp_icon_pilih_bisnis.png' title="Pilih Bisnis" content="Pilih bisnis favoritmu yang sedang melakukan penggalangan dana" height="100" width="100" />
+              <CardLandxWork img='../images/dhp_icon_ikut_patungan.png' title='Ikut Patungan' content='Dengan ikut patungan, kamu turut memiliki saham di bisnis tersebut' height="100" width="100" />
+              <CardLandxWork img='../images/dhp_icon_terima_bagi_hasil.png' title="Terima Bagi Hasil" content='Pembagian keuntungan sesuai dengan kinerja bisnis yang kamu miliki' height="100" width="100" />
             </Grid>
           </Grid>
-      </section>
+        </section>
 
-        <section style={{ padding: '30px', display: 'flex', alignItems: 'center', backgroundColor:`#fff` }}>
+        <section style={{ padding: '30px', display: 'flex', alignItems: 'center', backgroundColor: `#fff` }}>
           <Grid item xs={12} md={12}>
             <CardTitleSection title='Mengapa LandX?' />
-              <Grid container spacing={4}>
-                <CardLandxWork img='../images/dhp_icon_perjanjian.png' title="Perjanjian kerjasama yang jelas" content="Patungan bisnis di LandX berdasarkan perjanjian yang sah secara hukum" height="100" width="100" />
-                <CardLandxWork img='../images/dhp_icon_bagi_hasil.png' title='Pembagian hasil bisnis sesuai kepemilikan saham' content='Hasil bisnis yang kamu terima sesuai dengan porsi saham yang kamu miliki' height="100" width="100" />
-                <CardLandxWork img='../images/dhp_icon_komunikasi.png' title="Komunikasi" content='Pengelola bisnis akan memberikan laporan berkala terkait pengembangan bisnis yang kamu miliki' height="100" width="100" />
-                <CardLandxWork img='../images/dhp_icon_profesional.png' title="Dikelola oleh profesional di bidangnya" content='Pembagian keuntungan sesuai dengan kinerja bisnis yang kamu miliki' height="100" width="100" />
-              </Grid>
+            <Grid container spacing={4}>
+              <CardLandxWork img='../images/dhp_icon_perjanjian.png' title="Perjanjian kerjasama yang jelas" content="Patungan bisnis di LandX berdasarkan perjanjian yang sah secara hukum" height="100" width="100" />
+              <CardLandxWork img='../images/dhp_icon_bagi_hasil.png' title='Pembagian hasil bisnis sesuai kepemilikan saham' content='Hasil bisnis yang kamu terima sesuai dengan porsi saham yang kamu miliki' height="100" width="100" />
+              <CardLandxWork img='../images/dhp_icon_komunikasi.png' title="Komunikasi" content='Pengelola bisnis akan memberikan laporan berkala terkait pengembangan bisnis yang kamu miliki' height="100" width="100" />
+              <CardLandxWork img='../images/dhp_icon_profesional.png' title="Dikelola oleh profesional di bidangnya" content='Pembagian keuntungan sesuai dengan kinerja bisnis yang kamu miliki' height="100" width="100" />
+            </Grid>
           </Grid>
         </section>
 
@@ -313,60 +313,60 @@ const DragonHotPot = () => {
 
             <Grid container>
               <Grid xs={12} item style={{ justifyContent: 'center', display: 'flex', margin: '20px 0' }}>
-                <Button onClick={()=>{navigate("/project")}}>INVESTASI SEKARANG</Button>
+                <Button onClick={() => { navigate("/project") }}>INVESTASI SEKARANG</Button>
               </Grid>
             </Grid>
           </Container>
         </section>
 
-          <section style={{ padding: '30px', minHeight: '500px', display: 'flex', alignItems: 'center', backgroundColor:`#fff` }}>
-            <Container className="menu-mt">
-              <Grid item xs={12} md={12}>
-                <Typography color="primary" align="center" className="dragon-emot">
-                  &#128532;
-                </Typography>
-                <Typography color="secondary" variant="h4" align="center" paragraph={true} className="dragon-emot-desc">
-                  Brand favoritmu sudah terdanai? Tenang, kamu bisa booking dulu agar tidak ketinggalan pendanaan cabang selanjutnya!
-                </Typography>
-              </Grid>
-              <Grid item xs={12} md={12} align="center" style={{ marginTop:`3rem`, marginBottom:`3rem` }}>
-                <a href="https://forms.gle/b9N7KtBMCczZzFGH8" target="_blank" style={{ textDecoration:`none` }}>
-                  <Button >Booking Disini</Button>
-                </a>
-              </Grid>
-            </Container>
-          </section>
-
-          <section style={{ paddingTop: '50px', display: 'flex', alignItems: 'center' }}>
+        <section style={{ padding: '30px', minHeight: '500px', display: 'flex', alignItems: 'center', backgroundColor: `#fff` }}>
+          <Container className="menu-mt">
             <Grid item xs={12} md={12}>
               <Typography color="primary" align="center" className="dragon-emot">
-                &#129300;
+                &#128532;
               </Typography>
-              <Typography color="secondary" variant="h4" align="center" className="dragon-emot-desc">
-                Punya pertanyaan? Hubungi kami di
+              <Typography color="secondary" variant="h4" align="center" paragraph={true} className="dragon-emot-desc">
+                Brand favoritmu sudah terdanai? Tenang, kamu bisa booking dulu agar tidak ketinggalan pendanaan cabang selanjutnya!
               </Typography>
-              <Grid container style={{ marginTop:`3rem`}}>
-                <Grid item xs={5} md={5} align="right">
-                  <Button variant="outlined" onClick={()=>{ navigate("https://api.whatsapp.com/send?phone=6281381862878") }}>
-                    <Typography style={{ fontWeight:`600` }}>
-                      <WhatsAppIcon />
-                      WHATSAPP
-                    </Typography>
-                  </Button>
-                </Grid>
-                <Grid item xs={1} md={1}>
-                    <Typography color="secondary" align="center">
-                      atau
-                    </Typography>
-                </Grid>
-                <Grid item xs={6} md={6}>
-                    <Typography variant="h4" color="secondary" style={{ fontWeight:`600` }}>
-                      +62 813 8186 2878
-                    </Typography>
-                </Grid>
+            </Grid>
+            <Grid item xs={12} md={12} align="center" style={{ marginTop: `3rem`, marginBottom: `3rem` }}>
+              <a href="https://forms.gle/b9N7KtBMCczZzFGH8" target="_blank" style={{ textDecoration: `none` }}>
+                <Button >Booking Disini</Button>
+              </a>
+            </Grid>
+          </Container>
+        </section>
+
+        <section style={{ paddingTop: '50px', display: 'flex', alignItems: 'center' }}>
+          <Grid item xs={12} md={12}>
+            <Typography color="primary" align="center" className="dragon-emot">
+              &#129300;
+            </Typography>
+            <Typography color="secondary" variant="h4" align="center" className="dragon-emot-desc">
+              Punya pertanyaan? Hubungi kami di
+            </Typography>
+            <Grid container style={{ marginTop: `3rem` }}>
+              <Grid item xs={5} md={5} align="right">
+                <Button variant="outlined" onClick={() => { navigate("https://api.whatsapp.com/send?phone=6281381862878") }}>
+                  <Typography style={{ fontWeight: `600` }}>
+                    <WhatsAppIcon />
+                    WHATSAPP
+                  </Typography>
+                </Button>
+              </Grid>
+              <Grid item xs={1} md={1}>
+                <Typography color="secondary" align="center">
+                  atau
+                </Typography>
+              </Grid>
+              <Grid item xs={6} md={6}>
+                <Typography variant="h4" color="secondary" style={{ fontWeight: `600` }}>
+                  +62 813 8186 2878
+                </Typography>
               </Grid>
             </Grid>
-          </section>
+          </Grid>
+        </section>
         <Footer />
       </Box>
     </ThemeProvider>

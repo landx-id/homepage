@@ -59,7 +59,7 @@ const CardProject = ({ data }) => {
                 return (
                   <div style={{ height: '195px', position: 'relative' }} key={i}>
                     {data.launchProgress === 1 ?
-                      <img src="./images/habis-terjual.webp" alt="sold out" style={{ position: 'absolute', left: '-2px', top: '-2px' }} />
+                      <img src="/images/habis-terjual.webp" alt="sold out" style={{ position: 'absolute', left: '-2px', top: '-2px' }} />
                       :
                       ''}
                     <img src={img} style={{ height: '195px' }} className='c-pointer' alt="preview" onClick={() => navigate(`/project/${data.token.symbol.toLowerCase()}`)} onLoad={() => setLoadImg(false)} />

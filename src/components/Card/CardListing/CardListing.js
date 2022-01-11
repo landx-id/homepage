@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { Card, Grid, Typography } from '@mui/material'
-import testThumbnail from '../../../../project/images/CAPT/thumbnail.webp'
 
 import './CardListing.scss'
 
@@ -22,8 +21,8 @@ const CardListing = ({ code, data, timeUp }) => {
       <Grid item xs={11} className='container-slider-center'>
         <div className="container-card-listing">
           <Card className="card-listing">
-            <img src={testThumbnail} alt="thumbnail" className='listing-img' />
-            <img src="./images/soon-listing.webp" alt="soon listing" className='listing-soon' />
+            <img src={data.thumbnail} alt="thumbnail" className='listing-img' />
+            <img src="/images/soon-listing.webp" alt="soon listing" className='listing-soon' />
             <div className="text-contianer">
               <a href={data.link} style={{ textDecoration: 'none' }}>
                 <Typography className="text-time" componen='h2'>
