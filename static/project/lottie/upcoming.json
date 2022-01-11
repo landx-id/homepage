@@ -1,17 +1,17 @@
 {
   "upcoming": [
     {
-      "BKB": {
-        "link": "/project/bkb",
+      "BBKB": {
+        "link": "/project/bbkb",
         "listing_at": "2022.01.18 11:00",
         "images": [
-          "project/images/BKB/1.webp",
-          "project/images/BKB/2.webp",
-          "project/images/BKB/3.webp",
-          "project/images/BKB/4.webp",
-          "project/images/BKB/5.webp"
+          "project/images/BBKB/1.webp",
+          "project/images/BBKB/2.webp",
+          "project/images/BBKB/3.webp",
+          "project/images/BBKB/4.webp",
+          "project/images/BBKB/5.webp"
         ],
-        "thumbnail": "project/images/BKB/thumbnail.webp",
+        "thumbnail": "project/images/BBKB/thumbnail.webp",
         "description": "<p>Berbicara kuliner nusantara memang tidak ada habisnya. Apalagi kalau sudah bahas olahan khusus dari bebek yang jadi favorit banyak orang.</p><p><b>Bebek Kepahiang Babase (BKB)</b> yang jadi incaran para penikmat olahan bebek dengan sajian andalannya, bebek hitam kepahiang! Olahan khas daerah Kepahiang, Bengkulu, dengan bumbu spesial kepahiang dan proses tradisional nan kompleks membuat hidangan ini jadi pilihan utama penggemar olahan bebek.</p><p>Sejak 2017, Bebek BKB sudah membuka outletnya di lebih dari 23 cabang di wilayah Jabodetabek. Rasa yang gurih dan bumbu yang meresap bikin bisnis ini jadi ekspansi cabang sana-sini demi penuhi permintaan pelanggan.</p><br /><p>Tertarik jadi pemilik bisnis incaran konsumen? Tunggu tanggal listingnya, ya.</p><br /><p>Kalo listing, ingetin aku dong!</p>"
       }
     },
