@@ -90,7 +90,7 @@ const DragonHotPot = () => {
             <Toolbar>
               <Box>
                 <img
-                  src="./images/hamburger_menu.svg"
+                  src="/images/hamburger_menu.svg"
                   onClick={() => handleChange()}
                   style={{ cursor: `pointer` }}
                 />
@@ -98,7 +98,7 @@ const DragonHotPot = () => {
               <Box className="dragon-hot-navbar-logo">
                 <Link to="/">
                   <img
-                    src="./images/landx_logo.png"
+                    src="/images/landx_logo.png"
                     className="dragon-hot-logo-landx"
                   />
                 </Link>
@@ -241,7 +241,7 @@ const DragonHotPot = () => {
           </Box>
           <Box style={{ justifyContent: `center`, display: `flex` }}>
             <img
-              src="./images/dhp_icon.png"
+              src="/images/dhp_icon.png"
               alt="DHP Icon"
               className="dragon-hot-icon"
             />
@@ -290,7 +290,7 @@ const DragonHotPot = () => {
           </Box>
           <Box className="dragon-hot-bowl2">
             <img
-              src="./images/dhp_header_image_03.png"
+              src="/images/dhp_header_image_03.png"
               id="bowl"
               alt=""
             />
