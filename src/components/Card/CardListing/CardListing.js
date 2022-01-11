@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Card, Grid, Typography } from '@mui/material'
-import testThumbnail from '../../../../project/images/CAPT/thumbnail.webp'
+import testThumbnail from '../../../../static/project/images/CAPT/1.webp'
 
 import './CardListing.scss'
 
