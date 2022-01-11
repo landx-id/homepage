@@ -25,6 +25,8 @@ const ShowAllProject = () => {
   const [valSort, setValSort] = useState('settlementDate')
   const [minHis, setMinHis] = useState(1000000)
   const [maxHis, setMaxHis] = useState(5000000)
+  const [categoryHis, setCategoryHis] = useState('allCategory')
+  const [valSortHis, setValSortHis] = useState('settlementDate')
 
   const BootstrapInput = styled(InputBase)(({ theme }) => ({
     '& .MuiInputBase-root': {
@@ -143,7 +145,9 @@ const ShowAllProject = () => {
 
     setMinHis(minPrice)
     setMaxHis(maxPrice)
-    if (minPrice < minHis || maxPrice > maxHis || chooseCategory === 'allCategory' || valSort === 'settlementDate') {
+    setCategoryHis(chooseCategory)
+    setValSortHis(valSortHis)
+    if (minPrice < minHis || maxPrice > maxHis || chooseCategory !== categoryHis || valSort !== valSortHis) {
       getDataProjects()
     }
   }
