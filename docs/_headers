@@ -45,21 +45,21 @@
   Cache-Control: public, max-age=31536000, immutable
 /component---src-pages-payment-completed-index-js-db6867d4a44d605edee6.js
   Cache-Control: public, max-age=31536000, immutable
-/component---src-pages-payment-error-index-js-039ac4b87a29630b15c7.js
-  Cache-Control: public, max-age=31536000, immutable
 /component---src-pages-payment-uncompleted-index-js-eb2a0754406f6a045865.js
   Cache-Control: public, max-age=31536000, immutable
 /component---src-pages-pendaftaran-perusahaan-index-js-9dde8bd13516d7628570.js
   Cache-Control: public, max-age=31536000, immutable
+/component---src-pages-payment-error-index-js-039ac4b87a29630b15c7.js
+  Cache-Control: public, max-age=31536000, immutable
 /component---src-pages-privacy-policy-index-js-934819a0637ba9031c87.js
+  Cache-Control: public, max-age=31536000, immutable
+/component---src-pages-service-level-agreement-index-js-a6ae2c588a2567653b6c.js
   Cache-Control: public, max-age=31536000, immutable
 /57bcfd63-1c3e45b326688e975a47.js
   Cache-Control: public, max-age=31536000, immutable
 /component---src-pages-project-[code]-js-487f4b2107887a11037d.js
   Cache-Control: public, max-age=31536000, immutable
 /component---src-pages-project-index-js-7edb89b49ce138567584.js
-  Cache-Control: public, max-age=31536000, immutable
-/component---src-pages-service-level-agreement-index-js-a6ae2c588a2567653b6c.js
   Cache-Control: public, max-age=31536000, immutable
 /component---src-pages-syarat-dan-ketentuan-index-js-58f492b08fe25b49167b.js
   Cache-Control: public, max-age=31536000, immutable
@@ -203,16 +203,6 @@
   Link: </component---src-pages-payment-completed-index-js-db6867d4a44d605edee6.js>; rel=preload; as=script
   Link: </page-data/app-data.json>; rel=preload; as=fetch; crossorigin
   Link: </page-data/payment-completed/page-data.json>; rel=preload; as=fetch; crossorigin
-/payment-error/
-  Link: </webpack-runtime-9dc6f5a5212e49df8fba.js>; rel=preload; as=script
-  Link: </framework-02803a9a8c6b7ac4bea8.js>; rel=preload; as=script
-  Link: </app-bdb5c04c8afc8c92f8b2.js>; rel=preload; as=script
-  Link: </framework-02803a9a8c6b7ac4bea8.js>; rel=preload; as=script
-  Link: </commons-11b2a31672943c281305.js>; rel=preload; as=script
-  Link: </2e7e9bdbfbdf8234241a4dace6e7f708f09efa74-37fd2ed405a1ff4ddde3.js>; rel=preload; as=script
-  Link: </component---src-pages-payment-error-index-js-039ac4b87a29630b15c7.js>; rel=preload; as=script
-  Link: </page-data/app-data.json>; rel=preload; as=fetch; crossorigin
-  Link: </page-data/payment-error/page-data.json>; rel=preload; as=fetch; crossorigin
 /payment-uncompleted/
   Link: </webpack-runtime-9dc6f5a5212e49df8fba.js>; rel=preload; as=script
   Link: </framework-02803a9a8c6b7ac4bea8.js>; rel=preload; as=script
@@ -237,6 +227,16 @@
   Link: </component---src-pages-pendaftaran-perusahaan-index-js-9dde8bd13516d7628570.js>; rel=preload; as=script
   Link: </page-data/app-data.json>; rel=preload; as=fetch; crossorigin
   Link: </page-data/pendaftaran-perusahaan/page-data.json>; rel=preload; as=fetch; crossorigin
+/payment-error/
+  Link: </webpack-runtime-9dc6f5a5212e49df8fba.js>; rel=preload; as=script
+  Link: </framework-02803a9a8c6b7ac4bea8.js>; rel=preload; as=script
+  Link: </app-bdb5c04c8afc8c92f8b2.js>; rel=preload; as=script
+  Link: </framework-02803a9a8c6b7ac4bea8.js>; rel=preload; as=script
+  Link: </commons-11b2a31672943c281305.js>; rel=preload; as=script
+  Link: </2e7e9bdbfbdf8234241a4dace6e7f708f09efa74-37fd2ed405a1ff4ddde3.js>; rel=preload; as=script
+  Link: </component---src-pages-payment-error-index-js-039ac4b87a29630b15c7.js>; rel=preload; as=script
+  Link: </page-data/app-data.json>; rel=preload; as=fetch; crossorigin
+  Link: </page-data/payment-error/page-data.json>; rel=preload; as=fetch; crossorigin
 /privacy-policy/
   Link: </webpack-runtime-9dc6f5a5212e49df8fba.js>; rel=preload; as=script
   Link: </framework-02803a9a8c6b7ac4bea8.js>; rel=preload; as=script
@@ -251,6 +251,20 @@
   Link: </component---src-pages-privacy-policy-index-js-934819a0637ba9031c87.js>; rel=preload; as=script
   Link: </page-data/app-data.json>; rel=preload; as=fetch; crossorigin
   Link: </page-data/privacy-policy/page-data.json>; rel=preload; as=fetch; crossorigin
+/service-level-agreement/
+  Link: </webpack-runtime-9dc6f5a5212e49df8fba.js>; rel=preload; as=script
+  Link: </framework-02803a9a8c6b7ac4bea8.js>; rel=preload; as=script
+  Link: </app-bdb5c04c8afc8c92f8b2.js>; rel=preload; as=script
+  Link: </framework-02803a9a8c6b7ac4bea8.js>; rel=preload; as=script
+  Link: </commons-11b2a31672943c281305.js>; rel=preload; as=script
+  Link: </2e7e9bdbfbdf8234241a4dace6e7f708f09efa74-37fd2ed405a1ff4ddde3.js>; rel=preload; as=script
+  Link: </bed7cb5cbdba50a6b04edff5fd4e77d38610b467-2799b7eb3bc34c55fbc9.js>; rel=preload; as=script
+  Link: </6c04c9d8c8b2e0c7058f430c5b1c6a9dfdfe5c84-33946528e960d0478963.js>; rel=preload; as=script
+  Link: </08d5b37294ac205664f5346bcf14843098cf2ccb-8a93d0307edd3e6508cd.js>; rel=preload; as=script
+  Link: </c0066e52846ea675b515ec7bb2d0c007ede67687-93f795d9d4e44948dc01.js>; rel=preload; as=script
+  Link: </component---src-pages-service-level-agreement-index-js-a6ae2c588a2567653b6c.js>; rel=preload; as=script
+  Link: </page-data/app-data.json>; rel=preload; as=fetch; crossorigin
+  Link: </page-data/service-level-agreement/page-data.json>; rel=preload; as=fetch; crossorigin
 /project/[code]/
   Link: </webpack-runtime-9dc6f5a5212e49df8fba.js>; rel=preload; as=script
   Link: </framework-02803a9a8c6b7ac4bea8.js>; rel=preload; as=script
@@ -284,20 +298,6 @@
   Link: </component---src-pages-project-index-js-7edb89b49ce138567584.js>; rel=preload; as=script
   Link: </page-data/app-data.json>; rel=preload; as=fetch; crossorigin
   Link: </page-data/project/page-data.json>; rel=preload; as=fetch; crossorigin
-/service-level-agreement/
-  Link: </webpack-runtime-9dc6f5a5212e49df8fba.js>; rel=preload; as=script
-  Link: </framework-02803a9a8c6b7ac4bea8.js>; rel=preload; as=script
-  Link: </app-bdb5c04c8afc8c92f8b2.js>; rel=preload; as=script
-  Link: </framework-02803a9a8c6b7ac4bea8.js>; rel=preload; as=script
-  Link: </commons-11b2a31672943c281305.js>; rel=preload; as=script
-  Link: </2e7e9bdbfbdf8234241a4dace6e7f708f09efa74-37fd2ed405a1ff4ddde3.js>; rel=preload; as=script
-  Link: </bed7cb5cbdba50a6b04edff5fd4e77d38610b467-2799b7eb3bc34c55fbc9.js>; rel=preload; as=script
-  Link: </6c04c9d8c8b2e0c7058f430c5b1c6a9dfdfe5c84-33946528e960d0478963.js>; rel=preload; as=script
-  Link: </08d5b37294ac205664f5346bcf14843098cf2ccb-8a93d0307edd3e6508cd.js>; rel=preload; as=script
-  Link: </c0066e52846ea675b515ec7bb2d0c007ede67687-93f795d9d4e44948dc01.js>; rel=preload; as=script
-  Link: </component---src-pages-service-level-agreement-index-js-a6ae2c588a2567653b6c.js>; rel=preload; as=script
-  Link: </page-data/app-data.json>; rel=preload; as=fetch; crossorigin
-  Link: </page-data/service-level-agreement/page-data.json>; rel=preload; as=fetch; crossorigin
 /syarat-dan-ketentuan/
   Link: </webpack-runtime-9dc6f5a5212e49df8fba.js>; rel=preload; as=script
   Link: </framework-02803a9a8c6b7ac4bea8.js>; rel=preload; as=script
