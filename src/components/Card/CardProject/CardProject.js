@@ -20,7 +20,6 @@ const CardProject = ({ data }) => {
   useEffect(() => {
     {/* Script dibawah untuk handle loader image */ }
     data.previewImages.length > 0 && data.previewImages.map((img, i) => {
-      setLoadImg(false)
       return (
         <img src={img} style={{ display: 'none' }} alt="preview" onLoad={() => setLoadImg(true)} key={i} />
       )
