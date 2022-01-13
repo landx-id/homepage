@@ -2,7 +2,10 @@
   "upcoming": [
     {
       "BBKB": {
+        "name": "Kapal TUG & Barge - PT Samudera Rezeki Mulia",
         "link": "/project/bbkb",
+        "booking_url": "https://paperform.co/",
+        "booking_count": 120,
         "listing_at": "2022.01.01 11:00",
         "images": [
           "images/BBKB/1.webp",
@@ -18,7 +21,10 @@
     },
     {
       "MANG": {
+        "name": "Kapal TUG & Barge - PT Samudera Rezeki Mulia",
         "link": "/project/mang",
+        "booking_url": "https://paperform.co/",
+        "booking_count": 120,
         "listing_at": "2022.01.01 11:00",
         "images": [
           "images/MANG/1.webp",
