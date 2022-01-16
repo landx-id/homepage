@@ -108,7 +108,7 @@ const IndexPage = () => {
   }
 
   const handleListing = () => {
-    fetch('/project/lottie/upcoming.json')
+    fetch('/lottie/upcoming.json')
       .then(r => r.json())
       .then(data => {
         setDataListing((prevData) => [...prevData, data.upcoming])
