@@ -28,6 +28,7 @@ const Footer = () => {
                     src="/images/logo_playstore.webp"
                     alt="Play Store"
                     title="Play Store"
+                    style={{ height:`60px`, width:`203px` }}
                   />
                 </a>
               </Grid>
@@ -38,6 +39,7 @@ const Footer = () => {
                     alt="App Store"
                     title="App Store"
                     className="app-store"
+                    style={{ height:`60px`, width:`180px` }}
                   />
                 </a>
               </Grid>
@@ -50,12 +52,15 @@ const Footer = () => {
         <Typography className="footer-fcolor mt-4" display="block">
           BERIZIN & DIAWASI OLEH
         </Typography>
-        <img
-          src="/images/logo_ojk_01.webp"
-          alt="LandX merupakan platform equity crowdfunding terpercaya di Indonesia yang telah terdaftar dan diawasi OJK"
-          title="LandX merupakan platform equity crowdfunding terpercaya di Indonesia yang telah terdaftar dan diawasi OJK"
-          style={{ marginBottom: `3rem` }}
-        />
+        <Box style={{ display:`block` }}>
+          <img
+            src="/images/logo_ojk_01.webp"
+            alt="LandX merupakan platform equity crowdfunding terpercaya di Indonesia yang telah terdaftar dan diawasi OJK"
+            title="LandX merupakan platform equity crowdfunding terpercaya di Indonesia yang telah terdaftar dan diawasi OJK"
+            style={{ marginBottom: `3rem`, height:`130px`, width:`330px` }}
+          />
+        </Box>
+        
         <hr />
 
         <Grid container spacing={2} style={{ marginTop: `5rem`, marginBottom: `4rem`, textAlign: `center` }}>
@@ -67,7 +72,7 @@ const Footer = () => {
               src="/images/logo_kemkominfo.webp"
               alt="LandX TELAH TERDAFTAR OLEH KEMENTRIAN KOMUNIKASI DAN INFORMATIKA sehingga informasi dan investasi anda menjadi lebih aman"
               title="LandX TELAH TERDAFTAR OLEH KEMENTRIAN KOMUNIKASI DAN INFORMATIKA sehingga informasi dan investasi anda menjadi lebih aman"
-              style={{ marginBottom: `3rem` }}
+              style={{ marginBottom: `3rem`, height:`130px`, width:`144px` }}
             />
           </Grid>
           <Grid item xs={12} md={4}>
@@ -78,7 +83,8 @@ const Footer = () => {
               src="/images/logo_iso.webp"
               alt="LandX telah memilki sertifikasi ISO 27001 sehingga investasi anda melalui equity crowdfunding menjadi lebih mudah"
               title="LandX telah memilki sertifikasi ISO 27001 sehingga investasi anda melalui equity crowdfunding menjadi lebih mudah"
-              style={{ marginBottom: `3rem` }}
+              style={{ marginBottom: `3rem`, height:`130px`, width:`279px` }}
+              className="footer-images-size"
             />
           </Grid>
           <Grid item xs={12} md={4}>
@@ -89,7 +95,8 @@ const Footer = () => {
               src="/images/Logo_ALUDI.webp"
               alt="Landx merupakan salah satu board member dari Asosiasi Layanan Urun Dana Indonesia (ALUDI) yang ditujunjuk OJK untuk bertugas menjaga kestabilan ekosistem layanan urun dana atau equity crowdfunding di Indonesia"
               title="Landx merupakan salah satu board member dari Asosiasi Layanan Urun Dana Indonesia (ALUDI) yang ditujunjuk OJK untuk bertugas menjaga kestabilan ekosistem layanan urun dana atau equity crowdfunding di Indonesia"
-              style={{ marginBottom: `3rem` }}
+              style={{ marginBottom: `3rem`, height:`130px`, width:`95px` }}
+              className="footer-images-size"
             />
           </Grid>
         </Grid>
