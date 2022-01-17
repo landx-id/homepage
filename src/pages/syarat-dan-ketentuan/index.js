@@ -77,7 +77,7 @@ const TermAndCondition = () => (
             </li>
             <li>
               <Typography color="secondary" paragraph={true}>
-                <strong>LandX</strong> dalah Platform yang digunakan untuk melakukan Penawaran Efek melalui Layanan Urun Dana Berbasis Teknologi Informasi.
+                <strong>LandX</strong> adalah Platform yang digunakan untuk melakukan Penawaran Efek melalui Layanan Urun Dana Berbasis Teknologi Informasi.
               </Typography>
             </li>
             <li>
