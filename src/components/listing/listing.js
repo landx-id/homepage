@@ -16,9 +16,11 @@ const ListingProjects = (props) => {
   const [days, setDays] = useState('')
   const [hours, setHours] = useState('')
   const [listingAt, setlistingAt] = useState('')
+  const [imgListing, setImgListing] = useState(false)
 
   useEffect(() => {
     handleListing()
+    setImgListing(false)
   }, [])
 
   useEffect(() => {
@@ -60,7 +62,7 @@ const ListingProjects = (props) => {
             </Grid>
           </Grid>
 
-          {dataListing &&
+          {imgListing ?
             <div className='container-carousel-project'>
               <Slider
                 asNavFor={caraousel2}
@@ -88,6 +90,10 @@ const ListingProjects = (props) => {
                 })}
               </Slider>
             </div>
+            :
+            <div style={{ textAlign: 'center' }}>
+              <img src={dataListing.thumbnail} alt="Thumbnail Project" style={{ display: 'inline-block' }} />
+            </div>
           }
 
           <Grid container spacing={2}>
@@ -101,7 +107,7 @@ const ListingProjects = (props) => {
               <div className='container-reminder'>
                 <Grid container spacing={2} className='container-grid-remind'>
                   <Grid item xs={12} md={7} className='container-text-remind'><img src="/images/ic_calendar.webp" alt="ic_calendar" /> <Typography component='p' className='text-time'>{listingAt && days} Hari : {listingAt && hours} Jam</Typography></Grid>
-                  <Grid item xs={12} md={5} className='container-btn-remind'><Button variant="contained" data-paperform-id={dataListing && dataListing.title_form_paper} data-popup-button="1" className='btn-remind'><NotificationsNoneIcon className='icon-remind' style={{ marginRight: '5px' }} /> <span style={{ marginTop: '2px' }}>REMIND ME</span></Button></Grid>
+                  <Grid item xs={12} md={5} className='container-btn-remind'><Button variant="contained" data-paperform-id={dataListing.title_form_paper} data-popup-button="1" className='btn-remind'><NotificationsNoneIcon className='icon-remind' style={{ marginRight: '5px' }} /> <span style={{ marginTop: '2px' }}>REMIND ME</span></Button></Grid>
                 </Grid>
               </div>
             </Grid>
