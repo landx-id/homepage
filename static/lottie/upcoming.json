@@ -3,10 +3,11 @@
     {
       "BBKB": {
         "name": "Bebek Kepahiang Babase (BKB) - PT Nuansa Kulinari Indonesia",
-        "category": "Maritim",
+        "category": "Restoran",
         "link": "/project/bbkb",
         "booking_url": "https://paperform.co/",
-        "booking_count": 120,
+        "booking_count": 0,
+        "booking_enabled": false,
         "listing_at": "2022.01.10 11:00",
         "images": [
           "/images/BBKB/1.webp",
@@ -23,10 +24,11 @@
     {
       "MANG": {
         "name": "MangGang Grilled Beef Bowl - PT Rasa Mewah Indonesia",
-        "category": "Maritim",
+        "category": "Restoran",
         "link": "/project/mang",
         "booking_url": "https://paperform.co/",
-        "booking_count": 120,
+        "booking_count": 0,
+        "booking_enabled": false,
         "listing_at": "2022.01.24 11:00",
         "images": [
           "/images/MANG/1.webp",
