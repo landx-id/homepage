@@ -12,7 +12,6 @@ import CardTitleSection from "../components/Card/CardTitleSection/CardTitleSecti
 import CardLandxWork from "../components/Card/CardLandxWork/CardLandxWork";
 import CardValueInvestor from "../components/Card/CardValueInvestor/CardValueInvestor";
 import CardListing from "../components/Card/CardListing/CardListing";
-import '@justinribeiro/lite-youtube';
 
 // import CTAWhatsapp from '../components/CTAWhatsapp/CTAWhatsapp';
 
