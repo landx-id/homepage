@@ -20,7 +20,7 @@ const ListingProjects = (props) => {
 
   useEffect(() => {
     handleListing()
-    setImgListing(false)
+    setImgListing(true)
   }, [])
 
   useEffect(() => {
