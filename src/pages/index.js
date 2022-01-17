@@ -148,10 +148,10 @@ const IndexPage = () => {
                     <img src="./images/Logo_ojk_02.webp" alt="logo OJK" className="logo-ojk" />
                   </Grid>
                   <Grid item className='container-cta' sm={11} xl={12}>
-                    <Link href='https://play.google.com/store/apps/details?id=store.numoney.landxapp' target='_blank'>
+                    <Link href='https://play.google.com/store/apps/details?id=store.numoney.landxapp' target='_blank' rel='noreferrer noopener'>
                       <img src="/images/logo_playstore.webp" alt="PlayStore" className='playstoreLogo cta-image' />
                     </Link>
-                    <Link href='https://apps.apple.com/id/app/landx/id1453823676' target='_blank'>
+                    <Link href='https://apps.apple.com/id/app/landx/id1453823676' target='_blank' rel='noreferrer noopener'>
                       <img src="/images/logo_appstore.webp" alt="AppStore" className='cta-image appstoreLogo' />
                     </Link>
                   </Grid>
