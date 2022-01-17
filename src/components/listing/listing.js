@@ -16,7 +16,7 @@ const ListingProjects = (props) => {
   const [days, setDays] = useState('')
   const [hours, setHours] = useState('')
   const [listingAt, setlistingAt] = useState('')
-  const [imgListing, setImgListing] = useState(false)
+  const [imgListing, setImgListing] = useState(true)
 
   useEffect(() => {
     handleListing()
