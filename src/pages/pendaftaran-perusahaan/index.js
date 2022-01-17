@@ -143,7 +143,9 @@ const CompanyRegistration = () => (
             </Grid>
             <Grid item xs={12} md={6} style={{ alignSelf:`center`, marginTop:`2rem` }}>
               <Box style={{ display:`flex`, justifyContent:`center`, alignItems:`center` }}>
+              <a href='https://docs.google.com/forms/d/e/1FAIpQLSej-owlTcpGnLblw1IuPSgM-RjoENN3huk8tZPlar-uUVyLIA/viewform' style={{ textDecoration:"none" }}>
                 <Button>HUBUNGI KAMI</Button>
+              </a>
               </Box>
             </Grid>
           </Grid>  
