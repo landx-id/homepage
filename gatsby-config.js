@@ -22,15 +22,6 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-plugin-google-fonts`,
-      options: {
-        fonts: [
-          `Inter`,
-        ],
-        display: 'swap'
-      }
-    },
-    {
       resolve: "gatsby-plugin-anchor-links",
       options: {
         offset: -150

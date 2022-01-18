@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Arsenal:wght@400;700&display=swap');
+@import url("@fontsource/arsenal");
 
 .dragon-hot-font p, .dragon-hot-font h2, .dragon-hot-font h3, .dragon-hot-font h5 {
   color: #8e3825;
@@ -44,7 +44,7 @@
   color: #8e3825;
 
   h3 {
-    font-family: Arsenal !important;
+    font-family: "Arsenal" !important;
     font-weight: bold;
     font-size: 60px;
     line-height: 68px;
@@ -52,7 +52,7 @@
   }
 
   p {
-    font-family: Arsenal !important;
+    font-family: "Arsenal" !important;
     font-size: 24px;
     letter-spacing: 0.1px;
   }
@@ -65,7 +65,7 @@
 }
 
 .dragon-hot-text-content li {
-  font-family: Arsenal !important;
+  font-family: "Arsenal" !important;
   font-size: 34px;
   font-weight: bold;
   letter-spacing: 0.25px;
