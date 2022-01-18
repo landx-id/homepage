@@ -48,7 +48,7 @@ const ResponsiveAppBar = () => {
         <Container>
           <Toolbar style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingLeft: '0', paddingRight: '0' }}>
             <Link to='/'>
-              <img src="/images/landx-logo.webp" alt="logo landx" style={{ marginBottom: '0' }} />
+              <img src="/images/landx-logo.webp" alt="logo landx" style={{ marginBottom: '0', height:`30px`, width:`91px` }} />
             </Link>
             {widthWindows > 1055 ?
               <>

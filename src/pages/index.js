@@ -12,6 +12,7 @@ import CardTitleSection from "../components/Card/CardTitleSection/CardTitleSecti
 import CardLandxWork from "../components/Card/CardLandxWork/CardLandxWork";
 import CardValueInvestor from "../components/Card/CardValueInvestor/CardValueInvestor";
 import CardListing from "../components/Card/CardListing/CardListing";
+
 // import CTAWhatsapp from '../components/CTAWhatsapp/CTAWhatsapp';
 
 import '../assets/styling/cssReset.scss';
@@ -145,20 +146,22 @@ const IndexPage = () => {
                     </p>
                   </Grid>
                   <Grid item className='container-logo-ojk' sm={11} xl={12}>
-                    <img src="./images/Logo_ojk_02.webp" alt="logo OJK" className="logo-ojk" />
+                    <img src="./images/Logo_ojk_02.webp" alt="logo OJK" className="logo-ojk" style={{ height:`67px`, width:`287px` }} />
                   </Grid>
                   <Grid item className='container-cta' sm={11} xl={12}>
                     <Link href='https://play.google.com/store/apps/details?id=store.numoney.landxapp' target='_blank' rel='noreferrer noopener'>
-                      <img src="/images/logo_playstore.webp" alt="PlayStore" className='playstoreLogo cta-image' />
+                      <img src="/images/logo_playstore.webp" alt="PlayStore" className='playstoreLogo cta-image' style={{ height:`60px`, width:`203px` }} />
                     </Link>
                     <Link href='https://apps.apple.com/id/app/landx/id1453823676' target='_blank' rel='noreferrer noopener'>
-                      <img src="/images/logo_appstore.webp" alt="AppStore" className='cta-image appstoreLogo' />
+                      <img src="/images/logo_appstore.webp" alt="AppStore" className='cta-image appstoreLogo' style={{ height:`60px`, width:`180px` }} />
                     </Link>
                   </Grid>
                 </Grid>
               </Grid>
               <Grid item xs={12} md={6} className='container-yt'>
-                <iframe className='banner-yt' src="https://www.youtube.com/embed/Y03A0VgY_ug" title="Landx" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen loading='lazy'></iframe>
+              <video className="video-frame" controls>
+                <source src="https://landx-asset.s3.us-east-2.amazonaws.com/homepage-video.mp4" type="video/mp4" />
+              </video>
               </Grid>
             </Grid>
           </Container>

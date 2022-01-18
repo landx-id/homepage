@@ -201,6 +201,11 @@
   padding-top: 40px;
 }
 
+.video-frame {
+  width: auto;
+  height: 310px;
+}
+
 @media screen and (max-width: 1200px) {
   .container-slider-center {
     margin-left: auto !important;
@@ -283,6 +288,10 @@
 }
 
 @media screen and (max-width: 600px) {
+  .video-frame {
+    width: auto;
+    height: 175px;
+  }
 }
 
 @media screen and (max-width: 320px) {

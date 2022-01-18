@@ -109,6 +109,11 @@
   background-color: #2dbe60 !important;
 }
 
+.footer-images-size {
+  height: 130px;
+  max-width: 100%;
+}
+
 /* If the screen size is 600px wide or less, hide the element */
 @media only screen and (max-width: 600px) {
   .footer-CTA-move {
