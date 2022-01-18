@@ -57,13 +57,13 @@ const LandXCuan = () => {
           <Grid item xs={12} md={12} align="center">
             {widthWindows > 365 ?
               <img
-                src="/images/landx_cuan_desktop_KV.webp"
+                src="/images/Mobile-KV-360.webp"
                 alt="LandX cuan"
                 className="cuan-banner"
               />
               :
               <img
-                src="/images/Mobile-KV-360.webp"
+                src="/images/landx_cuan_desktop_KV.webp"
                 alt="LandX cuan"
                 className="cuan-banner"
               />

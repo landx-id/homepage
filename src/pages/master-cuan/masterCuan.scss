@@ -1,0 +1,21 @@
+.container-master-cuan {
+  .banner-container {
+    background: radial-gradient(
+      154.02% 59.94% at 50% 13.25%,
+      #6ae755 0%,
+      #1ba503 57.46%
+    );
+    padding: 32px 16px 24px;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .text-banner {
+    font-weight: 700;
+    font-size: 17px;
+    color: #fff;
+    font-family: "Inter", sans-serif;
+  }
+}
