@@ -6,7 +6,6 @@ import Seo from '../../components/seo/seo';
 import { capitalizeTheFirstLetterOfEachWord, FetchData } from '../../utils/common';
 import CardProject from '../../components/Card/CardProject/CardProject';
 import { toIDR, fromIDR } from '../../utils/currency';
-import { globalHistory } from "@reach/router"
 
 import Slider from 'react-slick'
 import "slick-carousel/slick/slick.css";
