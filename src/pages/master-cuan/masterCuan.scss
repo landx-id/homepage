@@ -18,4 +18,63 @@
     color: #fff;
     font-family: "Inter", sans-serif;
   }
+
+  .btn-join-white {
+    color: #00b242;
+    background-color: #fff;
+    font-weight: 400;
+    font-size: 17px;
+    width: 328px;
+    height: 48px;
+  }
+
+  .why-join-container {
+    margin-top: 77px;
+    text-align: center;
+  }
+
+  .reward-container {
+    text-align: center;
+    margin-top: 90px;
+  }
+
+  .text-title {
+    font-weight: 700;
+    font-size: 28px;
+    color: #64d882;
+    margin-bottom: 32px;
+    font-family: "Inter", sans-serif;
+  }
+
+  .icon-container {
+    width: 56px;
+    height: 56px;
+    background: #e4f6e8;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .icon-grid {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .lot-container {
+    margin-top: 8px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #425766;
+  }
+
+  .text-b-title {
+    font-weight: 700;
+    font-size: 20px;
+    font-family: "Inter", sans-serif;
+    line-height: 32px;
+    color: #425766;
+    margin-bottom: 24px;
+  }
 }
