@@ -235,6 +235,14 @@ export function NumberValueInvestor(num) {
   return parts.join(",");
 }
 
+export function TwoDecimalNumber(num) {
+  let numbers = num.toString().split("")
+  let index = numbers.length - 7
+  let number = numbers.splice(0, index).join('')
+  let parts = number.toString().split(".")
+  return (parts / 100).toFixed(2).toString().replace(".", ",")
+}
+
 export function capitalizeTheFirstLetterOfEachWord(words) {
   let separateWord = words.toLowerCase().split(' ');
   for (let i = 0; i < separateWord.length; i++) {
