@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import { Container, Grid, Typography, Button, CircularProgress } from '@mui/material';
 import Layout from "../components/layout/layout"
 import Seo from "../components/seo/seo"
-import { FetchLimitData, NumberValueInvestor, NumberWithCommas } from "../utils/common";
+import { FetchLimitData, TwoDecimalNumber, NumberWithCommas } from "../utils/common";
 import CardArticel from "../components/Card/CardArticel/CardArticel"
 import CardProject from "../components/Card/CardProject/CardProject";
 import CardTestimony from "../components/Card/CardTestimony/CardTestimony";
@@ -146,27 +146,26 @@ const IndexPage = () => {
                     </p>
                   </Grid>
                   <Grid item className='container-logo-ojk' sm={11} xl={12}>
-                    <img src="./images/Logo_ojk_02.webp" alt="logo OJK" className="logo-ojk" style={{ height:`67px`, width:`287px` }} />
+                    <img src="./images/Logo_ojk_02.webp" alt="logo OJK" className="logo-ojk" style={{ height: `67px`, width: `287px` }} />
                   </Grid>
                   <Grid item className='container-cta' sm={11} xl={12}>
                     <Link href='https://play.google.com/store/apps/details?id=store.numoney.landxapp' target='_blank' rel='noreferrer noopener'>
-                      <img src="/images/logo_playstore.webp" alt="PlayStore" className='playstoreLogo cta-image' style={{ height:`60px`, width:`203px` }} />
+                      <img src="/images/logo_playstore.webp" alt="PlayStore" className='playstoreLogo cta-image' style={{ height: `60px`, width: `203px` }} />
                     </Link>
                     <Link href='https://apps.apple.com/id/app/landx/id1453823676' target='_blank' rel='noreferrer noopener'>
-                      <img src="/images/logo_appstore.webp" alt="AppStore" className='cta-image appstoreLogo' style={{ height:`60px`, width:`180px` }} />
+                      <img src="/images/logo_appstore.webp" alt="AppStore" className='cta-image appstoreLogo' style={{ height: `60px`, width: `180px` }} />
                     </Link>
                   </Grid>
                 </Grid>
               </Grid>
               <Grid item xs={12} md={6} className='container-yt'>
-              <video className="video-frame" controls>
-                <source src="https://landx-asset.s3.us-east-2.amazonaws.com/homepage-video.mp4" type="video/mp4" />
-              </video>
+                <video className="video-frame" controls>
+                  <source src="https://landx-asset.s3.us-east-2.amazonaws.com/homepage-video.mp4" type="video/mp4" />
+                </video>
               </Grid>
             </Grid>
           </Container>
         </div>
-
 
         <section className="container-value-investor">
           <Container>
@@ -179,8 +178,8 @@ const IndexPage = () => {
                     <Slider {...sliderValueInvestor} className="slider-ValueInvestor">
                       <CardValueInvestor number={NumberWithCommas(dataInvestors.registered_users)} content='Investor Terdaftar' />
                       <CardValueInvestor number={NumberWithCommas(dataInvestors.property_count)} content='Perusahaan Penerbit' />
-                      <CardValueInvestor number={`${NumberValueInvestor(dataInvestors.raised_fund)} Miliar`} content='Investasi Tersalurkan' />
-                      <CardValueInvestor number={`${NumberValueInvestor(dataInvestors.dividend_payout)} Miliar`} content='Dividen Dibagikan' />
+                      <CardValueInvestor number={`${TwoDecimalNumber(dataInvestors.raised_fund)} Miliar`} content='Investasi Tersalurkan' />
+                      <CardValueInvestor number={`${TwoDecimalNumber(dataInvestors.dividend_payout)} Miliar`} content='Dividen Dibagikan' />
                     </Slider>
                   </>
                   :
@@ -189,8 +188,8 @@ const IndexPage = () => {
                       <>
                         <CardValueInvestor number={NumberWithCommas(dataInvestors.registered_users)} content='Investor Terdaftar' />
                         <CardValueInvestor number={NumberWithCommas(dataInvestors.property_count)} content='Perusahaan Penerbit' />
-                        <CardValueInvestor number={`${NumberValueInvestor(dataInvestors.raised_fund)} Miliar`} content='Investasi Tersalurkan' />
-                        <CardValueInvestor number={`${NumberValueInvestor(dataInvestors.dividend_payout)} Miliar`} content='Dividen Dibagikan' />
+                        <CardValueInvestor number={`${TwoDecimalNumber(dataInvestors.raised_fund)} Miliar`} content='Investasi Tersalurkan' />
+                        <CardValueInvestor number={`${TwoDecimalNumber(dataInvestors.dividend_payout)} Miliar`} content='Dividen Dibagikan' />
                       </>
                     }
                   </Grid>

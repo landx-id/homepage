@@ -228,11 +228,19 @@ export function NumberWithCommas(num) {
 
 export function NumberValueInvestor(num) {
   let numbers = num.toString().split("")
-  let index = numbers.length - 9
+  let index = numbers.length - 7
   let number = numbers.splice(0, index).join('')
   let parts = number.toString().split(".");
   parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ".");
   return parts.join(",");
+}
+
+export function TwoDecimalNumber(num) {
+  let numbers = num.toString().split("")
+  let index = numbers.length - 7
+  let number = numbers.splice(0, index).join('')
+  let parts = number.toString().split(".")
+  return (parts / 100).toFixed(2).toString().replace(".", ",")
 }
 
 export function capitalizeTheFirstLetterOfEachWord(words) {
