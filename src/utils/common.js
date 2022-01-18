@@ -228,7 +228,7 @@ export function NumberWithCommas(num) {
 
 export function NumberValueInvestor(num) {
   let numbers = num.toString().split("")
-  let index = numbers.length - 7
+  let index = numbers.length - 9
   let number = numbers.splice(0, index).join('')
   let parts = number.toString().split(".");
   parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ".");
