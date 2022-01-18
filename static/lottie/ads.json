@@ -3,8 +3,16 @@
         {
             "id": 1,
             "active": true,
-            "action": "https://landx.id/landx-cuan/",
-            "thumbnail":  "https://landx.id/images/thumbnail_landx_cuan.png"
+            "type": "campaign",
+            "action": "https://landx.id/blog/landx-sewaktu-2021/",
+            "thumbnail":  "https://landx.id/images/campaign_sewaktu2021.png"
+        },
+        {
+            "id": 2,
+            "active": true,
+            "type": "announcement",
+            "title" : "Hati-hati dengan segala jenis penipuan. ",
+            "description":  "LandX tidak memiliki grup Telegram! Akun resmi Customer Service LandX adalah 0811 9562 878 dan 0813 8186 2878"
         }
     ]
 }
