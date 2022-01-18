@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>PrivyID Digital Signing</title>
+    <style>
+      .privy-iframe-container {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="privy-document"></div>
+    <script src="https://unpkg.com/privy-sdk@2.0.3"></script>
+    <script>
+      if (window.location.hash) {
+        let documentToken = window.location.hash.replace("#", "");
+        console.log("docToken : "+documentToken);
+        Privy.openDoc(documentToken, {
+          dev: true,
+          container: ".privy-document",
+          signature: {
+            page: 6,
+            x: 520,
+            y: 460,
+            fixed: false,
+          },
+        }).on('after-action', (data) => {
+          window.location = "app://store.numoney.landxapp/document-signing-completed?doc_token=" + documentToken;
+        })
+        .on('after-sign', (data) => {
+          window.location = "app://store.numoney.landxapp/document-signing-completed?doc_token=" + documentToken;
+        })
+        .on('after-review', (data) => {
+          window.location = "app://store.numoney.landxapp/document-signing-completed?doc_token=" + documentToken;
+        });
+      }
+    </script>
+  </body>
+</html>
