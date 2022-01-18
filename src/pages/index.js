@@ -159,8 +159,9 @@ const IndexPage = () => {
                 </Grid>
               </Grid>
               <Grid item xs={12} md={6} className='container-yt'>
-                <lite-youtube videoid="Y03A0VgY_ug" autoload></lite-youtube>
-                {/* <iframe className='banner-yt' src="https://landx-asset.s3.us-east-2.amazonaws.com/homepage-video.mp4" title="Landx" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen loading='lazy'></iframe> */}
+              <video className="video-frame" controls>
+                <source src="https://landx-asset.s3.us-east-2.amazonaws.com/homepage-video.mp4" type="video/mp4" />
+              </video>
               </Grid>
             </Grid>
           </Container>
