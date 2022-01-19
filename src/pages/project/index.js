@@ -76,9 +76,9 @@ const ShowAllProject = () => {
       var code = hashUrl.replace(/[^a-z0-9]/gi,'');
       // redirect to proper url
       window.location = window.location.protocol + "//" + window.location.host + window.location.pathname + code;
+    } else {
+      getDataProjects();
     }
-
-    getDataProjects();
   }, [])
 
   useEffect(() => {
