@@ -146,7 +146,7 @@ const IndexPage = () => {
                     </p>
                   </Grid>
                   <Grid item className='container-logo-ojk' sm={11} xl={12}>
-                    <img src="./images/Logo_ojk_02.webp" alt="logo OJK" className="logo-ojk" style={{ height: `67px`, width: `287px` }} />
+                    <img src="/images/Logo_ojk_02.webp" alt="logo OJK" className="logo-ojk" style={{ height: `67px`, width: `287px` }} />
                   </Grid>
                   <Grid item className='container-cta' sm={11} xl={12}>
                     <Link href='https://play.google.com/store/apps/details?id=store.numoney.landxapp' target='_blank' rel='noreferrer noopener'>
