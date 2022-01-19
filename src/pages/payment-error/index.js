@@ -3,6 +3,7 @@ import { Button, Card, Container, Typography } from '@mui/material';
 import CancelOutlinedIcon from '@mui/icons-material/CancelOutlined';
 import Seo from '../../components/seo/seo';
 import { Link } from 'gatsby';
+import './PaymentError.scss'
 
 const PaymentError = () => {
   return (
