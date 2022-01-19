@@ -2,6 +2,7 @@ import React from 'react'
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import { Button, Card, Container, Typography } from '@mui/material';
 import Seo from '../../components/seo/seo';
+import './PaymentUncompleted.scss'
 
 const PaymentUncompleted = () => {
   return (
