@@ -9,24 +9,22 @@ const CardProjectMasterCuan = () => {
         <Grid item xs={12}>
           <div className="img-container">
             <img src="/images/BBKB/1.webp" alt="image project" className="img-project" />
-          </div>
-        </Grid>
-        <Grid itemxs={12}>
-          <div className="chip-card">
-            <Typography component='p'>
-              15 hari lagi
-            </Typography>
+            <div className="chip-card">
+              <Typography component='p' className="chip-text">
+                15 hari lagi
+              </Typography>
+            </div>
           </div>
         </Grid>
         <Grid itemxs={12}>
           <Grid container>
             <Grid item xs={6}>
-              <Typography component='h5'>
+              <Typography component='h5' className='text-code'>
                 KODE
               </Typography>
             </Grid>
             <Grid item xs={6}>
-              <Typography component='h5'>
+              <Typography component='h5' className='text-code'>
                 INDUSTRI
               </Typography>
             </Grid>

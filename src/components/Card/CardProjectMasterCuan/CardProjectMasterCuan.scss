@@ -4,7 +4,37 @@
   filter: drop-shadow(0px 4px 4px rgba(213, 213, 213, 0.3));
   border-radius: 8px;
 
+  .img-container {
+    position: relative;
+  }
+
   .img-project {
     border-radius: 8px 8px 0px 0px;
+  }
+
+  .chip-card {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(2px);
+    border-radius: 99px;
+    padding: 4px 8px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-right: 4px;
+    margin-bottom: 4px;
+  }
+
+  .chip-text {
+    color: #425766;
+    font-weight: bold;
+    font-size: 10px;
+    line-height: 12px;
+  }
+
+  .text-code {
+    color: #2dbe60;
+    font-size: 11px;
+    line-height: 13px;
+    letter-spacing: 1.65px;
   }
 }
