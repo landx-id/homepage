@@ -70,7 +70,15 @@ const ShowAllProject = () => {
   };
 
   useEffect(() => {
-    getDataProjects()
+    var hashUrl = window.location.hash;
+    if (/^(#\/[a-z0-9])/.test(hashUrl)) {
+      // get project code
+      var code = hashUrl.replace(/[^a-z0-9]/gi,'');
+      // redirect to proper url
+      window.location = window.location.protocol + "//" + window.location.host + window.location.pathname + code;
+    } else {
+      getDataProjects();
+    }
   }, [])
 
   useEffect(() => {
