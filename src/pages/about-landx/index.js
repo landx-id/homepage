@@ -18,7 +18,7 @@ const AboutLandX = () => (
 
       <Grid item xs={12} md={12} align="center" style={{ marginTop: `3rem` }}>
         <img
-          src="./images/landx_flow_02.png" 
+          src="/images/landx_flow_02.png" 
           style={{ height:`400px` }}
         />
       </Grid>

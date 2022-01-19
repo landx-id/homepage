@@ -4,6 +4,7 @@ module.exports = {
     description: `Yuk investasi ke berbagai bisnis potensial mulai dari franchise fnb terbaik, sektor jasa,  dan berbagai bisnis potensial lainnya | Investasi online OJK`,
     author: `@landx`,
     siteUrl: `https://landx.id/`,
+    siteImages: `/images/thumbnail_link.png`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
