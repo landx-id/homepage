@@ -31,19 +31,27 @@
   .why-join-container {
     margin-top: 77px;
     text-align: center;
+
+    .text-title {
+      font-weight: 700;
+      font-size: 28px;
+      color: #64d882;
+      margin-bottom: 32px;
+      font-family: "Inter", sans-serif;
+    }
   }
 
   .reward-container {
     text-align: center;
     margin-top: 90px;
-  }
 
-  .text-title {
-    font-weight: 700;
-    font-size: 28px;
-    color: #64d882;
-    margin-bottom: 32px;
-    font-family: "Inter", sans-serif;
+    .text-title {
+      font-weight: 700;
+      font-size: 28px;
+      color: #64d882;
+      margin-bottom: 32px;
+      font-family: "Inter", sans-serif;
+    }
   }
 
   .icon-container {
@@ -76,5 +84,210 @@
     line-height: 32px;
     color: #425766;
     margin-bottom: 24px;
+  }
+
+  .pendanaan-container {
+    .slick-dots {
+      text-align: left;
+    }
+
+    .slick-dots li.slick-active button:before,
+    .slick-dots li button:before {
+      color: #2dbe60;
+    }
+    .slick-dots li.slick-active button:before:hover {
+      color: #2dbe60;
+    }
+  }
+
+  .how-to-work-master-cuan {
+    margin-top: 80px;
+    margin-bottom: 56px;
+
+    .text-title {
+      font-weight: 700;
+      font-size: 28px;
+      color: #64d882;
+      margin-bottom: 32px;
+      font-family: "Inter", sans-serif;
+      text-align: center;
+    }
+
+    .list-container {
+      padding: 24px 16px;
+    }
+
+    .num-style {
+      list-style: none;
+
+      li {
+        counter-increment: custom;
+        display: flex;
+        margin-bottom: 16px;
+
+        &:before {
+          background: linear-gradient(
+            323.37deg,
+            #d9f2df 9.5%,
+            rgba(228, 246, 232, 0) 81.86%
+          );
+          width: 24px;
+          height: 24px;
+          content: counter(custom) " ";
+          color: #00b242;
+          line-height: 24;
+          font-size: 14px;
+          font-weight: 700;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-right: 8px;
+          padding: 7px;
+        }
+      }
+    }
+  }
+
+  .faq-container {
+    .text-title {
+      font-weight: 700;
+      font-size: 28px;
+      color: #64d882;
+      margin-bottom: 32px;
+      font-family: "Inter", sans-serif;
+    }
+
+    .btn-join-green {
+      background-color: #2dbe60;
+      color: #fff;
+      box-shadow: 0px 6px 6px rgba(213, 213, 213, 0.4);
+      border-radius: 8px;
+      margin: 30px 0 80px;
+      padding-top: 12px;
+      padding-bottom: 12px;
+      font-size: 17px;
+      line-height: 24px;
+      width: 100%;
+    }
+  }
+
+  .banner-download-container {
+    background: radial-gradient(
+      87.04% 133.41% at 9.6% 0%,
+      #6ae755 0%,
+      #1ba503 57.46%
+    );
+    border-radius: 8px;
+    width: 100%;
+    min-height: 160px;
+    padding: 16px;
+    margin-bottom: 32px;
+
+    .logo-container {
+      width: 64px;
+      height: 64px;
+      border-radius: 8px;
+      padding: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #fff;
+    }
+
+    .img-mini-logo {
+      width: 43px;
+      height: 43px;
+    }
+
+    .text-title-download {
+      color: #fff;
+      line-height: 24px;
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    .text-content {
+      line-height: 16px;
+      font-size: 10px;
+      color: #fff;
+      letter-spacing: 0.4px;
+    }
+
+    .btn-install {
+      margin-top: 16px;
+      width: 100%;
+      padding-top: 12px;
+      padding-bottom: 12px;
+      background: #ffffff;
+      border-radius: 8px;
+      font-size: 17px;
+      line-height: 24px;
+      letter-spacing: 0.3px;
+      color: #00b242;
+      text-transform: none;
+    }
+  }
+
+  .customer-container {
+    .text-subtitle {
+      font-weight: 700;
+      font-size: 17px;
+      line-height: 24px;
+      letter-spacing: 0.3px;
+      color: #425766;
+      margin-bottom: 16px;
+    }
+
+    .btn-customer {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      border: 1px solid #00b242;
+      filter: drop-shadow(0px 12px 28px rgba(15, 62, 32, 0.1));
+      border-radius: 8px;
+      margin-bottom: 8px;
+      width: 100%;
+      color: #00b242;
+    }
+  }
+
+  .footer-master-cuan {
+    padding-top: 24px;
+
+    .text-title {
+      margin-bottom: 16px;
+      font-weight: 700;
+      font-size: 17px;
+      line-height: 24px;
+      letter-spacing: 0.3px;
+      color: #222222;
+    }
+
+    .text-subtitle {
+      margin-bottom: 16px;
+      font-size: 17px;
+      line-height: 24px;
+      letter-spacing: 0.3px;
+      color: #4a4a4a;
+    }
+
+    .icon-container {
+      width: 100%;
+    }
+    .icon-sosmed {
+      color: #00b242;
+      width: 24px;
+      height: 24px;
+      margin-right: 24px;
+      margin-top: 0 !important;
+    }
+
+    .text-copyright {
+      font-size: 17px;
+      line-height: 24px;
+      letter-spacing: 0.3px;
+      color: #4a4a4a;
+      margin-top: 0 !important;
+    }
   }
 }

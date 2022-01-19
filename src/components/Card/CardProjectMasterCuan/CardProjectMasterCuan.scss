@@ -31,10 +31,67 @@
     line-height: 12px;
   }
 
-  .text-code {
+  .text-code,
+  .text-category {
     color: #2dbe60;
     font-size: 11px;
     line-height: 13px;
+  }
+
+  .text-code {
     letter-spacing: 1.65px;
+  }
+
+  .text-code-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .text-category {
+    padding: 2px 12px;
+    text-align: center;
+  }
+
+  .card-content {
+    padding: 11px 8px;
+    width: 100%;
+  }
+
+  .chip-category {
+    background: #ffffff;
+    border: 1px solid #bde8c7;
+    box-sizing: border-box;
+    border-radius: 100px;
+  }
+
+  .text-bisnis {
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 0.4px;
+    color: #425766;
+  }
+
+  .text-company {
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.2px;
+    color: #516a7c;
+  }
+
+  .text-price {
+    font-weight: bold;
+    font-size: 10px;
+    line-height: 12px;
+    letter-spacing: 0.2px;
+    color: #2dbe60;
+    margin-top: 12px;
+    margin-bottom: 8px;
+  }
+
+  .progress-bar {
+    height: 4px;
+    border-radius: 10px;
+    background-color: #2dbe60;
   }
 }
