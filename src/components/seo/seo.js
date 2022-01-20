@@ -8,91 +8,73 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
-import { StaticQuery, graphql } from "gatsby"
 
 function Seo({ description, lang, meta, title }) {
   return (
-    <StaticQuery
-      query={graphql`
-      query HeadingQuery {
-        site {
-          siteMetadata {
-            title
-            siteUrl
-            siteImages
-            description
-            author
-          }
-        }
-      }
-    `}
-      render={data => (
-        <Helmet
-          htmlAttributes={{
-            lang,
-          }}
-          title={title}
-          titleTemplate={data?.site.siteMetadata?.title ? `%s | ${data?.site.siteMetadata?.title}` : null}
-          meta={[
-            {
-              itemprop: `image`,
-              content: data?.site.siteMetadata.siteImages,
-            },
-            {
-              name: `thumbnail`,
-              content: data?.site.siteMetadata.siteImages,
-            },
-            {
-              name: `description`,
-              content: description || data?.site.siteMetadata.description,
-            },
-            {
-              property: `og:title`,
-              content: data?.site.siteMetadata.title,
-            },
-            {
-              property: `og:image`,
-              content: data?.site.siteMetadata.siteImages,
-            },
-            {
-              property: `og:image:width`,
-              content: `400`,
-            },
-            {
-              property: `og:image:height`,
-              content: `300`,
-            },
-            {
-              property: `og:description`,
-              content: description || data?.site.siteMetadata.description,
-            },
-            {
-              property: `og:type`,
-              content: `website`,
-            },
-            {
-              name: `twitter:card`,
-              content: `summary`,
-            },
-            {
-              name: `twitter:creator`,
-              content: data?.site.siteMetadata?.author || ``,
-            },
-            {
-              name: `twitter:title`,
-              content: data?.site.siteMetadata.title,
-            },
-            {
-              name: `twitter:description`,
-              content: description || data?.site.siteMetadata.description,
-            },
-            {
-              name: "facebook-domain-verification",
-              content: "f7kayy7mhaddcpu6xbwde08hlvsdfm",
-            },
-          ].concat(meta)}
-        />
-      )}
+    <Helmet
+      htmlAttributes={{
+        lang,
+      }}
+      title={title}
+      titleTemplate={`Yuk Miliki Bisnis Terbaik Cuma dengan 1 Jutaan`}
+      meta={[
+        {
+          itemprop: `image`,
+          content: `/images/thumbnail_link.png`,
+        },
+        {
+          name: `thumbnail`,
+          content: `/images/thumbnail_link.png`,
+        },
+        {
+          name: `description`,
+          content: description || `Yuk Miliki Bisnis Terbaik Cuma dengan 1 Jutaan`,
+        },
+        {
+          property: `og:title`,
+          content: `Yuk Miliki Bisnis Terbaik Cuma dengan 1 Jutaan`,
+        },
+        {
+          property: `og:image`,
+          content: `/images/thumbnail_link.png`,
+        },
+        {
+          property: `og:image:width`,
+          content: `400`,
+        },
+        {
+          property: `og:image:height`,
+          content: `300`,
+        },
+        {
+          property: `og:description`,
+          content: description || `Yuk investasi ke berbagai bisnis potensial mulai dari franchise fnb terbaik, sektor jasa,  dan berbagai bisnis potensial lainnya | Investasi online OJK`,
+        },
+        {
+          property: `og:type`,
+          content: `website`,
+        },
+        {
+          name: `twitter:card`,
+          content: `summary`,
+        },
+        {
+          name: `twitter:creator`,
+          content: `@landx` || ``,
+        },
+        {
+          name: `twitter:title`,
+          content: `Yuk Miliki Bisnis Terbaik Cuma dengan 1 Jutaan`,
+        },
+        {
+          name: `twitter:description`,
+          content: description || `Yuk investasi ke berbagai bisnis potensial mulai dari franchise fnb terbaik, sektor jasa,  dan berbagai bisnis potensial lainnya | Investasi online OJK`,
+        },
+        {
+          name: `facebook-domain-verification`,
+          content: `f7kayy7mhaddcpu6xbwde08hlvsdfm`,
+        },
+      ].concat(meta)}
     />
   )
 }
