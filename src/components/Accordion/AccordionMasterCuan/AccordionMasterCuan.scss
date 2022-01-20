@@ -1,0 +1,49 @@
+.faq-master-cuan-container {
+  margin-bottom: 16px;
+
+  .text-title-accordion {
+    font-weight: bold;
+    font-size: 17px;
+    line-height: 24px;
+    letter-spacing: 0.3px;
+    color: #222f39;
+  }
+
+  .text-content {
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.5px;
+    color: #425766;
+  }
+
+  .num-style {
+    list-style: none;
+
+    li {
+      counter-increment: custom;
+      display: flex;
+      margin-bottom: 16px;
+
+      &:before {
+        background: linear-gradient(
+          323.37deg,
+          #d9f2df 9.5%,
+          rgba(228, 246, 232, 0) 81.86%
+        );
+        width: 24px;
+        height: 24px;
+        content: counter(custom) " ";
+        color: #00b242;
+        line-height: 24;
+        font-size: 14px;
+        font-weight: 700;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 8px;
+        padding: 7px;
+      }
+    }
+  }
+}

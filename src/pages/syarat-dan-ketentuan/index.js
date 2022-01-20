@@ -51,7 +51,7 @@ const TermAndCondition = () => (
           Dalam Ketentuan Umum, Ketentuan Untuk Penerbit, dan Ketentuan Untuk Pemodal (<strong>“Ketentuan-Ketentuan”</strong>) yang ada pada halaman ini, definisi-definisi yang akan digunakan serta tertulis pada Ketentuan-Ketentuan tersebut adalah sebagai berikut:
         </Typography>
         <Grid sx={{ marginLeft: `2rem` }}>
-          <ol style={{ listStyleType: `number`, color: `#5e798d` }}>
+          <ol className="num-style">
             <li>
               <Typography color="secondary" paragraph={true}>
                 <strong>Akun</strong> adalah suatu pengaturan (<em>arrangement</em>) antara LandX dengan Pengunjung Platform atau Pengguna Platform berdasarkan akses yang diberikan oleh LandX kepada Pengunjung Platform atau Pengguna Platform setelah melakukan pendaftaran data pribadi, yaitu seperti nama pengguna (<em>username</em>) dan kata sandi (<em>password</em>) sehingga Pengunjung Platform atau Pengguna Platform dapat menikmati fitur-fitur yang disediakan.
