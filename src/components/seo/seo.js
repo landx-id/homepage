@@ -18,6 +18,10 @@ function Seo({ description, lang, meta, title }) {
         site {
           siteMetadata {
             title
+            siteUrl
+            siteImages
+            description
+            author
           }
         }
       }
