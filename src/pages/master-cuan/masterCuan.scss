@@ -100,6 +100,10 @@
     background: #14a2ff;
   }
 
+  .MuiSlider-root {
+    width: 85%;
+  }
+
   .MuiSlider-markLabel {
     font-weight: 700;
     font-size: 10px;
@@ -387,16 +391,6 @@
       .slick-initialized .slick-slide {
         display: flex;
         justify-content: center;
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 320px) {
-  .container-master-cuan {
-    .reward-container {
-      .css-14pt78w-MuiSlider-rail {
-        max-width: 310px;
       }
     }
   }
