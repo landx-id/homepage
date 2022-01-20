@@ -1,31 +1,64 @@
 import React, { useState, useEffect } from "react"
-import { navigate } from "gatsby";
-import { Grid, Container, Typography, Chip, LinearProgress, Button, Tooltip, ClickAwayListener, Dialog, DialogContent, DialogContentText } from "@mui/material"
+import { navigate, Link } from "gatsby";
+import { Grid, Container, Typography, Chip, LinearProgress, Button, Tooltip, ClickAwayListener, Dialog, DialogContent, DialogContentText, CircularProgress } from "@mui/material"
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
-import { CalculateRemainingDays, FetchDetailProject, FetchIDProjetDetail } from '../../utils/common';
+import { CalculateRemainingDays, FetchDetailProject, FetchIDProjetDetail, FetchLimitData } from '../../utils/common';
 import { toIDR } from "../../utils/currency";
 import { MobilePDFReader } from 'react-read-pdf';
 import CarouselSingleProject from "../Carousel/CarouselSingleProject/CarouselSingleProject";
 
+import CardTitleSection from "../Card/CardTitleSection/CardTitleSection";
+import CardListing from "../Card/CardListing/CardListing";
+import CardProject from "../Card/CardProject/CardProject";
+
+
+
+import Slider from 'react-slick'
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import './detailProjects.scss'
 
 const ProjectDetails = (props) => {
   const [linkBtnLandx, setLinkBtnLandx] = useState('https://play.google.com/store/apps/details?id=store.numoney.landxapp')
   const [idProject, setIdProject] = useState('')
-  const [dataProject, setDataProject] = useState('')
+	const [dataProject, setDataProject] = useState('')
+	const [dataProjectLimit, setDataProjectLimit] = useState('')
   const [endDay, setEndDay] = useState('')
   const [openTooltipDisc, setOpenTooltipDisc] = useState(false);
   const [openTooltipPeriode, setOpenTooltipPeriode] = useState(false)
   const [openProspektus, setOpenProspektus] = useState(false)
-  const [codeProject, setCodeProject] = useState('')
+	const [codeProject, setCodeProject] = useState('')
+	const [dataListing, setDataListing] = useState('')
+	const [loadProjects, setLoadProjects] = useState(true)
 
+	const cardProject = {
+    dots: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    arrows: false,
+    initialSlide: 0,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        }
+      }
+    ]
+	};
+	
   useEffect(() => {
     setCodeProject(props.codeSaham.toUpperCase())
   }, [codeProject])
 
   useEffect(() => {
-    detectDevice()
+		detectDevice()
+		getLimitCardProject()
+		handleListing()
   }, [])
 
   useEffect(() => {
@@ -94,7 +127,25 @@ const ProjectDetails = (props) => {
 
   const handleCloseProspektus = () => {
     setOpenProspektus(false);
-  };
+	};
+
+	const handleListing = () => {
+    fetch('/lottie/upcoming.json')
+      .then(r => r.json())
+      .then(data => {
+        setDataListing((prevData) => [...prevData, data.upcoming])
+      })
+	}
+	
+	const getLimitCardProject = () => {
+    FetchLimitData('https://api.landx.id/', 5, 1).then(data => {
+      setDataProjectLimit(data.data.currencies)
+      setLoadProjects(false)
+    })
+  }
+	
+	var showdown  = require('showdown'),
+      converter = new showdown.Converter();
 
   return (
     <>
@@ -236,6 +287,55 @@ const ProjectDetails = (props) => {
           </Grid>
         </Grid>
       </Container>
+      <hr style={{ marginTop:`3rem`, marginBottom:`3rem` }} />
+      <Container className="container-project-detail" style={{ marginTop:`5rem` }}>
+        <Grid container spacing={4}>
+          <Grid item xs={12} md={6}>
+						<Typography color="secondary" className="description-title">DESKRIPSI USAHA</Typography>
+						{dataProject && <div className='text-description' dangerouslySetInnerHTML={{ __html: converter.makeHtml(dataProject.description) }} />}
+            
+          </Grid>
+          <Grid item xs={12} md={6}>
+						<Typography color="secondary" className="description-title">ALAMAT & PETA</Typography>
+						{dataProject && <div className='text-description' dangerouslySetInnerHTML={{ __html: converter.makeHtml(dataProject.address) }} />}
+            
+						<img src={dataProject.mapImageUrl} alt="Peta Alamat" id="map-picture" style={{ width:`100%`, marginTop:`2rem` }}/>
+          </Grid>
+        </Grid>
+      </Container>
+			<hr style={{ marginTop:`3rem`, marginBottom:`3rem` }} />
+			<section>
+				<Container id='ongoing-projects' className='container-ongoing-projects pt-40'>
+					<CardTitleSection title='Proyek Lainnya' />
+					{loadProjects
+						? <div className='container-load'><CircularProgress color="success" /></div>
+						: <>
+							{dataProjectLimit &&
+								<Slider {...cardProject} className='container-card-projects'>
+
+									{dataListing && dataListing.map((data, i) => {
+										if (data !== undefined && data !== null && i >= 0) {
+											return data.map(d => {
+												return Object.entries(d).map(data => {
+													let listingAt = new Date(data[1].listing_at).getTime()
+													let now = Date.now()
+													if (listingAt > now) {
+														return <CardListing code={data[0]} data={data[1]} timeUp={listingAt - Date.now()} />
+													}
+												})
+											})
+										}
+									})}
+
+									{dataProjectLimit && dataProjectLimit.map((dataProjectLimit) => {
+										return <CardProject cardProject={cardProject} data={dataProjectLimit.landXProperty} key={dataProjectLimit.landXProperty.id} />
+									})}
+								</Slider>
+							}
+						</>
+					}
+				</Container>
+			</section>
     </>
   )
 }

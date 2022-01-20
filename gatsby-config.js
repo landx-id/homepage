@@ -1,9 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: `Investasi dan Miliki Bisnis Menguntungkan Mulai dari 1 Jutaan di LandX`,
-    description: `LandX adalah platform equity crowdfunding terpercaya yang telah berizin dan diawasi OJK. Equity crowdfunding merupakan skema investasi ke UKM potensial dengan modal 1 Jutaan`,
+    title: `Yuk Miliki Bisnis Terbaik Cuma dengan 1 Jutaan`,
+    description: `Yuk investasi ke berbagai bisnis potensial mulai dari franchise fnb terbaik, sektor jasa,  dan berbagai bisnis potensial lainnya | Investasi online OJK`,
     author: `@landx`,
     siteUrl: `https://landx.id/`,
+    siteImages: `/images/thumbnail_link.png`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -26,6 +27,12 @@ module.exports = {
       options: {
         offset: -150
       }
+    },
+    {
+      resolve: `gatsby-plugin-facebook-pixel`,
+      options: {
+        pixelId: "341440499911698",
+      },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,

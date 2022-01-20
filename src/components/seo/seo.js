@@ -19,6 +19,7 @@ function Seo({ description, lang, meta, title }) {
             title
             description
             author
+            siteImages
           }
         }
       }
@@ -37,12 +38,32 @@ function Seo({ description, lang, meta, title }) {
       titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
       meta={[
         {
+          itemprop: `image`,
+          content: site.siteMetadata.siteImages,
+        },
+        {
+          name: `thumbnail`,
+          content: site.siteMetadata.siteImages,
+        },
+        {
           name: `description`,
           content: metaDescription,
         },
         {
           property: `og:title`,
-          content: title,
+          content: site.siteMetadata.title,
+        },
+        {
+          property: `og:image`,
+          content: site.siteMetadata.siteImages,
+        },
+        {
+          property: `og:image:width`,
+          content: `400`,
+        },
+        {
+          property: `og:image:height`,
+          content: `300`,
         },
         {
           property: `og:description`,
@@ -62,7 +83,7 @@ function Seo({ description, lang, meta, title }) {
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: site.siteMetadata.title,
         },
         {
           name: `twitter:description`,

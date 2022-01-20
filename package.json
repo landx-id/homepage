@@ -14,6 +14,7 @@
     "@mui/material": "^5.2.4",
     "gatsby": "^4.3.0",
     "gatsby-plugin-anchor-links": "^1.2.1",
+    "gatsby-plugin-facebook-pixel": "^1.0.8",
     "gatsby-plugin-gatsby-cloud": "^4.3.0",
     "gatsby-plugin-google-tagmanager": "^4.4.0",
     "gatsby-plugin-image": "^2.3.0",
@@ -34,10 +35,12 @@
     "react-read-pdf": "^2.0.9",
     "react-slick": "^0.28.1",
     "sass": "^1.45.0",
+    "showdown": "^1.9.1",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.3"
   },
   "devDependencies": {
+    "@types/showdown": "^1.9.4",
     "prettier": "^2.4.1"
   },
   "keywords": [
