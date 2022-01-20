@@ -28,27 +28,27 @@ function Seo({ description, lang, meta, title }) {
             lang,
           }}
           title={title}
-          titleTemplate={data.site.siteMetadata?.title ? `%s | ${data.site.siteMetadata?.title}` : null}
+          titleTemplate={data?.site.siteMetadata?.title ? `%s | ${data?.site.siteMetadata?.title}` : null}
           meta={[
             {
               itemprop: `image`,
-              content: data.site.siteMetadata.siteImages,
+              content: data?.site.siteMetadata.siteImages,
             },
             {
               name: `thumbnail`,
-              content: data.site.siteMetadata.siteImages,
+              content: data?.site.siteMetadata.siteImages,
             },
             {
               name: `description`,
-              content: description || data.site.siteMetadata.description,
+              content: description || data?.site.siteMetadata.description,
             },
             {
               property: `og:title`,
-              content: data.site.siteMetadata.title,
+              content: data?.site.siteMetadata.title,
             },
             {
               property: `og:image`,
-              content: data.site.siteMetadata.siteImages,
+              content: data?.site.siteMetadata.siteImages,
             },
             {
               property: `og:image:width`,
@@ -60,7 +60,7 @@ function Seo({ description, lang, meta, title }) {
             },
             {
               property: `og:description`,
-              content: description || data.site.siteMetadata.description,
+              content: description || data?.site.siteMetadata.description,
             },
             {
               property: `og:type`,
@@ -72,15 +72,15 @@ function Seo({ description, lang, meta, title }) {
             },
             {
               name: `twitter:creator`,
-              content: data.site.siteMetadata?.author || ``,
+              content: data?.site.siteMetadata?.author || ``,
             },
             {
               name: `twitter:title`,
-              content: data.site.siteMetadata.title,
+              content: data?.site.siteMetadata.title,
             },
             {
               name: `twitter:description`,
-              content: description || data.site.siteMetadata.description,
+              content: description || data?.site.siteMetadata.description,
             },
             {
               name: "facebook-domain-verification",
