@@ -59,7 +59,16 @@ const MasterCuan = () => {
     speed: 500,
     slidesToShow: 2,
     slidesToScroll: 1,
-    arrows: false
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        }
+      }
+    ]
   };
 
   useEffect(() => {

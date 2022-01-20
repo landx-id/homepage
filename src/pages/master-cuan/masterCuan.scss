@@ -109,6 +109,10 @@
     margin-top: 4px;
   }
 
+  .css-14pt78w-MuiSlider-rail {
+    max-width: 310px;
+  }
+
   .text-b-title {
     font-weight: 700;
     font-size: 20px;
@@ -373,6 +377,21 @@
     &.active {
       color: #2dbe60;
       font-weight: 700;
+    }
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .container-master-cuan {
+    .btn-join-white {
+      width: 285px;
+    }
+
+    .pendanaan-container {
+      .slick-initialized .slick-slide {
+        display: flex;
+        justify-content: center;
+      }
     }
   }
 }
