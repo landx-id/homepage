@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Container, Grid, Typography, Button, Box, Slider as MuiSlider } from '@mui/material';
 import CardMasterCuan from '../../components/Card/CardMasterCuan/CardMasterCuan';
 import CardProjectMasterCuan from '../../components/Card/CardProjectMasterCuan/CardProjectMasterCuan';
@@ -12,8 +12,12 @@ import Slider from 'react-slick'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './masterCuan.scss'
+import { AnchorLink } from 'gatsby-plugin-anchor-links';
+import { Link } from 'gatsby';
 
 const MasterCuan = () => {
+  const [linkInstall, setlinkInstall] = useState('https://play.google.com/store/apps/details?id=store.numoney.landxapp');
+
   const marks = [
     {
       value: 0
@@ -38,38 +42,54 @@ const MasterCuan = () => {
     arrows: false
   };
 
+  useEffect(() => {
+    deviceType()
+  }, []);
+
+
+  const deviceType = () => {
+    const ua = navigator.userAgent;
+    if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
+      return setlinkInstall('https://play.google.com/store/apps/details?id=store.numoney.landxapp')
+    }
+    else if (/Mobile|Android|iP(hone|od)|IEMobile|BlackBerry|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(ua)) {
+      return setlinkInstall('https://apps.apple.com/id/app/landx-aplikasi-investasi/id1453823676?l=id')
+    }
+    return setlinkInstall('https://play.google.com/store/apps/details?id=store.numoney.landxapp')
+  };
+
   return (
     <div className='container-master-cuan'>
-      <Container maxWidth='xs'>
-        <div className="banner-container">
-          <Grid container>
-            <Grid item xs={12} className='text-center'>
-              <img src="/master-cuan/logo-white.webp" alt="Landx" />
-            </Grid>
-            <Grid item xs={12} className='text-center'>
-              <img src="/master-cuan/banner-master-cuan.webp" alt="Landx" />
-            </Grid>
-            <Grid item xs={12} className='text-center'>
-              <Typography align='center' className='text-banner'>
-                Makannya Bikin Kenyang, Dividennya Bikin Mapan!
-              </Typography>
-              <Typography align='center' className='text-banner'>
-                Wujudkan impianmu jadi BOS Restoran di tahun 2022!
-              </Typography>
-              <Typography align='center' className='text-banner'>
-                Mau punya bisnis resto kayak apa?
-              </Typography>
-              <Typography align='center' paragraph={true} className='text-banner'>
-                Mau yang punya puluhan cabang, yang ordernya ribuan, atau cari yang partnernya berpengalaman?
-              </Typography>
-              <Typography align='center' paragraph={true} className='text-banner'>
-                Semuanya ada di bulan ini!
-              </Typography>
-              <Button variant="text" className='btn-join-white'>Gabung Sekarang</Button>
-            </Grid>
+      <Container maxWidth='xs' className="banner-container">
+        <Grid container>
+          <Grid item xs={12} className='text-center'>
+            <img src="/master-cuan/logo-white.webp" alt="Landx" />
           </Grid>
-        </div>
+          <Grid item xs={12} className='text-center'>
+            <img src="/master-cuan/banner-master-cuan.webp" alt="Landx" />
+          </Grid>
+          <Grid item xs={12} className='text-center'>
+            <Typography align='center' className='text-banner'>
+              Makannya Bikin Kenyang, Dividennya Bikin Mapan!
+            </Typography>
+            <Typography align='center' className='text-banner'>
+              Wujudkan impianmu jadi BOS Restoran di tahun 2022!
+            </Typography>
+            <Typography align='center' className='text-banner'>
+              Mau punya bisnis resto kayak apa?
+            </Typography>
+            <Typography align='center' paragraph={true} className='text-banner'>
+              Mau yang punya puluhan cabang, yang ordernya ribuan, atau cari yang partnernya berpengalaman?
+            </Typography>
+            <Typography align='center' paragraph={true} className='text-banner'>
+              Semuanya ada di bulan ini!
+            </Typography>
+            <Button variant="text" className='btn-join-white'>Gabung Sekarang</Button>
+          </Grid>
+        </Grid>
+      </Container>
 
+      <Container maxWidth='xs' style={{ backgroundColor: '#fff' }}>
         <div className="why-join-container">
           <Grid container>
             <Grid item xs={12}>
@@ -153,37 +173,37 @@ const MasterCuan = () => {
               <div className="list-container">
                 <ol className='num-style'>
                   <li>
-                    <Typography className="text-rule">
+                    <Typography component='span' className="text-rule">
                       Tanggal promo: 24 Januari 2022 - 13 Februari 2022
                     </Typography>
                   </li>
                   <li>
-                    <Typography className="text-rule">
+                    <Typography component='span' className="text-rule">
                       Berlaku untuk semua pengguna LandX
                     </Typography>
                   </li>
                   <li>
-                    <Typography className="text-rule">
+                    <Typography component='span' className="text-rule">
                       Kamu bisa lakukan transaksi melalui aplikasi LandX
                     </Typography>
                   </li>
                   <li>
-                    <Typography className="text-rule">
+                    <Typography component='span' className="text-rule">
                       Kamu bisa melakukan transaksi lebih dari satu project
                     </Typography>
                   </li>
                   <li>
-                    <Typography className="text-rule">
+                    <Typography component='span' className="text-rule">
                       Kamu akan mendapatkan benefit dari campaign ini setelah tanggal 13 Februari 2022
                     </Typography>
                   </li>
                   <li>
-                    <Typography className="text-rule">
+                    <Typography component='span' className="text-rule">
                       Kamu bisa melakukan penambahan lot selama campaign ini berlangsung
                     </Typography>
                   </li>
                   <li>
-                    <Typography className="text-rule">
+                    <Typography component='span' className="text-rule">
                       Masa tenggang penambahan lot hingga tanggal 13 Februari 2022 pukul 23:59
                     </Typography>
                   </li>
@@ -232,7 +252,9 @@ const MasterCuan = () => {
             </Grid>
           </Grid>
           <Grid item xs={12}>
-            <Button variant='contained' className='btn-install'>Install Sekarang</Button>
+            <a href={linkInstall} style={{ textDecoration: 'none' }}>
+              <Button variant='contained' className='btn-install'>Install Sekarang</Button>
+            </a>
           </Grid>
         </div>
 
@@ -244,38 +266,54 @@ const MasterCuan = () => {
               </Typography>
             </Grid>
             <Grid item xs={12}>
-              <Button variant='outlined' className='btn-customer'><WhatsAppIcon sx={{ color: '00b242', marginRight: '5px', textTransform: 'none' }} /> WA Customer Service 1</Button>
-              <Button variant='outlined' className='btn-customer'><WhatsAppIcon sx={{ color: '00b242', marginRight: '5px', textTransform: 'none' }} /> WA Customer Service 2</Button>
+              <a href="https://bit.ly/3Ed3dTV" className='text-btn-customer'>
+                <Button variant='outlined' className='btn-customer'><WhatsAppIcon sx={{ color: '00b242', marginRight: '5px', textTransform: 'none' }} /> WA Customer Service 1</Button>
+              </a>
+              <a href="https://bit.ly/32coLTQ" className='text-btn-customer'>
+                <Button variant='outlined' className='btn-customer'><WhatsAppIcon sx={{ color: '00b242', marginRight: '5px', textTransform: 'none' }} /> WA Customer Service 2</Button>
+              </a>
             </Grid>
           </Grid>
         </div>
+      </Container>
 
-        <footer className="footer-master-cuan">
+      <footer>
+        <Container maxWidth='xs' className="footer-master-cuan">
           <Grid container>
             <Grid item xs={12}>
-              <Typography className="text-title">
-                Mengapa LandX
-              </Typography>
+              <AnchorLink to='/#why-landx' className="text-anchor">
+                <Typography className="text-title" style={{ textDecoration: 'none' }}>
+                  Mengapa LandX
+                </Typography>
+              </AnchorLink>
             </Grid>
             <Grid item xs={12}>
-              <Typography className="text-title">
-                Proyek
-              </Typography>
+              <AnchorLink to='/#ongoing-projects' className="text-anchor">
+                <Typography className="text-title" style={{ textDecoration: 'none' }}>
+                  Proyek
+                </Typography>
+              </AnchorLink>
             </Grid>
             <Grid item xs={12}>
-              <Typography className="text-title">
-                Cara Kerja
-              </Typography>
+              <AnchorLink to='/#how-it-works' className="text-anchor">
+                <Typography className="text-title" style={{ textDecoration: 'none' }}>
+                  Cara Kerja
+                </Typography>
+              </AnchorLink>
             </Grid>
             <Grid item xs={12}>
-              <Typography className="text-title">
-                Kontak
-              </Typography>
+              <Link to='/contact'>
+                <Typography className="text-title">
+                  Kontak
+                </Typography>
+              </Link>
             </Grid>
             <Grid item xs={12}>
-              <Typography className="text-title">
-                Blog
-              </Typography>
+              <a href="https://landx.id/blog/">
+                <Typography className="text-title">
+                  Blog
+                </Typography>
+              </a>
             </Grid>
             <Grid item xs={12}>
               <Typography className="text-title">
@@ -283,48 +321,68 @@ const MasterCuan = () => {
               </Typography>
             </Grid>
             <Grid item xs={12}>
-              <Typography className="text-subtitle">
-                Karir
-              </Typography>
+              <a href='https://landx.id/blog/jobs-at-landx/'>
+                <Typography className="text-subtitle">
+                  Karir
+                </Typography>
+              </a>
             </Grid>
             <Grid item xs={12}>
-              <Typography className="text-subtitle">
-                Syarat & Ketentuan
-              </Typography>
+              <Link to='/syarat-dan-ketentuan'>
+                <Typography className="text-subtitle">
+                  Syarat & Ketentuan
+                </Typography>
+              </Link>
             </Grid>
             <Grid item xs={12}>
-              <Typography className="text-subtitle">
-                Kebijakan Privasi
-              </Typography>
+              <Link to='/privacy-policy'>
+                <Typography className="text-subtitle">
+                  Kebijakan Privasi
+                </Typography>
+              </Link>
             </Grid>
             <Grid item xs={12}>
-              <Typography className="text-subtitle">
-                Service Level Agreement
-              </Typography>
+              <Link to='/service-level-agreement'>
+                <Typography className="text-subtitle">
+                  Service Level Agreement
+                </Typography>
+              </Link>
             </Grid>
             <Grid item xs={12}>
-              <Typography className="text-subtitle">
-                Kebijakan ISMS
-              </Typography>
+              <Link to='/kebijakan-isms'>
+                <Typography className="text-subtitle">
+                  Kebijakan ISMS
+                </Typography>
+              </Link>
             </Grid>
             <Grid item xs={12}>
-              <Typography className="text-subtitle">
-                Mitigasi Resiko
-              </Typography>
+              <Link to='/mitigasi-risiko'>
+                <Typography className="text-subtitle">
+                  Mitigasi Resiko
+                </Typography>
+              </Link>
             </Grid>
             <Grid item xs={12}>
-              <Typography className="text-subtitle">
-                FAQ
-              </Typography>
+              <a href="https://landx.id/blog/faq-landx/">
+                <Typography className="text-subtitle">
+                  FAQ
+                </Typography>
+              </a>
             </Grid>
           </Grid>
 
           <div className="icon-container">
             <Grid container>
               <Grid item xs={12}>
-                <FacebookIcon className="icon-sosmed" />
-                <LinkedInIcon className="icon-sosmed" />
-                <InstagramIcon className="icon-sosmed" />
+                <a href="https://id.linkedin.com/company/landx-id?trk=public_profile_topcard_current_company">
+                  <FacebookIcon className="icon-sosmed" />
+                </a>
+                <a href="https://www.facebook.com/landx.id">
+                  <LinkedInIcon className="icon-sosmed" />
+                </a>
+                <a href="https://www.instagram.com/landx.id/">
+                  <InstagramIcon className="icon-sosmed" />
+                </a>
               </Grid>
             </Grid>
           </div>
@@ -339,10 +397,33 @@ const MasterCuan = () => {
               </div>
             </Grid>
           </Grid>
-        </footer>
+        </Container>
+      </footer>
 
+      <Container maxWidth='xs' style={{ backgroundColor: '#fff' }}>
+        <div className="bottom-nav-container">
+          <div className="icon-container">
+            <img src="/master-cuan/home-active.png" alt="Home" />
+            <div className="text-icon active">
+              Home
+            </div>
+          </div>
+          <div className="icon-container">
+            <img src="/master-cuan/insight.png" alt="Cara Kerja" />
+            <div className="text-icon">
+              Cara Kerja
+            </div>
+          </div>
+          <div className="icon-container">
+            <img src="/master-cuan/user.png" alt="Login" />
+            <div className="text-icon">
+              Login
+            </div>
+          </div>
+        </div>
       </Container>
-    </div>
+
+    </div >
   )
 }
 
