@@ -100,6 +100,10 @@
     background: #14a2ff;
   }
 
+  .MuiSlider-root {
+    width: 85%;
+  }
+
   .MuiSlider-markLabel {
     font-weight: 700;
     font-size: 10px;
@@ -107,10 +111,6 @@
     letter-spacing: 0.4px;
     color: #425766;
     margin-top: 4px;
-  }
-
-  .css-14pt78w-MuiSlider-rail {
-    max-width: 310px;
   }
 
   .text-b-title {
