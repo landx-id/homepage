@@ -17,6 +17,10 @@ import { Link } from 'gatsby';
 
 const MasterCuan = () => {
   const [linkInstall, setlinkInstall] = useState('https://play.google.com/store/apps/details?id=store.numoney.landxapp');
+  const [slideReward, setslideReward] = useState(0);
+  const [updateReward, setupdateReward] = useState(0);
+  const [nav1, setNav1] = useState();
+  const [nav2, setNav2] = useState();
 
   const marks = [
     {
@@ -32,6 +36,17 @@ const MasterCuan = () => {
       value: 100
     },
   ];
+
+  const rewardMasterCuan = {
+    dots: false,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    afterChange: () =>
+      setupdateReward(updateReward + 1),
+    beforeChange: (current, next) => setslideReward(next)
+  };
 
   const cardProjectMasterCuan = {
     dots: true,
@@ -114,31 +129,56 @@ const MasterCuan = () => {
               </Typography>
             </Grid>
             <Grid item xs={12} className="icon-grid">
-              <div className="icon-container">
-                <img src="./icon-20lot.png" alt="icon lot" />
-              </div>
-              <div className="lot-container">
-                20 Lot
-              </div>
+              <Slider {...rewardMasterCuan} asNavFor={nav2} ref={(slider1) => setNav1(slider1)}>
+                <div className="slider-icon-container">
+                  <div className="icon-container">
+                    <img src="/master-cuan/20-lot.png" alt="20 lot" />
+                  </div>
+                  <div className="lot-container">
+                    20 Lot
+                  </div>
+                </div>
+                <div className="slider-icon-container">
+                  <div className="icon-container">
+                    <img src="/master-cuan/50-lot.png" alt="50 lot" />
+                  </div>
+                  <div className="lot-container">
+                    50 Lot
+                  </div>
+                </div>
+                <div className="slider-icon-container">
+                  <div className="icon-container">
+                    <img src="/master-cuan/100-lot.png" alt="100 lot" />
+                  </div>
+                  <div className="lot-container">
+                    100 Lot
+                  </div>
+                </div>
+                <div className="slider-icon-container">
+                  <div className="icon-container">
+                    <img src="/master-cuan/250-lot.png" alt="250 lot" />
+                  </div>
+                  <div className="lot-container">
+                    250 Lot
+                  </div>
+                </div>
+              </Slider>
             </Grid>
             <Grid item xs={12}>
-              <Box sx={{ width: 300 }}>
-                <MuiSlider
-                  aria-label="Always visible"
-                  defaultValue={80}
-                  // getAriaValueText={valuetext}
-                  step={25}
-                  marks={marks}
-                  valueLabelDisplay="off"
-                />
-              </Box>
+              <MuiSlider
+                defaultValue={slideReward}
+                value={slideReward}
+                valueLabelDisplay="off"
+                marks
+                min={0}
+                max={3} />
             </Grid>
             <Grid item xs={12}>
-              <Slider>
-                <CardMasterCuan title='Reward- 20 Lot' description='Dapatkan Mini Finance Bootcamp with Experts' />
-                <CardMasterCuan title='Reward- 50 Lot' description='Dapatkan EXCLUSIVE Mini Finance Bootcamp with Experts' />
-                <CardMasterCuan title='Reward- 100 Lot' description='Dapatkan Offline Finance Bootcamp with Experts, Happy Hour Meetup & Discussion with Speakers' />
-                <CardMasterCuan title='Reward- 250 Lot' description='Dapatkan Offline Bootcamp Finance with Experts & Business tour' />
+              <Slider {...rewardMasterCuan} asNavFor={nav1} ref={(slider2) => setNav2(slider2)}>
+                <CardMasterCuan title='Reward - 20 Lot' description='Dapatkan Mini Finance Bootcamp with Experts' />
+                <CardMasterCuan title='Reward - 50 Lot' description='Dapatkan EXCLUSIVE Mini Finance Bootcamp with Experts' />
+                <CardMasterCuan title='Reward - 100 Lot' description='Dapatkan Offline Finance Bootcamp with Experts, Happy Hour Meetup & Discussion with Speakers' />
+                <CardMasterCuan title='Reward - 250 Lot' description='Dapatkan Offline Bootcamp Finance with Experts & Business tour' />
               </Slider>
             </Grid>
           </Grid>
@@ -266,10 +306,10 @@ const MasterCuan = () => {
               </Typography>
             </Grid>
             <Grid item xs={12}>
-              <a href="https://bit.ly/3Ed3dTV" className='text-btn-customer'>
+              <a href="https://wa.link/wwcvhi" className='text-btn-customer'>
                 <Button variant='outlined' className='btn-customer'><WhatsAppIcon sx={{ color: '00b242', marginRight: '5px', textTransform: 'none' }} /> WA Customer Service 1</Button>
               </a>
-              <a href="https://bit.ly/32coLTQ" className='text-btn-customer'>
+              <a href="https://wa.link/fho9yk" className='text-btn-customer'>
                 <Button variant='outlined' className='btn-customer'><WhatsAppIcon sx={{ color: '00b242', marginRight: '5px', textTransform: 'none' }} /> WA Customer Service 2</Button>
               </a>
             </Grid>
@@ -302,14 +342,14 @@ const MasterCuan = () => {
               </AnchorLink>
             </Grid>
             <Grid item xs={12}>
-              <Link to='/contact'>
+              <Link to='/contact' className="text-dec-none">
                 <Typography className="text-title">
                   Kontak
                 </Typography>
               </Link>
             </Grid>
             <Grid item xs={12}>
-              <a href="https://landx.id/blog/">
+              <a href="https://landx.id/blog/" className="text-dec-none">
                 <Typography className="text-title">
                   Blog
                 </Typography>
@@ -321,49 +361,49 @@ const MasterCuan = () => {
               </Typography>
             </Grid>
             <Grid item xs={12}>
-              <a href='https://landx.id/blog/jobs-at-landx/'>
+              <a href='https://landx.id/blog/jobs-at-landx/' className="text-dec-none">
                 <Typography className="text-subtitle">
                   Karir
                 </Typography>
               </a>
             </Grid>
             <Grid item xs={12}>
-              <Link to='/syarat-dan-ketentuan'>
+              <Link to='/syarat-dan-ketentuan' className="text-dec-none">
                 <Typography className="text-subtitle">
                   Syarat & Ketentuan
                 </Typography>
               </Link>
             </Grid>
             <Grid item xs={12}>
-              <Link to='/privacy-policy'>
+              <Link to='/privacy-policy' className="text-dec-none">
                 <Typography className="text-subtitle">
                   Kebijakan Privasi
                 </Typography>
               </Link>
             </Grid>
             <Grid item xs={12}>
-              <Link to='/service-level-agreement'>
+              <Link to='/service-level-agreement' className="text-dec-none">
                 <Typography className="text-subtitle">
                   Service Level Agreement
                 </Typography>
               </Link>
             </Grid>
             <Grid item xs={12}>
-              <Link to='/kebijakan-isms'>
+              <Link to='/kebijakan-isms' className="text-dec-none">
                 <Typography className="text-subtitle">
                   Kebijakan ISMS
                 </Typography>
               </Link>
             </Grid>
             <Grid item xs={12}>
-              <Link to='/mitigasi-risiko'>
+              <Link to='/mitigasi-risiko' className="text-dec-none">
                 <Typography className="text-subtitle">
                   Mitigasi Resiko
                 </Typography>
               </Link>
             </Grid>
             <Grid item xs={12}>
-              <a href="https://landx.id/blog/faq-landx/">
+              <a href="https://landx.id/blog/faq-landx/" className="text-dec-none">
                 <Typography className="text-subtitle">
                   FAQ
                 </Typography>
