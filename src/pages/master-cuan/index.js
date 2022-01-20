@@ -7,6 +7,7 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
+import { SendVersiBuild } from '../../utils/clearCache';
 
 import Slider from 'react-slick'
 import "slick-carousel/slick/slick.css";
@@ -21,6 +22,10 @@ const MasterCuan = () => {
   const [updateReward, setupdateReward] = useState(0);
   const [nav1, setNav1] = useState();
   const [nav2, setNav2] = useState();
+
+  useEffect(() => {
+    SendVersiBuild()
+  }, [])
 
   const marks = [
     {
@@ -60,6 +65,25 @@ const MasterCuan = () => {
   useEffect(() => {
     deviceType()
   }, []);
+
+  const labelReward = [
+    {
+      value: 0,
+      label: '20 Lot',
+    },
+    {
+      value: 1,
+      label: '50 Lot',
+    },
+    {
+      value: 2,
+      label: '100 Lot',
+    },
+    {
+      value: 3,
+      label: '250 Lot'
+    },
+  ];
 
 
   const deviceType = () => {
@@ -169,7 +193,7 @@ const MasterCuan = () => {
                 defaultValue={slideReward}
                 value={slideReward}
                 valueLabelDisplay="off"
-                marks
+                marks={labelReward}
                 min={0}
                 max={3} />
             </Grid>
