@@ -109,10 +109,6 @@
     margin-top: 4px;
   }
 
-  .css-14pt78w-MuiSlider-rail {
-    max-width: 310px;
-  }
-
   .text-b-title {
     font-weight: 700;
     font-size: 20px;
@@ -391,6 +387,16 @@
       .slick-initialized .slick-slide {
         display: flex;
         justify-content: center;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .container-master-cuan {
+    .reward-container {
+      .css-14pt78w-MuiSlider-rail {
+        max-width: 310px;
       }
     }
   }
