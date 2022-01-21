@@ -74,6 +74,10 @@ function Seo({ description, lang, meta, title }) {
           name: `facebook-domain-verification`,
           content: `f7kayy7mhaddcpu6xbwde08hlvsdfm`,
         },
+        {
+          name: `charset`,
+          content: `UTF-8`,
+        },
       ].concat(meta)}
     />
   )

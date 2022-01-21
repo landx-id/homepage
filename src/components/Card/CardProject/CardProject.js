@@ -49,7 +49,7 @@ const CardProject = ({ data }) => {
 
   return (
     <>
-      <Grid item xs={11} md={6} className='container-slider-center'>
+      <Grid item xs={12} className='container-slider-center'>
         <Card className="card-project">
           {loadImg ? <div className='container-load-img'><CircularProgress color="success" /></div>
             :
@@ -93,57 +93,57 @@ const CardProject = ({ data }) => {
             <h2 className="card-title c-pointer" onClick={() => navigate(`/project/${data.token.symbol.toLowerCase()}`)}>{data.token.name}</h2>
             <Chip label={data.category} color="success" variant="outlined" className="chip-text" />
 
-            <Grid container sx={{ display: 'flex', justifyContent: 'space-between' }}>
+            <Grid container sx={{ display: 'flex', justifyContent: 'space-between' }} onClick={() => navigate(`/project/${data.token.symbol.toLowerCase()}`)}>
               <Grid item xs={9} className='card-price'>
                 {toIDR(data.launchProgress * data.totalPurchasePrice)}
               </Grid>
-              <Grid item xs={3} className='card-price'>
+              <Grid item xs={3} className='card-price' onClick={() => navigate(`/project/${data.token.symbol.toLowerCase()}`)}>
                 {endDay}
               </Grid>
             </Grid>
             <Grid container>
-              <Grid item xs={8} className='card-text-detail'>
+              <Grid item xs={8} className='card-text-detail' onClick={() => navigate(`/project/${data.token.symbol.toLowerCase()}`)}>
                 dari {toIDR(data.totalPurchasePrice)} Total Pendanaan
               </Grid>
-              <Grid item xs={3} className='card-text-detail'>
+              <Grid item xs={3} className='card-text-detail' onClick={() => navigate(`/project/${data.token.symbol.toLowerCase()}`)}>
                 Hari Lagi
               </Grid>
             </Grid>
 
-            <LinearProgress variant="determinate" value={data.launchProgress * 100} />
+            <LinearProgress variant="determinate" value={data.launchProgress * 100} onClick={() => navigate(`/project/${data.token.symbol.toLowerCase()}`)} />
 
-            <Grid container sx={{ display: 'flex', justifyContent: 'space-between' }}>
+            <Grid container sx={{ display: 'flex', justifyContent: 'space-between' }} onClick={() => navigate(`/project/${data.token.symbol.toLowerCase()}`)}>
               <Grid item xs={6} className='card-text-detail'>
                 <span>Harga Per Lot</span>
               </Grid>
-              <Grid item xs={6} className='card-text-detail'>
+              <Grid item xs={6} className='card-text-detail' onClick={() => navigate(`/project/${data.token.symbol.toLowerCase()}`)}>
                 <span>Jumlah Lot</span>
               </Grid>
             </Grid>
 
-            <Grid container sx={{ display: 'flex', justifyContent: 'space-between' }}>
+            <Grid container sx={{ display: 'flex', justifyContent: 'space-between' }} onClick={() => navigate(`/project/${data.token.symbol.toLowerCase()}`)}>
               <Grid item xs={6} className='card-title'>
                 <span>{toIDR(data.initialTokenPrice)}</span>
               </Grid>
-              <Grid item xs={6} className='card-title'>
+              <Grid item xs={6} className='card-title' onClick={() => navigate(`/project/${data.token.symbol.toLowerCase()}`)}>
                 <span>{parseInt(data.tokenSupply, 10)}</span>
               </Grid>
             </Grid>
 
-            <Grid container sx={{ display: 'flex', justifyContent: 'space-between' }}>
+            <Grid container sx={{ display: 'flex', justifyContent: 'space-between' }} onClick={() => navigate(`/project/${data.token.symbol.toLowerCase()}`)}>
               <Grid item xs={6} className='card-text-detail'>
                 <span>Periode Dividen</span>
               </Grid>
-              <Grid item xs={6} className='card-text-detail'>
+              <Grid item xs={6} className='card-text-detail' onClick={() => navigate(`/project/${data.token.symbol.toLowerCase()}`)}>
                 <span>Estimasi Dividen</span>
               </Grid>
             </Grid>
 
-            <Grid container sx={{ display: 'flex', justifyContent: 'space-between' }}>
+            <Grid container sx={{ display: 'flex', justifyContent: 'space-between' }} onClick={() => navigate(`/project/${data.token.symbol.toLowerCase()}`)}>
               <Grid item xs={6} className='card-title'>
                 <span>{data.dividendSchedule}</span>
               </Grid>
-              <Grid item xs={6}>
+              <Grid item xs={6} onClick={() => navigate(`/project/${data.token.symbol.toLowerCase()}`)}>
                 <span className='card-title'>{parseFloat(data.annualRentYield) * 100}-{parseFloat(data.annualRentYieldUpper) * 100}%</span> <span className='card-text-detail-2'>Per Tahun</span>
               </Grid>
             </Grid>
