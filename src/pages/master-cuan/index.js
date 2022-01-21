@@ -44,6 +44,7 @@ const MasterCuan = () => {
   ];
 
   const rewardMasterCuan = {
+    arrows: false,
     dots: false,
     infinite: false,
     speed: 500,
@@ -99,10 +100,10 @@ const MasterCuan = () => {
   const deviceType = () => {
     const ua = navigator.userAgent;
     if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
-      return setlinkInstall('https://play.google.com/store/apps/details?id=store.numoney.landxapp')
+      return setlinkInstall('https://apps.apple.com/id/app/landx-aplikasi-investasi/id1453823676?l=id')
     }
     else if (/Mobile|Android|iP(hone|od)|IEMobile|BlackBerry|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(ua)) {
-      return setlinkInstall('https://apps.apple.com/id/app/landx-aplikasi-investasi/id1453823676?l=id')
+      return setlinkInstall('https://play.google.com/store/apps/details?id=store.numoney.landxapp')
     }
     return setlinkInstall('https://play.google.com/store/apps/details?id=store.numoney.landxapp')
   };

@@ -62,6 +62,13 @@ const ShowAllProject = () => {
       {
         breakpoint: 1200,
         settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        }
+      },
+      {
+        breakpoint: 830,
+        settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
         }
@@ -94,17 +101,21 @@ const ShowAllProject = () => {
   }, [categories])
 
   useEffect(() => {
-    setWidthWindowVal(window.innerWidth)
     window.addEventListener('resize', () => {
       setWidthWindowVal(window.innerWidth)
     })
   }, [widthWindowVal])
 
+  console.log('numNext', numNext);
   useEffect(() => {
-    if (widthWindowVal < 1200) {
+    setNumNext(3)
+    if (widthWindowVal < 1200 && widthWindowVal > 830 && widthWindowVal !== null) {
+      setNumNext(2)
+    }
+    if (widthWindowVal <= 830 && widthWindowVal !== null) {
       setNumNext(1)
     }
-  }, [])
+  }, [widthWindowVal])
 
   const getCategory = () => {
     dataProjects.map(data => {
@@ -133,12 +144,17 @@ const ShowAllProject = () => {
   const handlePrev = () => {
     console.log('handlePrev', numPrev);
     if (numPrev > 0) {
-      if (widthWindowVal < 1200) {
+      if (widthWindowVal < 1200 && widthWindowVal > 830 && widthWindowVal !== null) {
+        setNumPrev(numPrev - 2)
+        setNumNext(numNext - 2)
+      } else if (widthWindowVal <= 830 && widthWindowVal !== null) {
         setNumPrev(numPrev - 1)
         setNumNext(numNext - 1)
       } else {
-        setNumPrev(numPrev - 3)
-        setNumNext(numNext - 3)
+        {
+          setNumPrev(numPrev - 3)
+          setNumNext(numNext - 3)
+        }
       }
     }
   }
@@ -146,7 +162,10 @@ const ShowAllProject = () => {
   const handleNext = () => {
     console.log('handleNext', numNext);
     if (numNext < dataProjects.length) {
-      if (widthWindowVal < 1200) {
+      if (widthWindowVal < 1200 && widthWindowVal > 830 && widthWindowVal !== null) {
+        setNumPrev(numPrev + 2)
+        setNumNext(numNext + 2)
+      } else if (widthWindowVal <= 830 && widthWindowVal !== null) {
         setNumPrev(numPrev + 1)
         setNumNext(numNext + 1)
       } else {

@@ -2,14 +2,14 @@
 import Cookies from 'universal-cookie';
 
 // selalu update versiBuild + 1 agar otomatis hard refresh
-let versiBuild = 3
+let versiBuild = 4
 const cookies = new Cookies();
 
 export function SendVersiBuild() {
   let oldVersi = cookies.get('versi-build')
 
   if (versiBuild !== Number(oldVersi)) {
-    cookies.set('versi-build', 0)
+    cookies.set('versi-build', 1)
   }
 
   if (versiBuild !== Number(oldVersi)) {
