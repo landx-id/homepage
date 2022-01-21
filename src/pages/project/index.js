@@ -106,7 +106,6 @@ const ShowAllProject = () => {
     })
   }, [widthWindowVal])
 
-  console.log('numNext', numNext);
   useEffect(() => {
     setNumNext(3)
     if (widthWindowVal < 1200 && widthWindowVal > 830 && widthWindowVal !== null) {
@@ -142,7 +141,6 @@ const ShowAllProject = () => {
   }
 
   const handlePrev = () => {
-    console.log('handlePrev', numPrev);
     if (numPrev > 0) {
       if (widthWindowVal < 1200 && widthWindowVal > 830 && widthWindowVal !== null) {
         setNumPrev(numPrev - 2)
@@ -160,7 +158,6 @@ const ShowAllProject = () => {
   }
 
   const handleNext = () => {
-    console.log('handleNext', numNext);
     if (numNext < dataProjects.length) {
       if (widthWindowVal < 1200 && widthWindowVal > 830 && widthWindowVal !== null) {
         setNumPrev(numPrev + 2)
