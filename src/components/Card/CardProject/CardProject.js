@@ -15,7 +15,7 @@ const CardProject = ({ data }) => {
 
   useEffect(() => {
     handleEndDay()
-  }, [data.launchProgress])
+  }, [data?.launchProgress])
 
   useEffect(() => {
     {/* Script dibawah untuk handle loader image */ }

@@ -242,7 +242,9 @@ const IndexPage = () => {
                     })}
 
                     {dataProject && dataProject.map((dataProject) => {
-                      return <CardProject cardProject={cardProject} data={dataProject?.landXProperty} key={dataProject?.landXProperty?.id} />
+                      if (dataProject.landXProperty !== null) {
+                        return <CardProject cardProject={cardProject} data={dataProject?.landXProperty} key={dataProject?.landXProperty?.id} />
+                      }
                     })}
                   </Slider>
                 }
