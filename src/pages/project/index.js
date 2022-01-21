@@ -101,6 +101,7 @@ const ShowAllProject = () => {
   }, [categories])
 
   useEffect(() => {
+    setWidthWindowVal(window.innerWidth)
     window.addEventListener('resize', () => {
       setWidthWindowVal(window.innerWidth)
     })
