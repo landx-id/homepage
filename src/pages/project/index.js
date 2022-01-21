@@ -51,7 +51,6 @@ const ShowAllProject = () => {
   }));
 
   const cardProject = {
-    dots: true,
     infinite: false,
     speed: 500,
     slidesToShow: 3,
@@ -73,7 +72,7 @@ const ShowAllProject = () => {
     var hashUrl = window.location.hash;
     if (/^(#\/[a-z0-9])/.test(hashUrl)) {
       // get project code
-      var code = hashUrl.replace(/[^a-z0-9]/gi,'');
+      var code = hashUrl.replace(/[^a-z0-9]/gi, '');
       // redirect to proper url
       window.location = window.location.protocol + "//" + window.location.host + window.location.pathname + code;
     } else {
@@ -95,8 +94,10 @@ const ShowAllProject = () => {
 
   const getCategory = () => {
     dataProjects.map(data => {
-      if (categories !== data.landXProperty.category) {
-        setCategories((prevArr) => [...prevArr, data.landXProperty.category])
+      if (data.landXProperty !== null) {
+        if (categories !== data.landXProperty.category) {
+          setCategories((prevArr) => [...prevArr, data.landXProperty.category])
+        }
       }
     })
   }
@@ -271,9 +272,11 @@ const ShowAllProject = () => {
                   {dataProjects &&
                     <Slider {...cardProject} className='container-card-projects'>
                       {dataProjects && dataProjects.slice(numPrev, numNext).map(dataProject => {
-                        return (
-                          <CardProject data={dataProject.landXProperty} key={dataProject.landXProperty.id} />
-                        )
+                        if (dataProject.landXProperty !== null) {
+                          return (
+                            <CardProject data={dataProject.landXProperty} key={dataProject.landXProperty.id} />
+                          )
+                        }
                       })}
                     </Slider>}
                 </>
