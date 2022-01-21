@@ -15,7 +15,7 @@ import './ShowAllProject.scss'
 const ShowAllProject = () => {
   const [dataProjects, setDataProjects] = useState('')
   const [numPrev, setNumPrev] = useState(0)
-  const [numNext, setNumNext] = useState(9)
+  const [numNext, setNumNext] = useState(3)
   const [loadingCard, setLoadingCard] = useState(true)
   const [minPrice, setMinPrice] = useState(1000000)
   const [maxPrice, setMaxPrice] = useState(5000000)
@@ -27,6 +27,7 @@ const ShowAllProject = () => {
   const [maxHis, setMaxHis] = useState(5000000)
   const [categoryHis, setCategoryHis] = useState('allCategory')
   const [valSortHis, setValSortHis] = useState('settlementDate')
+  const [widthWindowVal, setWidthWindowVal] = useState(null);
 
   const BootstrapInput = styled(InputBase)(({ theme }) => ({
     '& .MuiInputBase-root': {
@@ -92,6 +93,19 @@ const ShowAllProject = () => {
     }
   }, [categories])
 
+  useEffect(() => {
+    setWidthWindowVal(window.innerWidth)
+    window.addEventListener('resize', () => {
+      setWidthWindowVal(window.innerWidth)
+    })
+  }, [widthWindowVal])
+
+  useEffect(() => {
+    if (widthWindowVal < 1200) {
+      setNumNext(1)
+    }
+  }, [])
+
   const getCategory = () => {
     dataProjects.map(data => {
       if (data.landXProperty !== null) {
@@ -117,16 +131,28 @@ const ShowAllProject = () => {
   }
 
   const handlePrev = () => {
+    console.log('handlePrev', numPrev);
     if (numPrev > 0) {
-      setNumPrev(numPrev - 9)
-      setNumNext(numNext - 9)
+      if (widthWindowVal < 1200) {
+        setNumPrev(numPrev - 1)
+        setNumNext(numNext - 1)
+      } else {
+        setNumPrev(numPrev - 3)
+        setNumNext(numNext - 3)
+      }
     }
   }
 
   const handleNext = () => {
+    console.log('handleNext', numNext);
     if (numNext < dataProjects.length) {
-      setNumPrev(numPrev + 9)
-      setNumNext(numNext + 9)
+      if (widthWindowVal < 1200) {
+        setNumPrev(numPrev + 1)
+        setNumNext(numNext + 1)
+      } else {
+        setNumPrev(numPrev + 3)
+        setNumNext(numNext + 3)
+      }
     }
   }
 
@@ -283,7 +309,7 @@ const ShowAllProject = () => {
             }
             <Grid container>
               <Grid item xs={12} className='btn-next-prev' sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <Button variant="contained" color='success' onClick={() => handlePrev()}>Sebelumnya</Button>
+                <Button variant="contained" color='success' onClick={() => handlePrev()} className='prev-btn'>Sebelumnya</Button>
                 <Button variant="contained" color='success' onClick={() => handleNext()}>Selanjutnya</Button>
               </Grid>
             </Grid>
