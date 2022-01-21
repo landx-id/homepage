@@ -113,118 +113,118 @@ const DragonHotPot = () => {
         </Box>
 
         <Collapse in={checked}>
-        { widthWindows < 600 ?
-          <Grid container spacing={2} className="dragon-hot-menu">
-            <Grid item xs={12} md={12} className="footer-menu-two mb-3">
-              <Typography color="primary" variant="h6" style={{ marginLeft: `1rem`, marginBottom: `2rem` }}>
-                PERUSAHAAN
-              </Typography>
-              <MenuList className="dragon-hot-list-menu sections">
-                <MenuItem>
-                  <a href="https://landx.id/blog/">Blog</a>
-                </MenuItem>
-                <MenuItem>
-                  <AnchorLink to='/about-landx'>Tentang LandX</AnchorLink>
-                </MenuItem>
-                <MenuItem>
-                  <Link to='/syarat-dan-ketentuan'>Syarat & Ketentuan</Link>
-                </MenuItem>
-                <MenuItem>
-                  <Link to='/privacy-policy'>Kebijakan Privasi</Link>
-                </MenuItem>
-                <MenuItem>
-                  <Link to='/service-level-agreement'>Service Level Agreement</Link>
-                </MenuItem>
-                <MenuItem>
-                  <Link to='/kebijakan-isms'>Kebijakan ISMS</Link>
-                </MenuItem>
-                <MenuItem>
-                  <Link to='/mitigasi-risiko'>Mitigasi Risiko</Link>
-                </MenuItem>
-                <MenuItem>
-                <a href="https://landx.id/blog/faq-landx/">FAQ</a>
-                </MenuItem>
-              </MenuList>
-            </Grid>
+          {widthWindows < 600 ?
+            <Grid container spacing={2} className="dragon-hot-menu">
+              <Grid item xs={12} md={12} className="footer-menu-two mb-3">
+                <Typography color="primary" variant="h6" style={{ marginLeft: `1rem`, marginBottom: `2rem` }}>
+                  PERUSAHAAN
+                </Typography>
+                <MenuList className="dragon-hot-list-menu sections">
+                  <MenuItem>
+                    <a href="https://landx.id/blog/">Blog</a>
+                  </MenuItem>
+                  <MenuItem>
+                    <AnchorLink to='/about-landx'>Tentang LandX</AnchorLink>
+                  </MenuItem>
+                  <MenuItem>
+                    <Link to='/syarat-dan-ketentuan'>Syarat & Ketentuan</Link>
+                  </MenuItem>
+                  <MenuItem>
+                    <Link to='/privacy-policy'>Kebijakan Privasi</Link>
+                  </MenuItem>
+                  <MenuItem>
+                    <Link to='/service-level-agreement'>Service Level Agreement</Link>
+                  </MenuItem>
+                  <MenuItem>
+                    <Link to='/kebijakan-isms'>Kebijakan ISMS</Link>
+                  </MenuItem>
+                  <MenuItem>
+                    <Link to='/mitigasi-risiko'>Mitigasi Risiko</Link>
+                  </MenuItem>
+                  <MenuItem>
+                    <a href="https://landx.id/blog/faq-landx/">FAQ</a>
+                  </MenuItem>
+                </MenuList>
+              </Grid>
 
-            <Grid item xs={12} md={12} className="footer-menu-two">
-              <Typography color="primary" variant="h6" style={{ marginLeft:`1rem`, marginBottom:`2rem` }}>
-                DUKUNGAN
-              </Typography>  
-              <MenuList className="sections">
-                <MenuItem>
-                  <Link to='/contact'>Kontak</Link>
-                </MenuItem>
-                <MenuItem>
-                  <a href='mailto:hello@landx.id'>hello@landx.id</a>
-                </MenuItem>
-              </MenuList>
-            </Grid>
+              <Grid item xs={12} md={12} className="footer-menu-two">
+                <Typography color="primary" variant="h6" style={{ marginLeft: `1rem`, marginBottom: `2rem` }}>
+                  DUKUNGAN
+                </Typography>
+                <MenuList className="sections">
+                  <MenuItem>
+                    <Link to='/contact'>Kontak</Link>
+                  </MenuItem>
+                  <MenuItem>
+                    <a href='mailto:hello@landx.id'>hello@landx.id</a>
+                  </MenuItem>
+                </MenuList>
+              </Grid>
 
-            <Grid item xs={12} md={12}>
-              { widthWindows < 1200 ?
-                <Button variant="outlined" onClick={()=>{ navigate("/pendaftaran-perusahaan") }} style={{ fontWeight:`600` }}>PENDAFTARAN PERUSAHAAN</Button>
-                :
-                ''
-              }
+              <Grid item xs={12} md={12}>
+                {widthWindows < 1200 ?
+                  <Button variant="outlined" onClick={() => { navigate("/pendaftaran-perusahaan") }} style={{ fontWeight: `600` }}>PENDAFTARAN PERUSAHAAN</Button>
+                  :
+                  ''
+                }
+              </Grid>
             </Grid>
-          </Grid>   
-          :
-          <Grid container spacing={2} className="dragon-hot-menu">
-            <Grid item xs={3} md={3} className="footer-menu-two mb-3">
-              <Typography color="primary" variant="h6" style={{ marginLeft:`1rem`, marginBottom:`2rem` }}>
-                PERUSAHAAN
-              </Typography>  
-              <MenuList className="dragon-hot-list-menu sections">
-                <MenuItem>
-                  <a href="https://landx.id/blog/">Blog</a>
-                </MenuItem>
-                <MenuItem>
-                  <AnchorLink to='/about-landx'>Tentang LandX</AnchorLink>
-                </MenuItem>
-                <MenuItem>
-                  <Link to='/syarat-dan-ketentuan'>Syarat & Ketentuan</Link>
-                </MenuItem>
-                <MenuItem>
-                  <Link to='/privacy-policy'>Kebijakan Privasi</Link>
-                </MenuItem>
-                <MenuItem>
-                  <Link to='/service-level-agreement'>Service Level Agreement</Link>
-                </MenuItem>
-                <MenuItem>
-                <Link to='/kebijakan-isms'>Kebijakan ISMS</Link>
-                </MenuItem>
-                <MenuItem>
-                <Link to='/mitigasi-risiko'>Mitigasi Risiko</Link>
-                </MenuItem>
-                <MenuItem>
-                <a href="https://landx.id/blog/faq-landx/">FAQ</a>
-                </MenuItem>
-              </MenuList>
-            </Grid>
+            :
+            <Grid container spacing={2} className="dragon-hot-menu">
+              <Grid item xs={3} md={3} className="footer-menu-two mb-3">
+                <Typography color="primary" variant="h6" style={{ marginLeft: `1rem`, marginBottom: `2rem` }}>
+                  PERUSAHAAN
+                </Typography>
+                <MenuList className="dragon-hot-list-menu sections">
+                  <MenuItem>
+                    <a href="https://landx.id/blog/">Blog</a>
+                  </MenuItem>
+                  <MenuItem>
+                    <AnchorLink to='/about-landx'>Tentang LandX</AnchorLink>
+                  </MenuItem>
+                  <MenuItem>
+                    <Link to='/syarat-dan-ketentuan'>Syarat & Ketentuan</Link>
+                  </MenuItem>
+                  <MenuItem>
+                    <Link to='/privacy-policy'>Kebijakan Privasi</Link>
+                  </MenuItem>
+                  <MenuItem>
+                    <Link to='/service-level-agreement'>Service Level Agreement</Link>
+                  </MenuItem>
+                  <MenuItem>
+                    <Link to='/kebijakan-isms'>Kebijakan ISMS</Link>
+                  </MenuItem>
+                  <MenuItem>
+                    <Link to='/mitigasi-risiko'>Mitigasi Risiko</Link>
+                  </MenuItem>
+                  <MenuItem>
+                    <a href="https://landx.id/blog/faq-landx/">FAQ</a>
+                  </MenuItem>
+                </MenuList>
+              </Grid>
 
-            <Grid item xs={3} md={3} className="footer-menu-two">
-              <Typography color="primary" variant="h6" style={{ marginLeft: `1rem`, marginBottom: `2rem` }}>
-                DUKUNGAN
-              </Typography>
-              <MenuList className="sections">
-                <MenuItem>
-                  <Link to='/contact'>Kontak</Link>
-                </MenuItem>
-                <MenuItem>
-                  <a href='mailto:hello@landx.id'>hello@landx.id</a>
-                </MenuItem>
-              </MenuList>
-            </Grid>
+              <Grid item xs={3} md={3} className="footer-menu-two">
+                <Typography color="primary" variant="h6" style={{ marginLeft: `1rem`, marginBottom: `2rem` }}>
+                  DUKUNGAN
+                </Typography>
+                <MenuList className="sections">
+                  <MenuItem>
+                    <Link to='/contact'>Kontak</Link>
+                  </MenuItem>
+                  <MenuItem>
+                    <a href='mailto:hello@landx.id'>hello@landx.id</a>
+                  </MenuItem>
+                </MenuList>
+              </Grid>
 
-            <Grid item xs={3} md={3}>
-              {widthWindows < 1200 ?
-                <Button variant="outlined" onClick={() => { navigate("/pendaftaran-perusahaan") }} style={{ fontWeight: `600` }}>PENDAFTARAN PERUSAHAAN</Button>
-                :
-                ''
-              }
+              <Grid item xs={3} md={3}>
+                {widthWindows < 1200 ?
+                  <Button variant="outlined" onClick={() => { navigate("/pendaftaran-perusahaan") }} style={{ fontWeight: `600` }}>PENDAFTARAN PERUSAHAAN</Button>
+                  :
+                  ''
+                }
+              </Grid>
             </Grid>
-          </Grid>
           }
         </Collapse>
 
@@ -363,7 +363,9 @@ const DragonHotPot = () => {
                 })}
 
                 {dataProject && dataProject.map((dataProject) => {
-                  return <CardProject cardProject={cardProject} data={dataProject.landXProperty} key={dataProject.landXProperty.id} />
+                  if (dataProject.landXProperty !== null) {
+                    return <CardProject cardProject={cardProject} data={dataProject.landXProperty} key={dataProject.landXProperty.id} />
+                  }
                 })}
               </Slider>
             }
