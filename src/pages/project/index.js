@@ -13,7 +13,7 @@ import "slick-carousel/slick/slick-theme.css";
 import './ShowAllProject.scss'
 
 const ShowAllProject = () => {
-  const [dataProjects, setDataProjects] = useState('')
+  const [dataProjects, setDataProjects] = useState([])
   const [numPrev, setNumPrev] = useState(0)
   const [numNext, setNumNext] = useState(3)
   const [loadingCard, setLoadingCard] = useState(true)
@@ -28,6 +28,8 @@ const ShowAllProject = () => {
   const [categoryHis, setCategoryHis] = useState('allCategory')
   const [valSortHis, setValSortHis] = useState('settlementDate')
   const [widthWindowVal, setWidthWindowVal] = useState(null);
+  const [isSell, setIsSell] = useState([]);
+  const [isSold, setIsSold] = useState([]);
 
   const BootstrapInput = styled(InputBase)(({ theme }) => ({
     '& .MuiInputBase-root': {
@@ -88,6 +90,11 @@ const ShowAllProject = () => {
     }
   }, [])
 
+
+  useEffect(() => {
+    setDataProjects([...isSell, ...isSold])
+  }, [isSold])
+
   useEffect(() => {
     if (dataProjects) {
       getCategory()
@@ -135,8 +142,15 @@ const ShowAllProject = () => {
   }
 
   const getDataProjects = () => {
-    FetchData('https://api.landx.id/').then(data => {
-      setDataProjects(data.data.currencies)
+    FetchData('https://api.landx.id/').then(datas => {
+      datas.data.currencies.map((data) => {
+        if (data.landXProperty['launchProgress'] < 1) {
+          setIsSell((prevData) => [...prevData, data])
+        }
+        if (data.landXProperty['launchProgress'] === 1) {
+          setIsSold((prevData) => [...prevData, data])
+        }
+      })
       setLoadingCard(false)
     })
   }
