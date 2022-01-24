@@ -24,7 +24,7 @@ import './index.scss';
 const IndexPage = () => {
   const [widthWindows, setWidthWindows] = useState('')
   const [dataProject, setDataProject] = useState([])
-  const [dataListing, setDataListing] = useState('')
+  const [dataListing, setDataListing] = useState([])
   const [dataInvestors, setDataInvestors] = useState(null)
   const [loadProjects, setLoadProjects] = useState(true)
   const [loadInvestor, setLoadInvestor] = useState(true)
