@@ -23,11 +23,13 @@ import './index.scss';
 
 const IndexPage = () => {
   const [widthWindows, setWidthWindows] = useState('')
-  const [dataProject, setDataProject] = useState(null)
+  const [dataProject, setDataProject] = useState([])
   const [dataListing, setDataListing] = useState('')
   const [dataInvestors, setDataInvestors] = useState(null)
   const [loadProjects, setLoadProjects] = useState(true)
   const [loadInvestor, setLoadInvestor] = useState(true)
+  const [isSell, setIsSell] = useState([]);
+  const [isSold, setIsSold] = useState([]);
 
   useEffect(() => {
     setWidthWindows(window.innerWidth)
@@ -39,6 +41,10 @@ const IndexPage = () => {
   useEffect(() => {
     getLimitCardProject()
   }, [])
+
+  useEffect(() => {
+    setDataProject([...isSell, ...isSold])
+  }, [isSold])
 
   useEffect(() => {
     handleListing()
@@ -102,8 +108,15 @@ const IndexPage = () => {
 
 
   const getLimitCardProject = () => {
-    FetchLimitData('https://api.landx.id/', 5, 1).then(data => {
-      setDataProject(data.data.currencies)
+    FetchLimitData('https://api.landx.id/', 5, 1).then(datas => {
+      datas.data.currencies.map((data) => {
+        if (data.landXProperty['launchProgress'] < 1) {
+          setIsSell((prevData) => [...prevData, data])
+        }
+        if (data.landXProperty['launchProgress'] === 1) {
+          setIsSold((prevData) => [...prevData, data])
+        }
+      })
       setLoadProjects(false)
     })
   }
