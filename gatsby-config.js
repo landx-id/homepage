@@ -37,7 +37,28 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sass`,
-    `gatsby-plugin-netlify`,
+    {
+      resolve:`gatsby-plugin-netlify`,
+      options: {
+        headers: {
+          "/public/**/*.html": [
+            "cache-control: public",
+            "cache-control: max-age=0", 
+            "cache-control: must-revalidate"
+          ],
+          "/sw.js": [
+            "cache-control: public",
+            "cache-control: max-age=0", 
+            "cache-control: must-revalidate"
+          ],
+          "/public/page-data/*": [
+            "cache-control: public",
+            "cache-control: max-age=0", 
+            "cache-control: must-revalidate"
+          ]
+        }
+      }
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
