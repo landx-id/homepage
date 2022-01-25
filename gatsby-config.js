@@ -42,9 +42,9 @@ module.exports = {
       options: {
         headers: {
           "/public/**/*.html": [
-            "cache-control: public",
-            "cache-control: max-age=0", 
-            "cache-control: must-revalidate"
+          "cache-control: public",
+          "cache-control: max-age=0", 
+          "cache-control: must-revalidate"
           ],
           "/sw.js": [
             "cache-control: public",
@@ -55,9 +55,24 @@ module.exports = {
             "cache-control: public",
             "cache-control: max-age=0", 
             "cache-control: must-revalidate"
-          ]
-        }
-      }
+          ],
+          "/public/images/*": [
+            "cache-control: public",
+            "cache-control: max-age=0", 
+            "cache-control: must-revalidate"
+          ],
+          "/public/lottie/*.json": [
+            "cache-control: public",
+            "cache-control: max-age=0", 
+            "cache-control: must-revalidate"
+          ],
+        }, // option to add more headers. `Link` headers are transformed by the below criteria
+        allPageHeaders: [], // option to add headers for all pages. `Link` headers are transformed by the below criteria
+        mergeSecurityHeaders: true, // boolean to turn off the default security headers
+        mergeLinkHeaders: true, // boolean to turn off the default gatsby js headers
+        mergeCachingHeaders: true, // boolean to turn off the default caching headers
+        generateMatchPathRewrites: true, // boolean to turn off automatic creation of redirect rules for client only paths
+      },
     },
     {
       resolve: `gatsby-plugin-manifest`,
