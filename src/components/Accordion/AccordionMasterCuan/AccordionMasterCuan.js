@@ -22,22 +22,22 @@ const AccordionMasterCuan = ({ title, content, accCategory = false }) => {
                 <ol className='num-style'>
                   <li>
                     <Typography className="text-rule">
-                      Pembelian minimal 20 lot akan mendapatkan Mini Finance Bootcamp with the expert (2 webinar in 2 months - January & February), berlaku untuk 1000 orang
+                      Beli min. 20 lot: Dapatkan Mini Finance Bootcamp with Experts
                     </Typography>
                   </li>
                   <li>
                     <Typography className="text-rule">
-                      Pembelian minimal 50 lot akan mendapatkan Finance bootcamp with the expert (4 webinar in 3 months February - April) berlaku untuk 1000 orang
+                      Beli min. 50 lot: Dapatkan EXCLUSIVE Mini Finance Bootcamp with Experts
                     </Typography>
                   </li>
                   <li>
                     <Typography className="text-rule">
-                      Pembelian minimal 100 lot {'→'} akan mendapatkan Offline bootcamp finance with the expert + happy hour meetup di satu tempat, berlaku untuk 100 orang (batch system - per batch ada 20 orang)
+                      Beli min. 100 lot: Dapatkan Offline Finance Bootcamp with Experts Happy Hour Meetup & Discussion with Speakers
                     </Typography>
                   </li>
                   <li>
                     <Typography className="text-rule">
-                      Pembelian minimal 250 lot akan mendapatkan Offline bootcamp finance with the expert + F&B and Business tour, berlaku untuk 100 orang (batch system - per batch ada 20 orang)
+                      Beli min. 250 lot: Dapatkan Offline Bootcamp Finance with Experts Business tour
                     </Typography>
                   </li>
                 </ol>

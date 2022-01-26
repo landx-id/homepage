@@ -249,7 +249,7 @@ const MasterCuan = () => {
                   <ol className='num-style'>
                     <li>
                       <Typography component='span' className="text-rule">
-                        Tanggal promo: 24 Januari 2022 - 13 Februari 2022
+                        Tanggal promo: 27 Januari 2022 - 13 Februari 2022
                       </Typography>
                     </li>
                     <li>
