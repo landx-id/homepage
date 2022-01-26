@@ -90,7 +90,6 @@ const ShowAllProject = () => {
     }
   }, [])
 
-
   useEffect(() => {
     setDataProjects([...isSell, ...isSold])
   }, [isSold])

@@ -125,7 +125,7 @@ const MasterCuan = () => {
               <Typography align='center' className='text-banner'>
                 Wujudkan impianmu jadi BOS Restoran di tahun 2022!
               </Typography>
-              <Typography align='center' className='text-banner'>
+              <Typography align='center' className='text-banner-desc'>
                 Mau punya bisnis resto kayak apa?
               </Typography>
               <Typography align='center' paragraph={true} className='text-banner-desc'>
