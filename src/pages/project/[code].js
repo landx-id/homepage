@@ -27,7 +27,7 @@ const DetailProjects = (props) => {
   }, [dataListing])
 
   const handleListing = () => {
-    fetch('/lottie/upcoming.json')
+    fetch('https://web-api.landx.id/mobile/upcoming_project')
       .then(r => r.json())
       .then(data => {
         setDataListing((prevData) => [...prevData, data.upcoming])

@@ -116,10 +116,7 @@ const MasterCuan = () => {
         <Container maxWidth='xs' className="banner-container">
           <Grid container>
             <Grid item xs={12} className='text-center'>
-              <img src="/master-cuan/logo-white.webp" alt="Landx" />
-            </Grid>
-            <Grid item xs={12} className='text-center'>
-              <img src="/master-cuan/banner-master-cuan.webp" alt="Landx" />
+              <img src="/master-cuan/logo-master-cuan.webp" alt="Landx" />
             </Grid>
             <Grid item xs={12} className='text-center'>
               <Typography align='center' className='text-banner'>
@@ -131,10 +128,10 @@ const MasterCuan = () => {
               <Typography align='center' className='text-banner'>
                 Mau punya bisnis resto kayak apa?
               </Typography>
-              <Typography align='center' paragraph={true} className='text-banner'>
+              <Typography align='center' paragraph={true} className='text-banner-desc'>
                 Mau yang punya puluhan cabang, yang ordernya ribuan, atau cari yang partnernya berpengalaman?
               </Typography>
-              <Typography align='center' paragraph={true} className='text-banner'>
+              <Typography align='center' paragraph={true} className='text-banner-desc'>
                 Semuanya ada di bulan ini!
               </Typography>
               <Button variant="text" className='btn-join-white'>Gabung Sekarang</Button>
@@ -478,28 +475,26 @@ const MasterCuan = () => {
           </Container>
         </footer>
 
-        <Container maxWidth='xs' style={{ backgroundColor: '#fff' }}>
-          <div className="bottom-nav-container">
-            <div className="icon-container">
-              <img src="/master-cuan/home-active.png" alt="Home" />
-              <div className="text-icon active">
-                Home
-              </div>
-            </div>
-            <div className="icon-container">
-              <img src="/master-cuan/insight.png" alt="Cara Kerja" />
-              <div className="text-icon">
-                Cara Kerja
-              </div>
-            </div>
-            <div className="icon-container">
-              <img src="/master-cuan/user.png" alt="Login" />
-              <div className="text-icon">
-                Login
-              </div>
+        <div className="bottom-nav-container">
+          <div className="icon-container">
+            <img src="/master-cuan/home-active.png" alt="Home" />
+            <div className="text-icon active">
+              Home
             </div>
           </div>
-        </Container>
+          <div className="icon-container">
+            <img src="/master-cuan/insight.png" alt="Cara Kerja" />
+            <div className="text-icon">
+              Cara Kerja
+            </div>
+          </div>
+          <div className="icon-container">
+            <img src="/master-cuan/user.png" alt="Login" />
+            <div className="text-icon">
+              Login
+            </div>
+          </div>
+        </div>
 
       </div >
     </>

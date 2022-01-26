@@ -129,7 +129,7 @@ const IndexPage = () => {
   }
 
   const handleListing = () => {
-    fetch('/lottie/upcoming.json')
+    fetch('https://web-api.landx.id/mobile/upcoming_project')
       .then(r => r.json())
       .then(data => {
         setPreDataListing((prevData) => [...prevData, data.upcoming])

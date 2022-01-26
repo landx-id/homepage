@@ -67,7 +67,7 @@ const DragonHotPot = () => {
   }
 
   const handleListing = () => {
-    fetch('https://landx.id/lottie/upcoming.json')
+    fetch('https://web-api.landx.id/mobile/upcoming_project')
       .then(r => r.json())
       .then(data => {
         setDataListing((prevData) => [...prevData, data.upcoming])
