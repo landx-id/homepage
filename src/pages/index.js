@@ -115,11 +115,13 @@ const IndexPage = () => {
   const getLimitCardProject = () => {
     FetchLimitData('https://api.landx.id/', 5, 1).then(datas => {
       datas.data.currencies.map((data) => {
-        if (data.landXProperty['launchProgress'] < 1) {
-          setIsSell((prevData) => [...prevData, data])
-        }
-        if (data.landXProperty['launchProgress'] === 1) {
-          setIsSold((prevData) => [...prevData, data])
+        if (data.landXProperty !== null) {
+          if (data.landXProperty['launchProgress'] < 1) {
+            setIsSell((prevData) => [...prevData, data])
+          }
+          if (data.landXProperty['launchProgress'] === 1) {
+            setIsSold((prevData) => [...prevData, data])
+          }
         }
       })
       setLoadProjects(false)
