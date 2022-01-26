@@ -23,7 +23,9 @@ const ProjectDetails = (props) => {
   const [linkBtnLandx, setLinkBtnLandx] = useState('https://play.google.com/store/apps/details?id=store.numoney.landxapp')
   const [idProject, setIdProject] = useState('')
   const [dataProject, setDataProject] = useState('')
-  const [dataProjectLimit, setDataProjectLimit] = useState('')
+  const [dataProjectLimit, setDataProjectLimit] = useState([])
+  const [isSell, setIsSell] = useState([]);
+  const [isSold, setIsSold] = useState([]);
   const [endDay, setEndDay] = useState('')
   const [openTooltipDisc, setOpenTooltipDisc] = useState(false);
   const [openTooltipPeriode, setOpenTooltipPeriode] = useState(false)
@@ -78,6 +80,10 @@ const ProjectDetails = (props) => {
       }
     })
   }, [idProject])
+
+  useEffect(() => {
+    setDataProjectLimit([...isSell, ...isSold])
+  }, [isSold])
 
   const detectDevice = () => {
     var userAgent = navigator.userAgent || navigator.vendor || window.opera;
@@ -138,8 +144,17 @@ const ProjectDetails = (props) => {
   }
 
   const getLimitCardProject = () => {
-    FetchLimitData('https://api.landx.id/', 5, 1).then(data => {
-      setDataProjectLimit(data.data.currencies)
+    FetchLimitData('https://api.landx.id/', 5, 1).then(datas => {
+      datas.data.currencies.map((data) => {
+        if (data.landXProperty !== null) {
+          if (data.landXProperty['launchProgress'] < 1) {
+            setIsSell((prevData) => [...prevData, data])
+          }
+          if (data.landXProperty['launchProgress'] === 1) {
+            setIsSold((prevData) => [...prevData, data])
+          }
+        }
+      })
       setLoadProjects(false)
     })
   }
