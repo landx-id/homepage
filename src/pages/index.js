@@ -25,6 +25,7 @@ const IndexPage = () => {
   const [widthWindows, setWidthWindows] = useState('')
   const [dataProject, setDataProject] = useState([])
   const [dataListing, setDataListing] = useState([])
+  const [preDataListing, setPreDataListing] = useState([])
   const [dataInvestors, setDataInvestors] = useState(null)
   const [loadProjects, setLoadProjects] = useState(true)
   const [loadInvestor, setLoadInvestor] = useState(true)
@@ -50,6 +51,10 @@ const IndexPage = () => {
     handleListing()
     handleInvestors()
   }, [])
+
+  useEffect(() => {
+    setDataListing([...preDataListing])
+  }, [preDataListing])
 
   const cardProject = {
     dots: true,
@@ -125,7 +130,7 @@ const IndexPage = () => {
     fetch('/lottie/upcoming.json')
       .then(r => r.json())
       .then(data => {
-        setDataListing((prevData) => [...prevData, data.upcoming])
+        setPreDataListing((prevData) => [...prevData, data.upcoming])
       })
   }
 
