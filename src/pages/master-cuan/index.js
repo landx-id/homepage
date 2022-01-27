@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Container, Grid, Typography, Button, Box, Slider as MuiSlider } from '@mui/material';
+import { navigate } from "gatsby"
 import CardMasterCuan from '../../components/Card/CardMasterCuan/CardMasterCuan';
 import CardProjectMasterCuan from '../../components/Card/CardProjectMasterCuan/CardProjectMasterCuan';
 import AccordionMasterCuan from '../../components/Accordion/AccordionMasterCuan/AccordionMasterCuan';
@@ -116,7 +117,7 @@ const MasterCuan = () => {
         <Container maxWidth='xs' className="banner-container">
           <Grid container>
             <Grid item xs={12} className='text-center'>
-              <img src="/master-cuan/logo-master-cuan.webp" alt="Landx" />
+              <img src="/master-cuan/logo-master-cuan-1.webp" alt="Landx" />
             </Grid>
             <Grid item xs={12} className='text-center'>
               <Typography align='center' className='text-banner'>
@@ -134,7 +135,7 @@ const MasterCuan = () => {
               <Typography align='center' paragraph={true} className='text-banner-desc'>
                 Semuanya ada di bulan ini!
               </Typography>
-              <Button variant="text" className='btn-join-white'>Gabung Sekarang</Button>
+              <Button variant="text" className='btn-join-white' onClick={() => navigate(linkInstall)}>Gabung Sekarang</Button>
             </Grid>
           </Grid>
         </Container>
@@ -249,7 +250,7 @@ const MasterCuan = () => {
                   <ol className='num-style'>
                     <li>
                       <Typography component='span' className="text-rule">
-                        Tanggal promo: 24 Januari 2022 - 13 Februari 2022
+                        Tanggal promo: 27 Januari 2022 - 13 Februari 2022
                       </Typography>
                     </li>
                     <li>
@@ -306,7 +307,7 @@ const MasterCuan = () => {
               </Grid>
             </Grid>
             <Grid item xs={12}>
-              <Button variant='contained' className='btn-join-green'>Gabung Sekarang</Button>
+              <Button variant='contained' className='btn-join-green' onClick={() => navigate(linkInstall)}>Gabung Sekarang</Button>
             </Grid>
           </div>
 
@@ -449,10 +450,10 @@ const MasterCuan = () => {
             <div className="icon-container">
               <Grid container>
                 <Grid item xs={12}>
-                  <a href="https://id.linkedin.com/company/landx-id?trk=public_profile_topcard_current_company">
+                  <a href="https://www.facebook.com/landx.id">
                     <FacebookIcon className="icon-sosmed" />
                   </a>
-                  <a href="https://www.facebook.com/landx.id">
+                  <a href="https://id.linkedin.com/company/landx-id?trk=public_profile_topcard_current_company">
                     <LinkedInIcon className="icon-sosmed" />
                   </a>
                   <a href="https://www.instagram.com/landx.id/">
@@ -475,20 +476,20 @@ const MasterCuan = () => {
           </Container>
         </footer>
 
-        <div className="bottom-nav-container">
+        <div className="bottom-nav-container" onClick={() => navigate(`https://web-app-staging.landx.id/login/`)}>
           <div className="icon-container">
             <img src="/master-cuan/home-active.png" alt="Home" />
             <div className="text-icon active">
               Home
             </div>
           </div>
-          <div className="icon-container">
+          <div className="icon-container" onClick={() => navigate(`https://web-app-staging.landx.id/login/`)}>
             <img src="/master-cuan/insight.png" alt="Cara Kerja" />
             <div className="text-icon">
               Cara Kerja
             </div>
           </div>
-          <div className="icon-container">
+          <div className="icon-container" onClick={() => navigate(`https://web-app-staging.landx.id/login/`)}>
             <img src="/master-cuan/user.png" alt="Login" />
             <div className="text-icon">
               Login
