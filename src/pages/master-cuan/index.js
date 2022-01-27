@@ -117,7 +117,7 @@ const MasterCuan = () => {
         <Container maxWidth='xs' className="banner-container">
           <Grid container>
             <Grid item xs={12} className='text-center'>
-              <img src="/master-cuan/logo-master-cuan.webp" alt="Landx" />
+              <img src="/master-cuan/logo-master-cuan-1.webp" alt="Landx" />
             </Grid>
             <Grid item xs={12} className='text-center'>
               <Typography align='center' className='text-banner'>
