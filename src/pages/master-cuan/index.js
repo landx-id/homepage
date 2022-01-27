@@ -44,9 +44,21 @@ const MasterCuan = () => {
     },
   ];
 
-  const rewardMasterCuan = {
+  const rewardMasterCuan1 = {
     arrows: false,
     dots: false,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    afterChange: () =>
+      setupdateReward(updateReward + 1),
+    beforeChange: (current, next) => setslideReward(next)
+  };
+
+  const rewardMasterCuan = {
+    arrows: false,
+    dots: true,
     infinite: false,
     speed: 500,
     slidesToShow: 1,
@@ -135,7 +147,7 @@ const MasterCuan = () => {
               <Typography align='center' paragraph={true} className='text-banner-desc'>
                 Semuanya ada di bulan ini!
               </Typography>
-              <Button variant="text" className='btn-join-white' onClick={() => navigate(linkInstall)}>Gabung Sekarang</Button>
+              <Button variant="text" className='btn-join-white' onClick={() => navigate('https://web-app-staging.landx.id/login/')}>Gabung Sekarang</Button>
             </Grid>
           </Grid>
         </Container>
@@ -165,7 +177,7 @@ const MasterCuan = () => {
                 </Typography>
               </Grid>
               <Grid item xs={12} className="icon-grid">
-                <Slider {...rewardMasterCuan} asNavFor={nav2} ref={(slider1) => setNav1(slider1)}>
+                <Slider {...rewardMasterCuan1} asNavFor={nav2} ref={(slider1) => setNav1(slider1)}>
                   <div className="slider-icon-container">
                     <div className="icon-container">
                       <img src="/master-cuan/20-lot.png" alt="20 lot" />
@@ -210,7 +222,7 @@ const MasterCuan = () => {
                   max={3} />
               </Grid>
               <Grid item xs={12}>
-                <Slider {...rewardMasterCuan} asNavFor={nav1} ref={(slider2) => setNav2(slider2)}>
+                <Slider {...rewardMasterCuan} asNavFor={nav1} ref={(slider2) => setNav2(slider2)} className="mb-32">
                   <CardMasterCuan title='Reward - 20 Lot' description='Dapatkan Mini Finance Bootcamp with Experts' />
                   <CardMasterCuan title='Reward - 50 Lot' description='Dapatkan EXCLUSIVE Mini Finance Bootcamp with Experts' />
                   <CardMasterCuan title='Reward - 100 Lot' description='Dapatkan Offline Finance Bootcamp with Experts, Happy Hour Meetup & Discussion with Speakers' />
@@ -302,12 +314,12 @@ const MasterCuan = () => {
                 <AccordionMasterCuan title='Apa itu program Master Cuan' content='Program Master Cuan adalah program khusus investor LandX agar menjadi juragan bisnis FnB di LandX dengan minimal pembelian hanya 20 lot saja pada project FnB yang sedang listing' />
                 <AccordionMasterCuan title='Benefitnya apa saja?' accCategory={true} />
                 <AccordionMasterCuan title='Syarat ikutan bagaimana?' content='Kakak terdaftar sebagai user yang sudah verifikasi akun di Aplikasi LandX' />
-                <AccordionMasterCuan title='Bagaimana cara menjadi juragan bisnis F&B di Master Cuan?' content='Kakak terdaftar sebagai user yang sudah verifikasi akun di Aplikasi LandX' />
+                <AccordionMasterCuan title='Bagaimana cara menjadi juragan bisnis F&B di Master Cuan?' content='Kakak bisa ikutan dengan mendaftarkan diri Kakak pada form yang sudah kamu kirimkan' />
                 <AccordionMasterCuan title='Saya sudah mengisi form, selanjutnya bagaimana?' content='Setelah mengisi form Kakak akan menerima email otomatis yang mengarahkan Kakak untuk melakukan pembelian di aplikasi LandX, lakukan pembelian project FnB yang sedang listing di LandX sesuai dengan total lot yang ingin Kakak beli.' />
               </Grid>
             </Grid>
             <Grid item xs={12}>
-              <Button variant='contained' className='btn-join-green' onClick={() => navigate(linkInstall)}>Gabung Sekarang</Button>
+              <Button variant='contained' className='btn-join-green' onClick={() => navigate('https://web-app-staging.landx.id/login/')}>Gabung Sekarang</Button>
             </Grid>
           </div>
 
