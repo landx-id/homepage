@@ -489,7 +489,7 @@ const MasterCuan = () => {
         </footer>
 
         <div className="bottom-nav-container">
-          <div className="icon-container" onClick={() => navigate(`https://web-app-staging.landx.id/login/`)}>
+          <div className="icon-container" onClick={() => navigate(`https://landx.id/master-cuan/`)}>
             <img src="/master-cuan/home-active.png" alt="Home" />
             <div className="text-icon active">
               Home
@@ -501,7 +501,7 @@ const MasterCuan = () => {
               Cara Kerja
             </div>
           </div>
-          <div className="icon-container" onClick={() => navigate(`https://web-app-staging.landx.id/master-cuan/login/`)}>
+          <div className="icon-container" onClick={() => navigate(`https://web-app-staging.landx.id/login/`)}>
             <img src="/master-cuan/user.png" alt="Login" />
             <div className="text-icon">
               Login
