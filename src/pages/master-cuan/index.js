@@ -488,20 +488,20 @@ const MasterCuan = () => {
           </Container>
         </footer>
 
-        <div className="bottom-nav-container" onClick={() => navigate(`https://web-app-staging.landx.id/login/`)}>
-          <div className="icon-container">
+        <div className="bottom-nav-container">
+          <div className="icon-container" onClick={() => navigate(`https://web-app-staging.landx.id/login/`)}>
             <img src="/master-cuan/home-active.png" alt="Home" />
             <div className="text-icon active">
               Home
             </div>
           </div>
-          <div className="icon-container" onClick={() => navigate(`https://web-app-staging.landx.id/login/`)}>
+          <div className="icon-container" onClick={() => navigate(`https://web-app-staging.landx.id/master-cuan/cara-kerja`)}>
             <img src="/master-cuan/insight.png" alt="Cara Kerja" />
             <div className="text-icon">
               Cara Kerja
             </div>
           </div>
-          <div className="icon-container" onClick={() => navigate(`https://web-app-staging.landx.id/login/`)}>
+          <div className="icon-container" onClick={() => navigate(`https://web-app-staging.landx.id/master-cuan/login/`)}>
             <img src="/master-cuan/user.png" alt="Login" />
             <div className="text-icon">
               Login
