@@ -317,10 +317,6 @@
       text-decoration: none;
     }
   }
-
-  .slick-list {
-    height: 236px;
-  }
 }
 
 .footer-master-cuan {
@@ -410,6 +406,16 @@
   }
 }
 
+@media screen and (max-width: 480px) {
+  .container-master-cuan {
+    .mx-auto {
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 16px;
+    }
+  }
+}
+
 @media screen and (max-width: 360px) {
   .container-master-cuan {
     .btn-join-white {
@@ -420,6 +426,10 @@
       .slick-initialized .slick-slide {
         display: flex;
         justify-content: center;
+      }
+
+      .slick-list {
+        height: 236px;
       }
     }
   }
