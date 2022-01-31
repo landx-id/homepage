@@ -17,6 +17,7 @@ import './masterCuan.scss'
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import { Link } from 'gatsby';
 import Seo from '../../components/seo/seo';
+import { FetchLimitData } from '../../utils/common';
 
 const MasterCuan = () => {
   const [linkInstall, setlinkInstall] = useState('https://play.google.com/store/apps/details?id=store.numoney.landxapp');
@@ -24,10 +25,54 @@ const MasterCuan = () => {
   const [updateReward, setupdateReward] = useState(0);
   const [nav1, setNav1] = useState();
   const [nav2, setNav2] = useState();
+  const [loadProjects, setLoadProjects] = useState(true)
+  const [dataListing, setDataListing] = useState([])
+  const [preDataListing, setPreDataListing] = useState([])
+  const [isSell, setIsSell] = useState([]);
+  const [isSold, setIsSold] = useState([]);
 
   useEffect(() => {
     SendVersiBuild()
   }, [])
+
+  useEffect(() => {
+    getLimitCardProject()
+  }, [])
+
+  useEffect(() => {
+    handleListing()
+  }, [])
+
+  useEffect(() => {
+    setDataListing([...preDataListing])
+  }, [preDataListing])
+
+  const getLimitCardProject = () => {
+    FetchLimitData('https://api.landx.id/', 5, 1).then(datas => {
+      datas.data.currencies.map((data) => {
+        if (data.landXProperty !== null) {
+          // FIlter Project dengan menyamakan dengan kode symbolnya
+          if (data.landXProperty.token.symbol === 'CAPT' || data.landXProperty.token.symbol === 'BBKB' || data.landXProperty.token.symbol === 'MANG') {
+            if (data.landXProperty['launchProgress'] < 1) {
+              setIsSell((prevData) => [...prevData, data])
+            }
+            if (data.landXProperty['launchProgress'] === 1) {
+              setIsSold((prevData) => [...prevData, data])
+            }
+          }
+        }
+      })
+      setLoadProjects(false)
+    })
+  }
+
+  const handleListing = () => {
+    fetch('https://web-api.landx.id/mobile/upcoming_project')
+      .then(r => r.json())
+      .then(data => {
+        setPreDataListing((prevData) => [...prevData, data.upcoming])
+      })
+  }
 
   const marks = [
     {
@@ -242,9 +287,29 @@ const MasterCuan = () => {
 
               <Grid item xs={12}>
                 <Slider {...cardProjectMasterCuan}>
-                  <CardProjectMasterCuan date='15 hari lagi' code='CAPT' bisnisName='Kapal Tug & Barge' companyName='PT Samudera Rezeki Mulia' price='Rp 6.529.000.000' category='MARITIM' />
-                  <CardProjectMasterCuan date='0 hari lagi' code='PMBB' bisnisName='Padang Merdeka' companyName='PT Merdeka Bisnis Bersama' price='Rp 3.750.000.000' category='RESTORAN' />
-                  <CardProjectMasterCuan date='0 hari lagi' code='HONG' bisnisName='Hong Tang' companyName='PT Gula Garam Asia' price='Rp 7.050.000.000' category='RESTORAN' />
+                  {
+                    isSell && isSell.map(data => {
+                      return <CardProjectMasterCuan data={data.landXProperty} type='isProject' />
+                    })
+                  }
+                  {
+                    isSold && isSold.map(data => {
+                      return <CardProjectMasterCuan data={data.landXProperty} type='isProject' />
+                    })
+                  }
+                  {dataListing && dataListing.map((data, i) => {
+                    if (data !== undefined && data !== null && i >= 0) {
+                      return data.map(d => {
+                        return Object.entries(d).map(data => {
+                          let listingAt = new Date(data[1].listing_at).getTime()
+                          let now = Date.now()
+                          if (listingAt > now) {
+                            return <CardProjectMasterCuan dataListing={data} type='isListing' />
+                          }
+                        })
+                      })
+                    }
+                  })}
                 </Slider>
               </Grid>
             </Grid>
