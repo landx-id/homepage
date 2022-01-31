@@ -196,7 +196,7 @@ const MasterCuan = () => {
               <Typography align='center' paragraph={true} className='text-banner-desc'>
                 Semuanya ada di bulan ini!
               </Typography>
-              <Button variant="text" className='btn-join-white' onClick={() => navigate('https://web-app-staging.landx.id/login/')}>Gabung Sekarang</Button>
+              <Button variant="text" className='btn-join-white' onClick={() => navigate('https://app.landx.id/login/')}>Gabung Sekarang</Button>
             </Grid>
           </Grid>
         </Container>
@@ -388,7 +388,7 @@ const MasterCuan = () => {
               </Grid>
             </Grid>
             <Grid item xs={12}>
-              <Button variant='contained' className='btn-join-green' onClick={() => navigate('https://web-app-staging.landx.id/login/')}>Gabung Sekarang</Button>
+              <Button variant='contained' className='btn-join-green' onClick={() => navigate('https://app.landx.id/login/')}>Gabung Sekarang</Button>
             </Grid>
           </div>
 
@@ -564,13 +564,13 @@ const MasterCuan = () => {
               Home
             </div>
           </div>
-          <div className="icon-container" onClick={() => navigate(`https://web-app-staging.landx.id/master-cuan/cara-kerja`)}>
+          <div className="icon-container" onClick={() => navigate(`https://app.landx.id/master-cuan/cara-kerja`)}>
             <img src="/master-cuan/insight.png" alt="Cara Kerja" />
             <div className="text-icon">
               Cara Kerja
             </div>
           </div>
-          <div className="icon-container" onClick={() => navigate(`https://web-app-staging.landx.id/login/`)}>
+          <div className="icon-container" onClick={() => navigate(`https://app.landx.id/login/`)}>
             <img src="/master-cuan/user.png" alt="Login" />
             <div className="text-icon">
               Login
