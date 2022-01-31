@@ -57,7 +57,7 @@ const CardProjectMasterCuan = ({ data, dataListing, type }) => {
   const showProject = () => {
     if (type === 'isProject') {
       return (
-        <div className='card-project-master-container'>
+        <div className='card-project-master-container mx-auto'>
           <Grid container>
             <Grid item xs={12}>
               <div className="img-container">
@@ -125,7 +125,7 @@ const CardProjectMasterCuan = ({ data, dataListing, type }) => {
 
     if (type === 'isListing') {
       return (
-        <div className='card-project-master-container'>
+        <div className='card-project-master-container mx-auto'>
           <Grid container>
             <Grid item xs={12}>
               <div className="img-container" onClick={() => navigate(`/project/${dataListing[0].toLowerCase()}`)}>
