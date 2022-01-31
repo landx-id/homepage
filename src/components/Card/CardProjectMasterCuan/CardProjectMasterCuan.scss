@@ -3,13 +3,39 @@
   height: 227px;
   filter: drop-shadow(0px 4px 4px rgba(213, 213, 213, 0.3));
   border-radius: 8px;
+  box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%),
+    0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
 
   .img-container {
     position: relative;
+    cursor: pointer;
+
+    .slick-list {
+      height: 100%;
+    }
   }
 
   .img-project {
     border-radius: 8px 8px 0px 0px;
+  }
+
+  .filter-blur {
+    filter: blur(3px);
+  }
+
+  .coming-soon-card {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  .coming-soon-text {
+    color: #fff;
   }
 
   .chip-card {
@@ -22,6 +48,7 @@
     right: 0;
     margin-right: 4px;
     margin-bottom: 4px;
+    cursor: pointer;
   }
 
   .chip-text {
@@ -29,6 +56,7 @@
     font-weight: bold;
     font-size: 10px;
     line-height: 12px;
+    cursor: pointer;
   }
 
   .text-code,
@@ -36,10 +64,12 @@
     color: #2dbe60;
     font-size: 11px;
     line-height: 13px;
+    cursor: pointer;
   }
 
   .text-code {
     letter-spacing: 1.65px;
+    cursor: pointer;
   }
 
   .text-code-container {
@@ -50,6 +80,7 @@
   .text-category {
     padding: 2px 12px;
     text-align: center;
+    cursor: pointer;
   }
 
   .card-content {
@@ -62,6 +93,7 @@
     border: 1px solid #bde8c7;
     box-sizing: border-box;
     border-radius: 100px;
+    cursor: pointer;
   }
 
   .text-bisnis {
@@ -70,6 +102,8 @@
     line-height: 15px;
     letter-spacing: 0.4px;
     color: #425766;
+    margin-top: 9px;
+    cursor: pointer;
   }
 
   .text-company {
@@ -77,6 +111,7 @@
     line-height: 14px;
     letter-spacing: 0.2px;
     color: #516a7c;
+    cursor: pointer;
   }
 
   .text-price {
@@ -87,11 +122,17 @@
     color: #2dbe60;
     margin-top: 12px;
     margin-bottom: 8px;
+    cursor: pointer;
   }
 
   .progress-bar {
     height: 4px;
     border-radius: 10px;
     background-color: #2dbe60;
+    cursor: pointer;
+  }
+
+  .slick-list {
+    height: 236px;
   }
 }
