@@ -69,14 +69,14 @@ const CardProjectMasterCuan = ({ data, dataListing, type }) => {
                           <img src="/images/habis-terjual.webp" alt="sold out" style={{ position: 'absolute', left: '-2px', top: '-2px', width: '30px' }} />
                           :
                           ''}
-                        <img src={img} alt="image project" className="img-project" onClick={() => navigate(`https://web-app-staging.landx.id/master-cuan/detail-project/${data?.token.symbol}`)} />
+                        <img src={img} alt="image project" className="img-project" onClick={() => navigate(`https://app.landx.id/master-cuan/detail-project/${data?.token.symbol}`)} />
                       </div>
                     )
                   })
                   }
                 </Slider>
 
-                <div className="chip-card" onClick={() => navigate(`https://web-app-staging.landx.id/master-cuan/detail-project/${data?.token.symbol}`)}>
+                <div className="chip-card" onClick={() => navigate(`https://app.landx.id/master-cuan/detail-project/${data?.token.symbol}`)}>
                   <Typography component='p' className="chip-text">
                     {endDay} hari lagi
                   </Typography>
@@ -86,13 +86,13 @@ const CardProjectMasterCuan = ({ data, dataListing, type }) => {
             <div className="card-content">
               <Grid item xs={12}>
                 <Grid container>
-                  <Grid item xs={5} className='text-code-container' onClick={() => navigate(`https://web-app-staging.landx.id/master-cuan/detail-project/${data?.token.symbol}`)}>
+                  <Grid item xs={5} className='text-code-container' onClick={() => navigate(`https://app.landx.id/master-cuan/detail-project/${data?.token.symbol}`)}>
                     <Typography component='h5' className='text-code'>
                       {data?.token.symbol}
                     </Typography>
                   </Grid>
                   <Grid item xs={7}>
-                    <div className="chip-category" onClick={() => navigate(`https://web-app-staging.landx.id/master-cuan/detail-project/${data?.token.symbol}`)}>
+                    <div className="chip-category" onClick={() => navigate(`https://app.landx.id/master-cuan/detail-project/${data?.token.symbol}`)}>
                       <Typography component='h5' className='text-category'>
                         {data?.category}
                       </Typography>
@@ -100,23 +100,23 @@ const CardProjectMasterCuan = ({ data, dataListing, type }) => {
                   </Grid>
                 </Grid>
               </Grid>
-              <Grid item xs={12} onClick={() => navigate(`https://web-app-staging.landx.id/master-cuan/detail-project/${data?.token.symbol}`)}>
+              <Grid item xs={12} onClick={() => navigate(`https://app.landx.id/master-cuan/detail-project/${data?.token.symbol}`)}>
                 <Typography component='h2' className='text-bisnis'>
                   {nameProject && nameProject[0]}
                 </Typography>
               </Grid>
-              <Grid item xs={12} onClick={() => navigate(`https://web-app-staging.landx.id/master-cuan/detail-project/${data?.token.symbol}`)}>
+              <Grid item xs={12} onClick={() => navigate(`https://app.landx.id/master-cuan/detail-project/${data?.token.symbol}`)}>
                 <Typography component='h5' className='text-company'>
                   {data?.issuerName}
                 </Typography>
               </Grid>
               <Grid item xs={12}>
-                <Typography component='h5' className='text-price' onClick={() => navigate(`https://web-app-staging.landx.id/master-cuan/detail-project/${data?.token.symbol}`)}>
+                <Typography component='h5' className='text-price' onClick={() => navigate(`https://app.landx.id/master-cuan/detail-project/${data?.token.symbol}`)}>
                   {toIDR(data?.launchProgress * data?.totalPurchasePrice)}
                 </Typography>
               </Grid>
               <Grid item xs={12}>
-                <LinearProgress variant="determinate" value={data?.launchProgress * 100} className="progress-bar" color='success' onClick={() => navigate(`https://web-app-staging.landx.id/master-cuan/detail-project/${data?.token.symbol}`)} />
+                <LinearProgress variant="determinate" value={data?.launchProgress * 100} className="progress-bar" color='success' onClick={() => navigate(`https://app.landx.id/master-cuan/detail-project/${data?.token.symbol}`)} />
               </Grid>
             </div>
           </Grid>
