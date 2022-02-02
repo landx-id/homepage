@@ -70,7 +70,7 @@ const CardProject = ({ data }) => {
                       <img src="/images/habis-terjual.webp" alt="sold out" style={{ position: 'absolute', left: '-2px', top: '-2px' }} />
                       :
                       ''}
-                    <img src={img} style={{ height: '195px', width: '100%' }} alt={`Miliki bisnis ${nameProject[0]} cuma dengan 1 jutaan aja`} title={`Cara jadi owner bisnis ${nameProject[0]} hanya dengan modal 1 juta. Temukan bisnis terbaik dari berbagai sektor mulai dari fnb, jasa, ritel dan berbagai bisnis lainnya hanya di landx`} className='c-pointer' alt="preview" onClick={() => navigate(`/project/${data.token.symbol.toLowerCase()}`)} onLoad={() => setLoadImg(false)} />
+                    <img src={`https://thumbor.landx.id/unsafe/330x195/${img}`} style={{ height: '195px', width: '100%' }} alt={`Miliki bisnis ${nameProject[0]} cuma dengan 1 jutaan aja`} title={`Cara jadi owner bisnis ${nameProject[0]} hanya dengan modal 1 juta. Temukan bisnis terbaik dari berbagai sektor mulai dari fnb, jasa, ritel dan berbagai bisnis lainnya hanya di landx`} className='c-pointer' alt="preview" onClick={() => navigate(`/project/${data.token.symbol.toLowerCase()}`)} onLoad={() => setLoadImg(false)} />
                   </div>
                 )
               })
@@ -80,7 +80,7 @@ const CardProject = ({ data }) => {
 
           {data.previewImages.length > 0 && data.previewImages.map((img, i) => {
             return (
-              <img src={img} style={{ display: 'none' }} alt="preview" onLoad={() => setLoadImg(false)} key={i} />
+              <img src={`https://thumbor.landx.id/unsafe/330x195/${img}`} style={{ display: 'none' }} alt="preview" onLoad={() => setLoadImg(false)} key={i} />
             )
           })}
 
