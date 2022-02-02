@@ -1,7 +1,7 @@
 import { Card, CardContent, Grid, Typography } from '@mui/material'
 import React from 'react'
 
-const CardLandxWork = ({ img, title, content, height = '72px', width = '72px' }) => {
+const CardLandxWork = ({ img, title, content, titleImg, height = '72px', width = '72px' }) => {
   return (
     <Grid item xs={11} md={6} lg={3} className="container-slider-center">
       <Card className='card-landx-work'>

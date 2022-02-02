@@ -8,11 +8,11 @@ import "../../assets/styling/style.scss"
 
 const PrivacyPolicy = () => (
   <Layout>
-    <Seo title="Privacy Policy" />
+    <Seo title="Kebijakan Privasi dalam Berinvestasi melalui Sistem Urun Dana" description="INFORMASI DALAM LAYANAN URUN DANA INI PENTING DAN PERLU MENDAPAT PERHATIAN SEGERA. APABILA TERDAPAT KERAGUAN PADA TINDAKAN YANG AKAN DIAMBIL" />
 
     <Container className="menu-mt">
       <Grid item xs={12} md={12}>
-        <Typography color="primary" className="menu-title">
+        <Typography color="primary" component="h1" className="menu-title">
           Kebijakan Privasi
         </Typography>
         <Typography color="secondary" className="menu-subtitle">

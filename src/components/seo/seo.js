@@ -16,7 +16,7 @@ function Seo({ description, lang, meta, title }) {
         lang,
       }}
       title={title}
-      titleTemplate={`Yuk Miliki Bisnis Terbaik Cuma dengan 1 Jutaan`}
+      titleTemplate={description || `Yuk Miliki Bisnis Terbaik Cuma dengan 1 Jutaan`}
       meta={[
         {
           itemprop: `image`,

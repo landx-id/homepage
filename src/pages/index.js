@@ -150,7 +150,7 @@ const IndexPage = () => {
     <>
       {/* <CTAWhatsapp /> */}
       <Layout>
-        <Seo title="Home" />
+        <Seo title="Investasi dan Miliki Bisnis Menguntungkan Cuma dengan 1 Juta" description="LandX merupakan platform equity crowdfunding yang telah berizin dan diawasi OJK yang aman untuk investasi online jangka panjang kamu|Investasi online OJK" />
 
         <div className="homepage">
           <Container>
@@ -166,7 +166,7 @@ const IndexPage = () => {
                     </p>
                   </Grid>
                   <Grid item className='container-logo-ojk' sm={11} xl={12}>
-                    <img src="/images/Logo_ojk_02.webp" alt="logo OJK" className="logo-ojk" style={{ height: `67px`, width: `287px` }} />
+                    <img src="/images/Logo_ojk_02.webp" alt="LandX telah resmi mengantongi izin OJK sesuai POJK 37 sebagai platform equity crowdfunding yang menyalurkan dana investor kepada bisnis-bisnis potensial" title="LandX adalah platfom investasi online OJK yang membantu kamu berinvestasi ke dalam berbagai bisnis potensial dengan keuntungan jangka panjang menjanjikan" className="logo-ojk" style={{ height: `67px`, width: `287px` }} />
                   </Grid>
                   <Grid item className='container-cta' sm={11} xl={12}>
                     <Link href='https://play.google.com/store/apps/details?id=store.numoney.landxapp' target='_blank' rel='noreferrer noopener'>
@@ -224,15 +224,15 @@ const IndexPage = () => {
 
             {widthWindows < 1200 ?
               <Slider {...sliderOneCard}>
-                <CardWhyLandx logo='./images/icon_star.webp' title='Bisnis-bisnis Terbaik' content='Pengguna LandX mendapatkan akses ke bisnis-bisnis yang teruji dan sudah diseleksi secara ketat' />
-                <CardWhyLandx logo='./images/icon_time.webp' title='Investasi Bagi Hasil' content='Laporan keuangan tepat waktu dan pembagian hasil investasi transaparan' />
-                <CardWhyLandx logo='./images/icon_jewely.webp' title='Investasi Aman untuk Pemula' content='Sebagian besar bisnis yang terdaftar memiliki aset dasar properti yang bernilai tinggi, sehingga dapat melindungi investor apabila terjadi risiko kegagalan bisnis.' />
+                <CardWhyLandx logo='./images/icon_star.webp' title='Bisnis-bisnis Terbaik' alt='Investasi online kamu kini semakin menguntungkan dengan berbagai pilihan  bisnis terbaik' titleImg='LandX akan membantu kamu menemukan bisnis-bisnis terbaik untuk investasi online jangka panjang kamu' content='Pengguna LandX mendapatkan akses ke bisnis-bisnis yang teruji dan sudah diseleksi secara ketat' />
+                <CardWhyLandx logo='./images/icon_time.webp' title='Investasi Bagi Hasil' alt='Equity crowdfunding atau urun dana memberikan kamu kesempatan investasi dengan sistem bagi hasil' titleImg='Equity crowdfunding bisa jadi pilihan untuk kamu yang ingin mulai investasi online dengan sistem bagi hasil' content='Laporan keuangan tepat waktu dan pembagian hasil investasi transaparan' />
+                <CardWhyLandx logo='./images/icon_jewely.webp' title='Investasi Aman untuk Pemula' alt='Investasi lewat securities crowdfunding merupakan salah satu instrumen yang aman untuk pemula' titleImg='Securities crowdfunding merupakan cara investasi yang aman untuk pemula, urun dana membuat anda lebih mudah berinvestasi' content='Sebagian besar bisnis yang terdaftar memiliki aset dasar properti yang bernilai tinggi, sehingga dapat melindungi investor apabila terjadi risiko kegagalan bisnis.' />
               </Slider>
               :
               <Grid container spacing={4}>
-                <CardWhyLandx logo='./images/icon_star.webp' title='Bisnis-bisnis Terbaik' content='Pengguna LandX mendapatkan akses ke bisnis-bisnis yang teruji dan sudah diseleksi secara ketat' />
-                <CardWhyLandx logo='./images/icon_time.webp' title='Investasi Bagi Hasil' content='Laporan keuangan tepat waktu dan pembagian hasil investasi transaparan' />
-                <CardWhyLandx logo='./images/icon_jewely.webp' title='Investasi Aman untuk Pemula' content='Sebagian besar bisnis yang terdaftar memiliki aset dasar properti yang bernilai tinggi, sehingga dapat melindungi investor apabila terjadi risiko kegagalan bisnis.' />
+                <CardWhyLandx logo='./images/icon_star.webp' title='Bisnis-bisnis Terbaik' alt='Investasi online kamu kini semakin menguntungkan dengan berbagai pilihan  bisnis terbaik' titleImg='LandX akan membantu kamu menemukan bisnis-bisnis terbaik untuk investasi online jangka panjang kamu' content='Pengguna LandX mendapatkan akses ke bisnis-bisnis yang teruji dan sudah diseleksi secara ketat' />
+                <CardWhyLandx logo='./images/icon_time.webp' title='Investasi Bagi Hasil' alt='Equity crowdfunding atau urun dana memberikan kamu kesempatan investasi dengan sistem bagi hasil' titleImg='Equity crowdfunding bisa jadi pilihan untuk kamu yang ingin mulai investasi online dengan sistem bagi hasil' content='Laporan keuangan tepat waktu dan pembagian hasil investasi transaparan' />
+                <CardWhyLandx logo='./images/icon_jewely.webp' title='Investasi Aman untuk Pemula' alt='Investasi lewat securities crowdfunding merupakan salah satu instrumen yang aman untuk pemula' titleImg='Securities crowdfunding merupakan cara investasi yang aman untuk pemula, urun dana membuat anda lebih mudah berinvestasi' content='Sebagian besar bisnis yang terdaftar memiliki aset dasar properti yang bernilai tinggi, sehingga dapat melindungi investor apabila terjadi risiko kegagalan bisnis.' />
               </Grid>
             }
           </Container>
@@ -287,17 +287,17 @@ const IndexPage = () => {
 
             {widthWindows < 1200 ?
               <Slider {...sliderOneCard}>
-                <CardLandxWork img='../images/icon_pilih_bisnis.webp' title="Pilih Bisnis" content="Pilih bisnis yang sesuai dengan profil investasimu" width="63px" />
-                <CardLandxWork img='../images/icon_menjadi_investor.webp' title='Menjadi Investor' content='Beli saham, obligasi, atau sukuk dari proyek pendanaan tersebut' width='94px' />
-                <CardLandxWork img='../images/icon_terima_imbal_hasil.webp' title="Terima Imbal Hasil" content='Terima keuntungan sesuai kinerja perusahaan yang kamu miliki, atau bunga sesuai kesepakatan awal' width='96px' />
-                <CardLandxWork img='../images/icon_capital_gain.webp' title="Keuntungan Capital Gain" content='Dapatkan keuntungan dari kenaikan harga saham ketika dijual' />
+                <CardLandxWork img='../images/icon_pilih_bisnis.webp' title="Pilih Bisnis" alt="Pilih bisnis terbaik untuk investasi jangka panjang hanya di LandX" title="Temukan bisnis terbaik untuk investasi menguntungkang jangka panjang kamu di LandX" content="Pilih bisnis yang sesuai dengan profil investasimu" width="63px" />
+                <CardLandxWork img='../images/icon_menjadi_investor.webp' title='Menjadi Investor' alt='Menjadi investor dan berinvestasi ke dalam bisnis dengan sistem urun dana lewat LandX' titleImg='Menjadi investor properti dan berbagai bisnis menguntungkan dengan sistem urun dana' content='Beli saham, obligasi, atau sukuk dari proyek pendanaan tersebut' width='94px' />
+                <CardLandxWork img='../images/icon_terima_imbal_hasil.webp' title="Terima Imbal Hasil" alt='Imbal hasil atau return dalam investasi equity crowdfunding' titleImg='Investasi lewat equity crowdfunding bisa memberikan kamu imbal hasil berupa dividen dan capital gain ' content='Terima keuntungan sesuai kinerja perusahaan yang kamu miliki, atau bunga sesuai kesepakatan awal' width='96px' />
+                <CardLandxWork img='../images/icon_capital_gain.webp' alt='Potensi return berupa capital gain saat berinvestasi lewat securities crowdfunding' titleImg='Mendapatkan keuntungan berupa capital gain saat berinvestasi ' title="Keuntungan Capital Gain" content='Dapatkan keuntungan dari kenaikan harga saham ketika dijual' />
               </Slider>
               :
               <Grid container spacing={4}>
-                <CardLandxWork img='../images/icon_pilih_bisnis.webp' title="Pilih Bisnis" content="Pilih bisnis yang sesuai dengan profil investasimu" width="63px" />
-                <CardLandxWork img='../images/icon_menjadi_investor.webp' title='Menjadi Investor' content='Beli saham, obligasi, atau sukuk dari proyek pendanaan tersebut' width='94px' />
-                <CardLandxWork img='../images/icon_terima_imbal_hasil.webp' title="Terima Imbal Hasil" content='Terima keuntungan sesuai kinerja perusahaan yang kamu miliki, atau bunga sesuai kesepakatan awal' width='96px' />
-                <CardLandxWork img='../images/icon_capital_gain.webp' title="Keuntungan Capital Gain" content='Dapatkan keuntungan dari kenaikan harga saham ketika dijual' />
+                <CardLandxWork img='../images/icon_pilih_bisnis.webp' title="Pilih Bisnis" alt="Pilih bisnis terbaik untuk investasi jangka panjang hanya di LandX" title="Temukan bisnis terbaik untuk investasi menguntungkang jangka panjang kamu di LandX" content="Pilih bisnis yang sesuai dengan profil investasimu" width="63px" />
+                <CardLandxWork img='../images/icon_menjadi_investor.webp' title='Menjadi Investor' alt='Menjadi investor dan berinvestasi ke dalam bisnis dengan sistem urun dana lewat LandX' titleImg='Menjadi investor properti dan berbagai bisnis menguntungkan dengan sistem urun dana' content='Beli saham, obligasi, atau sukuk dari proyek pendanaan tersebut' width='94px' />
+                <CardLandxWork img='../images/icon_terima_imbal_hasil.webp' title="Terima Imbal Hasil" alt='Imbal hasil atau return dalam investasi equity crowdfunding' titleImg='Investasi lewat equity crowdfunding bisa memberikan kamu imbal hasil berupa dividen dan capital gain ' content='Terima keuntungan sesuai kinerja perusahaan yang kamu miliki, atau bunga sesuai kesepakatan awal' width='96px' />
+                <CardLandxWork img='../images/icon_capital_gain.webp' alt='Potensi return berupa capital gain saat berinvestasi lewat securities crowdfunding' titleImg='Mendapatkan keuntungan berupa capital gain saat berinvestasi ' title="Keuntungan Capital Gain" content='Dapatkan keuntungan dari kenaikan harga saham ketika dijual' />
               </Grid>
             }
           </Container>
