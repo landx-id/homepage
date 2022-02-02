@@ -22,12 +22,16 @@ const CardTestimony = () => {
     {
       'img': "./images/testimonyProfilePicture2.webp",
       'name': "Valerie",
-      'testimony': "Akhirnya ada solusi untuk investasi properti bagi yang tidak punya waktu. Layanan LandX sangat baik, kinerja investasi sangat memuaskan, aplikasi mudah digunakan, plus saya dapat memeriksa investasi saya kapan saja!"
+      'testimony': "Akhirnya ada solusi untuk investasi properti bagi yang tidak punya waktu. Layanan LandX sangat baik, kinerja investasi sangat memuaskan, aplikasi mudah digunakan, plus saya dapat memeriksa investasi saya kapan saja!",
+      'titleImg': "Pengalaman investor saat berinvestasi di LandX",
+      'alt': "Review investor LandX"
     },
     {
       'img': "./images/testimonyProfilePicture.webp",
       'name': "Herbert",
-      'testimony': "Walaupun sempat ARA di awal IPO (Initial Public Offering), saham Bukalapak kini terus mengalami ARB, membuat banyak investor merasa dirugikan oleh hal ini."
+      'testimony': "Walaupun sempat ARA di awal IPO (Initial Public Offering), saham Bukalapak kini terus mengalami ARB, membuat banyak investor merasa dirugikan oleh hal ini.",
+      'titleImg': "Pengalaman investor berinvestasi di LandX",
+      'alt': "LandX review, pengalaman investasi di LandX"
     }
   ];
 
@@ -39,7 +43,7 @@ const CardTestimony = () => {
             <Grid item xs={12} className="container-slider-center" key={i}>
               <Card className='card-testimony'>
                 <div className="container-img">
-                  <img src={data.img} alt={data.name} className='card-img' />
+                  <img src={data.img} alt={data.name} className='card-img' alt={data.alt} title={data.titleImg} />
                 </div>
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="h2" className="card-title">

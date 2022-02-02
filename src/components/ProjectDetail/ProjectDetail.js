@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react"
-import { navigate, Link } from "gatsby";
+import { navigate } from "gatsby";
 import { Grid, Container, Typography, Chip, LinearProgress, Button, Tooltip, ClickAwayListener, Dialog, DialogContent, DialogContentText, CircularProgress } from "@mui/material"
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import { CalculateRemainingDays, FetchDetailProject, FetchIDProjetDetail, FetchLimitData } from '../../utils/common';
 import { toIDR } from "../../utils/currency";
 import { MobilePDFReader } from 'react-read-pdf';
+import Seo from "../../components/seo/seo";
 import CarouselSingleProject from "../Carousel/CarouselSingleProject/CarouselSingleProject";
 
 import CardTitleSection from "../Card/CardTitleSection/CardTitleSection";
@@ -33,6 +34,8 @@ const ProjectDetails = (props) => {
   const [codeProject, setCodeProject] = useState('')
   const [dataListing, setDataListing] = useState('')
   const [loadProjects, setLoadProjects] = useState(true)
+  const [nameProject, setNameProject] = useState();
+  const [metaDesc, setMetaDesc] = useState();
 
   const cardProject = {
     dots: true,
@@ -62,6 +65,10 @@ const ProjectDetails = (props) => {
     getLimitCardProject()
     handleListing()
   }, [])
+
+  useEffect(() => {
+    handleSeoProject()
+  }, [dataProject?.token?.name])
 
   useEffect(() => {
     handleEndDay()
@@ -102,6 +109,11 @@ const ProjectDetails = (props) => {
     }
 
     return setLinkBtnLandx('https://play.google.com/store/apps/details?id=store.numoney.landxapp')
+  }
+
+  const handleSeoProject = () => {
+    setNameProject(dataProject?.token?.name.split('-'))
+    setMetaDesc(dataProject?.description?.split('').slice(0, 156).join(''))
   }
 
   const handleEndDay = () => {
@@ -164,6 +176,8 @@ const ProjectDetails = (props) => {
 
   return (
     <>
+      <Seo title={`Punya bisnis ${nameProject && nameProject[0]} modal 1 juta`} description={metaDesc} />
+
       <Container className="container-project-detail">
         <Grid container>
           <Grid item xs={12} className="back-to-project">

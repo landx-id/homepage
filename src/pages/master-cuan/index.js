@@ -52,7 +52,7 @@ const MasterCuan = () => {
       datas.data.currencies.map((data) => {
         if (data.landXProperty !== null) {
           // FIlter Project dengan menyamakan dengan kode symbolnya
-          if (data.landXProperty.token.symbol === 'CAPT' || data.landXProperty.token.symbol === 'BBKB' || data.landXProperty.token.symbol === 'MANG') {
+          if (data.landXProperty.token.symbol === 'ARKO') {
             if (data.landXProperty['launchProgress'] < 1) {
               setIsSell((prevData) => [...prevData, data])
             }
@@ -292,23 +292,23 @@ const MasterCuan = () => {
               <Grid item xs={12}>
                 <Slider {...cardProjectMasterCuan}>
                   {
-                    isSell && isSell.map(data => {
-                      return <CardProjectMasterCuan data={data.landXProperty} type='isProject' />
+                    isSell && isSell.map((data, i) => {
+                      return <CardProjectMasterCuan data={data.landXProperty} type='isProject' key={i} />
                     })
                   }
                   {
-                    isSold && isSold.map(data => {
-                      return <CardProjectMasterCuan data={data.landXProperty} type='isProject' />
+                    isSold && isSold.map((data, i) => {
+                      return <CardProjectMasterCuan data={data.landXProperty} type='isProject' key={i} />
                     })
                   }
                   {dataListing && dataListing.map((data, i) => {
                     if (data !== undefined && data !== null && i >= 0) {
                       return data.map(d => {
-                        return Object.entries(d).map(data => {
+                        return Object.entries(d).map((data, i) => {
                           let listingAt = new Date(data[1].listing_at).getTime()
                           let now = Date.now()
                           if (listingAt > now) {
-                            return <CardProjectMasterCuan dataListing={data} type='isListing' />
+                            return <CardProjectMasterCuan dataListing={data} type='isListing' key={i} />
                           }
                         })
                       })

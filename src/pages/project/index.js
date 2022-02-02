@@ -222,7 +222,8 @@ const ShowAllProject = () => {
   return (
     <>
       <Layout>
-        <Seo title="Project" />
+        <Seo title="Yuk Temukan Bisnis-bisnis Terbaik untuk Investasi Jangka Panjang Kamu di LandX" description="Yuk investasi ke berbagai bisnis potensial mulai dari franchise fnb terbaik, sektor jasa, dan berbagai bisnis potensial lainnya | Investasi online OJK" />
+
         <div className="container-all-project">
           <Container>
             <Grid container>

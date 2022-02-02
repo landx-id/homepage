@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react"
 import Layout from '../../components/layout/layout';
-import Seo from "../../components/seo/seo";
 import ListingProjects from "../../components/listing/listing"
 import ProjectDetail from "../../components/ProjectDetail/ProjectDetail"
 
@@ -37,7 +36,6 @@ const DetailProjects = (props) => {
   return (
     <>
       <Layout>
-        <Seo title="Project" />
         {listingAt > Date.now() ?
           <ListingProjects codeSaham={props.params.code} />
           :

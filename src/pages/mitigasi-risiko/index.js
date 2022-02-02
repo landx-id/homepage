@@ -7,11 +7,11 @@ import "../../assets/styling/style.scss"
 
 const RiskMitigation = () => (
   <Layout>
-    	<Seo title="Mitigasi Risiko" />
+    <Seo title="Mitagasi RIsiko dalam Investasi" description="Mitigasi risiko ini diharapkan untuk menjadi acuan bagi Pemodal yang akan berinvestasi di platform LandX yang dioperasikan oleh LandX" />
 
     <Container className="menu-mt">
       <Grid item xs={12} md={12}>
-        <Typography color="primary" className="menu-title">
+        <Typography color="primary" component="h1" className="menu-title">
           Mitigasi Risiko
         </Typography>
       </Grid>

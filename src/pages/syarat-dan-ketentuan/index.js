@@ -7,7 +7,7 @@ import "../../assets/styling/style.scss"
 
 const TermAndCondition = () => (
   <Layout>
-    <Seo title="Syarat dan Ketentuan" />
+    <Seo title="Syarat & Ketentuan Berinvestasi di LandX sebagai Platform Equity Crowdfunding" description="Kami menyediakan penawaran efek bersifat Utang dan Saham (”Efek”) melalui layanan urun dana berbasis teknologi informasi (online securities crowdfunding)" />
 
     <Container className="menu-mt">
       <Grid item xs={12} md={12}>

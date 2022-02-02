@@ -1,13 +1,13 @@
 import { Card, CardContent, Grid, Typography } from '@mui/material'
 import React from 'react'
 
-const CardWhyLandx = ({ title, content, logo }) => {
+const CardWhyLandx = ({ title, content, logo, alt, titleImg }) => {
   return (
     <Grid item xs={11} md={6} lg={4} className="container-slider-center">
       <Card className='card-why-landx'>
         <div>
           <div style={{ height: '120px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <img src={logo} alt={title} className="card-icon" />
+            <img src={logo} alt={alt} title={titleImg} className="card-icon" />
           </div>
           <CardContent>
             <h2 className="title-icon">
