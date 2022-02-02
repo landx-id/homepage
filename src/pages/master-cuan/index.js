@@ -172,9 +172,9 @@ const MasterCuan = () => {
 
   return (
     <>
-      <Seo title="Home" />
+      <Seo title="Master Cuan: Makannya Bikin Kenyang, Dividennya Bikin Mapan!" description="Jadi Pemilik F&B SEKARANG JUGA! Yuk investasi ke berbagai bisnis fnb menguntungkan bersama bareng LandX" />
 
-      <div className='container-master-cuan'>
+      <div div className='container-master-cuan' >
         <Container maxWidth='xs' className="banner-container">
           <Grid container>
             <Grid item xs={12} className='text-center'>
