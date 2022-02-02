@@ -328,7 +328,7 @@ const ProjectDetails = (props) => {
             <Typography color="secondary" className="description-title">ALAMAT & PETA</Typography>
             {dataProject && <div className='text-description' dangerouslySetInnerHTML={{ __html: converter.makeHtml(dataProject.address) }} />}
 
-            <img src={dataProject.mapImageUrl} alt="Peta Alamat" id="map-picture" style={{ width: `100%`, marginTop: `2rem` }} />
+            <img src={dataProject.mapImageUrl} alt={`Peta Alamat ${nameProject[0]}`} title={`Peta Alamat ${nameProject[0]}`} id="map-picture" style={{ width: `100%`, marginTop: `2rem` }} />
           </Grid>
         </Grid>
       </Container>

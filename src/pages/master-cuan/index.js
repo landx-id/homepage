@@ -383,7 +383,7 @@ const MasterCuan = () => {
                 <AccordionMasterCuan title='Apa itu program Master Cuan' content='Program Master Cuan adalah program khusus investor LandX agar menjadi juragan bisnis FnB di LandX dengan minimal pembelian hanya 20 lot saja pada project FnB yang sedang listing' />
                 <AccordionMasterCuan title='Benefitnya apa saja?' accCategory={true} />
                 <AccordionMasterCuan title='Syarat ikutan bagaimana?' content='Kakak terdaftar sebagai user yang sudah verifikasi akun di Aplikasi LandX' />
-                <AccordionMasterCuan title='Bagaimana cara menjadi juragan bisnis F&B di Master Cuan?' content='Kakak bisa ikutan dengan mendaftarkan diri Kakak pada form yang sudah kamu kirimkan' />
+                <AccordionMasterCuan title='Bagaimana cara menjadi juragan bisnis F&B di Master Cuan?' content='Kakak bisa ikutan dengan mendaftarkan diri Kakak pada form yang sudah kakak kirimkan' />
               </Grid>
             </Grid>
             <Grid item xs={12}>
