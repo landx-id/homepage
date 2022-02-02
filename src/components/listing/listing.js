@@ -17,6 +17,7 @@ const ListingProjects = (props) => {
   const [hours, setHours] = useState('')
   const [listingAt, setlistingAt] = useState('')
   const [imgListing, setImgListing] = useState(true)
+  const [nameProject, setNameProject] = useState();
 
   useEffect(() => {
     handleListing()
@@ -42,6 +43,15 @@ const ListingProjects = (props) => {
   useEffect(() => {
     handleTime()
   }, [listingAt])
+
+  useEffect(() => {
+    spiltNameProject()
+  }, [dataListing?.name])
+
+  const spiltNameProject = () => {
+    setNameProject(dataListing?.name.split('-'))
+  }
+
 
   const handleTime = () => {
     setDays(Math.floor((listingAt) / (1000 * 60 * 60 * 24)))
@@ -92,7 +102,7 @@ const ListingProjects = (props) => {
             </div>
             :
             <div style={{ textAlign: 'center' }}>
-              <img src={dataListing.thumbnail} alt="Thumbnail Project" style={{ display: 'inline-block' }} />
+              <img src={dataListing.thumbnail} alt={`Miliki bisnis ${nameProject[0]} cuma dengan 1 jutaan aja`} title={`Cara jadi owner bisnis ${nameProject[0]} hanya dengan modal 1 juta. Temukan bisnis terbaik dari berbagai sektor mulai dari fnb, jasa, ritel dan berbagai bisnis lainnya hanya di landx`} style={{ display: 'inline-block' }} />
             </div>
           }
 

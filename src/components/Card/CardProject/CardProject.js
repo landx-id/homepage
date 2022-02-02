@@ -12,10 +12,19 @@ import './CardProject.scss'
 const CardProject = ({ data }) => {
   const [endDay, setEndDay] = useState('')
   const [loadImg, setLoadImg] = useState(true)
+  const [nameProject, setNameProject] = useState();
 
   useEffect(() => {
     handleEndDay()
   }, [data?.launchProgress])
+
+  useEffect(() => {
+    spiltNameProject()
+  }, [data?.token])
+
+  const spiltNameProject = () => {
+    setNameProject(data?.token?.name.split('-'))
+  }
 
   useEffect(() => {
     {/* Script dibawah untuk handle loader image */ }
@@ -61,7 +70,7 @@ const CardProject = ({ data }) => {
                       <img src="/images/habis-terjual.webp" alt="sold out" style={{ position: 'absolute', left: '-2px', top: '-2px' }} />
                       :
                       ''}
-                    <img src={`https://thumbor.landx.id/unsafe/330x195/${img}`} style={{ height: '195px', width: '100%' }} className='c-pointer' alt="preview" onClick={() => navigate(`/project/${data.token.symbol.toLowerCase()}`)} onLoad={() => setLoadImg(false)} />
+                    <img src={`https://thumbor.landx.id/unsafe/330x195/${img}`} style={{ height: '195px', width: '100%' }} alt={`Miliki bisnis ${nameProject[0]} cuma dengan 1 jutaan aja`} title={`Cara jadi owner bisnis ${nameProject[0]} hanya dengan modal 1 juta. Temukan bisnis terbaik dari berbagai sektor mulai dari fnb, jasa, ritel dan berbagai bisnis lainnya hanya di landx`} className='c-pointer' alt="preview" onClick={() => navigate(`/project/${data.token.symbol.toLowerCase()}`)} onLoad={() => setLoadImg(false)} />
                   </div>
                 )
               })
