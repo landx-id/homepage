@@ -69,7 +69,7 @@ const CardProjectMasterCuan = ({ data, dataListing, type }) => {
                           <img src="/images/habis-terjual.webp" alt="sold out" style={{ position: 'absolute', left: '-2px', top: '-2px', width: '30px' }} />
                           :
                           ''}
-                        <img src={img} alt="image project" className="img-project" onClick={() => navigate(`https://app.landx.id/master-cuan/detail-project/${data?.token.symbol}`)} />
+                        <img src={img} alt={`Miliki bisnis ${nameProject && nameProject[0]} cuma dengan 1 jutaan aja`} title={`Cara jadi owner bisnis ${nameProject && nameProject[0]} hanya dengan modal 1 juta. Temukan bisnis terbaik dari berbagai sektor mulai dari fnb, jasa, ritel dan berbagai bisnis lainnya hanya di landx`} className="img-project" onClick={() => navigate(`https://app.landx.id/master-cuan/detail-project/${data?.token.symbol}`)} />
                       </div>
                     )
                   })
@@ -129,7 +129,7 @@ const CardProjectMasterCuan = ({ data, dataListing, type }) => {
           <Grid container>
             <Grid item xs={12}>
               <div className="img-container" onClick={() => navigate(`/project/${dataListing[0].toLowerCase()}`)}>
-                <img src={dataListing[1].images[0]} alt="image project" className="img-project filter-blur" />
+                <img src={dataListing[1].images[0]} alt={`Miliki bisnis ${nameProject && nameProject[0]} cuma dengan 1 jutaan aja`} title={`Cara jadi owner bisnis ${nameProject && nameProject[0]} hanya dengan modal 1 juta. Temukan bisnis terbaik dari berbagai sektor mulai dari fnb, jasa, ritel dan berbagai bisnis lainnya hanya di landx`} className="img-project filter-blur" />
                 <div className="coming-soon-card">
                   <Typography component='p' className="coming-soon-text">
                     Coming Soon
