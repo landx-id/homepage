@@ -2,7 +2,7 @@
 import Cookies from 'universal-cookie';
 
 // selalu update versiBuild + 1 agar otomatis hard refresh
-let versiBuild = 20
+let versiBuild = 21
 const cookies = new Cookies();
 
 export function SendVersiBuild() {

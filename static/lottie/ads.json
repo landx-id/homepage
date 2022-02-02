@@ -4,11 +4,18 @@
             "id": 1,
             "active": true,
             "type": "campaign",
+            "action": "https://landx.id/master-cuan/",
+            "thumbnail":  "/master-cuan/banner_master_cuan_1jt.webp"
+        },
+        {
+            "id": 2,
+            "active": true,
+            "type": "campaign",
             "action": "https://landx.id/blog/landx-sewaktu-2021/",
             "thumbnail":  "https://landx.id/images/campaign_sewaktu2021.png"
         },
         {
-            "id": 2,
+            "id": 3,
             "active": true,
             "type": "announcement",
             "title" : "Hati-hati dengan segala jenis penipuan. ",
