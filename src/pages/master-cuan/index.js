@@ -384,7 +384,6 @@ const MasterCuan = () => {
                 <AccordionMasterCuan title='Benefitnya apa saja?' accCategory={true} />
                 <AccordionMasterCuan title='Syarat ikutan bagaimana?' content='Kakak terdaftar sebagai user yang sudah verifikasi akun di Aplikasi LandX' />
                 <AccordionMasterCuan title='Bagaimana cara menjadi juragan bisnis F&B di Master Cuan?' content='Kakak bisa ikutan dengan mendaftarkan diri Kakak pada form yang sudah kamu kirimkan' />
-                <AccordionMasterCuan title='Saya sudah mengisi form, selanjutnya bagaimana?' content='Setelah mengisi form Kakak akan menerima email otomatis yang mengarahkan Kakak untuk melakukan pembelian di aplikasi LandX, lakukan pembelian project FnB yang sedang listing di LandX sesuai dengan total lot yang ingin Kakak beli.' />
               </Grid>
             </Grid>
             <Grid item xs={12}>
