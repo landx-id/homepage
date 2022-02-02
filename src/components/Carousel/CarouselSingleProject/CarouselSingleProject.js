@@ -40,7 +40,7 @@ const CarouselSingleProject = ({ data }) => {
       >
         {data && data.previewImages.map((prevImage, i) => {
           return (
-            <img src={prevImage} key={i} style={{ cursor: 'pointer' }} alt={`Miliki bisnis ${nameProject[0]} cuma dengan 1 jutaan aja`} title={`Cara jadi owner bisnis ${nameProject[0]} hanya dengan modal 1 juta. Temukan bisnis terbaik dari berbagai sektor mulai dari fnb, jasa, ritel dan berbagai bisnis lainnya hanya di landx`} />
+            <img src={prevImage} key={i} style={{ cursor: 'pointer' }} alt={`Miliki bisnis ${nameProject && nameProject[0]} cuma dengan 1 jutaan aja`} title={`Cara jadi owner bisnis ${nameProject && nameProject[0]} hanya dengan modal 1 juta. Temukan bisnis terbaik dari berbagai sektor mulai dari fnb, jasa, ritel dan berbagai bisnis lainnya hanya di landx`} />
           )
         })}
       </Slider>
