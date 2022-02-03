@@ -178,7 +178,7 @@ const MasterCuan = () => {
         <Container maxWidth='xs' className="banner-container">
           <Grid container>
             <Grid item xs={12} className='text-center'>
-              <img src="/master-cuan/logo-master-cuan-2feb.webp" alt="Landx" />
+              <img src="/master-cuan/logo-master-cuan-2feb.webp" alt="Master Cuan: Makannya Bikin Kenyang, Dividennya Bikin Mapan!" title="Jadi Pemilik F&B SEKARANG JUGA! Yuk investasi ke berbagai bisnis fnb menguntungkan bersama bareng LandX" />
             </Grid>
             <Grid item xs={12} className='text-center'>
               <Typography align='center' className='text-banner'>
@@ -395,7 +395,7 @@ const MasterCuan = () => {
             <Grid container spacing={2}>
               <Grid item xs={3}>
                 <div className="logo-container">
-                  <img src="/master-cuan/mini-logo.webp" alt="landx" className="img-mini-logo" />
+                  <img src="/master-cuan/mini-logo.webp" alt="Master Cuan: Makannya Bikin Kenyang, Dividennya Bikin Mapan!" title="Jadi Pemilik F&B SEKARANG JUGA! Yuk investasi ke berbagai bisnis fnb menguntungkan bersama bareng LandX" className="img-mini-logo" />
                 </div>
               </Grid>
               <Grid item xs={9}>
