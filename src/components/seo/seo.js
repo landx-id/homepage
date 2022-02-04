@@ -32,7 +32,7 @@ function Seo({ description, lang, meta, title }) {
         },
         {
           property: `og:title`,
-          content: `Yuk Miliki Bisnis Terbaik Cuma dengan 1 Jutaan`,
+          content: title || `Yuk Miliki Bisnis Terbaik Cuma dengan 1 Jutaan`,
         },
         {
           property: `og:image`,
@@ -53,22 +53,6 @@ function Seo({ description, lang, meta, title }) {
         {
           property: `og:type`,
           content: `website`,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary`,
-        },
-        {
-          name: `twitter:creator`,
-          content: `@landx` || ``,
-        },
-        {
-          name: `twitter:title`,
-          content: `Yuk Miliki Bisnis Terbaik Cuma dengan 1 Jutaan`,
-        },
-        {
-          name: `twitter:description`,
-          content: description || `Yuk investasi ke berbagai bisnis potensial mulai dari franchise fnb terbaik, sektor jasa,  dan berbagai bisnis potensial lainnya | Investasi online OJK`,
         },
         {
           name: `facebook-domain-verification`,
