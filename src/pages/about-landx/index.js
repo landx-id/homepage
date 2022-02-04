@@ -18,8 +18,9 @@ const AboutLandX = () => (
 
       <Grid item xs={12} md={12} align="center" style={{ marginTop: `3rem` }}>
         <img
-          src="/images/landx_flow_02.png" 
-          style={{ height:`400px` }}
+          src="/images/landx_flow_02.webp" 
+          height="400px"
+          width="520px"
         />
       </Grid>
       <Grid item xs={12} md={8} className="menu-description" style={{ marginTop: `3rem` }}>

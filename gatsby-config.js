@@ -39,6 +39,12 @@ module.exports = {
     `gatsby-plugin-sass`,
     `gatsby-plugin-netlify`,
     {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://landx.id/`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `gatsby-starter-default`,
