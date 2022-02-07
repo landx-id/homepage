@@ -16,7 +16,7 @@ function Seo({ description, lang, meta, title }) {
         lang,
       }}
       title={title}
-      titleTemplate={description || `Yuk Miliki Bisnis Terbaik Cuma dengan 1 Jutaan`}
+      titleTemplate={title || `Investasi Online Aman Berizin OJK Lewat Equity Crowdfunding di LandX`}
       meta={[
         {
           itemprop: `image`,
