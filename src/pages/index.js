@@ -150,7 +150,7 @@ const IndexPage = () => {
     <>
       {/* <CTAWhatsapp /> */}
       <Layout>
-        <Seo title="Investasi dan Miliki Bisnis Menguntungkan Cuma dengan 1 Juta" description="LandX merupakan platform equity crowdfunding yang telah berizin dan diawasi OJK yang aman untuk investasi online jangka panjang kamu|Investasi online OJK" />
+        <Seo title="Investasi Online Aman Berizin OJK Lewat Equity Crowdfunding di LandX" description="LandX merupakan platform equity crowdfunding yang telah berizin dan diawasi OJK yang aman untuk investasi online jangka panjang kamu|Investasi online OJK" />
 
         <div className="homepage">
           <Container>
