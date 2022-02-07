@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Yuk Miliki Bisnis Terbaik Cuma dengan 1 Jutaan`,
+    title: `Investasi Online Aman Berizin OJK Lewat Equity Crowdfunding di LandX`,
     description: `Yuk investasi ke berbagai bisnis potensial mulai dari franchise fnb terbaik, sektor jasa,  dan berbagai bisnis potensial lainnya | Investasi online OJK`,
     author: `@landx`,
     siteUrl: `https://landx.id/`,

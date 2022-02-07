@@ -32,7 +32,7 @@ function Seo({ description, lang, meta, title }) {
         },
         {
           property: `og:title`,
-          content: title || `Yuk Miliki Bisnis Terbaik Cuma dengan 1 Jutaan`,
+          content: title || `Investasi Online Aman Berizin OJK Lewat Equity Crowdfunding di LandX`,
         },
         {
           property: `og:image`,
