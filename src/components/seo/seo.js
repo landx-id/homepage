@@ -27,12 +27,16 @@ function Seo({ description, lang, meta, title }) {
           content: `/images/thumbnail_link.png`,
         },
         {
+          name: `title`,
+          content: title || `Investasi Online Aman Berizin OJK Lewat Equity Crowdfunding di LandX`,
+        },
+        {
           name: `description`,
           content: description || `Yuk Miliki Bisnis Terbaik Cuma dengan 1 Jutaan`,
         },
         {
           property: `og:title`,
-          content: title || `Yuk Miliki Bisnis Terbaik Cuma dengan 1 Jutaan`,
+          content: title || `Investasi Online Aman Berizin OJK Lewat Equity Crowdfunding di LandX`,
         },
         {
           property: `og:image`,
