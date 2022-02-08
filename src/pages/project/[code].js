@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import Layout from '../../components/layout/layout';
 import ListingProjects from "../../components/listing/listing"
 import ProjectDetail from "../../components/ProjectDetail/ProjectDetail"
+import { formatDate30DaysMaore } from "../../utils/common";
 
 const DetailProjects = (props) => {
   const [dataListing, setDataListing] = useState('')
@@ -18,12 +19,14 @@ const DetailProjects = (props) => {
       dataListing.map(datas => {
         datas.map(data => {
           if (codeSaham === Object.keys(data)[0]) {
-            setListingAt(new Date(data[codeSaham]['listing_at']).getTime())
+            // setListingAt(new Date(data[codeSaham]['listing_at']).getTime())
+            setListingAt(new Date(formatDate30DaysMaore(null, data[codeSaham]['listing_at'])).getTime())
           }
         })
       })
     }
   }, [dataListing])
+  console.log(listingAt)
 
   const handleListing = () => {
     fetch('https://web-api.landx.id/mobile/upcoming_project')
@@ -39,7 +42,8 @@ const DetailProjects = (props) => {
         {listingAt > Date.now() ?
           <ListingProjects codeSaham={props.params.code} />
           :
-          <ProjectDetail codeSaham={props.params.code} />
+          // <ProjectDetail codeSaham={props.params.code} />
+          ''
         }
       </Layout>
     </>

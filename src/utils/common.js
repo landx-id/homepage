@@ -251,3 +251,16 @@ export function capitalizeTheFirstLetterOfEachWord(words) {
   }
   return separateWord.join(' ');
 }
+
+export function formatDate30DaysMaore(date, date2) {
+  if (date) {
+    let fixDateListing = `${date[1].listing_at.split(' ')[0].split('.')[0]}.${date[1].listing_at.split(' ')[0].split('.')[1]}.${date[1].listing_at.split(' ')[0].split('.')[2] - 30} ${date[1].listing_at.split(' ')[1]}`
+
+    return fixDateListing
+  }
+  if (date2) {
+    let fixDateListing = `${date2[1].split(' ')[0].split('.')[0]}.${date2[1].split(' ')[0].split('.')[1]}.${date2[1].split(' ')[0].split('.')[2] - 30} ${date2[1].split(' ')[1]}`
+
+    return fixDateListing
+  }
+}

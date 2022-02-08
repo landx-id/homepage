@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import { Container, Grid, Typography, Button, CircularProgress } from '@mui/material';
 import Layout from "../components/layout/layout"
 import Seo from "../components/seo/seo"
-import { FetchLimitData, TwoDecimalNumber, NumberWithCommas } from "../utils/common";
+import { FetchLimitData, TwoDecimalNumber, NumberWithCommas, formatDate30DaysMaore } from "../utils/common";
 import CardArticel from "../components/Card/CardArticel/CardArticel"
 import CardProject from "../components/Card/CardProject/CardProject";
 import CardTestimony from "../components/Card/CardTestimony/CardTestimony";
@@ -252,11 +252,8 @@ const IndexPage = () => {
                         return data.map(d => {
                           return Object.entries(d).map(data => {
                             // let listingAt = new Date(data[1].listing_at).getTime()
-                            let fixDateListing = `${data[1].listing_at.split(' ')[0].split('.')[0]}.${data[1].listing_at.split(' ')[0].split('.')[1]}.${data[1].listing_at.split(' ')[0].split('.')[2] - 30} ${data[1].listing_at.split(' ')[1]}`
                             let now = Date.now()
-                            let listingAt = new Date(fixDateListing).getTime()
-                            console.log(now)
-                            console.log(fixDateListing)
+                            let listingAt = new Date(formatDate30DaysMaore(data)).getTime()
                             if (listingAt > now) {
                               return <CardListing code={data[0]} data={data[1]} timeUp={listingAt - Date.now()} />
                             }
