@@ -113,7 +113,7 @@ const IndexPage = () => {
 
 
   const getLimitCardProject = () => {
-    FetchLimitData('https://api.landx.id/', 5, 1).then(datas => {
+    FetchLimitData('https://api.landx.id/', 7, 1).then(datas => {
       datas.data.currencies.map((data) => {
         if (data.landXProperty !== null) {
           if (data.landXProperty['launchProgress'] < 1) {
@@ -251,8 +251,12 @@ const IndexPage = () => {
                       if (data !== undefined && data !== null && i >= 0) {
                         return data.map(d => {
                           return Object.entries(d).map(data => {
-                            let listingAt = new Date(data[1].listing_at).getTime()
+                            // let listingAt = new Date(data[1].listing_at).getTime()
+                            let fixDateListing = `${data[1].listing_at.split(' ')[0].split('.')[0]}.${data[1].listing_at.split(' ')[0].split('.')[1]}.${data[1].listing_at.split(' ')[0].split('.')[2] - 30} ${data[1].listing_at.split(' ')[1]}`
                             let now = Date.now()
+                            let listingAt = new Date(fixDateListing).getTime()
+                            console.log(now)
+                            console.log(fixDateListing)
                             if (listingAt > now) {
                               return <CardListing code={data[0]} data={data[1]} timeUp={listingAt - Date.now()} />
                             }
