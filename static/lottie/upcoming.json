@@ -21,13 +21,13 @@
       }
     },
     {
-      "BBKB": {
+      "VIGO": {
         "name": "VIGO",
         "category": "Restoran",
         "link": "/project/vigo",
         "booking_url": "https://landx-vigo.paperform.co/",
         "booking_count": 0,
-        "listing_at": "2022.01.26 11:00",
+        "listing_at": "2022.02.11 11:00",
         "images": [
           "/images/VIGO/1.webp",
           "/images/VIGO/2.webp",
