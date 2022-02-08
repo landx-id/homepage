@@ -27,7 +27,7 @@ const ListingProjects = (props) => {
   }, [])
 
   useEffect(() => {
-    setlistingAt(new Date(formatDate30DaysMore(null, dataListing.listing_at)).getTime() - Date.now())
+    setlistingAt(new Date(dataListing.listing_at).getTime() - Date.now())
   }, [dataListing])
 
   const handleListing = () => {
