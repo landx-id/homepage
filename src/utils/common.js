@@ -251,3 +251,16 @@ export function capitalizeTheFirstLetterOfEachWord(words) {
   }
   return separateWord.join(' ');
 }
+
+export function formatDate30DaysMore(date, date2) {
+  if (date !== null && date !== undefined) {
+    let fixDateListing = `${date[1].listing_at.split(' ')[0].split('.')[0]}.${date[1].listing_at.split(' ')[0].split('.')[1]}.${date[1].listing_at.split(' ')[0].split('.')[2] - 30} ${date[1].listing_at.split(' ')[1]}`
+
+    return fixDateListing
+  }
+  if (date2 !== null && date2 !== undefined) {
+    let fixDateListing = `${date2.split(' ')[0].split('.')[0]}.${date2.split(' ')[0].split('.')[1]}.${date2.split(' ')[0].split('.')[2] - 30} ${date2.split(' ')[1]}`
+
+    return fixDateListing
+  }
+}

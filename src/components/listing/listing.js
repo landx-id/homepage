@@ -8,6 +8,7 @@ import Slider from 'react-slick'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './listing.scss'
+import { formatDate30DaysMore } from '../../utils/common';
 
 const ListingProjects = (props) => {
   const [dataListing, setDataListing] = useState('')
@@ -20,12 +21,13 @@ const ListingProjects = (props) => {
   const [nameProject, setNameProject] = useState();
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     handleListing()
     setImgListing(true)
   }, [])
 
   useEffect(() => {
-    setlistingAt(new Date(dataListing.listing_at).getTime() - Date.now())
+    setlistingAt(new Date(formatDate30DaysMore(null, dataListing.listing_at)).getTime() - Date.now())
   }, [dataListing])
 
   const handleListing = () => {
@@ -49,7 +51,7 @@ const ListingProjects = (props) => {
   }, [dataListing?.name])
 
   const spiltNameProject = () => {
-    setNameProject(dataListing?.name.split('-'))
+    setNameProject(dataListing?.name?.split('-'))
   }
 
 

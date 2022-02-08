@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import { Container, Grid, Typography, Button, CircularProgress } from '@mui/material';
 import Layout from "../components/layout/layout"
 import Seo from "../components/seo/seo"
-import { FetchLimitData, TwoDecimalNumber, NumberWithCommas } from "../utils/common";
+import { FetchLimitData, TwoDecimalNumber, NumberWithCommas, formatDate30DaysMore } from "../utils/common";
 import CardArticel from "../components/Card/CardArticel/CardArticel"
 import CardProject from "../components/Card/CardProject/CardProject";
 import CardTestimony from "../components/Card/CardTestimony/CardTestimony";
@@ -113,7 +113,7 @@ const IndexPage = () => {
 
 
   const getLimitCardProject = () => {
-    FetchLimitData('https://api.landx.id/', 5, 1).then(datas => {
+    FetchLimitData('https://api.landx.id/', 7, 1).then(datas => {
       datas.data.currencies.map((data) => {
         if (data.landXProperty !== null) {
           if (data.landXProperty['launchProgress'] < 1) {
@@ -251,8 +251,9 @@ const IndexPage = () => {
                       if (data !== undefined && data !== null && i >= 0) {
                         return data.map(d => {
                           return Object.entries(d).map(data => {
-                            let listingAt = new Date(data[1].listing_at).getTime()
+                            // let listingAt = new Date(data[1].listing_at).getTime()
                             let now = Date.now()
+                            let listingAt = new Date(formatDate30DaysMore(data)).getTime()
                             if (listingAt > now) {
                               return <CardListing code={data[0]} data={data[1]} timeUp={listingAt - Date.now()} />
                             }
