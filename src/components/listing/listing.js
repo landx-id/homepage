@@ -3,12 +3,12 @@ import { Container, Button, Grid, Typography } from '@mui/material';
 import { navigate } from "gatsby";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
+import Seo from "../../components/seo/seo";
 
 import Slider from 'react-slick'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './listing.scss'
-import { formatDate30DaysMore } from '../../utils/common';
 
 const ListingProjects = (props) => {
   const [dataListing, setDataListing] = useState('')
@@ -19,6 +19,7 @@ const ListingProjects = (props) => {
   const [listingAt, setlistingAt] = useState('')
   const [imgListing, setImgListing] = useState(true)
   const [nameProject, setNameProject] = useState();
+  const [metaDesc, setMetaDesc] = useState();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -52,6 +53,7 @@ const ListingProjects = (props) => {
 
   const spiltNameProject = () => {
     setNameProject(dataListing?.name?.split('-'))
+    setMetaDesc(dataListing?.description?.split('').slice(0, 156).join('').replace('<p>', '').replace('<b>', '').replace('<br>', ''))
   }
 
 
@@ -64,6 +66,7 @@ const ListingProjects = (props) => {
 
   return (
     <>
+      <Seo title={`Punya bisnis ${nameProject && nameProject[0]} modal 1 juta`} description={metaDesc} />
       <div className="container-listing">
         <Container>
           <Grid container spacing={2}>
