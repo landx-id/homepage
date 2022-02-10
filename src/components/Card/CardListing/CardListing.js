@@ -18,11 +18,11 @@ const CardListing = ({ code, data, timeUp }) => {
   return (
     <div>
       <Grid item xs={11} className='container-slider-center'>
-        <div className="container-card-listing">
-          <Card className="card-listing">
-            <img src={data.thumbnail} alt="thumbnail" className='listing-img' />
-            <img src="/images/soon-listing.webp" alt="soon listing" className='listing-soon' />
-            <a href={data.link} style={{ textDecoration: 'none' }}>
+        <a href={data.link} style={{ textDecoration: 'none' }}>
+          <div className="container-card-listing">
+            <Card className="card-listing">
+              <img src={data.thumbnail} alt="thumbnail" className='listing-img' />
+              <img src="/images/soon-listing.webp" alt="soon listing" className='listing-soon' />
               <div className="text-contianer">
                 <Typography className="text-time" componen='h2'>
                   {days} Hari : {hours} Jam
@@ -31,9 +31,9 @@ const CardListing = ({ code, data, timeUp }) => {
                   Pelajari Lebih Lanjut
                 </Typography>
               </div>
-            </a>
-          </Card>
-        </div>
+            </Card>
+          </div>
+        </a>
       </Grid>
     </div>
   )
