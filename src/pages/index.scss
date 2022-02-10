@@ -294,5 +294,10 @@
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 360px) {
+  .container-ongoing-projects {
+    .slick-slide {
+      padding: 0 7px;
+    }
+  }
 }
