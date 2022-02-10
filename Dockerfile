@@ -9,7 +9,7 @@ COPY . .
 RUN npm install
 RUN npm run build
 
-COPY ./docker/default.conf /etc/nginx/conf.d/default.conf
+COPY ./docker/default.conf /etc/nginx/sites-available/default
 
 EXPOSE 80
 
