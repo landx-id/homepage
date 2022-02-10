@@ -17,7 +17,7 @@ const CardArticel = () => {
   }, [])
 
   const getDataBlog = () => {
-    fetch('https://landx.id/blog/rss/')
+    fetch('https://landx.id/blog/rss.xml')
       .then(response => response.text())
       .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
       .then(data => {
