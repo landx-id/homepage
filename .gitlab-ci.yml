@@ -1,0 +1,49 @@
+.for_staging:
+  environment:
+    name: staging
+  variables:
+    DOCKER_IMAGE_TAG: latest
+  only:
+    - develop
+
+.build:
+  image: docker:stable
+  services:
+    - docker:19-dind
+  script:
+    - docker login -u ${CI_REGISTRY_USER} -p ${CI_REGISTRY_PASSWORD} ${CI_REGISTRY}
+    - docker pull ${CI_REGISTRY_IMAGE}:${DOCKER_IMAGE_TAG} || true
+      .
+    - docker build
+      --cache-from ${CI_REGISTRY_IMAGE}:${DOCKER_IMAGE_TAG}
+      --tag ${CI_REGISTRY_IMAGE}:${DOCKER_IMAGE_TAG}
+      --label org.label-schema.schema-version="1.0"
+      --label org.label-schema.vcs-url="${CI_PROJECT_URL}.git"
+      --label org.label-schema.vcs-ref="${CI_COMMIT_SHA}"
+      .
+    
+    - docker push ${CI_REGISTRY_IMAGE}:${DOCKER_IMAGE_TAG}
+  extends:
+    - .for_staging
+
+.deploy:
+  stage: deploy
+  image: google/cloud-sdk
+  script:
+    # Authenticate using the service account
+    - echo $GCLOUD_SERVICE_KEY | base64 --decode -i > ~/gcloud-service-key.json
+    - gcloud auth activate-service-account --key-file ~/gcloud-service-key.json
+    - gcloud config set project $GCLOUD_PROJECT_NAME
+    - gcloud --quiet container clusters get-credentials $CLUSTER_NAME --region $CLUSTER_REGION
+
+    - kubectl rollout restart -n landx-staging deployment/landx-homepage
+
+prepare_staging:
+  extends: .build
+  stage: build
+
+deploy:staging:
+  extends:
+    - .deploy
+  dependencies:
+    - prepare_staging
