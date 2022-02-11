@@ -23,10 +23,10 @@ const CardArticel = () => {
       .then(data => {
         const items = data.querySelectorAll("item");
         items.forEach((e, i) => {
-          let title = e.getElementsByTagName("title")[0] !== undefined ? e.getElementsByTagName("title")[0].childNodes[0].nodeValue : "";
-          let description = e.getElementsByTagName("description")[0] !== undefined ? e.getElementsByTagName("description")[0].childNodes[0].nodeValue : "";
-          let link = e.getElementsByTagName("link")[0] !== undefined ? e.getElementsByTagName("link")[0].childNodes[0].nodeValue : "";
-          let category = e.getElementsByTagName("category")[0] !== undefined ? e.getElementsByTagName("category")[0].childNodes[0].nodeValue : "LandX";
+          let title = e.getElementsByTagName("title")[0] !== undefined ? e.getElementsByTagName("title")[0]?.childNodes[0]?.nodeValue : "";
+          let description = e.getElementsByTagName("description")[0] !== undefined ? e.getElementsByTagName("description")[0]?.childNodes[0]?.nodeValue : "";
+          let link = e.getElementsByTagName("link")[0] !== undefined ? e.getElementsByTagName("link")[0]?.childNodes[0]?.nodeValue : "";
+          let category = e.getElementsByTagName("category")[0] !== undefined ? e.getElementsByTagName("category")[0]?.childNodes[0]?.nodeValue : "LandX";
 
           setDataBlogs((prevArr) => [...prevArr, { title: title, desc: description, category: category, link: link }])
         })
