@@ -107,7 +107,7 @@ const ListingProjects = (props) => {
             </div>
             :
             <div style={{ textAlign: 'center' }}>
-              <img src={dataListing.thumbnail} alt={`Miliki bisnis ${nameProject[0]} cuma dengan 1 jutaan aja`} title={`Cara jadi owner bisnis ${nameProject[0]} hanya dengan modal 1 juta. Temukan bisnis terbaik dari berbagai sektor mulai dari fnb, jasa, ritel dan berbagai bisnis lainnya hanya di landx`} style={{ display: 'inline-block' }} />
+              <img src={dataListing.thumbnail} alt={`Miliki bisnis ${nameProject[0]} cuma dengan 1 jutaan aja`} title={`Cara jadi owner bisnis ${nameProject[0]} hanya dengan modal 1 juta. Temukan bisnis terbaik dari berbagai sektor mulai dari fnb, jasa, ritel dan berbagai bisnis lainnya hanya di landX`} style={{ display: 'inline-block' }} />
             </div>
           }
 

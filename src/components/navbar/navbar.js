@@ -48,7 +48,7 @@ const ResponsiveAppBar = () => {
         <Container>
           <Toolbar style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingLeft: '0', paddingRight: '0' }}>
             <Link to='/'>
-              <img src="/images/landx-logo.webp" alt="logo landx" style={{ marginBottom: '0', height: `30px`, width: `91px` }} alt="Logo LandX Platform Securities Crowdfunding yang diawasi dan berizin OJK - Temukan bisnis untuk investasi terbaik di LandX" title="LandX adalah startup crowdfunding Indonesia berbasis yang memberikan kesempatan untuk berinvestasi ke dalam bisnis dengan modal kecil" />
+              <img src="/images/landx-logo.webp" alt="logo landX" style={{ marginBottom: '0', height: `30px`, width: `91px` }} alt="Logo LandX Platform Securities Crowdfunding yang diawasi dan berizin OJK - Temukan bisnis untuk investasi terbaik di LandX" title="LandX adalah startup crowdfunding Indonesia berbasis yang memberikan kesempatan untuk berinvestasi ke dalam bisnis dengan modal kecil" />
             </Link>
             {widthWindows > 1055 ?
               <>
@@ -57,7 +57,7 @@ const ResponsiveAppBar = () => {
                     <AnchorLink to='/#why-landx' className='text-link'>
                       <MenuItem>
                         <Typography textAlign="center">
-                          Mengapa Landx
+                          Mengapa LandX
                         </Typography>
                       </MenuItem>
                     </AnchorLink>
@@ -189,7 +189,7 @@ const ResponsiveAppBar = () => {
                 <AnchorLink to='/#why-landx' className='text-link'>
                   <MenuItem>
                     <Typography textAlign="center">
-                      Mengapa Landx
+                      Mengapa LandX
                     </Typography>
                   </MenuItem>
                 </AnchorLink>
