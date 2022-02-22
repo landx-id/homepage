@@ -13,7 +13,7 @@ import CardLandxWork from "../components/Card/CardLandxWork/CardLandxWork";
 import CardValueInvestor from "../components/Card/CardValueInvestor/CardValueInvestor";
 import CardListing from "../components/Card/CardListing/CardListing";
 
-// import CTAWhatsapp from '../components/CTAWhatsapp/CTAWhatsapp';
+import CTAWhatsapp from '../components/CTAWhatsapp/CTAWhatsapp';
 
 import '../assets/styling/cssReset.scss';
 import Slider from 'react-slick'
@@ -148,7 +148,7 @@ const IndexPage = () => {
 
   return (
     <>
-      {/* <CTAWhatsapp /> */}
+      <CTAWhatsapp />
       <Layout>
         <Seo title="Investasi Online Aman Berizin OJK Lewat Equity Crowdfunding di LandX" description="LandX merupakan platform equity crowdfunding yang telah berizin dan diawasi OJK yang aman untuk investasi online jangka panjang kamu|Investasi online OJK" />
 
