@@ -29,7 +29,7 @@ const CardTestimony = () => {
     {
       'img': "./images/testimonyProfilePicture.webp",
       'name': "Herbert",
-      'testimony': "Walaupun sempat ARA di awal IPO (Initial Public Offering), saham Bukalapak kini terus mengalami ARB, membuat banyak investor merasa dirugikan oleh hal ini.",
+      'testimony': "LandX memberikan solusi mudah dan cepat untuk mengembangkan uang saya. Lumayan ya terima hasil tiap bulan.",
       'titleImg': "Pengalaman investor berinvestasi di LandX",
       'alt': "LandX review, pengalaman investasi di LandX"
     }
