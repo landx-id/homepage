@@ -3,7 +3,7 @@ import { Card, Grid, Typography } from '@mui/material'
 import './CardListing.scss'
 
 
-const CardListing = ({ code, data, timeUp }) => {
+const CardListing = ({ data, timeUp }) => {
   const [days, setDays] = useState('')
   const [hours, setHours] = useState('')
 
@@ -15,6 +15,7 @@ const CardListing = ({ code, data, timeUp }) => {
     setDays(Math.floor((timeUp) / (1000 * 60 * 60 * 24)))
     setHours(Math.floor((timeUp % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)))
   }
+
   return (
     <div>
       <Grid item xs={11} className='container-slider-center'>

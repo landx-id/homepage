@@ -67,10 +67,10 @@ const DragonHotPot = () => {
   }
 
   const handleListing = () => {
-    fetch('https://web-api.landx.id/mobile/upcoming_project')
+    fetch('https://content.landx.id/api/upcomings')
       .then(r => r.json())
       .then(data => {
-        setDataListing((prevData) => [...prevData, data.upcoming])
+        setDataListing((prevData) => [...prevData, data.data])
       })
   }
 
@@ -350,15 +350,13 @@ const DragonHotPot = () => {
             {dataProject &&
               <Slider {...cardProject} className='container-card-projects'>
 
-                {dataListing && dataListing.map((data, i) => {
-                  if (data[i] !== undefined && data[i] !== null && i >= 0) {
-                    return Object.entries(data[i]).map(data => {
-                      let listingAt = new Date(data[1].listing_at).getTime()
-                      let now = Date.now()
-                      if (listingAt > now) {
-                        return <CardListing code={data[0]} data={data[1]} />
-                      }
-                    })
+                {dataListing[0] && dataListing[0].map((data, i) => {
+                  if (data !== undefined && data !== null && i >= 0) {
+                    let listingAt = new Date(data.attributes.listing_at).getTime()
+                    let now = Date.now()
+                    if (listingAt > now) {
+                      return <CardListing data={data.attributes} timeUp={listingAt - Date.now()} />
+                    }
                   }
                 })}
 
