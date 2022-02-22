@@ -129,10 +129,10 @@ const IndexPage = () => {
   }
 
   const handleListing = () => {
-    fetch('https://web-api.landx.id/mobile/coming_soon')
+    fetch('https://content.landx.id/api/upcomings')
       .then(r => r.json())
       .then(data => {
-        setPreDataListing((prevData) => [...prevData, data.upcoming])
+        setPreDataListing((prevData) => [...prevData, data.data])
       })
   }
 
@@ -247,17 +247,13 @@ const IndexPage = () => {
                 {dataProject &&
                   <Slider {...cardProject} className='container-card-projects'>
 
-                    {dataListing && dataListing.map((data, i) => {
+                    {dataListing[0] && dataListing[0].map((data, i) => {
                       if (data !== undefined && data !== null && i >= 0) {
-                        return data.map(d => {
-                          return Object.entries(d).map(data => {
-                            let listingAt = new Date(data[1].listing_at).getTime()
-                            let now = Date.now()
-                            if (listingAt > now) {
-                              return <CardListing code={data[0]} data={data[1]} timeUp={listingAt - Date.now()} />
-                            }
-                          })
-                        })
+                        let listingAt = new Date(data.attributes.listing_at).getTime()
+                        let now = Date.now()
+                        if (listingAt > now) {
+                          return <CardListing data={data.attributes} timeUp={listingAt - Date.now()} />
+                        }
                       }
                     })}
 
