@@ -36,15 +36,12 @@ const ListingProjects = (props) => {
       .then(r => r.json())
       .then(datas => {
         datas.data.map(data => {
-          console.log(data)
           if (props.codeSaham.toUpperCase() === data.attributes.link.split('/')[2]) {
             setDataListing(data.attributes)
           }
         })
       })
   }
-
-  console.log('dataListing', dataListing)
 
   useEffect(() => {
     handleTime()
