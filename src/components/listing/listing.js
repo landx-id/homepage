@@ -32,12 +32,12 @@ const ListingProjects = (props) => {
   }, [dataListing])
 
   const handleListing = () => {
-    fetch('https://web-api.landx.id/mobile/coming_soon')
+    fetch('https://content.landx.id/api/upcomings')
       .then(r => r.json())
       .then(datas => {
-        datas.upcoming.map(data => {
-          if (props.codeSaham.toUpperCase() === Object.keys(data)[0]) {
-            setDataListing(data[props.codeSaham.toUpperCase()])
+        datas.data.map(data => {
+          if (props.codeSaham.toUpperCase() === data.attributes.link.split('/')[2]) {
+            setDataListing(data.attributes)
           }
         })
       })
@@ -122,7 +122,7 @@ const ListingProjects = (props) => {
               <div className='container-reminder'>
                 <Grid container spacing={2} className='container-grid-remind'>
                   <Grid item xs={12} md={7} className='container-text-remind'><img src="/images/ic_calendar.webp" alt="ic_calendar" /> <Typography component='p' className='text-time'>{listingAt && days} Hari : {listingAt && hours} Jam</Typography></Grid>
-                  <Grid item xs={12} md={5} className='container-btn-remind'><Button variant="contained" data-paperform-id={dataListing.title_form_paper} data-popup-button="1" className='btn-remind' disabled={dataListing.title_form_paper === 'landxftmanggang' ? true : false}><NotificationsNoneIcon className='icon-remind' style={{ marginRight: '5px' }} /> <span style={{ marginTop: '2px' }}>REMIND ME</span></Button></Grid>
+                  <Grid item xs={12} md={5} className='container-btn-remind'><Button variant="contained" data-paperform-id={dataListing?.title_form_paper} data-popup-button="1" className='btn-remind'><NotificationsNoneIcon className='icon-remind' style={{ marginRight: '5px' }} /> <span style={{ marginTop: '2px' }}>REMIND ME</span></Button></Grid>
                 </Grid>
               </div>
             </Grid>
