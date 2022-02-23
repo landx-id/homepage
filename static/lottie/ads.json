@@ -4,18 +4,25 @@
             "id": 1,
             "active": true,
             "type": "campaign",
+            "action": "https://landx.id/blog/5-tips-buka-usaha-gym-di-tahun-2022-jadi-investor-bisnis-gym-di-bali/?utm_source=APPS&utm_medium=APPSbanner&utm_campaign=PushAPP&utm_id=APP",
+            "thumbnail":  "https://landx.id/images/tips_buka_usaha_gym_di_tahun_2022_jadi_investor_bisnis_gym_di_bali.webp"
+        },
+        {
+            "id": 2,
+            "active": true,
+            "type": "campaign",
             "action": "https://landx.id/master-cuan/",
             "thumbnail":  "https://landx.id/master-cuan/app_banner_master_cuan.webp"
         },
         {
-            "id": 2,
+            "id": 3,
             "active": true,
             "type": "campaign",
             "action": "https://landx.id/blog/landx-sewaktu-2021/",
             "thumbnail":  "https://landx.id/images/campaign_sewaktu2021.png"
         },
         {
-            "id": 3,
+            "id": 4,
             "active": true,
             "type": "announcement",
             "title" : "Hati-hati dengan segala jenis penipuan. ",
