@@ -61,7 +61,7 @@ const DragonHotPot = () => {
   };
 
   const getLimitCardProject = () => {
-    FetchLimitData('https://api.landx.id/', 4, 1).then(data => {
+    FetchLimitData('https://api.landx.id/', 14, 1).then(data => {
       setDataProject(data.data.currencies)
     })
   }
