@@ -15,21 +15,20 @@ const DetailProjects = (props) => {
 
   useEffect(() => {
     if (dataListing) {
-      dataListing.map(datas => {
-        datas.map(data => {
-          if (codeSaham === Object.keys(data)[0]) {
-            setListingAt(new Date(data[codeSaham]['listing_at']).getTime())
-          }
-        })
+      dataListing[0].map((data, i) => {
+        if (codeSaham === data.attributes.link.split('/')[2]) {
+          let listingAt = new Date(data.attributes.listing_at).getTime()
+          setListingAt(listingAt)
+        }
       })
     }
   }, [dataListing])
 
   const handleListing = () => {
-    fetch('https://web-api.landx.id/mobile/coming_soon')
+    fetch('https://content.landx.id/api/upcomings')
       .then(r => r.json())
       .then(data => {
-        setDataListing((prevData) => [...prevData, data.upcoming])
+        setDataListing((prevData) => [...prevData, data.data])
       })
   }
 
