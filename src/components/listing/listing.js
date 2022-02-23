@@ -35,12 +35,6 @@ const ListingProjects = (props) => {
     fetch('https://content.landx.id/api/upcomings')
       .then(r => r.json())
       .then(datas => {
-        // datas.upcoming.map(data => {
-        //   if (props.codeSaham.toUpperCase() === Object.keys(data)[0]) {
-        //     setDataListing(data[props.codeSaham.toUpperCase()])
-        //   }
-        // })
-
         datas.data.map(data => {
           console.log(data)
           if (props.codeSaham.toUpperCase() === data.attributes.link.split('/')[2]) {
