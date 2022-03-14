@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import { Container, Grid, Typography, Button, CircularProgress } from '@mui/material';
 import Layout from "../components/layout/layout"
 import Seo from "../components/seo/seo"
-import { FetchLimitData, TwoDecimalNumber, NumberWithCommas } from "../utils/common";
+import { TwoDecimalNumber, NumberWithCommas } from "../utils/common";
 import CardArticel from "../components/Card/CardArticel/CardArticel"
 import CardProject from "../components/Card/CardProject/CardProject";
 import CardTestimony from "../components/Card/CardTestimony/CardTestimony";
@@ -40,7 +40,7 @@ const IndexPage = () => {
   }, [widthWindows])
 
   useEffect(() => {
-    getLimitCardProject()
+    handleProject()
   }, [])
 
   useEffect(() => {
@@ -111,20 +111,22 @@ const IndexPage = () => {
     arrows: false,
   };
 
-
-  const getLimitCardProject = () => {
-    FetchLimitData('https://api.landx.id/', 14, 1).then(datas => {
-      datas.data.currencies.map((data) => {
-        if (data.landXProperty !== null) {
-          if (data.landXProperty['launchProgress'] < 1) {
-            setIsSell((prevData) => [...prevData, data])
+  const handleProject = () => {
+    fetch('https://web-api.landx.id/v2/mobile/get_properties?page=2')
+      .then(r => r.json())
+      .then(datas => {
+        // console.log(datas)
+        datas.data.currencies.map((data) => {
+          if (data.landXProperty !== null) {
+            if (data.landXProperty['launchProgress'] < 1) {
+              setIsSell((prevData) => [...prevData, data])
+            }
+            if (data.landXProperty['launchProgress'] === 1) {
+              setIsSold((prevData) => [...prevData, data])
+            }
           }
-          if (data.landXProperty['launchProgress'] === 1) {
-            setIsSold((prevData) => [...prevData, data])
-          }
-        }
-      })
-      setLoadProjects(false)
+        })
+        setLoadProjects(false)
     })
   }
 
