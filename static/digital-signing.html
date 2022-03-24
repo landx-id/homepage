@@ -22,19 +22,19 @@
           dev: true,
           container: ".privy-document",
           signature: {
-            page: 6,
+            page: 9,
             x: 520,
             y: 460,
             fixed: false,
           },
         }).on('after-action', (data) => {
-          window.location = "app://store.numoney.landxapp/document-signing-completed?doc_token=" + documentToken;
+          window.location = "https://landx.id?doc_token=" + documentToken;
         })
         .on('after-sign', (data) => {
-          window.location = "app://store.numoney.landxapp/document-signing-completed?doc_token=" + documentToken;
+          window.location = "https://landx.id?doc_token=" + documentToken;
         })
         .on('after-review', (data) => {
-          window.location = "app://store.numoney.landxapp/document-signing-completed?doc_token=" + documentToken;
+          window.location = "https://landx.id?doc_token=" + documentToken;
         });
       }
     </script>
