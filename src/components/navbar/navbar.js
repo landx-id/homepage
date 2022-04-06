@@ -48,7 +48,7 @@ const ResponsiveAppBar = () => {
         <Container>
           <Toolbar style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingLeft: '0', paddingRight: '0' }}>
             <Link to='/'>
-              <img src="/images/landx-logo.webp" alt="logo landX" style={{ marginBottom: '0', height: `30px`, width: `91px` }} alt="Logo LandX Platform Securities Crowdfunding yang diawasi dan berizin OJK - Temukan bisnis untuk investasi terbaik di LandX" title="LandX adalah startup crowdfunding Indonesia berbasis yang memberikan kesempatan untuk berinvestasi ke dalam bisnis dengan modal kecil" />
+              <img src="/images/landx-logo.webp" style={{ marginBottom: '0', height: `30px`, width: `91px` }} alt="Logo LandX Platform Securities Crowdfunding yang diawasi dan berizin OJK - Temukan bisnis untuk investasi terbaik di LandX" title="LandX adalah startup crowdfunding Indonesia berbasis yang memberikan kesempatan untuk berinvestasi ke dalam bisnis dengan modal kecil" />
             </Link>
             {widthWindows > 1055 ?
               <>
@@ -169,9 +169,12 @@ const ResponsiveAppBar = () => {
                   </Box>
                 </Box>
                 <div className='container-btn'>
-                  <Link to='/pendaftaran-perusahaan' className='btn-text'>
-                    <Button color="success">PENDAFTARAN PERUSAHAAN</Button>
-                  </Link>
+                  <a href='https://app.landx.id/webapp' className='btn-text' style={{ marginRight: '16px', textDecoration: 'none' }}>
+                    <Button color="success">PENDAFTARAN</Button>
+                  </a>
+                  <a href='https://app.landx.id/webapp/login' className='btn-outline-success' style={{ textDecoration: 'none' }}>
+                    <Button color="success" variant='outlined'>LOGIN</Button>
+                  </a>
                 </div>
               </>
               :
@@ -284,9 +287,12 @@ const ResponsiveAppBar = () => {
             </Container>
 
             <div className='container-btn'>
-              <Link to='/pendaftaran-perusahaan' className='btn-text'>
-                <Button color="success">PENDAFTARAN PERUSAHAAN</Button>
-              </Link>
+              <a href='https://app.landx.id/webapp' className='btn-text' style={{ marginRight: '16px', textDecoration: 'none' }}>
+                <Button color="success">PENDAFTARAN</Button>
+              </a>
+              <a href='https://app.landx.id/webapp/login' className='btn-outline-success' style={{ textDecoration: 'none' }}>
+                <Button color="success" variant='outlined'>LOGIN</Button>
+              </a>
             </div>
           </div>
           : ''
