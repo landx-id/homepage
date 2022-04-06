@@ -169,12 +169,16 @@ const ResponsiveAppBar = () => {
                   </Box>
                 </Box>
                 <div className='container-btn'>
-                  <a href='https://app.landx.id/webapp' className='btn-text' style={{ marginRight: '16px', textDecoration: 'none' }}>
-                    <Button color="success">PENDAFTARAN</Button>
-                  </a>
-                  <a href='https://app.landx.id/webapp/login' className='btn-outline-success' style={{ textDecoration: 'none' }}>
-                    <Button color="success" variant='outlined'>LOGIN</Button>
-                  </a>
+                  {/* <a href='https://app.landx.id/webapp' className='btn-text' style={{ marginRight: '16px', textDecoration: 'none' }}>
+                <Button color="success">PENDAFTARAN</Button>
+              </a>
+              <a href='https://app.landx.id/webapp/login' className='btn-outline-success' style={{ textDecoration: 'none' }}>
+                <Button color="success" variant='outlined'>LOGIN</Button>
+              </a> */}
+
+                  <Link to='/pendaftaran-perusahaan' className='btn-text'>
+                    <Button color="success">PENDAFTARAN PERUSAHAAN</Button>
+                  </Link>
                 </div>
               </>
               :
@@ -287,12 +291,16 @@ const ResponsiveAppBar = () => {
             </Container>
 
             <div className='container-btn'>
-              <a href='https://app.landx.id/webapp' className='btn-text' style={{ marginRight: '16px', textDecoration: 'none' }}>
+              {/* <a href='https://app.landx.id/webapp' className='btn-text' style={{ marginRight: '16px', textDecoration: 'none' }}>
                 <Button color="success">PENDAFTARAN</Button>
               </a>
               <a href='https://app.landx.id/webapp/login' className='btn-outline-success' style={{ textDecoration: 'none' }}>
                 <Button color="success" variant='outlined'>LOGIN</Button>
-              </a>
+              </a> */}
+
+              <Link to='/pendaftaran-perusahaan' className='btn-text'>
+                <Button color="success">PENDAFTARAN PERUSAHAAN</Button>
+              </Link>
             </div>
           </div>
           : ''
