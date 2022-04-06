@@ -16,7 +16,7 @@ const DetailProjects = (props) => {
   useEffect(() => {
     if (dataListing) {
       dataListing[0].map((data, i) => {
-        if (codeSaham === data.attributes.link.split('/')[2]) {
+        if (codeSaham === data.attributes.currency.toUpperCase()) {
           let listingAt = new Date(data.attributes.listing_at).getTime()
           setListingAt(listingAt)
         }
