@@ -27,8 +27,9 @@ const CardArticel = () => {
           let description = e.getElementsByTagName("description")[0] !== undefined ? e.getElementsByTagName("description")[0]?.childNodes[0]?.nodeValue : "";
           let link = e.getElementsByTagName("link")[0] !== undefined ? e.getElementsByTagName("link")[0]?.childNodes[0]?.nodeValue : "";
           let category = e.getElementsByTagName("category")[0] !== undefined ? e.getElementsByTagName("category")[0]?.childNodes[0]?.nodeValue : "LandX";
+          let blogImg = e.getElementsByTagName("image")[0] !== undefined ? e.getElementsByTagName("image")[0]?.childNodes[0]?.nodeValue : "";
 
-          setDataBlogs((prevArr) => [...prevArr, { title: title, desc: description, category: category, link: link }])
+          setDataBlogs((prevArr) => [...prevArr, { title: title, desc: description, category: category, link: link, blogImg: blogImg }])
         })
         setLoadArticle(false)
       })
@@ -69,10 +70,13 @@ const CardArticel = () => {
                       <Typography variant="h5" component="h2" className='card-title'>
                         {data.title}
                       </Typography>
+                      <div>
+                        {data.blogImg && <img src={`https://thumbor.landx.id/unsafe/330x195/${data.blogImg}`} alt={data.title} className='card-img' style={{ margin: '0 auto 16px' }} />}
+                      </div>
                       <Typography sx={{ mb: 1.5 }} color="text.secondary" className="card-description">
                         {data.desc}
                       </Typography>
-                      <Link href={data.link} className="text-link">
+                      <Link href={data.link} className="text-link" style={{ marginTop: '16px' }}>
                         <Button variant="text" size="small">SELENGKAPNYA DI BLOG</Button>
                       </Link>
                     </CardContent>

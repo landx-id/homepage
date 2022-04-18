@@ -14,8 +14,8 @@
     line-height: normal;
     letter-spacing: 0.15px;
     color: #5e798d;
-    margin: 7px 0 18px 0;
-    height: 100px;
+    margin: 7px 0 10px 0;
+    min-height: 50px;
   }
 
   .card-description {
@@ -30,7 +30,7 @@
 
   .card-body {
     box-shadow: 0 8px 30px 0px rgba(0, 0, 0, 0.08);
-    min-height: 375px;
+    min-height: 379px;
     position: relative;
   }
 
@@ -46,6 +46,10 @@
   .slick-track {
     min-height: 380px;
   }
+
+  .slick-slide {
+    min-height: 520px
+  }
 }
 
 @media screen and (max-width: 1200px) {
@@ -60,7 +64,11 @@
 @media screen and (max-width: 600px) {
   .container-article {
     .slick-track {
-      min-height: 395px;
+      min-height: 420px;
+    }
+
+    .slick-slide {
+      min-height: 450px
     }
   }
 }
