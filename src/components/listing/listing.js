@@ -121,14 +121,21 @@ const ListingProjects = (props) => {
             <Grid item xs={12}>
               <div className='container-reminder'>
                 <Grid container spacing={2} className='container-grid-remind'>
-                  <Grid item xs={12} md={7} className='container-text-remind'><img src="/images/ic_calendar.webp" alt="ic_calendar" /> <Typography component='p' className='text-time'>{listingAt && days} Hari : {listingAt && hours} Jam</Typography></Grid>
-                  <Grid item xs={12} md={5} className='container-btn-remind'><Button variant="contained" data-paperform-id={dataListing?.paperform_title} data-popup-button="1" className='btn-remind'><NotificationsNoneIcon className='icon-remind' style={{ marginRight: '5px' }} /> <span style={{ marginTop: '2px' }}>REMIND ME</span></Button></Grid>
+                  {
+                    dataListing.hide_schedule ?
+                      <Grid item xs={12} className='container-btn-remind' sx={{ textAlign: 'center' }} > <Button variant="contained" data-paperform-id={dataListing?.paperform_title} data-popup-button="1" className='btn-remind'><NotificationsNoneIcon className='icon-remind' style={{ marginRight: '5px' }} /> <span style={{ marginTop: '2px' }}>REMIND ME</span></Button></Grid>
+                      :
+                      <>
+                        <Grid item xs={12} md={7} className='container-text-remind' sx={{ textAlign: 'left' }}><img src="/images/ic_calendar.webp" alt="ic_calendar" /> <Typography component='p' className='text-time'>{listingAt && days} Hari : {listingAt && hours} Jam</Typography></Grid>
+                        <Grid item xs={12} md={5} className='container-btn-remind'><Button variant="contained" data-paperform-id={dataListing?.paperform_title} data-popup-button="1" className='btn-remind'><NotificationsNoneIcon className='icon-remind' style={{ marginRight: '5px' }} /> <span style={{ marginTop: '2px' }}>REMIND ME</span></Button></Grid>
+                      </>
+                  }
                 </Grid>
               </div>
             </Grid>
           </Grid>
         </Container>
-      </div>
+      </div >
     </>
   )
 }

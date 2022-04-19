@@ -5,6 +5,7 @@ import ProjectDetail from "../../components/ProjectDetail/ProjectDetail"
 
 const DetailProjects = (props) => {
   const [dataListing, setDataListing] = useState('')
+  const [dataProject, setdataProject] = useState('')
   const [codeSaham, setCodeSaham] = useState('')
   const [listingAt, setListingAt] = useState(null)
 
@@ -17,6 +18,7 @@ const DetailProjects = (props) => {
     if (dataListing) {
       dataListing[0].map((data, i) => {
         if (codeSaham === data.attributes.currency.toUpperCase()) {
+          setdataProject(data.attributes)
           let listingAt = new Date(data.attributes.listing_at).getTime()
           setListingAt(listingAt)
         }
@@ -32,14 +34,20 @@ const DetailProjects = (props) => {
       })
   }
 
+  const showProject = () => {
+    if (dataProject.hide_schedule) {
+      return <ListingProjects codeSaham={props.params.code} />
+    } else if (listingAt > Date.now()) {
+      return <ListingProjects codeSaham={props.params.code} />
+    } else {
+      return <ProjectDetail codeSaham={props.params.code} />
+    }
+  }
+
   return (
     <>
       <Layout>
-        {listingAt > Date.now() ?
-          <ListingProjects codeSaham={props.params.code} />
-          :
-          <ProjectDetail codeSaham={props.params.code} />
-        }
+        {showProject()}
       </Layout>
     </>
   )
