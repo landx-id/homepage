@@ -3,7 +3,7 @@ import { Card, Grid, Typography } from '@mui/material'
 import './CardListing.scss'
 
 
-const CardListing = ({ data, timeUp }) => {
+const CardListing = ({ data, timeUp, dataCardListing }) => {
   const [days, setDays] = useState('')
   const [hours, setHours] = useState('')
 
@@ -26,7 +26,13 @@ const CardListing = ({ data, timeUp }) => {
               <img src="/images/soon-listing.webp" alt="soon listing" className='listing-soon' />
               <div className="text-contianer">
                 <Typography className="text-time" componen='h2'>
-                  {days} Hari : {hours} Jam
+                  {dataCardListing.hide_schedule ?
+                    ''
+                    :
+                    <>
+                      {days} Hari : {hours} Jam
+                    </>
+                  }
                 </Typography>
                 <Typography className="text-read-more" componen='h2'>
                   Pelajari Lebih Lanjut

@@ -250,9 +250,10 @@ const IndexPage = () => {
                     {dataListing[0] && dataListing[0].map((data, i) => {
                       if (data !== undefined && data !== null && i >= 0) {
                         let listingAt = new Date(data.attributes.listing_at).getTime()
+                        let dataCardListing = data.attributes
                         let now = Date.now()
                         if (listingAt > now) {
-                          return <CardListing data={data.attributes} timeUp={listingAt - Date.now()} />
+                          return <CardListing data={data.attributes} dataCardListing={dataCardListing} timeUp={listingAt - Date.now()} />
                         }
                       }
                     })}
