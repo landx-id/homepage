@@ -53,8 +53,13 @@ const ProjectDetails = props => {
   const [codeProject, setCodeProject] = useState("")
   const [dataListing, setDataListing] = useState("")
   const [loadProjects, setLoadProjects] = useState(true)
+<<<<<<< HEAD
   const [nameProject, setNameProject] = useState()
   const [metaDesc, setMetaDesc] = useState()
+=======
+  const [nameProject, setNameProject] = useState();
+  const [metaDesc, setMetaDesc] = useState();
+>>>>>>> 981ecdc (handle loading)
   const [isLoading, setIsLoading] = useState(true)
 
   const cardProject = {
