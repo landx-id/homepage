@@ -1,15 +1,14 @@
-
-import Cookies from 'universal-cookie';
+import Cookies from "universal-cookie"
 
 // selalu update versiBuild + 1 agar otomatis hard refresh
 let versiBuild = 53
-const cookies = new Cookies();
+const cookies = new Cookies()
 
 export function SendVersiBuild() {
-  let oldVersi = cookies.get('versi-build')
+  let oldVersi = cookies.get("versi-build")
 
   if (versiBuild !== Number(oldVersi)) {
-    cookies.set('versi-build', 1)
+    cookies.set("versi-build", 1)
   }
 
   if (versiBuild !== Number(oldVersi)) {
@@ -18,6 +17,6 @@ export function SendVersiBuild() {
 }
 
 export function ForceClearCache() {
-  cookies.set('versi-build', versiBuild)
+  cookies.set("versi-build", versiBuild)
   window.location.reload(true)
 }
