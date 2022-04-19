@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Container, Button, Grid, Typography } from '@mui/material';
+import { Container, Button, Grid, Typography, CircularProgress } from '@mui/material';
 import { navigate } from "gatsby";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
@@ -20,6 +20,7 @@ const ListingProjects = (props) => {
   const [imgListing, setImgListing] = useState(true)
   const [nameProject, setNameProject] = useState();
   const [metaDesc, setMetaDesc] = useState();
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -40,7 +41,7 @@ const ListingProjects = (props) => {
             setDataListing(data.attributes)
           }
         })
-      })
+      }, setIsLoading(false))
   }
 
   useEffect(() => {
@@ -116,7 +117,10 @@ const ListingProjects = (props) => {
               <Typography component="h2" className='title-section'>Segera Listing</Typography>
             </Grid>
             <Grid item xs={12}>
-              {dataListing && <div className='text-description' dangerouslySetInnerHTML={{ __html: dataListing.description }} />}
+              {isLoading ?
+                <CircularProgress color="success" />
+                :
+                <div className='text-description' dangerouslySetInnerHTML={{ __html: dataListing.description }} />}
             </Grid>
             <Grid item xs={12}>
               <div className='container-reminder'>

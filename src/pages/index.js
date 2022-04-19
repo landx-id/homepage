@@ -252,7 +252,7 @@ const IndexPage = () => {
                         let listingAt = new Date(data.attributes.listing_at).getTime()
                         let now = Date.now()
                         if (listingAt > now) {
-                          return <CardListing data={data.attributes} timeUp={listingAt - Date.now()} />
+                          return <CardListing data={data.attributes} timeUp={listingAt - Date.now()} key={i} />
                         }
                       }
                     })}

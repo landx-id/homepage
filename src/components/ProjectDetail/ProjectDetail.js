@@ -36,6 +36,7 @@ const ProjectDetails = (props) => {
   const [loadProjects, setLoadProjects] = useState(true)
   const [nameProject, setNameProject] = useState();
   const [metaDesc, setMetaDesc] = useState();
+  const [isLoading, setIsLoading] = useState(true)
 
   const cardProject = {
     dots: true,
@@ -72,7 +73,7 @@ const ProjectDetails = (props) => {
 
   useEffect(() => {
     handleEndDay()
-  }, [dataProject.launchProgress])
+  }, [dataProject?.launchProgress])
 
   useEffect(() => {
     FetchIDProjetDetail('https://api.landx.id/encode_currency_id', codeProject).then(data => {
