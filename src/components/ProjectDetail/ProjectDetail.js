@@ -12,6 +12,7 @@ import CarouselSingleProject from "../Carousel/CarouselSingleProject/CarouselSin
 import CardTitleSection from "../Card/CardTitleSection/CardTitleSection";
 import CardListing from "../Card/CardListing/CardListing";
 import CardProject from "../Card/CardProject/CardProject";
+import SectionFAQ from "../SectionFAQ/SectionFAQ";
 
 
 
@@ -334,7 +335,7 @@ const ProjectDetails = (props) => {
         </Grid>
       </Container>
       <hr style={{ marginTop: `3rem`, marginBottom: `3rem` }} />
-      <section>
+      {/* <section>
         <Container id='ongoing-projects' className='container-ongoing-projects pt-40'>
           <CardTitleSection title='Proyek Lainnya' />
           {loadProjects
@@ -366,6 +367,13 @@ const ProjectDetails = (props) => {
               }
             </>
           }
+        </Container>
+      </section> */}
+
+      <section>
+        <Container id='ongoing-projects' className='container-ongoing-projects pt-40'>
+          <CardTitleSection title='FAQ' />
+          <SectionFAQ />
         </Container>
       </section>
     </>
