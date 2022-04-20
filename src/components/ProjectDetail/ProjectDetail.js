@@ -27,10 +27,17 @@ import { MobilePDFReader } from "react-read-pdf"
 import Seo from "../../components/seo/seo"
 import CarouselSingleProject from "../Carousel/CarouselSingleProject/CarouselSingleProject"
 
+<<<<<<< HEAD
 import CardTitleSection from "../Card/CardTitleSection/CardTitleSection"
 import CardListing from "../Card/CardListing/CardListing"
 import CardProject from "../Card/CardProject/CardProject"
 import SectionFAQ from "../SectionFAQ/SectionFAQ"
+=======
+import CardTitleSection from "../Card/CardTitleSection/CardTitleSection";
+import CardListing from "../Card/CardListing/CardListing";
+import CardProject from "../Card/CardProject/CardProject";
+import SectionFAQ from "../SectionFAQ/SectionFAQ";
+>>>>>>> b0df9c4 (template video)
 
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
@@ -488,11 +495,16 @@ const ProjectDetails = props => {
       </section> */}
 
       <section>
+<<<<<<< HEAD
         <Container
           id="ongoing-projects"
           className="container-ongoing-projects pt-40"
         >
           <CardTitleSection title="FAQ" />
+=======
+        <Container id='ongoing-projects' className='container-ongoing-projects pt-40'>
+          <CardTitleSection title='FAQ' />
+>>>>>>> b0df9c4 (template video)
           <SectionFAQ />
         </Container>
       </section>
