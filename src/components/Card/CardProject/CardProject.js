@@ -70,7 +70,7 @@ const CardProject = ({ data }) => {
                       <img src="/images/habis-terjual.webp" alt="sold out" style={{ position: 'absolute', left: '-2px', top: '-2px' }} />
                       :
                       ''}
-                    <img src={`https://thumbor.landx.id/unsafe/330x195/${img}`} style={{ height: '195px', width: '100%' }} alt={`Miliki bisnis ${nameProject[0]} cuma dengan 1 jutaan aja`} title={`Cara jadi owner bisnis ${nameProject[0]} hanya dengan modal 1 juta. Temukan bisnis terbaik dari berbagai sektor mulai dari fnb, jasa, ritel dan berbagai bisnis lainnya hanya di landx`} className='c-pointer' onClick={() => navigate(`/project/${data.token.symbol.toLowerCase()}`)} onLoad={() => setLoadImg(false)} />
+                    <img src={`https://thumbor.landx.id/unsafe/330x195/${img}%3Fversion%3D1`} style={{ height: '195px', width: '100%' }} alt={`Miliki bisnis ${nameProject[0]} cuma dengan 1 jutaan aja`} title={`Cara jadi owner bisnis ${nameProject[0]} hanya dengan modal 1 juta. Temukan bisnis terbaik dari berbagai sektor mulai dari fnb, jasa, ritel dan berbagai bisnis lainnya hanya di landx`} className='c-pointer' onClick={() => navigate(`/project/${data.token.symbol.toLowerCase()}`)} onLoad={() => setLoadImg(false)} />
                   </div>
                 )
               })
