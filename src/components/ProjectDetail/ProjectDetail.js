@@ -54,11 +54,7 @@ const ProjectDetails = props => {
   const [dataListing, setDataListing] = useState("")
   const [loadProjects, setLoadProjects] = useState(true)
   const [nameProject, setNameProject] = useState()
-<<<<<<< HEAD
   const [metaDesc, setMetaDesc] = useState()\
-=======
-  const [metaDesc, setMetaDesc] = useState()
->>>>>>> d90eeda ([FIX] handle size video tutorial faq)
   const [isLoading, setIsLoading] = useState(true)
 
   const cardProject = {
