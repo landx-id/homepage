@@ -54,7 +54,11 @@ const ProjectDetails = props => {
   const [dataListing, setDataListing] = useState("")
   const [loadProjects, setLoadProjects] = useState(true)
   const [nameProject, setNameProject] = useState()
+<<<<<<< HEAD
   const [metaDesc, setMetaDesc] = useState()\
+=======
+  const [metaDesc, setMetaDesc] = useState()
+>>>>>>> d90eeda ([FIX] handle size video tutorial faq)
   const [isLoading, setIsLoading] = useState(true)
 
   const cardProject = {
@@ -483,8 +487,11 @@ const ProjectDetails = props => {
       </section> */}
 
       <section>
-        <Container id='ongoing-projects' className='container-ongoing-projects pt-40'>
-          <CardTitleSection title='FAQ' />
+        <Container
+          id="ongoing-projects"
+          className="container-ongoing-projects pt-40"
+        >
+          <CardTitleSection title="FAQ" />
           <SectionFAQ />
         </Container>
       </section>
