@@ -3,6 +3,18 @@
         overflow: scroll;
     }
 
+    .MuiAccordion-root{
+        margin-bottom: 24px;
+        border-radius: 14px;
+    }
+    .MuiAccordion-root:before{
+        display: none;
+    }
+
+    .text-question{
+        font-weight: bold;
+    }
+
     .tutorial-faq{
         width: 390px;
         height: 693px;

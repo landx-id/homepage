@@ -53,7 +53,7 @@ function AccordionTutorial() {
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography>Accordion 1</Typography>
+          <Typography className="text-question">Pertanyaan 1</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
@@ -68,7 +68,7 @@ function AccordionTutorial() {
           aria-controls="panel2a-content"
           id="panel2a-header"
         >
-          <Typography>Accordion 2</Typography>
+          <Typography className="text-question">Pertanyaan 2</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
