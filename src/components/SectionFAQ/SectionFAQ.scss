@@ -1,0 +1,35 @@
+.container-faq{
+    .MuiTabs-flexContainer{
+        overflow: scroll;
+    }
+
+    .tutorial-faq{
+        width: 390px;
+        height: 693px;
+        margin-top: 16px;
+    }
+}
+
+@media only screen and (max-width: 424px) {
+    .container-faq{    
+        .tutorial-faq{
+            width: 320px;
+        }
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .container-faq{    
+        .tutorial-faq{
+            width: 285px;
+        }
+    }
+}
+
+@media only screen and (max-width: 330px) {
+    .container-faq{    
+        .tutorial-faq{
+            width: 260px;
+        }
+    }
+}
