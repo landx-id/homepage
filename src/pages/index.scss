@@ -294,6 +294,16 @@
   }
 }
 
+@media screen and (max-width: 430px) {
+  .container-ongoing-projects {
+    .container-card-projects{
+      .slick-track {
+        min-height: 580px;
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 360px) {
   .container-ongoing-projects {
     .slick-slide {
