@@ -53,13 +53,9 @@ function AccordionTutorial() {
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-<<<<<<< HEAD
           <Typography className="text-question">
             Kenapa Pengguna Wajib Melakukan Verifikasi KYC?
           </Typography>
-=======
-          <Typography className="text-question">Pertanyaan 1</Typography>
->>>>>>> 91726dd (custom style accordion)
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
@@ -93,13 +89,9 @@ function AccordionTutorial() {
           aria-controls="panel2a-content"
           id="panel2a-header"
         >
-<<<<<<< HEAD
           <Typography className="text-question">
             Apa Penyebab Verifikasi KYC Ditolak?
           </Typography>
-=======
-          <Typography className="text-question">Pertanyaan 2</Typography>
->>>>>>> 91726dd (custom style accordion)
         </AccordionSummary>
         <AccordionDetails>
           <Typography>

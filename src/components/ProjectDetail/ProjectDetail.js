@@ -54,7 +54,7 @@ const ProjectDetails = props => {
   const [dataListing, setDataListing] = useState("")
   const [loadProjects, setLoadProjects] = useState(true)
   const [nameProject, setNameProject] = useState()
-  const [metaDesc, setMetaDesc] = useState()\
+  const [metaDesc, setMetaDesc] = useState()
   const [isLoading, setIsLoading] = useState(true)
 
   const cardProject = {
