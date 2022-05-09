@@ -1,8 +1,4 @@
 .container-faq{
-    .MuiTabs-flexContainer{
-        overflow: scroll;
-    }
-
     .MuiAccordion-root{
         margin-bottom: 24px;
         border-radius: 3px;
@@ -19,6 +15,12 @@
         width: 390px;
         height: 693px;
         margin-top: 16px;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .MuiTabs-flexContainer{
+        overflow: scroll;
     }
 }
 
