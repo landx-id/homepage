@@ -44,7 +44,9 @@ module.exports = {
         siteUrl: `https://landx.id/`,
       },
       headers: {
-        "/kinerja-penerbit": [],
+        "/kinerja-penerbit/*": [
+          'X-Frame-Options: none'
+        ],
       },
     },
     {
