@@ -43,6 +43,11 @@ module.exports = {
       options: {
         siteUrl: `https://landx.id/`,
       },
+      headers: {
+        "/*": [
+          'Content-Security-Policy: frame-ancestors',
+        ],
+      },
     },
     {
       resolve: `gatsby-plugin-manifest`,
