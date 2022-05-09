@@ -9,7 +9,6 @@ const kinerjaPenerbit = () => {
         frameBorder="0"
         className="iframe-full"
         allowFullScreen
-        target="_blank"
       ></iframe>
     </div>
   )
