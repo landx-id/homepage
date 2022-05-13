@@ -68,13 +68,13 @@ const CardArticel = () => {
                         {data.category}
                       </Typography>
                       <Typography variant="h5" component="h2" className='card-title'>
-                        {data.title}
+                        {data.title.substr(0, 52)}...
                       </Typography>
                       <div>
                         {data.blogImg && <img src={`https://thumbor.landx.id/unsafe/330x195/${data.blogImg}`} alt={data.title} className='card-img' style={{ margin: '0 auto 16px' }} />}
                       </div>
                       <Typography sx={{ mb: 1.5 }} color="text.secondary" className="card-description">
-                        {data.desc}
+                        {data.desc.substr(0, 200)}...
                       </Typography>
                       <Link href={data.link} className="text-link" style={{ marginTop: '16px' }}>
                         <Button variant="text" size="small">SELENGKAPNYA DI BLOG</Button>
