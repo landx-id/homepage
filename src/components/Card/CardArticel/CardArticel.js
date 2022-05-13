@@ -68,7 +68,7 @@ const CardArticel = () => {
                         {data.category}
                       </Typography>
                       <Typography variant="h5" component="h2" className='card-title'>
-                        {data.title.substr(0, 52)}...
+                        {data.title.substr(0, 53)}...
                       </Typography>
                       <div>
                         {data.blogImg && <img src={`https://thumbor.landx.id/unsafe/330x195/${data.blogImg}`} alt={data.title} className='card-img' style={{ margin: '0 auto 16px' }} />}
