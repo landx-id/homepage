@@ -22,6 +22,7 @@ import CardTitleSection from "../components/Card/CardTitleSection/CardTitleSecti
 import CardLandxWork from "../components/Card/CardLandxWork/CardLandxWork"
 import CardValueInvestor from "../components/Card/CardValueInvestor/CardValueInvestor"
 import CardListing from "../components/Card/CardListing/CardListing"
+import KinerjaAssets from "../components/Section/KinerjaAssets/KinerjaAssets"
 
 import CTAWhatsapp from "../components/CTAWhatsapp/CTAWhatsapp"
 
@@ -30,6 +31,7 @@ import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import "./index.scss"
+import "./utils.scss"
 
 const IndexPage = () => {
   const [widthWindows, setWidthWindows] = useState("")
@@ -509,12 +511,17 @@ const IndexPage = () => {
                   img="../images/icon_capital_gain.webp"
                   alt="Potensi return berupa capital gain saat berinvestasi lewat securities crowdfunding"
                   titleImg="Mendapatkan keuntungan berupa capital gain saat berinvestasi "
-                  title="Keuntungan Capital Gain"
+                  title="Keuntungan Imbal Hasil"
                   content="Dapatkan keuntungan dari kenaikan harga saham ketika dijual"
                 />
               </Grid>
             )}
           </Container>
+        </section>
+
+        {/* section kinerja assets */}
+        <section>
+          <KinerjaAssets desc="BARU! Sekarang kamu bisa melihat perkembangan dan kinerja bisnis yang kamu danai di LandX" />
         </section>
 
         <section
