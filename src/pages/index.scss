@@ -131,6 +131,12 @@
 }
 
 .container-how-it-works {
+  background: #F8F8F8;
+  min-height: 636px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   .slick-list {
     height: 360px;
   }
@@ -204,6 +210,14 @@
 .video-frame {
   width: auto;
   height: 310px;
+}
+
+// section kinerja assets
+.section-kinerja-asset {
+  min-height: 580px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media screen and (max-width: 1200px) {

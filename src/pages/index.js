@@ -22,7 +22,7 @@ import CardTitleSection from "../components/Card/CardTitleSection/CardTitleSecti
 import CardLandxWork from "../components/Card/CardLandxWork/CardLandxWork"
 import CardValueInvestor from "../components/Card/CardValueInvestor/CardValueInvestor"
 import CardListing from "../components/Card/CardListing/CardListing"
-import KinerjaAssets from "../components/Section/KinerjaAssets/KinerjaAssets"
+import CardKinerjaAssets from "../components/Card/CardKinerjaAssets/CardKinerjaAssets"
 
 import CTAWhatsapp from "../components/CTAWhatsapp/CTAWhatsapp"
 
@@ -443,8 +443,8 @@ const IndexPage = () => {
           </Container>
         </section>
 
-        <section>
-          <Container id="how-it-works" className="container-how-it-works pt-40">
+        <section className="container-how-it-works pt-40">
+          <Container id="how-it-works">
             <CardTitleSection title="Cara Kerja LandX" />
 
             {widthWindows < 1200 ? (
@@ -520,8 +520,38 @@ const IndexPage = () => {
         </section>
 
         {/* section kinerja assets */}
-        <section>
-          <KinerjaAssets desc="BARU! Sekarang kamu bisa melihat perkembangan dan kinerja bisnis yang kamu danai di LandX" />
+        <section className="section-kinerja-asset">
+          <Container>
+            <CardTitleSection title="Pantau Perkembangan Project Bisnis Kamu Secara Real Time" />
+            <div className="utils font-sm-17 line-height-sm-24 font-20 line-height-32 color-black-700 text-center mb-40">
+              <Typography variant="p">BARU! Sekarang kamu bisa melihat perkembangan dan kinerja bisnis yang kamu danai di LandX</Typography>
+            </div>
+
+            <Container>
+              <Grid container spacing={4}>
+                <Grid item xs={12} md={4}>
+                  <CardKinerjaAssets cardDesc="Pantau perkembangan project bisnis yang kamu miliki"></CardKinerjaAssets>
+                </Grid>
+                <Grid item xs={12} md={4}>
+                  <CardKinerjaAssets cardDesc="Pantau kinerja bisnis dan laporan keuangan"></CardKinerjaAssets>
+                </Grid>
+                <Grid item xs={12} md={4}>
+                  <CardKinerjaAssets cardDesc="Dapatkan informasi jadwal pembagian dividen project bisnismu"></CardKinerjaAssets>
+                </Grid>
+              </Grid>
+
+              <div className="utils flex center-center mt-48 flex-sm-direction-column">
+                <Button variant="contained" color="success" href="https://kinerja.landx.id/" className="utils mr-24 m-sm-0 min-width-sm-245 mb-sm-16 font-w-bold">
+                  Buka Kinerja Aset
+                </Button>
+
+                <Button variant="outlined" color="success" href="/kinerja-penerbit" className="utils min-width-sm-245">
+                  Pelajari Selengkapnya
+                </Button>
+              </div>
+
+            </Container>
+          </Container>
         </section>
 
         <section

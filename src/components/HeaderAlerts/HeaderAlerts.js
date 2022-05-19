@@ -16,6 +16,14 @@ const HeaderAlerts = () => {
 
   }, [windowDimension])
 
+  useEffect(() => {
+    setTimeout(() => {
+      setOpen(false)
+    }, 30000);
+
+  }, [])
+
+
   const handleAlert = (windowDimension) => {
     if (windowDimension > 1170) {
       return <span style={{ display: 'flex', alignItems: 'center' }}>Hati-hati dengan segala jenis penipuan. LandX tidak memiliki grup Telegram! Akun resmi Customer Service LandX adalah <span style={{ margin: '3px 5px 0' }}><WhatsAppIcon /></span> 0811 9562 878</span>
@@ -28,7 +36,7 @@ const HeaderAlerts = () => {
   return (
     <>
       <Collapse in={open}>
-        <Alert sx={{ height: '50px', alignItems: 'center', fontSize: '16px' }} variant="filled" severity="info" onClose={() => { setOpen(false) }}>
+        <Alert sx={{ height: '50px', alignItems: 'center', fontSize: '16px', justifyContent: 'center' }} variant="filled" severity="info">
           {handleAlert(windowDimension)}
         </Alert>
       </Collapse>
