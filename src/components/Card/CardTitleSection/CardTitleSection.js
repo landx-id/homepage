@@ -8,7 +8,7 @@ const CardTitleSection = ({ title }) => {
     <div className='container-title-section'>
       <Grid container className='title-center'>
         <Grid item>
-          <h2 className='title-section'>
+          <h2 className='title-section utils font-sm-32 line-height-sm-48'>
             {title}
           </h2>
           <hr className='divider' />
