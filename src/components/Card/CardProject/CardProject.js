@@ -105,7 +105,7 @@ const CardProject = ({ data }) => {
 
             <Grid container sx={{ display: 'flex', justifyContent: 'space-between' }} onClick={() => navigate(`/project/${data.token.symbol.toLowerCase()}`)}>
               <Grid item xs={9} className='card-price'>
-                {toIDR(data.launchProgress * data.totalPurchasePrice)}
+                {toIDR(CalculateRemainingDays(data.settlementDate) < 0 ? 1 * data.totalPurchasePrice : data.launchProgress * data.totalPurchasePrice)}
               </Grid>
               <Grid item xs={3} className='card-price' onClick={() => navigate(`/project/${data.token.symbol.toLowerCase()}`)}>
                 {endDay}
