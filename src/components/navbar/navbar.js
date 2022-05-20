@@ -68,13 +68,13 @@ const ResponsiveAppBar = () => {
                         </Typography>
                       </MenuItem>
                     </AnchorLink>
-                    <AnchorLink to='/#how-it-works' className='text-link'>
+                    <Link to='/kinerja-penerbit' className='text-link'>
                       <MenuItem>
                         <Typography textAlign="center">
-                          Cara Kerja
+                          Kinerja Penerbit
                         </Typography>
                       </MenuItem>
-                    </AnchorLink>
+                    </Link>
                     <Link to='/contact' className='text-link'>
                       <MenuItem>
                         <Typography textAlign="center">
@@ -137,6 +137,14 @@ const ResponsiveAppBar = () => {
                                       className='text-link-company'>
                                       <MenuItem onClick={handleClose} className='menulink'>Syarat & Ketentuan</MenuItem>
                                     </Link>
+                                    <hr />
+                                    <AnchorLink to='/#how-it-works' className='text-link'>
+                                      <MenuItem>
+                                        <Typography textAlign="center">
+                                          Cara Kerja
+                                        </Typography>
+                                      </MenuItem>
+                                    </AnchorLink>
                                     <hr />
                                     <Link to='/privacy-policy' className='text-link-company'>
                                       <MenuItem onClick={handleClose} className='menulink'>Kebijakan Privasi</MenuItem>
@@ -211,13 +219,13 @@ const ResponsiveAppBar = () => {
                 </AnchorLink>
               </List>
               <List component="nav" aria-label="mailbox folders">
-                <AnchorLink to='/#how-it-works' className='text-link'>
+                <Link to='/kinerja-penerbit' className='text-link'>
                   <MenuItem>
                     <Typography textAlign="center">
-                      Cara Kerja
+                      Kinerja Penerbit
                     </Typography>
                   </MenuItem>
-                </AnchorLink>
+                </Link>
               </List>
               <List component="nav" aria-label="mailbox folders">
                 <Link to='/contact' className='text-link'>
@@ -266,6 +274,14 @@ const ResponsiveAppBar = () => {
                     className='text-link'>
                     <MenuItem onClick={handleClose} className='menulink'>Syarat & Ketentuan</MenuItem>
                   </Link>
+                  <hr />
+                  <AnchorLink to='/#how-it-works' className='text-link'>
+                    <MenuItem>
+                      <Typography textAlign="center">
+                        Cara Kerja
+                      </Typography>
+                    </MenuItem>
+                  </AnchorLink>
                   <hr />
                   <Link to='/privacy-policy' className='text-link'>
                     <MenuItem onClick={handleClose} className='menulink'>Kebijakan Privasi</MenuItem>

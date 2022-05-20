@@ -25,11 +25,11 @@ const HeaderAlerts = () => {
 
 
   const handleAlert = (windowDimension) => {
-    if (windowDimension > 1170) {
-      return <span style={{ display: 'flex', alignItems: 'center' }}>Hati-hati dengan segala jenis penipuan. LandX tidak memiliki grup Telegram! Akun resmi Customer Service LandX adalah <span style={{ margin: '3px 5px 0' }}><WhatsAppIcon /></span> 0811 9562 878</span>
+    if (windowDimension > 1336) {
+      return <span style={{ display: 'flex', alignItems: 'center' }}>Hati-hati dengan segala jenis penipuan. LandX tidak memiliki grup Telegram! Akun resmi Customer Service LandX adalah <span style={{ margin: '3px 5px 0' }}><WhatsAppIcon /></span> 0811 9562 878 dan <span style={{ margin: '3px 5px 0' }}><WhatsAppIcon /></span> 0813 813 8186 2878</span>
     }
     else {
-      return <span style={{ display: 'flex', alignItems: 'center' }}><marquee>Hati-hati dengan segala jenis penipuan. LandX tidak memiliki grup Telegram! Akun resmi Customer Service LandX adalah <span style={{ margin: '3px 5px 0' }}><WhatsAppIcon /></span> 0811 9562 878</marquee></span>
+      return <span style={{ display: 'flex', alignItems: 'center' }}><marquee>Hati-hati dengan segala jenis penipuan. LandX tidak memiliki grup Telegram! Akun resmi Customer Service LandX adalah <span style={{ margin: '3px 5px 0' }}><WhatsAppIcon /></span> 0811 9562 878 dan <span style={{ margin: '3px 5px 0' }}><WhatsAppIcon /></span> 0813 813 8186 2878</marquee></span>
     }
   }
 
