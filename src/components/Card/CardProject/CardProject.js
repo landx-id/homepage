@@ -120,7 +120,7 @@ const CardProject = ({ data }) => {
               </Grid>
             </Grid>
 
-            <LinearProgress variant="determinate" value={data.launchProgress * 100} onClick={() => navigate(`/project/${data.token.symbol.toLowerCase()}`)} />
+            <LinearProgress variant="determinate" value={CalculateRemainingDays(data.settlementDate) < 0 ? 100 : data.launchProgress * 100} onClick={() => navigate(`/project/${data.token.symbol.toLowerCase()}`)} />
 
             <Grid container sx={{ display: 'flex', justifyContent: 'space-between' }} onClick={() => navigate(`/project/${data.token.symbol.toLowerCase()}`)}>
               <Grid item xs={6} className='card-text-detail'>
