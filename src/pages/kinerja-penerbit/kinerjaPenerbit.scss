@@ -1,4 +1,26 @@
-.iframe-full {
-    width: 100%;
-    min-height: 100vh;
+.page-kinerja-penerbit {
+    .header-kinerja-penerbit {
+        min-height: 100vh;
+        background-position: bottom;
+    }
+
+    .bg-kinerja-penerbit {
+        background-image: url('/assets/imgs/bg-penerbit.webp');
+        background-repeat: no-repeat;
+        background-position: bottom;
+        background-size: contain;
+        z-index: 0;
+        width: 100%;
+        height: 100%;
+        margin-top: 100px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .page-kinerja-penerbit {
+
+        .bg-kinerja-penerbit {
+            background-image: url('/assets/imgs/bg-sm-penerbit.webp');
+        }
+    }
 }
