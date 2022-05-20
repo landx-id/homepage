@@ -251,8 +251,7 @@ const ProjectDetails = props => {
             />
             <Grid container>
               <Grid item xs={6} className="text-green-price" component="h3">
-                {dataProject &&
-                  toIDR(CalculateRemainingDays(dataProject.settlementDate) < 0 ? 1 * dataProject.totalPurchasePrice : dataProject.launchProgress * dataProject.totalPurchasePrice)}
+                {dataProject && toIDR(dataProject.launchProgress * dataProject.totalPurchasePrice)}
               </Grid>
               <Grid item xs={6} className="text-green-price" component="h3">
                 {dataProject && endDay}
@@ -268,7 +267,7 @@ const ProjectDetails = props => {
             </Grid>
             <LinearProgress
               variant="determinate"
-              value={CalculateRemainingDays(dataProject.settlementDate) < 0 ? 100 : dataProject.launchProgress * 100}
+              value={dataProject.launchProgress * 100}
               className="progress-bar"
             />
             <Grid container>

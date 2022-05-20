@@ -16,7 +16,6 @@ const CardProject = ({ data }) => {
 
   useEffect(() => {
     handleEndDay()
-
   }, [data?.launchProgress])
 
   useEffect(() => {
@@ -67,8 +66,12 @@ const CardProject = ({ data }) => {
               {data.previewImages.length > 0 && data.previewImages.map((img, i) => {
                 return (
                   <div style={{ height: '195px', position: 'relative' }} key={i}>
-                    {data.launchProgress === 1 || CalculateRemainingDays(data.settlementDate) < 0 ?
+                    {data.launchProgress === 1 ?
                       <img src="/images/habis-terjual.webp" alt="sold out" style={{ position: 'absolute', left: '-2px', top: '-2px' }} />
+                      :
+                      ''}
+                    {data.launchProgress < 1 && CalculateRemainingDays(data.settlementDate) < 0 ?
+                      <img src="/assets/imgs/pendanaan-selesai.webp" alt="sold out" style={{ position: 'absolute', left: '-66px', top: '-64px', maxWidth: '243px' }} />
                       :
                       ''}
                     <img src={`https://thumbor.landx.id/unsafe/330x195/${img}%3Fversion%3D1`} style={{ height: '195px', width: '100%' }} alt={`Miliki bisnis ${nameProject[0]} cuma dengan 1 jutaan aja`} title={`Cara jadi owner bisnis ${nameProject[0]} hanya dengan modal 1 juta. Temukan bisnis terbaik dari berbagai sektor mulai dari fnb, jasa, ritel dan berbagai bisnis lainnya hanya di landx`} className='c-pointer' onClick={() => navigate(`/project/${data.token.symbol.toLowerCase()}`)} onLoad={() => setLoadImg(false)} />
@@ -105,7 +108,7 @@ const CardProject = ({ data }) => {
 
             <Grid container sx={{ display: 'flex', justifyContent: 'space-between' }} onClick={() => navigate(`/project/${data.token.symbol.toLowerCase()}`)}>
               <Grid item xs={9} className='card-price'>
-                {toIDR(CalculateRemainingDays(data.settlementDate) < 0 ? 1 * data.totalPurchasePrice : data.launchProgress * data.totalPurchasePrice)}
+                {toIDR(data.launchProgress * data.totalPurchasePrice)}
               </Grid>
               <Grid item xs={3} className='card-price' onClick={() => navigate(`/project/${data.token.symbol.toLowerCase()}`)}>
                 {endDay}
@@ -120,7 +123,7 @@ const CardProject = ({ data }) => {
               </Grid>
             </Grid>
 
-            <LinearProgress variant="determinate" value={CalculateRemainingDays(data.settlementDate) < 0 ? 100 : data.launchProgress * 100} onClick={() => navigate(`/project/${data.token.symbol.toLowerCase()}`)} />
+            <LinearProgress variant="determinate" value={data.launchProgress * 100} onClick={() => navigate(`/project/${data.token.symbol.toLowerCase()}`)} />
 
             <Grid container sx={{ display: 'flex', justifyContent: 'space-between' }} onClick={() => navigate(`/project/${data.token.symbol.toLowerCase()}`)}>
               <Grid item xs={6} className='card-text-detail'>
