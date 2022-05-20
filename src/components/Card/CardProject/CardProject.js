@@ -16,6 +16,7 @@ const CardProject = ({ data }) => {
 
   useEffect(() => {
     handleEndDay()
+
   }, [data?.launchProgress])
 
   useEffect(() => {
@@ -37,7 +38,7 @@ const CardProject = ({ data }) => {
   }, [loadImg])
 
   const handleEndDay = () => {
-    if (data.launchProgress === 1) {
+    if (data.launchProgress === 1 || CalculateRemainingDays(data.settlementDate) < 0) {
       setEndDay(0)
     } else {
       setEndDay(CalculateRemainingDays(data.settlementDate))
@@ -66,7 +67,7 @@ const CardProject = ({ data }) => {
               {data.previewImages.length > 0 && data.previewImages.map((img, i) => {
                 return (
                   <div style={{ height: '195px', position: 'relative' }} key={i}>
-                    {data.launchProgress === 1 ?
+                    {data.launchProgress === 1 || CalculateRemainingDays(data.settlementDate) < 0 ?
                       <img src="/images/habis-terjual.webp" alt="sold out" style={{ position: 'absolute', left: '-2px', top: '-2px' }} />
                       :
                       ''}
@@ -89,7 +90,7 @@ const CardProject = ({ data }) => {
               <Grid item xs={9}>
               </Grid>
               <Grid item xs={3} className='btn-container-buy'>
-                {data.launchProgress < 1 ?
+                {data.launchProgress < 1 && CalculateRemainingDays(data.settlementDate) >= 0 ?
                   <Button variant="contained" className="btn-buy" onClick={() => navigate(`/project/${data.token.symbol.toLowerCase()}`)}>
                     <span className='f-buy'>BELI</span>
                   </Button>

@@ -149,7 +149,7 @@ const ProjectDetails = props => {
   }
 
   const handleEndDay = () => {
-    if (dataProject.launchProgress === 1) {
+    if (dataProject.launchProgress === 1 || CalculateRemainingDays(dataProject.settlementDate) < 0) {
       setEndDay(0)
     } else {
       setEndDay(CalculateRemainingDays(dataProject.settlementDate))
