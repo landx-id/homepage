@@ -270,7 +270,7 @@ const ProjectDetails = props => {
             </Grid>
             <LinearProgress
               variant="determinate"
-              value={dataProject.launchProgress * 100}
+              value={CalculateRemainingDays(dataProject.settlementDate) < 0 ? 100 : dataProject.launchProgress * 100}
               className="progress-bar"
             />
             <Grid container>
