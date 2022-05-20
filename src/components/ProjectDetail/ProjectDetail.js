@@ -252,9 +252,7 @@ const ProjectDetails = props => {
             <Grid container>
               <Grid item xs={6} className="text-green-price" component="h3">
                 {dataProject &&
-                  toIDR(
-                    dataProject.launchProgress * dataProject.totalPurchasePrice
-                  )}
+                  toIDR(CalculateRemainingDays(dataProject.settlementDate) < 0 ? 1 * dataProject.totalPurchasePrice : dataProject.launchProgress * dataProject.totalPurchasePrice)}
               </Grid>
               <Grid item xs={6} className="text-green-price" component="h3">
                 {dataProject && endDay}
