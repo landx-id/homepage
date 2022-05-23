@@ -1,0 +1,12 @@
+.card-kinerja-asset {
+    cursor: pointer;
+    border: 1px solid #CCD7DF;
+
+    &.active {
+        border: 1px solid #2CBE60;
+    }
+
+    &:hover {
+        border: 1px solid #2CBE60;
+    }
+}

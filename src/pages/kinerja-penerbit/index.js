@@ -1,5 +1,6 @@
-import * as React from "react"
+import React, { useState } from "react"
 import { Button, Container, Grid, Typography } from "@mui/material"
+import { StaticImage } from 'gatsby-plugin-image';
 
 import CTAWhatsapp from "../../components/CTAWhatsapp/CTAWhatsapp"
 import Layout from "../../components/layout/layout"
@@ -9,7 +10,34 @@ import CardKinerjaAssets from "../../components/Card/CardKinerjaAssets/CardKiner
 
 import "./kinerjaPenerbit.scss"
 
-const kinerjaPenerbit = () => {
+const KinerjaPenerbit = () => {
+  const [cardActive, setCardActive] = useState({
+    "tutor1": true,
+    "tutor2": false,
+    "tutor3": false,
+    "tutor4": false,
+    "tutor5": false,
+    "tutor6": false,
+    "tutor7": false,
+    "tutor8": false
+  })
+
+  const changePreviewImgs = (tutorCard) => {
+    setCardActive(
+      {
+        ...cardActive,
+        "tutor1": tutorCard === "tutor-1" ? true : false,
+        "tutor2": tutorCard === "tutor-2" ? true : false,
+        "tutor3": tutorCard === "tutor-3" ? true : false,
+        "tutor4": tutorCard === "tutor-4" ? true : false,
+        "tutor5": tutorCard === "tutor-5" ? true : false,
+        "tutor6": tutorCard === "tutor-6" ? true : false,
+        "tutor7": tutorCard === "tutor-7" ? true : false,
+        "tutor8": tutorCard === "tutor-8" ? true : false
+      }
+    )
+  }
+
   return (
     <>
       <CTAWhatsapp />
@@ -43,32 +71,58 @@ const kinerjaPenerbit = () => {
 
                 <Container>
                   <Grid container spacing={4}>
-                    <Grid item xs={12} md={4}>
-                      <CardKinerjaAssets cardDesc="Pantau perkembangan project bisnis yang kamu miliki"></CardKinerjaAssets>
+                    <Grid item xs={12} md={4} className="utils flex center-center">
+                      <Grid container spacing={4}>
+                        <Grid item xs={12}>
+                          <div onClick={() => changePreviewImgs("tutor-1")}>
+                            <CardKinerjaAssets cardDesc="Pantau perkembangan project bisnis yang kamu miliki" cardActive={cardActive.tutor1} />
+                          </div>
+                        </Grid>
+                        <Grid item xs={12}>
+                          <div onClick={() => changePreviewImgs("tutor-2")}>
+                            <CardKinerjaAssets cardDesc="Dapatkan informasi pembagian dividen project bisnismu" cardActive={cardActive.tutor2} />
+                          </div>
+                        </Grid>
+                        <Grid item xs={12}>
+                          <div onClick={() => changePreviewImgs("tutor-3")}>
+                            <CardKinerjaAssets cardDesc="Pantau kinerja bisnis melalui laporan keuangan" cardActive={cardActive.tutor3} />
+                          </div>
+                        </Grid>
+                        <Grid item xs={12}>
+                          <div onClick={() => changePreviewImgs("tutor-4")}>
+                            <CardKinerjaAssets cardDesc="Sampaikan masukan langsung pada manajemen bisnis" cardActive={cardActive.tutor4} />
+                          </div>
+                        </Grid>
+                      </Grid>
                     </Grid>
+
                     <Grid item xs={12} md={4}>
-                      <CardKinerjaAssets cardDesc="Dapatkan informasi pembagian dividen project bisnismu "></CardKinerjaAssets>
+                      <StaticImage src="../../assets/imgs/tutor-penerbit-1.webp" alt="Tutor Kinerja Penerbit" />
                     </Grid>
-                    <Grid item xs={12} md={4}>
-                      <CardKinerjaAssets cardDesc="Pantau kinerja bisnis melalui laporan keuangan "></CardKinerjaAssets>
-                    </Grid>
-                    <Grid item xs={12} md={4}>
-                      <CardKinerjaAssets cardDesc="Sampaikan masukan langsung pada manajemen bisnis"></CardKinerjaAssets>
-                    </Grid>
-                    <Grid item xs={12} md={4}>
-                      <CardKinerjaAssets cardDesc="Pantau perkembangan setiap outlet bisnis"></CardKinerjaAssets>
-                    </Grid>
-                    <Grid item xs={12} md={4}>
-                      <CardKinerjaAssets cardDesc="Lihat histori distribusi pembagian dividen"></CardKinerjaAssets>
-                    </Grid>
-                    <Grid item xs={12} md={4}>
-                      <CardKinerjaAssets cardDesc="Lihat business scorecard setiap bisnis"></CardKinerjaAssets>
-                    </Grid>
-                    <Grid item xs={12} md={4}>
-                      <CardKinerjaAssets cardDesc="Lihat informasi jadwal pasar sekunder"></CardKinerjaAssets>
-                    </Grid>
-                    <Grid item xs={12} md={4}>
-                      <CardKinerjaAssets cardDesc="Lihat liputan bisnis kamu dari media"></CardKinerjaAssets>
+
+                    <Grid item xs={12} md={4} className="utils flex center-center">
+                      <Grid container spacing={4}>
+                        <Grid item xs={12}>
+                          <div onClick={() => changePreviewImgs("tutor-5")}>
+                            <CardKinerjaAssets cardDesc="Pantau perkembangan setiap outlet bisnis" cardActive={cardActive.tutor5} />
+                          </div>
+                        </Grid>
+                        <Grid item xs={12}>
+                          <div onClick={() => changePreviewImgs("tutor-6")}>
+                            <CardKinerjaAssets cardDesc="Lihat business scorecard setiap bisnis" cardActive={cardActive.tutor6} />
+                          </div>
+                        </Grid>
+                        <Grid item xs={12}>
+                          <div onClick={() => changePreviewImgs("tutor-7")}>
+                            <CardKinerjaAssets cardDesc="Lihat informasi jadwal pasar sekunder" cardActive={cardActive.tutor7} />
+                          </div>
+                        </Grid>
+                        <Grid item xs={12}>
+                          <div onClick={() => changePreviewImgs("tutor-8")}>
+                            <CardKinerjaAssets cardDesc="Lihat liputan bisnis kamu dari media" cardActive={cardActive.tutor8} />
+                          </div>
+                        </Grid>
+                      </Grid>
                     </Grid>
                   </Grid>
 
@@ -77,9 +131,9 @@ const kinerjaPenerbit = () => {
                       Buka Kinerja Aset
                     </Button>
                   </div>
-
                 </Container>
               </div>
+
             </Container>
           </section>
         </div>
@@ -89,4 +143,4 @@ const kinerjaPenerbit = () => {
   )
 }
 
-export default kinerjaPenerbit
+export default KinerjaPenerbit
