@@ -18,7 +18,8 @@
 
   .filter-btn {
     font-size: x-small;
-    height: 40px;
+    min-height: 40px;
+    min-width: 100px;
     margin-top: 12px;
     align-content: center;
   }

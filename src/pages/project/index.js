@@ -3,7 +3,7 @@ import { Box, Button, Container, FormControl, Grid, NativeSelect, OutlinedInput,
 import { styled } from '@mui/material/styles';
 import Layout from "../../components/layout/layout"
 import Seo from '../../components/seo/seo';
-import { capitalizeTheFirstLetterOfEachWord, FetchData } from '../../utils/common';
+import { CalculateRemainingDays, capitalizeTheFirstLetterOfEachWord, FetchData } from '../../utils/common';
 import CardProject from '../../components/Card/CardProject/CardProject';
 import { toIDR, fromIDR } from '../../utils/currency';
 
@@ -23,13 +23,8 @@ const ShowAllProject = () => {
   const [category, setCategory] = useState('')
   const [chooseCategory, setchooseCategory] = useState('allCategory')
   const [valSort, setValSort] = useState('settlementDate')
-  const [minHis, setMinHis] = useState(1000000)
-  const [maxHis, setMaxHis] = useState(5000000)
-  const [categoryHis, setCategoryHis] = useState('allCategory')
-  const [valSortHis, setValSortHis] = useState('settlementDate')
   const [widthWindowVal, setWidthWindowVal] = useState(null);
-  const [isSell, setIsSell] = useState([]);
-  const [isSold, setIsSold] = useState([]);
+  const [isLoad, setisLoad] = useState(false)
 
   const BootstrapInput = styled(InputBase)(({ theme }) => ({
     '& .MuiInputBase-root': {
@@ -91,10 +86,6 @@ const ShowAllProject = () => {
   }, [])
 
   useEffect(() => {
-    setDataProjects([...isSell, ...isSold])
-  }, [isSold])
-
-  useEffect(() => {
     if (dataProjects) {
       getCategory()
     }
@@ -124,10 +115,10 @@ const ShowAllProject = () => {
   }, [widthWindowVal])
 
   const getCategory = () => {
-    dataProjects.map(data => {
+    dataProjects?.map(data => {
       if (data.landXProperty !== null) {
-        if (categories !== data.landXProperty.category) {
-          setCategories((prevArr) => [...prevArr, data.landXProperty.category])
+        if (categories !== data.landXProperty?.category) {
+          setCategories((prevArr) => [...prevArr, data.landXProperty?.category])
         }
       }
     })
@@ -140,19 +131,23 @@ const ShowAllProject = () => {
     setValSort('settlementDate')
   }
 
-  const getDataProjects = () => {
-    FetchData('https://api.landx.id/').then(datas => {
+  const getDataProjects = async () => {
+    let sellProject = []
+    let soldProject = []
+
+    await FetchData('https://api.landx.id/').then(datas => {
       datas.data.currencies.map((data) => {
         if (data.landXProperty !== null) {
           if (data.landXProperty['launchProgress'] < 1) {
-            setIsSell((prevData) => [...prevData, data])
+            sellProject.push(data)
           }
           if (data.landXProperty['launchProgress'] === 1) {
-            setIsSold((prevData) => [...prevData, data])
+            soldProject.push(data)
           }
         }
       })
       setLoadingCard(false)
+      setDataProjects([...sellProject, ...soldProject])
     })
   }
 
@@ -193,30 +188,70 @@ const ShowAllProject = () => {
     setMaxPrice(newValue[1])
   }
 
-  const handleFilter = () => {
-    let renderProjects = dataProjects.filter(property => {
-      return (
-        fromIDR(property.landXProperty['initialTokenPrice']) / 10 >= minPrice && fromIDR(property.landXProperty['initialTokenPrice']) / 10 <= maxPrice
-      )
-    })
-    if (chooseCategory !== 'allCategory') {
-      renderProjects = renderProjects.filter(property => {
-        return (
-          !chooseCategory.localeCompare(property.landXProperty["category"])
-        )
+
+  const handleFilter = async () => {
+    setisLoad(true)
+    let projectFilter = []
+    let sellProject = []
+    let soldProject = []
+    let initProject = []
+
+    await FetchData('https://api.landx.id/').then(datas => {
+      datas.data.currencies.map((data) => {
+        if (data.landXProperty !== null) {
+          if (data.landXProperty['launchProgress'] < 1) {
+            sellProject.push(data)
+          }
+          if (data.landXProperty['launchProgress'] === 1) {
+            soldProject.push(data)
+          }
+          initProject = [...sellProject, ...soldProject]
+        }
       })
-    }
-    renderProjects = renderProjects.sort((a, b) => a[valSort] > b[valSort] ? -1 : 1)
+      setLoadingCard(false)
+      setDataProjects(initProject)
+    })
 
-    setDataProjects(renderProjects)
+    initProject?.filter(property => {
+      let priceProject = Number(property.landXProperty.initialTokenPrice)
+      let categoryProject = property.landXProperty.category
 
-    setMinHis(minPrice)
-    setMaxHis(maxPrice)
-    setCategoryHis(chooseCategory)
-    setValSortHis(valSortHis)
-    if (minPrice < minHis || maxPrice > maxHis || chooseCategory !== categoryHis || valSort !== valSortHis) {
-      getDataProjects()
-    }
+      if (priceProject >= minPrice && priceProject <= maxPrice && chooseCategory === 'allCategory' && valSort === 'settlementDate') {
+        projectFilter.push(property)
+        setDataProjects(projectFilter)
+      }
+      if (priceProject >= minPrice && priceProject <= maxPrice && chooseCategory === 'allCategory' && valSort === 'name') {
+        projectFilter.push(property)
+        setDataProjects(projectFilter.sort((a, b) => a.name.localeCompare(b.name)))
+      }
+      if (priceProject >= minPrice && priceProject <= maxPrice && chooseCategory === 'allCategory' && valSort === 'symbol') {
+        projectFilter.push(property)
+        setDataProjects(projectFilter.sort((a, b) => a.landXProperty.token.symbol.localeCompare(b.landXProperty.token.symbol)))
+      }
+      if (priceProject >= minPrice && priceProject <= maxPrice && chooseCategory === 'allCategory' && valSort === 'launchProgress') {
+        projectFilter.push(property)
+        setDataProjects(projectFilter.sort((a, b) => a.landXProperty.launchProgress - b.landXProperty.launchProgress))
+      }
+
+      if (priceProject >= minPrice && priceProject <= maxPrice && chooseCategory === categoryProject && valSort === 'settlementDate') {
+        projectFilter.push(property)
+        setDataProjects(projectFilter)
+      }
+      if (priceProject >= minPrice && priceProject <= maxPrice && chooseCategory === categoryProject && valSort === 'name') {
+        projectFilter.push(property)
+        setDataProjects(projectFilter.sort((a, b) => a.name.localeCompare(b.name)))
+      }
+      if (priceProject >= minPrice && priceProject <= maxPrice && chooseCategory === categoryProject && valSort === 'symbol') {
+        projectFilter.push(property)
+        setDataProjects(projectFilter.sort((a, b) => a.landXProperty.token.symbol.localeCompare(b.landXProperty.token.symbol)))
+      }
+      if (priceProject >= minPrice && priceProject <= maxPrice && chooseCategory === categoryProject && valSort === 'launchProgress') {
+        projectFilter.push(property)
+        setDataProjects(projectFilter.sort((a, b) => a.landXProperty.launchProgress - b.landXProperty.launchProgress))
+      }
+    })
+
+    setisLoad(false)
   }
 
   return (
@@ -286,9 +321,11 @@ const ShowAllProject = () => {
                       >
                         <option value="allCategory">Semua Kategori</option>
                         {category && category.map(data => {
-                          return (
-                            <option key={data} value={data}>{capitalizeTheFirstLetterOfEachWord(data)}</option>
-                          )
+                          if (data) {
+                            return (
+                              <option key={data} value={data}>{capitalizeTheFirstLetterOfEachWord(data)}</option>
+                            )
+                          }
                         })
                         }
                       </NativeSelect>
@@ -311,7 +348,7 @@ const ShowAllProject = () => {
                   </Grid>
                   <Grid item xs={12} sm={4}>
                     <br />
-                    <Button className='filter-btn' onClick={() => handleFilter()}>TERAPKAN FILTER</Button>
+                    <Button className='filter-btn' onClick={() => handleFilter()} disabled={isLoad}> {isLoad ? <CircularProgress color="success" size={20} /> : "TERAPKAN FILTER"}</Button>
                   </Grid>
                 </Grid>
               </Grid>
@@ -333,7 +370,7 @@ const ShowAllProject = () => {
                       {dataProjects && dataProjects.slice(numPrev, numNext).map(dataProject => {
                         if (dataProject.landXProperty !== null) {
                           return (
-                            <CardProject data={dataProject.landXProperty} key={dataProject.landXProperty.id} />
+                            <CardProject data={dataProject.landXProperty} key={dataProject.landXProperty?.token.symbol} />
                           )
                         }
                       })}
