@@ -218,39 +218,40 @@ const ShowAllProject = () => {
 
       if (priceProject >= minPrice && priceProject <= maxPrice && chooseCategory === 'allCategory' && valSort === 'settlementDate') {
         projectFilter.push(property)
-        setDataProjects(projectFilter)
+        return setDataProjects(projectFilter)
       }
       if (priceProject >= minPrice && priceProject <= maxPrice && chooseCategory === 'allCategory' && valSort === 'name') {
         projectFilter.push(property)
-        setDataProjects(projectFilter.sort((a, b) => a.name.localeCompare(b.name)))
+        return setDataProjects(projectFilter.sort((a, b) => a.name.localeCompare(b.name)))
       }
       if (priceProject >= minPrice && priceProject <= maxPrice && chooseCategory === 'allCategory' && valSort === 'symbol') {
         projectFilter.push(property)
-        setDataProjects(projectFilter.sort((a, b) => a.landXProperty.token.symbol.localeCompare(b.landXProperty.token.symbol)))
+        return setDataProjects(projectFilter.sort((a, b) => a.landXProperty.token.symbol.localeCompare(b.landXProperty.token.symbol)))
       }
       if (priceProject >= minPrice && priceProject <= maxPrice && chooseCategory === 'allCategory' && valSort === 'launchProgress') {
         projectFilter.push(property)
-        setDataProjects(projectFilter.sort((a, b) => a.landXProperty.launchProgress - b.landXProperty.launchProgress))
+        return setDataProjects(projectFilter.sort((a, b) => a.landXProperty.launchProgress - b.landXProperty.launchProgress))
       }
 
       if (priceProject >= minPrice && priceProject <= maxPrice && chooseCategory === categoryProject && valSort === 'settlementDate') {
         projectFilter.push(property)
-        setDataProjects(projectFilter)
+        return setDataProjects(projectFilter)
       }
       if (priceProject >= minPrice && priceProject <= maxPrice && chooseCategory === categoryProject && valSort === 'name') {
         projectFilter.push(property)
-        setDataProjects(projectFilter.sort((a, b) => a.name.localeCompare(b.name)))
+        return setDataProjects(projectFilter.sort((a, b) => a.name.localeCompare(b.name)))
       }
       if (priceProject >= minPrice && priceProject <= maxPrice && chooseCategory === categoryProject && valSort === 'symbol') {
         projectFilter.push(property)
-        setDataProjects(projectFilter.sort((a, b) => a.landXProperty.token.symbol.localeCompare(b.landXProperty.token.symbol)))
+        return setDataProjects(projectFilter.sort((a, b) => a.landXProperty.token.symbol.localeCompare(b.landXProperty.token.symbol)))
       }
       if (priceProject >= minPrice && priceProject <= maxPrice && chooseCategory === categoryProject && valSort === 'launchProgress') {
         projectFilter.push(property)
-        setDataProjects(projectFilter.sort((a, b) => a.landXProperty.launchProgress - b.landXProperty.launchProgress))
+        return setDataProjects(projectFilter.sort((a, b) => a.landXProperty.launchProgress - b.landXProperty.launchProgress))
       }
     })
 
+    setDataProjects(projectFilter)
     setisLoad(false)
   }
 
