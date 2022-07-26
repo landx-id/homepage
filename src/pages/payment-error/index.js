@@ -33,6 +33,11 @@ const PaymentError = () => {
                 WA Customer 2
               </Button>
             </Link>
+            <Link href='https:/wa.me/628111622878' style={{ textDecoration: 'none' }}>
+              <Button variant='contained' color='success' className='btn-project'>
+                WA Consultant Representative
+              </Button>
+            </Link>
           </Card>
         </Container>
       </div>

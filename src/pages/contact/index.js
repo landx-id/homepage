@@ -67,6 +67,16 @@ const Contact = () => (
           </Grid>
           <Grid container spacing={2}>
             <Grid item xs={1} md={1}>
+              <WhatsAppIcon fontSize="medium" color="primary" />
+            </Grid>
+            <Grid item xs={11} md={11}>
+              <Typography paragraph={true} color="secondary">
+                (+62) 811 1622 878 (Consultant Representative)
+              </Typography>
+            </Grid>
+          </Grid>
+          <Grid container spacing={2}>
+            <Grid item xs={1} md={1}>
               <LocationOnOutlinedIcon fontSize="medium" color="primary" />
             </Grid>
             <Grid item xs={11} md={11}>
