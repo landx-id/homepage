@@ -21,7 +21,7 @@ const RiskMitigation = () => (
           Mitigasi Risiko
         </Typography>
         <Typography color="secondary" paragraph={true}>
-          Mitigasi risiko ini diharapkan untuk menjadi acuan bagi Pemodal yang akan berinvestasi di platform LandX yang dioperasikan oleh PT Numex Teknologi Indonesia (LandX) tentang beberapa risiko yang dapat terjadi saat berinvestasi di proyek yang diterbitkan oleh Penerbit pada platform LandX.
+          Mitigasi risiko ini diharapkan untuk menjadi acuan bagi Pemodal yang akan berinvestasi di platform LandX yang dioperasikan oleh PT ICX Bangun Indonesia (LandX) tentang beberapa risiko yang dapat terjadi saat berinvestasi di proyek yang diterbitkan oleh Penerbit pada platform LandX.
         </Typography>
         <Typography color="secondary" paragraph={true}>
           Anda harus mempertimbangkan setiap keputusan investasi yang akan Anda lakukan. Anda harus memilih investasi yang cocok dan terbaik untuk Anda berdasarkan pengetahuan dan pengalaman Anda dalam bidang keuangan, bisnis, laporan keuangan, tujuan investasi, keuangan, dan kemampuan analisis risiko yang akan Anda ambil.

@@ -7,7 +7,7 @@ import "../../assets/styling/style.scss"
 
 const ServiceLevelAgreement = () => (
   <Layout>
-    <Seo title="LandX - Service Level Agreement" description="Dokumen ini adalah Service Level Agreement (“SLA”) yang menjadi acuan PT Numex Teknologi Indonesia dalam memberikan layanan kepada seluruh pengguna." />
+    <Seo title="LandX - Service Level Agreement" description="Dokumen ini adalah Service Level Agreement (“SLA”) yang menjadi acuan PT ICX Bangun Indonesia dalam memberikan layanan kepada seluruh pengguna." />
 
     <Container className="menu-mt">
       <Grid item xs={12} md={8} className="menu-description" style={{ marginTop: `3rem` }}>
@@ -18,7 +18,7 @@ const ServiceLevelAgreement = () => (
           Internal
         </Typography>
         <Typography color="secondary" paragraph={true}>
-          LandX (“Platform” atau “Kami”) dan LandX.id dikelola oleh PT Numex Teknologi Indonesia.
+          LandX (“Platform” atau “Kami”) dan LandX.id dikelola oleh PT ICX Bangun Indonesia.
         </Typography>
 
         <Typography color="primary" style={{ fontWeight: `600` }}>
@@ -32,10 +32,10 @@ const ServiceLevelAgreement = () => (
           PENDAHULUAN
         </Typography>
         <Typography color="secondary" paragraph={true}>
-          Dokumen ini adalah Service Level Agreement (“SLA”) yang menjadi acuan PT Numex Teknologi Indonesia dalam memberikan layanan kepada seluruh pengguna. Harap membaca SLA ini beserta Syarat dan Ketentuan serta Kebijakan Privasi yang memuat hak-hak Anda sebagai pengguna.
+          Dokumen ini adalah Service Level Agreement (“SLA”) yang menjadi acuan PT ICX Bangun Indonesia dalam memberikan layanan kepada seluruh pengguna. Harap membaca SLA ini beserta Syarat dan Ketentuan serta Kebijakan Privasi yang memuat hak-hak Anda sebagai pengguna.
         </Typography>
         <Typography color="secondary" paragraph={true}>
-          PT Numex Teknologi Indonesia (“Kami”) berhak untuk mengubah ketentuan SLA ini apabila dibutuhkan. Salinan SLA kami dapat diperoleh dengan mengirim email permintaan ke: hello@landx.id
+          PT ICX Bangun Indonesia (“Kami”) berhak untuk mengubah ketentuan SLA ini apabila dibutuhkan. Salinan SLA kami dapat diperoleh dengan mengirim email permintaan ke: hello@landx.id
         </Typography>
 
         <Typography color="secondary" variant="h5" paragraph={true} style={{ fontWeight: `600`, marginTop: `3rem` }}>

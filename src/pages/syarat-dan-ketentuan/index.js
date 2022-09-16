@@ -21,7 +21,7 @@ const TermAndCondition = () => (
 
       <Grid item xs={12} md={8} className="menu-description">
         <Typography color="secondary">
-          Aplikasi LandX  dan situs LandX.id (<b>“Platform”</b>) dikelola oleh PT NUMEX TEKNOLOGI INDONESIA (<b>“Kami”</b>).
+          Aplikasi LandX  dan situs LandX.id (<b>“Platform”</b>) dikelola oleh PT ICX Bangun Indonesia (<b>“Kami”</b>).
         </Typography>
         <Typography color="secondary" style={{ marginTop: `2rem` }}>
           Dengan mengunjungi dan/atau menggunakan Platform, maka baik pengunjung maupun pengguna (<b>“Anda”</b>) dinyatakan telah memahami dan menyepakati semua isi dalam Syarat dan Ketentuan di bawah ini
@@ -432,7 +432,7 @@ const TermAndCondition = () => (
           Semua Hak Kekayaan Intelektual dalam situs ini dimiliki oleh LandX. Semua informasi dan bahan yang tertera pada situs Kami seperti: logo, ikon, kode html, dan kode lainnya dalam situs web ini dilarang untuk dimodifikasi, direproduksi atau diubah dengan cara apapun di luar wilayah situs ini tanpa izin yang dinyatakan oleh LandX. Apabila Anda melanggar hak-hak ini, Kami berhak untuk membuat gugatan perdata untuk jumlah keseluruhan kerusakan atau kerugian yang diderita, ataupun mengambil langkah lainnya sebagaimana diatur dalam peraturan perundang-undangan yang berlaku, termasuk menempuh jalur hukum serta membuat pelaporan atas terjadinya tindak pidana dan melakukan tindakan-tindakan berikutnya sehubungan dengan tindak pidana tersebut.
         </Typography>
         <Typography color="secondary" paragraph={true}>
-          Semua fitur yang terdapat di dalam situs ini adalah milik <b>PT NUMEX TEKNOLOGI INDONESIA</b> dan dilindungi oleh ketentuan hukum Indonesia yang terdapat dalam Undang-undang HKI (Hak Kekayaan Intelektual), termasuk setiap peraturan pelaksananya dan perubahannya dari waktu ke waktu. Oleh karena itu, pengguna situs tidak diperkenankan untuk menyalahgunakan fitur yang terdapat dalam situs ini untuk kepentingan pribadi, kolektif maupun komersil.
+          Semua fitur yang terdapat di dalam situs ini adalah milik <b>PT ICX Bangun Indonesia</b> dan dilindungi oleh ketentuan hukum Indonesia yang terdapat dalam Undang-undang HKI (Hak Kekayaan Intelektual), termasuk setiap peraturan pelaksananya dan perubahannya dari waktu ke waktu. Oleh karena itu, pengguna situs tidak diperkenankan untuk menyalahgunakan fitur yang terdapat dalam situs ini untuk kepentingan pribadi, kolektif maupun komersil.
         </Typography>
 
         <Typography color="secondary" variant="h5" paragraph={true} style={{ fontWeight: `600`, marginTop: `3rem` }}>
