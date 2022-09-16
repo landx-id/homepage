@@ -71,7 +71,7 @@ function Seo({ description, lang, meta, title }) {
         },
         {
           name: `facebook-domain-verification`,
-          content: `f7kayy7mhaddcpu6xbwde08hlvsdfm`,
+          content: `lldmsn17ngl30gb2h5ftkpscygatmz`,
         },
         {
           name: `charset`,

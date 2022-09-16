@@ -7,7 +7,7 @@ import "../../assets/styling/style.scss"
 
 const PaparanRisiko = () => (
   <Layout>
-    	<Seo title="Paparan Risiko" />
+    <Seo title="Paparan Risiko" />
 
     <Container className="menu-mt">
       <Grid item xs={12} md={12}>
@@ -21,7 +21,7 @@ const PaparanRisiko = () => (
           Paparan Risiko
         </Typography>
         <Typography color="secondary" paragraph={true}>
-          Paparan risiko ini diharapkan untuk menjadi acuan bagi Pemodal yang akan berinvestasi di platform LandX yang dioperasikan oleh PT Numex Teknologi Indonesia (LandX) tentang beberapa risiko yang dapat terjadi saat berinvestasi di proyek yang diterbitkan oleh Penerbit pada platform LandX.
+          Paparan risiko ini diharapkan untuk menjadi acuan bagi Pemodal yang akan berinvestasi di platform LandX yang dioperasikan oleh PT ICX Bangun Indonesia (LandX) tentang beberapa risiko yang dapat terjadi saat berinvestasi di proyek yang diterbitkan oleh Penerbit pada platform LandX.
         </Typography>
         <Typography color="secondary" paragraph={true}>
           Anda harus mempertimbangkan setiap keputusan investasi yang akan Anda lakukan. Anda harus memilih investasi yang cocok dan terbaik untuk Anda berdasarkan pengetahuan dan pengalaman Anda dalam bidang keuangan, bisnis, laporan keuangan, tujuan investasi, keuangan, dan kemampuan analisis risiko yang akan Anda ambil.

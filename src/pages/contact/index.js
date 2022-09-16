@@ -11,7 +11,7 @@ import "../../assets/styling/style.scss"
 
 const Contact = () => (
   <Layout>
-    <Seo title="Kontak PT Numex Teknologi Indonesia" description="LandX (PT Numex Teknologi Indonesia) merupakan platform crowdfunding yang telah berizin dan diawasi oleh OJK " />
+    <Seo title="Kontak PT ICX Bangun Indonesia" description="LandX (PT ICX Bangun Indonesia) merupakan platform crowdfunding yang telah berizin dan diawasi oleh OJK " />
 
     <Container className="menu-mt">
       <Grid item xs={12} md={12}>
@@ -23,7 +23,7 @@ const Contact = () => (
       <Grid container spacing={2} style={{ marginTop: `3rem` }}>
         <Grid item xs={12} md={6} style={{ marginBottom: `2rem` }}>
           <Typography color="primary" variant="h5" paragraph={true} style={{ fontWeight: `600` }}>
-            PT Numex Teknologi Indonesia
+            PT ICX Bangun Indonesia
           </Typography>
           <Grid container spacing={2}>
             <Grid item xs={1} md={1}>

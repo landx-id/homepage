@@ -73,7 +73,7 @@ const PrivacyPolicy = () => (
             </li>
             <li>
               <Typography color="secondary" paragraph={true}>
-                "Kami" adalah PT Numex Teknologi Indonesia (LandX) beserta para perwakilan dan/atau kuasanya yang sah dapat bertindak untuk PT Numex Teknologi Indonesia.
+                "Kami" adalah PT ICX Bangun Indonesia (LandX) beserta para perwakilan dan/atau kuasanya yang sah dapat bertindak untuk PT ICX Bangun Indonesia.
               </Typography>
             </li>
             <li>
@@ -340,7 +340,7 @@ const PrivacyPolicy = () => (
             </li>
             <li>
               <Typography color="secondary" paragraph={true}>
-                Kami PT Numex Teknologi Indonesia dengan ini menyatakan dan menjamin tidak memiliki hak akses ke penyimpanan apapun milik Pengguna, kecuali disepakati lain secara bersama-sama oleh kedua pihak.
+                Kami PT ICX Bangun Indonesia dengan ini menyatakan dan menjamin tidak memiliki hak akses ke penyimpanan apapun milik Pengguna, kecuali disepakati lain secara bersama-sama oleh kedua pihak.
               </Typography>
             </li>
           </ol>
