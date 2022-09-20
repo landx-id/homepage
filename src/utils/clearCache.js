@@ -1,7 +1,7 @@
 import Cookies from "universal-cookie"
 
 // selalu update versiBuild + 1 agar otomatis hard refresh
-let versiBuild = 81
+let versiBuild = 82
 
 const cookies = new Cookies()
 
