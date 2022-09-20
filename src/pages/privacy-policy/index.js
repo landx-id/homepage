@@ -16,7 +16,7 @@ const PrivacyPolicy = () => (
           Kebijakan Privasi
         </Typography>
         <Typography color="secondary" className="menu-subtitle">
-          Revisi terakhir per tanggal 23 November 2021.
+          Revisi terakhir per tanggal 19 September 2022
         </Typography>
       </Grid>
 
@@ -53,7 +53,7 @@ const PrivacyPolicy = () => (
             </li>
             <li>
               <Typography color="secondary">
-                "Konten" adalah apapun yang ada pada Layanan Kami, termasuk namun tidak terbatas pada rancangan, desain, teks, gambar grafis, foto, gambar, citra, video, perangkat lunak, musik, suara dan file lain, peringkat kredit, tarif, biaya, kuotasi, data historis, grafik, statistik, artikel, informasi kontak Kami, setiap informasi lain, beserta pemilihan dan pengaturannya.
+                "Konten" adalah apapun yang ada pada Layanan Penyelenggara, termasuk namun tidak terbatas pada rancangan, desain, teks, gambar grafis, foto, gambar, citra, video, perangkat lunak, musik, suara dan file lain, peringkat kredit, tarif, biaya, kuotasi, data historis, grafik, statistik, artikel, informasi kontak Penyelenggara, setiap informasi lain, beserta pemilihan dan pengaturannya.
               </Typography>
             </li>
             <li>
@@ -73,7 +73,7 @@ const PrivacyPolicy = () => (
             </li>
             <li>
               <Typography color="secondary" paragraph={true}>
-                "Kami" adalah PT ICX Bangun Indonesia (LandX) beserta para perwakilan dan/atau kuasanya yang sah dapat bertindak untuk PT ICX Bangun Indonesia.
+                "Penyelenggara" adalah PT ICX BANGUN INDONESIA (dh. PT Numex Teknologi Indonesia) atau “LandX” beserta para perwakilan dan/atau kuasanya yang sah dapat bertindak untuk PT ICX BANGUN INDONESIA yang yang dalam hal ini merupakan badan hukum Indonesia yang menyediakan, mengelola, dan mengoperasikan Layanan Urun Dana yang telah memperoleh izin dari OJK.
               </Typography>
             </li>
             <li>
@@ -83,7 +83,7 @@ const PrivacyPolicy = () => (
             </li>
             <li>
               <Typography color="secondary" paragraph={true}>
-                Pengguna wajib untuk memberikan Data Pribadi yang akurat serta tidak menyesatkan, serta diperlukan untuk selalu memperbaharui Data Pribadi tersebut pada Layanan apabila terjadi perubahan daripadanya. Kami memiliki hak untuk melakukan proses autentikasi, verifikasi, dan validasi atas setiap Data Pribadi yang diberikan oleh Pengguna demi kepentingan penggunaan dan implementasi dari Layanan Kami, dan Kami memiliki hak untuk melakukan pembatalan penggunaan Layanan apabila dikemudian hari ditemukan bahwa Data Pribadi yang diberikan adalah tidak benar, palsu, atau hasil dari tindakan yang melanggar ketentuan peraturan perundang-undangan serta apabila Pengguna melakukan atau terafiliasi dengan hal-hal yang melanggar ketentuan peraturan perundang-undangan yang berlaku, termasuk namun tidak terbatas pada tindak pidana pencucian uang dan pendanaan terorisme (APU PPT).
+                Pengguna wajib untuk memberikan Data Pribadi yang akurat serta tidak menyesatkan, serta diperlukan untuk selalu memperbaharui Data Pribadi tersebut pada Layanan apabila terjadi perubahan daripadanya. Penyelenggara memiliki hak untuk melakukan proses autentikasi, verifikasi, dan validasi atas setiap Data Pribadi yang diberikan oleh Pengguna demi kepentingan penggunaan dan implementasi dari Layanan Penyelenggara, dan Penyelenggara memiliki hak untuk melakukan pembatalan penggunaan Layanan apabila dikemudian hari ditemukan bahwa Data Pribadi yang diberikan adalah tidak benar, palsu, atau hasil dari tindakan yang melanggar ketentuan peraturan perundang-undangan serta apabila Pengguna melakukan atau terafiliasi dengan hal-hal yang melanggar ketentuan peraturan perundang-undangan yang berlaku, termasuk namun tidak terbatas  pada tindak pidana pencucian uang dan pendanaan terorisme (APU PPT).
               </Typography>
             </li>
           </ol>
@@ -96,64 +96,64 @@ const PrivacyPolicy = () => (
           <ol style={{ listStyleType: `number`, color: `#5e798d` }}>
             <li>
               <Typography color="secondary" paragraph={true}>
-                Sehubungan dengan penggunaan Layanan Kami oleh Pengguna, dari waktu ke waktu Kami dapat mengumpulkan informasi Pengguna, terkait dengan hal-hal berikut:
+                Sehubungan dengan penggunaan Layanan Penyelenggara oleh Pengguna, dari waktu ke waktu Penyelenggara dapat mengumpulkan informasi Pengguna, terkait dengan hal-hal berikut:
               </Typography>
               <ul style={{ listStyleType: `circle` }}>
                 <li>
                   <Typography color="secondary">
-                    Pengguna ataupun pihak lain yang memiliki persetujuan yang sah dari Pengguna untuk memberikan Data Pribadi dalam rangka mengakses Layanan Kami;
+                    Pengguna ataupun pihak lain yang memiliki persetujuan yang sah dari Pengguna untuk memberikan Data Pribadi dalam rangka mengakses Layanan Penyelenggara;
                   </Typography>
                 </li>
                 <li>
                   <Typography color="secondary">
-                    Setiap kunjungan Pengguna ke Platform Kami;
+                    Setiap kunjungan Pengguna ke Platform Penyelenggara;
                   </Typography>
                 </li>
                 <li>
                   <Typography color="secondary">
-                    Percakapan melalui telepon antara Pengguna dengan Kami;
+                    Percakapan melalui telepon antara Pengguna dengan Penyelenggara;
                   </Typography>
                 </li>
                 <li>
                   <Typography color="secondary">
-                    Penggunaan perangkat komputer maupun perangkat lainnya yang memfasilitasi hubungan ke internet untuk mengakses Layanan Kami oleh Pengguna, termasuk informasi mengenai alamat IP, sistem operasi dan browser yang Pengguna gunakan dalam mengakses Layanan Kami;
+                    Penggunaan perangkat komputer maupun perangkat lainnya yang memfasilitasi hubungan ke internet untuk mengakses Layanan Penyelenggara oleh Pengguna, termasuk informasi mengenai alamat IP, sistem operasi dan <em>browser</em> yang Pengguna gunakan dalam mengakses Layanan Penyelenggara;
                   </Typography>
                 </li>
                 <li>
                   <Typography color="secondary">
-                    Penggunaan "<em>cookies</em>" saat browser Pengguna mengakses dan Pengguna masuk (log-in) untuk menggunakan Layanan Kami. Jika statusnya diaktifkan (enabled), cookies akan menyimpan sejumlah kecil data pada komputer Pengguna tentang aktivitas Pengguna dalam menggunakan Layanan Kami; dan/atau
+                    Penggunaan "<em>cookies</em>" saat browser Pengguna mengakses dan Pengguna masuk (log-in) untuk menggunakan Layanan Penyelenggara. Jika statusnya diaktifkan (<em>enabled</em>), <em>cookies</em> akan menyimpan sejumlah kecil data pada komputer Pengguna tentang aktivitas Pengguna dalam menggunakan Layanan Penyelenggara; dan/atau
                   </Typography>
                 </li>
                 <li>
                   <Typography color="secondary">
-                    Data Pribadi selama Pengguna menggunakan Layanan Kami, yang dalam hal ini termasuk namun tidak terbatas pada nama lengkap, pekerjaan, Pendidikan terakhir, jenis kelamin, nomor <em>handphone</em>, tempat lahir, tanggal lahir, foto KTP, dan foto <em>selfie</em> dengan KTP.
+                    Data Pribadi selama Pengguna menggunakan Layanan Penyelenggara, yang dalam hal ini termasuk namun tidak terbatas pada nama lengkap, pekerjaan, Pendidikan terakhir, jenis kelamin, nomor <em>handphone</em>, tempat lahir, tanggal lahir, foto KTP, dan foto <em>selfie</em> dengan KTP.
                   </Typography>
                 </li>
               </ul>
             </li>
             <li>
               <Typography color="secondary" paragraph={true}>
-                Dalam memperoleh, menggunakan, memanfaatkan, dan mengelola Data Pribadi, Kami tunduk pada ketentuan peraturan perundang-undangan yang berlaku di Indonesia, termasuk pada Undang-Undang Nomor 11 Tahun 2008 sebagaimana telah diubah dengan Undang-Undang Nomor 19 Tahun 2016 tentang Informasi dan Transaksi Elektronik beserta peraturan pelaksananya dan peraturan perundang-undangan terkait lainnya, antara lain Peraturan Pemerintah Nomor 71 Tahun 2019 tentang Penyelenggaraan Sistem dan Transaksi Elektronik dan Peraturan Menteri Komunikasi dan Informatika Nomor 20 Tahun 2016 tentang Perlindungan Data Pribadi dalam Sistem Elektronik, termasuk dengan setiap perubahannya dari waktu ke waktu.
+                Dalam memperoleh, menggunakan, memanfaatkan, dan mengelola Data Pribadi, Penyelenggara tunduk pada ketentuan peraturan perundang-undangan yang berlaku di Indonesia, termasuk pada Undang-Undang Nomor 11 Tahun 2008 sebagaimana telah diubah dengan Undang-Undang Nomor 19 Tahun 2016 tentang Informasi dan Transaksi Elektronik beserta peraturan pelaksananya dan peraturan perundang-undangan terkait lainnya, antara lain Peraturan Pemerintah Nomor 71 Tahun 2019 tentang Penyelenggaraan Sistem dan Transaksi Elektronik dan Peraturan Menteri Komunikasi dan Informatika Nomor 20 Tahun 2016 tentang Perlindungan Data Pribadi dalam Sistem Elektronik, termasuk dengan setiap perubahannya dari waktu ke waktu.
               </Typography>
             </li>
             <li>
               <Typography color="secondary" paragraph={true}>
-                LandX tidak memperdagangkan Data Pribadi yang Kami peroleh dari Pengguna melalui aktivitas penggunaan Layanan Kami.
+                LandX tidak memperdagangkan Data Pribadi yang Penyelenggara peroleh dari Pengguna melalui aktivitas penggunaan Layanan Penyelenggara.
               </Typography>
             </li>
             <li>
               <Typography color="secondary" paragraph={true}>
-                Pengguna wajib untuk memberikan Data Pribadi yang akurat serta tidak menyesatkan, serta diperlukan untuk selalu memperbaharui Data Pribadi tersebut pada Layanan apabila terjadi perubahan daripadanya. Kami memiliki hak untuk melakukan proses autentikasi, verifikasi, dan validasi atas setiap Data Pribadi yang diberikan oleh Pengguna demi kepentingan penggunaan dan implementasi dari Layanan Kami, dan Kami memiliki hak untuk melakukan pembatalan penggunaan Layanan apabila dikemudian hari ditemukan bahwa Data Pribadi yang diberikan adalah tidak benar, palsu, atau hasil dari tindakan yang melanggar ketentuan peraturan perundang-undangan serta apabila Pengguna melakukan atau terafiliasi dengan hal-hal yang melanggar ketentuan peraturan perundang-undangan yang berlaku, termasuk namun tidak terbatas  pada tindak pidana pencucian uang dan pendanaan terorisme (APU PPT).
+                Pengguna wajib untuk memberikan Data Pribadi yang akurat serta tidak menyesatkan, serta diperlukan untuk selalu memperbaharui Data Pribadi tersebut pada Layanan apabila terjadi perubahan daripadanya. Penyelenggara memilik hak untuk melakukan proses autentikasi, verifikasi, dan validasi atas setiap Data Pribadi yang diberikan oleh Pengguna demi kepentingan penggunaan dan implementasi dari Layanan Penyelenggara, dan Penyelenggara memiliki hak untuk melakukan pembatalan penggunaan Layanan apabila dikemudian hari ditemukan bahwa Data Pribadi yang diberikan adalah tidak benar, palsu, atau hasil dari tindakan yang melanggar ketentuan peraturan perundang-undangan serta apabila Pengguna melakukan atau terafiliasi dengan hal-hal yang melanggar ketentuan peraturan perundang-undangan yang berlaku, termasuk namun tidak terbatas  pada tindak pidana pencucian uang dan pendanaan terorisme (APU PPT).
               </Typography>
             </li>
             <li>
               <Typography color="secondary" paragraph={true}>
-                Dalam hal Pengguna memberikan Data Pribadi pihak ketiga dalam penggunaan Layanan kepada Kami, maka Kami menganggap, dan dengan ini Pengguna menerimanya, bahwa Pengguna telah mendapatkan persetujuan dari pihak ketiga terkait untuk pemberian Data Pribadi tersebut kepada Kami.
+                Dalam hal Pengguna memberikan Data Pribadi pihak ketiga dalam penggunaan Layanan kepada Penyelenggara, maka Penyelenggara menganggap, dan dengan ini Pengguna menerimanya, bahwa Pengguna telah mendapatkan persetujuan dari pihak ketiga terkait untuk pemberian Data Pribadi tersebut kepada Penyelenggara.
               </Typography>
             </li>
             <li>
               <Typography color="secondary" paragraph={true}>
-                Pengguna dengan ini setuju bahwa kegagalan Pengguna untuk memberikan Data Pribadi yang benar dan akurat akan membuat Pengguna bertanggung jawab atas segala kerugian yang timbul, termasuk atas kerugian Kami dan pihak ketiga lainnya. Selain itu, atas kelalaian Pengguna, Kami berwenang untuk menutup akses Pengguna pada Layanan Kami.
+                Pengguna dengan ini setuju bahwa kegagalan Pengguna untuk memberikan Data Pribadi yang benar dan akurat akan membuat Pengguna bertanggung jawab atas segala kerugian yang timbul, termasuk atas kerugian Penyelenggara dan pihak ketiga lainnya. Selain itu, atas kelalaian Pengguna, Penyelenggara berwenang untuk menutup akses Pengguna pada Layanan Penyelenggara.
               </Typography>
             </li>
           </ol>
@@ -166,17 +166,17 @@ const PrivacyPolicy = () => (
           <ol style={{ listStyleType: `number`, color: `#5e798d` }}>
             <li>
               <Typography color="secondary" paragraph={true}>
-                Pengguna dengan ini setuju bahwa Data Pribadi yang diberikan kepada Kami, akan dapat Kami gunakan untuk kepentingan-kepentingan berikut:
+                Pengguna dengan ini setuju bahwa Data Pribadi yang diberikan kepada Penyelenggara, akan dapat Penyelenggara gunakan untuk kepentingan-kepentingan berikut:
               </Typography>
               <ul style={{ listStyleType: `circle` }}>
                 <li>
                   <Typography color="secondary">
-                    memberikan akses bagi Pengguna ke Layanan Kami dan memastikan bahwa Konten dan Layanan ditampilkan dengan cara yang paling efektif untuk Pengguna;
+                    memberikan akses bagi Pengguna ke Layanan Penyelenggara dan memastikan bahwa Konten dan Layanan ditampilkan dengan cara yang paling efektif untuk Pengguna;
                   </Typography>
                 </li>
                 <li>
                   <Typography color="secondary">
-                    memberikan kepada Pengguna informasi terkait konten situs, produk, layanan dan layanan interaktif Pengguna milik Kami;
+                    memberikan kepada Pengguna informasi terkait konten situs, produk, layanan dan layanan interaktif Pengguna milik Penyelenggara;
                   </Typography>
                 </li>
                 <li>
@@ -186,17 +186,17 @@ const PrivacyPolicy = () => (
                 </li>
                 <li>
                   <Typography color="secondary">
-                    melaksanakan kewajiban Kami yang timbul dari setiap perjanjian yang diadakan antara Pengguna dan Kami;
+                    melaksanakan kewajiban Penyelenggara yang timbul dari setiap perjanjian yang diadakan antara Pengguna dan Penyelenggara;
                   </Typography>
                 </li>
                 <li>
                   <Typography color="secondary">
-                    pengembangan Layanan Kami, termasuk namun tidak terbatas pada pemecahan masalah, analisis data, pengujian, penelitian, tujuan statistik serta survei;
+                    pengembangan Layanan Penyelenggara, termasuk namun tidak terbatas pada pemecahan masalah, analisis data, pengujian, penelitian, tujuan statistik serta survei;
                   </Typography>
                 </li>
                 <li>
                   <Typography color="secondary">
-                    untuk membuat analisa statistik dalam rangka pengembangan produk Kami;
+                    untuk membuat analisa statistik dalam rangka pengembangan produk Penyelenggara;
                   </Typography>
                 </li>
                 <li>
@@ -216,7 +216,7 @@ const PrivacyPolicy = () => (
                 </li>
                 <li>
                   <Typography color="secondary">
-                    memberitahu Pengguna tentang perubahan-perubahan terhadap Layanan Kami;
+                    memberitahu Pengguna tentang perubahan-perubahan terhadap Layanan Penyelenggara;
                   </Typography>
                 </li>
                 <li>
@@ -226,12 +226,12 @@ const PrivacyPolicy = () => (
                 </li>
                 <li>
                   <Typography color="secondary">
-                    memeriksa identitas dan/atau kewenangan dari para wakil atau kuasa Pengguna yang menghubungi Kami dan untuk menanggapi permintaan, pertanyaan atau instruksi dari para kuasa yang telah diperiksa tersebut atau para pihak lain;
+                    memeriksa identitas dan/atau kewenangan dari para wakil atau kuasa Pengguna yang menghubungi Penyelenggara dan untuk menanggapi permintaan, pertanyaan atau instruksi dari para kuasa yang telah diperiksa tersebut atau para pihak lain;
                   </Typography>
                 </li>
                 <li>
                   <Typography color="secondary">
-                    untuk memberikan otorisasi kepada bank, badan keuangan atau pihak ketiga yang berwenang untuk mengadakan pengecekan terbatas pada status Pengguna dalam <em>database</em> Kami atau Layanan Kami;
+                    untuk memberikan otorisasi kepada bank, badan keuangan atau pihak ketiga yang berwenang untuk mengadakan pengecekan terbatas pada status Pengguna dalam <em>database</em> Penyelenggara atau Layanan Penyelenggara;
                   </Typography>
                 </li>
                 <li>
@@ -258,18 +258,16 @@ const PrivacyPolicy = () => (
             </li>
             <li>
               <Typography color="secondary" paragraph={true}>
-                Pengguna dengan ini setuju dan memberikan izin bahwa Kami dapat menggunakan Data Pribadi untuk tujuan lain yang berkaitan dengan hal-hal sebagaimana disebutkan dalam poin 1 di atas, dengan tetap memperhatikan peraturan perundang-undangan yang berlaku.
+                Pengguna dengan ini setuju dan memberikan izin bahwa Penyelenggara dapat menggunakan Data Pribadi untuk tujuan lain yang berkaitan dengan hal-hal sebagaimana disebutkan dalam poin 1 di atas, dengan tetap memperhatikan ketentuan-ketentuan pada peraturan perundang-undangan yang berlaku.
+              </Typography>
+            </li>
+            <li>
+              <Typography color="secondary" paragraph={true}>
+                Pengguna dengan ini setuju dan memberikan izin untuk Penyelenggara untuk dapat mengungkapkan Data Pribadi dengan pihak ketiga lainnya sepanjang tidak bertentangan dengan ketentuan-ketentuan pada peraturan perundang-undangan yang berlaku, termasuk namun tidak terbatas pada para konsultan, akuntan publik atau pejabat negara.
               </Typography>
             </li>
           </ol>
         </Grid>
-
-        <Typography color="secondary" paragraph={true}>
-          Pengguna dengan ini setuju dan memberikan izin bahwa Kami dapat menggunakan Data Pribadi untuk tujuan lain yang berkaitan dengan hal-hal sebagaimana disebutkan dalam poin 1 di atas, dengan tetap memperhatikan ketentuan-ketentuan pada peraturan perundang-undangan yang berlaku.
-        </Typography>
-        <Typography color="secondary" paragraph={true}>
-          Pengguna dengan ini setuju dan memberikan izin untuk Kami untuk dapat mengungkapkan Data Pribadi dengan pihak ketiga lainnya sepanjang tidak bertentangan dengan ketentuan-ketentuan pada peraturan perundang-undangan yang berlaku, termasuk namun tidak terbatas pada para konsultan, akuntan publik atau pejabat negara.
-        </Typography>
 
         <Typography color="secondary" variant="h5" paragraph={true} style={{ fontWeight: `600`, marginTop: `3rem` }}>
           KERAHASIAAN KATA SANDI
@@ -282,7 +280,7 @@ const PrivacyPolicy = () => (
           TAUTAN TERHADAP APLIKASI ATAU SITUS LAINNYA
         </Typography>
         <Typography color="secondary" paragraph={true}>
-          Jika Pengguna mengikuti salah satu tautan situs yang terdapat pada aplikasi atau situs LandX, harap diingat bahwa aplikasi tersebut memiliki kebijakan privasi tersendiri dan Kami tidak memberikan tanggung jawab dalam bentuk apapun atas ketentuan-ketentuan maupun jaminan-jaminan yang terdapat dalam kebijakan privasi pada aplikasi dan/atau situs tersebut.
+          Jika Pengguna mengikuti salah satu tautan situs yang terdapat pada aplikasi atau situs LandX, harap diingat bahwa aplikasi tersebut memiliki kebijakan privasi tersendiri dan Penyelenggara tidak memberikan tanggung jawab dalam bentuk apapun atas ketentuan-ketentuan maupun jaminan-jaminan yang terdapat dalam kebijakan privasi pada aplikasi dan/atau situs tersebut.
         </Typography>
 
         <Typography color="secondary" variant="h5" paragraph={true} style={{ fontWeight: `600`, marginTop: `3rem` }}>
@@ -292,7 +290,7 @@ const PrivacyPolicy = () => (
           <ol style={{ listStyleType: `number`, color: `#5e798d` }}>
             <li>
               <Typography color="secondary" paragraph={true}>
-                Cookies adalah file berukuran kecil yang secara otomatis akan mengambil tempat di dalam perangkat komputer Pengguna, yang berguna untuk mengidentifikasi dan memantau koneksi jaringan Pengguna sehingga Pengguna akan dapat mengakses Layanan Kami secara lebih optimal. Cookies akan membantu Kami untuk menelusuri fitur yang paling menarik untuk Pengguna dan jenis konten yang pernah Pengguna kunjungi di waktu lalu. Saat Pengguna mengunjungi aplikasi dan/atau situs ini kembali, cookies akan mempermudah untuk menyesuaikan konten sesuai dengan kebutuhan Pengguna. Cookies tidak melakukan pelacakan terhadap informasi Pengguna secara individual, dan semua data cookies Kami telah terenkripsi dan tidak dapat dibaca oleh aplikasi dan/atau situs lain.
+                Cookies adalah file berukuran kecil yang secara otomatis akan mengambil tempat di dalam perangkat komputer Pengguna, yang berguna untuk mengidentifikasi dan memantau koneksi jaringan Pengguna sehingga Pengguna akan dapat mengakses Layanan Penyelenggara secara lebih optimal. Cookies akan membantu Penyelenggara untuk menelusuri fitur yang paling menarik untuk Pengguna dan jenis konten yang pernah Pengguna kunjungi di waktu lalu. Saat Pengguna mengunjungi aplikasi dan/atau situs ini kembali, cookies akan mempermudah untuk menyesuaikan konten sesuai dengan kebutuhan Pengguna. Cookies tidak melakukan pelacakan terhadap informasi Pengguna secara individual, dan semua data cookies Penyelenggara telah terenkripsi dan tidak dapat dibaca oleh aplikasi dan/atau situs lain.
               </Typography>
             </li>
             <li>
@@ -310,12 +308,12 @@ const PrivacyPolicy = () => (
           <ol style={{ listStyleType: `number`, color: `#5e798d` }}>
             <li>
               <Typography color="secondary" paragraph={true}>
-                Dalam rangka pengembangan Layanan, Kami dapat meminta Pengguna untuk memberikan kami izin dalam mengakses akun media sosial milik Pengguna.
+                Dalam rangka pengembangan Layanan, Penyelenggara dapat meminta Pengguna untuk memberikan Penyelenggara izin dalam mengakses akun media sosial milik Pengguna.
               </Typography>
             </li>
             <li>
               <Typography color="secondary" paragraph={true}>
-                Apabila Pengguna memberikan Kami akses ke data akun media sosial Pengguna, Pengguna setuju bahwa Kami hanya menggunakan data tersebut untuk keperluan pelaksanaan Layanan.
+                Apabila Pengguna memberikan Penyelenggara akses ke data akun media sosial Pengguna, Pengguna setuju bahwa Penyelenggara hanya menggunakan data tersebut untuk keperluan pelaksanaan Layanan.
               </Typography>
             </li>
           </ol>
@@ -324,9 +322,20 @@ const PrivacyPolicy = () => (
         <Typography color="secondary" variant="h5" paragraph={true} style={{ fontWeight: `600`, marginTop: `3rem` }}>
           KEAMANAN DAN KERAHASIAAN DATA PRIBADI
         </Typography>
-        <Typography color="secondary" paragraph={true}>
-          Kami akan selalu memberikan upaya terbaik Kami untuk menjaga kerahasiaan, keutuhan, dan ketersediaan Data Pribadi yang kami peroleh dalam pelaksanaan Layanan sejak diperoleh hingga Data Pribadi tersebut dimusnahkan. Terkhusus untuk kerahasiaan Data Pribadi, Data Pribadi tersebut tidak lagi menjadi rahasia apabila telah diketahui oleh publik sebelum diberikan oleh Pengguna kepada Kami, dan oleh karenanya dengan ini Pengguna tidak dapat melakukan klaim atau tuntutan apapun terhadap Kami apabila ditemukan bahwa Data Pribadi tersebut telah menjadi milik publik atau diketahui oleh publik sebelum Pengguna menggunakan Layanan.
-        </Typography>
+        <Grid sx={{ marginLeft: `2rem` }}>
+          <ol style={{ listStyleType: `number`, color: `#5e798d` }}>
+            <li>
+              <Typography color="secondary" paragraph={true}>
+                Setiap Data Pribadi yang Penyelenggara peroleh sesuai dengan ketentuan Kebijakan Privasi ini akan dilindungi dengan upaya terbaik Penyelenggara melalui perangkat keamanan teruji. Penyelenggara akan berupaya sebaik mungkin untuk menghalangi akses ke dalam Data Pribadi oleh pihak yang tidak berwenang. Setiap pengungkapan Data Pribadi kepada pihak ketiga lainnya wajib untuk mendapatkan persetujuan dari para pemilik Data Pribadi tersebut.
+              </Typography>
+            </li>
+            <li>
+              <Typography color="secondary" paragraph={true}>
+                Penyelenggara akan selalu memberikan upaya terbaik Penyelenggara untuk menjaga kerahasiaan, keutuhan, dan ketersediaan Data Pribadi yang Penyelenggara peroleh dalam pelaksanaan Layanan sejak diperoleh hingga Data Pribadi tersebut dimusnahkan. Terkhusus untuk kerahasiaan Data Pribadi, Data Pribadi tersebut tidak lagi menjadi rahasia apabila telah diketahui oleh publik sebelum diberikan oleh Pengguna kepada Penyelenggara, dan oleh karenanya dengan ini Pengguna tidak dapat melakukan klaim atau tuntutan apapun terhadap Penyelenggara apabila ditemukan bahwa Data Pribadi tersebut telah menjadi milik publik atau diketahui oleh publik sebelum Pengguna menggunakan Layanan.
+              </Typography>
+            </li>
+          </ol>
+        </Grid>
 
         <Typography color="secondary" variant="h5" paragraph={true} style={{ fontWeight: `600`, marginTop: `3rem` }}>
           KEWAJIBAN PEMBUKAAN DATA PRIBADI
@@ -335,12 +344,12 @@ const PrivacyPolicy = () => (
           <ol style={{ listStyleType: `number`, color: `#5e798d` }}>
             <li>
               <Typography color="secondary" paragraph={true}>
-                Kami dapat diwajibkan oleh peraturan-perundang-undangan yang berlaku untuk membuka Data Pribadi dan informasi terkait Pengguna lainnya kepada pihak ketiga yang berwenang seperti lembaga pemerintah, lembaga kepolisian dan lembaga peradilan hanya jika ada surat perintah yang sah dari lembaga-lembaga tersebut. Kami akan dengan segera memberitahu Pengguna setidaknya satu hari kalender sebelumnya, sehingga Pengguna dapat mengusahakan suatu tindakan yang dianggap perlu untuk pembukaan Data Pribadi ini.
+                Penyelenggara dapat diwajibkan oleh peraturan-perundang-undangan yang berlaku untuk membuka Data Pribadi dan informasi terkait Pengguna lainnya kepada pihak ketiga yang berwenang seperti lembaga pemerintah, lembaga kepolisian dan lembaga peradilan hanya jika ada surat perintah yang sah dari lembaga-lembaga tersebut. Penyelenggara akan dengan segera memberitahu Pengguna setidaknya satu hari kalender sebelumnya, sehingga Pengguna dapat mengusahakan suatu tindakan yang dianggap perlu untuk pembukaan Data Pribadi ini.
               </Typography>
             </li>
             <li>
               <Typography color="secondary" paragraph={true}>
-                Kami PT ICX Bangun Indonesia dengan ini menyatakan dan menjamin tidak memiliki hak akses ke penyimpanan apapun milik Pengguna, kecuali disepakati lain secara bersama-sama oleh kedua pihak.
+                Penyelenggara dengan ini menyatakan dan menjamin tidak memiliki hak akses ke penyimpanan apapun milik Pengguna, kecuali disepakati lain secara bersama-sama oleh kedua pihak.
               </Typography>
             </li>
           </ol>
@@ -353,7 +362,7 @@ const PrivacyPolicy = () => (
           <ol style={{ listStyleType: `number`, color: `#5e798d` }}>
             <li>
               <Typography color="secondary" paragraph={true}>
-                Tidak terdapat pemindahan/pengalihan hak ataupun tanggung jawab serta kewajiban Kami sebagai penyelenggara Layanan kepada Pengguna. Setiap hak (termasuk namun tidak terbatas pada hak kekayaan intelektual) baik yang Kami miliki atau yang dimiliki oleh Pengguna yang digunakan dalam Layanan milik Kami akan seterusnya menjadi milik masing-masing pihak.
+                Tidak terdapat pemindahan/pengalihan hak ataupun tanggung jawab serta kewajiban Penyelenggara sebagai penyelenggara Layanan kepada Pengguna. Setiap hak (termasuk namun tidak terbatas pada hak kekayaan intelektual) baik yang Penyelenggara miliki atau yang dimiliki oleh Pengguna yang digunakan dalam Layanan milik Penyelenggara akan seterusnya menjadi milik masing-masing pihak.
               </Typography>
             </li>
             <li>
@@ -368,23 +377,23 @@ const PrivacyPolicy = () => (
           PERNYATAAN DAN JAMINAN
         </Typography>
         <Typography color="secondary" paragraph={true}>
-          Dalam menjaga kerahasiaan Data Pribadi Pengguna, Kami menyatakan dan menjamin untuk:
+          Dalam menjaga kerahasiaan Data Pribadi Pengguna, Penyelenggara menyatakan dan menjamin untuk:
         </Typography>
         <Grid sx={{ marginLeft: `2rem` }}>
           <ol style={{ listStyleType: `number`, color: `#5e798d` }}>
             <li>
               <Typography color="secondary" paragraph={true}>
-                Menjaga kerahasiaan, keutuhan, dan ketersediaan Data Pribadi yang diperoleh oleh Kami dalam melaksanakan Layanan sejak diperolehnya Data Pribadi tersebut hingga perlu dimusnahkan.
+                Menjaga kerahasiaan, keutuhan, dan ketersediaan Data Pribadi yang diperoleh oleh Penyelenggara dalam melaksanakan Layanan sejak diperolehnya Data Pribadi tersebut hingga perlu dimusnahkan.
               </Typography>
             </li>
             <li>
               <Typography color="secondary" paragraph={true}>
-                Tersedianya proses autentikasi, verifikasi, dan validasi yang mendukung kenirsangkalan dalam mengakses, memproses, dan mengeksekusi Data Pribadi  yang Kami peroleh dalam melaksanakan Layanan.
+                Tersedianya proses autentikasi, verifikasi, dan validasi yang mendukung kenirsangkalan dalam mengakses, memproses, dan mengeksekusi Data Pribadi  yang Penyelenggara peroleh dalam melaksanakan Layanan.
               </Typography>
             </li>
             <li>
               <Typography color="secondary" paragraph={true}>
-                Akan memberitahukan secara tertulis kepada Pengguna selaku pemilik Data Pribadi, jika terjadi kegagalan dalam perlindungan kerahasiaan terhadap Data Pribadi yang Kami Peroleh untuk melaksanakan Layanan, seperti adanya akses yang tidak sah terhadap Data Pribadi Pengguna.
+                Akan memberitahukan secara tertulis kepada Pengguna selaku pemilik Data Pribadi, jika terjadi kegagalan dalam perlindungan kerahasiaan terhadap Data Pribadi yang Penyelenggara Peroleh untuk melaksanakan Layanan, seperti adanya akses yang tidak sah terhadap Data Pribadi Pengguna.
               </Typography>
             </li>
           </ol>
@@ -394,31 +403,31 @@ const PrivacyPolicy = () => (
           PERNYATAAN PUBLIK
         </Typography>
         <Typography color="secondary" paragraph={true}>
-          Pengguna sepakat bahwa setiap pembicaraan dengan Kami akan dilakukan secara rahasia. Pengguna setuju tidak akan memberikan keterangan ataupun pernyataan kepada pers ataupun publik mengenai pembicaraan yang dimaksudkan sehubungan dengan Layanan yang Kami sediakan, kecuali apabila telah disepakati dan disetujui oleh Kami terlebih dahulu.
+          Pengguna sepakat bahwa setiap pembicaraan dengan Penyelenggara akan dilakukan secara rahasia. Pengguna setuju tidak akan memberikan keterangan ataupun pernyataan kepada pers ataupun publik mengenai pembicaraan yang dimaksudkan sehubungan dengan Layanan yang Penyelenggara sediakan, kecuali apabila telah disepakati dan disetujui oleh Penyelenggara terlebih dahulu.
         </Typography>
 
         <Typography color="secondary" variant="h5" paragraph={true} style={{ fontWeight: `600`, marginTop: `3rem` }}>
           PENOLAKAN UNTUK TUJUAN PEMASARAN
         </Typography>
         <Typography color="secondary" paragraph={true}>
-          Pengguna berhak untuk meminta kami agar tidak memanfaatkan Data Pribadi Pengguna untuk tujuan pemasaran. Kami akan memberitahu Pengguna dan meminta persetujuan dari Pengguna sebelum Kami menggunakan Data Pribadi Pengguna untuk tujuan tersebut atau jika Kami bermaksud mengungkapkan Data Pribadi Pengguna kepada pihak ketiga manapun untuk tujuan tersebut. Pengguna dapat menggunakan hak Pengguna untuk menolak pengolahan tersebut dengan cara memberikan tanda pada formulir yang terkait yang Kami gunakan untuk mengumpulkan data Pengguna. Bahkan setelah Pengguna memberikan persetujuan Pengguna atas Data Pribadi yang akan digunakan untuk tujuan pemasaran, Pengguna dapat, setiap saat setelah itu, menarik persetujuan Pengguna dengan menghubungi kami di <Link href="mailto:hello@landx.id"> hello@landx.id</Link>.
+          Pengguna berhak untuk meminta Penyelenggara agar tidak memanfaatkan Data Pribadi Pengguna untuk tujuan pemasaran. Penyelenggara akan memberitahu Pengguna dan meminta persetujuan dari Pengguna sebelum Penyelenggara menggunakan Data Pribadi Pengguna untuk tujuan tersebut atau jika Penyelenggara bermaksud mengungkapkan Data Pribadi Pengguna kepada pihak ketiga manapun untuk tujuan tersebut. Pengguna dapat menggunakan hak Pengguna untuk menolak pengolahan tersebut dengan cara memberikan tanda pada formulir yang terkait yang Penyelenggara gunakan untuk mengumpulkan data Pengguna. Bahkan setelah Pengguna memberikan persetujuan Pengguna atas Data Pribadi yang akan digunakan untuk tujuan pemasaran, Pengguna dapat, setiap saat setelah itu, menarik persetujuan Pengguna dengan menghubungi Penyelenggara di <Link href="mailto:hello@landx.id"> hello@landx.id</Link>.
         </Typography>
 
         <Typography color="secondary" variant="h5" paragraph={true} style={{ fontWeight: `600`, marginTop: `3rem` }}>
           JANGKA WAKTU KEBIJAKAN PRIVASI
         </Typography>
         <Typography color="secondary" paragraph={true}>
-          Kebijakan Privasi ini akan berlaku secara terus menerus selama Layanan Kami berlangsung, terhitung sejak disetujuinya Kebijakan Privasi ini kecuali diakhiri dengan persetujuan tertulis oleh para pihak.
+          Kebijakan Privasi ini akan berlaku secara terus menerus selama Layanan Penyelenggara berlangsung, terhitung sejak disetujuinya Kebijakan Privasi ini kecuali diakhiri dengan persetujuan tertulis oleh para pihak.
         </Typography>
 
         <Typography color="secondary" variant="h5" paragraph={true} style={{ fontWeight: `600`, marginTop: `3rem` }}>
           KEBERLAKUAN KETENTUAN
         </Typography>
         <Typography color="secondary" paragraph={true}>
-          Apabila salah satu atau beberapa ketentuan dalam Kebijakan Privasi ini menjadi tidak berlaku atau tidak dapat dilaksanakan karena melawan ketentuan peraturan perundang-undangan yang berlaku, hal tersebut tidak akan mempengaruhi ketentuan lainnya pada Kebijakan Privasi ini. Kami setuju untuk mengubah ketentuan-ketentuan yang berlawanan tersebut sehingga dapat dilaksanakan sesuai dengan peraturan perundang-undangan yang berlaku.
+          Apabila salah satu atau beberapa ketentuan dalam Kebijakan Privasi ini menjadi tidak berlaku atau tidak dapat dilaksanakan karena melawan ketentuan peraturan perundang-undangan yang berlaku, hal tersebut tidak akan mempengaruhi ketentuan lainnya pada Kebijakan Privasi ini. Penyelenggara setuju untuk mengubah ketentuan-ketentuan yang berlawanan tersebut sehingga dapat dilaksanakan sesuai dengan peraturan perundang-undangan yang berlaku.
         </Typography>
         <Typography color="secondary" paragraph={true}>
-          Kami memiliki hak serta kewajiban untuk mengubah ketentuan-ketentuan pada Kebijakan Privasi ini untuk alasan tertentu.
+          Penyelenggara memiliki hak serta kewajiban untuk mengubah ketentuan-ketentuan pada Kebijakan Privasi ini untuk alasan tertentu.
         </Typography>
 
         <Typography color="secondary" variant="h5" paragraph={true} style={{ fontWeight: `600`, marginTop: `3rem` }}>
@@ -471,7 +480,7 @@ const PrivacyPolicy = () => (
           HUBUNGI KAMI
         </Typography>
         <Typography color="secondary" paragraph={true}>
-          Apabila Pengguna memiliki pertanyaan terkait Kebijakan Privasi ini, Pengguna dapat menghubungi Kami di <Link href="mailto:hello@landx.id">hello@landx.id</Link>.
+          Apabila Pengguna memiliki pertanyaan terkait Kebijakan Privasi ini, Pengguna dapat menghubungi Penyelenggara di <Link href="mailto:hello@landx.id">hello@landx.id</Link>.
         </Typography>
 
         <Typography color="secondary" variant="h5" paragraph={true} style={{ fontWeight: `600`, marginTop: `3rem` }}>
@@ -481,17 +490,17 @@ const PrivacyPolicy = () => (
           <ol style={{ listStyleType: `number`, color: `#5e798d` }}>
             <li>
               <Typography color="secondary" paragraph={true}>
-                Setiap hak dan kewajiban yang ada pada Kebijakan Privasi ini mengikat setiap pihak yang menggunakan Platform LandX.
+                Setiap hak dan kewajiban yang ada pada Kebijakan Privasi ini mengikat setiap pihak yang menggunakan Platform.
               </Typography>
             </li>
             <li>
               <Typography color="secondary" paragraph={true}>
-                Setiap perubahan atau modifikasi atas Kebijakan Privasi ini akan diberitahukan kepada pengguna dari Platform LandX sesuai dengan ketentuan pada syarat dan ketentuan.
+                Setiap perubahan atau modifikasi atas Kebijakan Privasi ini akan diberitahukan kepada Pengguna dari Platform sesuai dengan ketentuan pada Syarat dan Ketentuan.
               </Typography>
             </li>
             <li>
               <Typography color="secondary" paragraph={true}>
-                Pengguna dengan ini sepakat untuk menggunakan Platform LandX dengan penuh tanggung jawab dan dengan secara itikad baik.
+                Pengguna dengan ini sepakat untuk menggunakan Platform dengan penuh tanggung jawab dan dengan secara itikad baik.
               </Typography>
             </li>
           </ol>
