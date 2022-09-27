@@ -57,7 +57,7 @@ const HeaderAlerts = () => {
   return (
     <>
       <Collapse in={open}>
-        <Alert sx={{ alignItems: 'center', fontSize: '16px', justifyContent: 'center', padding: '8px' }} variant="filled" severity="info" icon={false}>
+        <Alert sx={{ alignItems: 'center', fontSize: '16px', justifyContent: 'center', padding: '8px', background: '#1A86C0' }} variant="filled" severity="info" icon={false}>
           {handleAlert(windowDimension)}
         </Alert>
       </Collapse>

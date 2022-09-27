@@ -98,7 +98,7 @@ const DragonHotPot = () => {
               <Box className="dragon-hot-navbar-logo">
                 <Link to="/">
                   <img
-                    src="/images/landx_logo.png"
+                    src="/images/landx_logo_v3.png"
                     className="dragon-hot-logo-landx"
                   />
                 </Link>

@@ -67,7 +67,7 @@ hr {
 }
 
 .text--light-green {
-  color: #00a339;
+  color: #3CB987;
 }
 
 .text--gray {
@@ -647,4 +647,8 @@ a:active {
   .partners hr {
     display: block;
   }
+}
+
+.shadow-v3 {
+  box-shadow: 10px 10px 7px -13px rgba(0,0,0,0.26) !important;
 }

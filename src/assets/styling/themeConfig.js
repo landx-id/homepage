@@ -13,14 +13,14 @@ import { createTheme } from '@mui/material/styles'
 // const brandgrey800 = '#344450'
 // const brandgrey900 = '#222f39'
 
-const brandgreen50 = '#e4f6e8'
-// const brandgreen100 = '#bde8c7'
+const brandgreen50 = '#3CB987'
+// const brandgreen100 = '#3CB987'
 // const brandgreen200 = '#91d8a2'
 // const brandgreen300 = '#5fca7d'
-// const brandgreen400 = '#2dbe60'
+// const brandgreen400 = '#00a478'
 // const brandgreen500 = '#00b242'
-// const brandgreen600 = '#00a339'
-// const brandgreen700 = '#00912d'
+// const brandgreen600 = '#3CB987'
+// const brandgreen700 = '#006750'
 // const brandgreen800 = '#008021'
 // const brandgreen900 = '#00600c'
 
@@ -45,9 +45,9 @@ const accent3dark = '#493B99'
 const infonormal = '#64b6e2'
 // const infodark = '#1a86c0'
 
-// const successlight = '#BDE8C7'
-const successnormal = '#2DBE60'
-// const successdark = '#00912D'
+// const successlight = '#3CB987'
+const successnormal = '#00a478'
+// const successdark = '#006750'
 
 // const warninglight = '#FDE47A'
 const warningnormal = '#F5A623'
@@ -85,14 +85,14 @@ export const themeconfig = createTheme({
   palette: {
     type: 'light',
     primary: {
-      main: '#2DBE60',
-      light: '#BDE8C7',
-      dark: '#00912D',
+      main: '#00a478',
+      light: '#3CB987',
+      dark: '#005543',
       contrastText: 'rgba(255,255,255,0.87)',
     },
     secondary: {
       main: '#5e798d',
-      contrastText: '#2DBE60',
+      contrastText: '#00a478',
     },
     accent1: {
       light: accent1,
@@ -131,9 +131,9 @@ export const themeconfig = createTheme({
       contrastText: 'rgba(255,255,255,0.87)',
     },
     success: {
-      main: '#2DBE60',
-      light: '#BDE8C7',
-      dark: '#00912D',
+      main: '#00a478',
+      light: '#3CB987',
+      dark: '#006750',
       contrastText: 'rgba(255,255,255,0.87)',
     },
     neutral: {
@@ -200,6 +200,7 @@ export const themeconfig = createTheme({
       styleOverrides: {
         root: {
           // borderRadius: radiusregular,
+          // boxShadow: '10px 10px 7px -13px rgba(0,0,0,0.86)',
           fontSize: '0.85rem',
           letterSpacing: '2px'
         }
