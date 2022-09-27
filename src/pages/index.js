@@ -189,10 +189,10 @@ const IndexPage = () => {
           <img
             src='/images/decoration_2_v3.png'
             style={{
-              height: window.innerWidth < 500 ? '50%' : '100%',
+              height: widthWindows < 500 ? '50%' : '100%',
               position: 'absolute',
               top: 0,
-              right:  window.innerWidth < 500 ? '-50vw' : '-42px',
+              right:  widthWindows < 500 ? '-50vw' : '-42px',
               zIndex: '0',
               opacity: '0.5'
             }}>
@@ -215,10 +215,10 @@ const IndexPage = () => {
           <img
             src='/images/decoration_3_v3.png'
             style={{
-              width: window.innerWidth < 500 ? '50vh' : '100vh',
+              width: widthWindows < 500 ? '50vh' : '100vh',
               position: 'absolute',
               bottom: '20vh',
-              left:   window.innerWidth < 769 ? '-40vw' : -300,
+              left:   widthWindows < 769 ? '-40vw' : -300,
               transform: 'rotate(90deg)',
               zIndex: '0',
             }}>
@@ -229,7 +229,7 @@ const IndexPage = () => {
             justifyContent="center"
             alignItems="center"
             spacing={1}
-            flexWrap={window.innerWidth < 960 ? 'wrap-reverse' : 'nowrap'}
+            flexWrap={widthWindows < 960 ? 'wrap-reverse' : 'nowrap'}
             zIndex={2}
           >
 
@@ -241,7 +241,7 @@ const IndexPage = () => {
               padding='32px'
               maxWidth={'700px'}
               flex='auto'
-              textAlign={window.innerWidth < 960 ? 'center' : 'left'}
+              textAlign={widthWindows < 960 ? 'center' : 'left'}
             >
 
               <Typography variant="h1" fontSize={'3rem'} color={'white'} padding='16px'>
