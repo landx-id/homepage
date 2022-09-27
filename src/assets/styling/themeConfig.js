@@ -193,7 +193,7 @@ export const themeconfig = createTheme({
     },
     MuiButton: {
       defaultProps: {
-        disableElevation: true,
+        // disableElevation: true,
         variant: 'contained',
         size: 'medium',
       },
