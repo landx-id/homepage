@@ -623,6 +623,7 @@ a:active {
 }
 
 @media only screen and (max-width: 576px) {
+
   .risk-register,
   .isms-policy {
     font-size: 14px;
@@ -650,5 +651,5 @@ a:active {
 }
 
 .shadow-v3 {
-  box-shadow: 10px 10px 7px -13px rgba(0,0,0,0.26) !important;
+  box-shadow: 10px 10px 7px -13px rgba(0, 0, 0, 0.26) !important;
 }

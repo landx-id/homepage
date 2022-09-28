@@ -35,7 +35,7 @@ import "./index.scss"
 import "./utils.scss"
 
 const IndexPage = () => {
-  const [widthWindows, setWidthWindows] = useState("")
+  const [widthWindows, setWidthWindows] = useState(window.innerWidth)
   const [dataProject, setDataProject] = useState([])
   const [dataListing, setDataListing] = useState([])
   const [preDataListing, setPreDataListing] = useState([])
@@ -65,11 +65,15 @@ const IndexPage = () => {
     handleInvestors()
 
     // SET NEW LOGO POSITION
+    let topBar = document.getElementById('navbar')
+    console.log(topBar.getBoundingClientRect().top, widthWindows)
+
+    let topLogo = document.getElementById('new-logo-top')
+    topLogo.style.top = widthWindows < 1055 ? '-20px' : (topBar.getBoundingClientRect().top + topBar.clientHeight + -40) + 'px'
+
     setTimeout(() => {
-      let topLogo = document.getElementById('new-logo-top')
-      topLogo.style.top = widthWindows > 1054 ? '45px' : '-20px'
-      console.log('nice')
-    }, 30000);
+      topLogo.style.top = widthWindows < 1055 ? '-20px' : (topBar.getBoundingClientRect().top + topBar.clientHeight - 30) + 'px'
+    }, 30200);
   }, [])
 
 
@@ -287,7 +291,6 @@ const IndexPage = () => {
               // transform: 'translate(-50%, -50%)'
               left: 0,
               right: 0,
-              top: widthWindows > 1054 ? 95 : -20,
             }}
             id='new-logo-top'>
           </img>
@@ -306,10 +309,8 @@ const IndexPage = () => {
             }}>
           </img>
 
-          <Container>
+          <Container sx={{paddingTop: '64px'}}>
             <Grid container className="container-banner">
-
-
               <Grid item xs={12} md={6}>
                 <Grid container>
                   <Grid item sm={11} xl={12}>

@@ -44,7 +44,7 @@ const ResponsiveAppBar = () => {
 
   return (
     <>
-      <AppBar position={widthWindows < 1055 ? "relative" : "static"} sx={{ backgroundColor: '#fff', color: '#000', boxShadow: 'none' }} className='container-navbar'>
+      <AppBar position={widthWindows < 1055 ? "relative" : "static"} sx={{ backgroundColor: '#fff', color: '#000', boxShadow: 'none' }} className='container-navbar' id='navbar'>
         <Container>
           <Toolbar style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingLeft: '0', paddingRight: '0' }}>
             <Link to='/'>
