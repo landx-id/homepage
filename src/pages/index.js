@@ -66,7 +66,6 @@ const IndexPage = () => {
 
     // SET NEW LOGO POSITION
     let topBar = document.getElementById('navbar')
-    console.log(topBar.getBoundingClientRect().top, widthWindows)
 
     let topLogo = document.getElementById('new-logo-top')
     topLogo.style.top = widthWindows < 1055 ? '-20px' : (topBar.getBoundingClientRect().top + topBar.clientHeight + -40) + 'px'
