@@ -35,7 +35,7 @@ import "./index.scss"
 import "./utils.scss"
 
 const IndexPage = () => {
-  const [widthWindows, setWidthWindows] = useState(window.innerWidth)
+  const [widthWindows, setWidthWindows] = useState(0)
   const [dataProject, setDataProject] = useState([])
   const [dataListing, setDataListing] = useState([])
   const [preDataListing, setPreDataListing] = useState([])
@@ -64,14 +64,16 @@ const IndexPage = () => {
     handleListing()
     handleInvestors()
 
+    const windowWidth = window.innerWidth
+
     // SET NEW LOGO POSITION
     let topBar = document.getElementById('navbar')
 
     let topLogo = document.getElementById('new-logo-top')
-    topLogo.style.top = widthWindows < 1055 ? '-20px' : (topBar.getBoundingClientRect().top + topBar.clientHeight + -40) + 'px'
+    topLogo.style.top = windowWidth < 1055 ? '-20px' : (topBar.getBoundingClientRect().top + topBar.clientHeight + -40) + 'px'
 
     setTimeout(() => {
-      topLogo.style.top = widthWindows < 1055 ? '-20px' : (topBar.getBoundingClientRect().top + topBar.clientHeight - 30) + 'px'
+      topLogo.style.top = windowWidth < 1055 ? '-20px' : (topBar.getBoundingClientRect().top + topBar.clientHeight - 30) + 'px'
     }, 30200);
   }, [])
 
