@@ -13,13 +13,13 @@ import { createTheme } from '@mui/material/styles'
 // const brandgrey800 = '#344450'
 // const brandgrey900 = '#222f39'
 
-const brandgreen50 = '#3CB987'
-// const brandgreen100 = '#3CB987'
+const brandgreen50 = '#2DBE60'
+// const brandgreen100 = '#2DBE60'
 // const brandgreen200 = '#91d8a2'
 // const brandgreen300 = '#5fca7d'
-// const brandgreen400 = '#00a478'
+// const brandgreen400 = '#2DBE60'
 // const brandgreen500 = '#00b242'
-// const brandgreen600 = '#3CB987'
+// const brandgreen600 = '#2DBE60'
 // const brandgreen700 = '#006750'
 // const brandgreen800 = '#008021'
 // const brandgreen900 = '#00600c'
@@ -45,8 +45,8 @@ const accent3dark = '#493B99'
 const infonormal = '#64b6e2'
 // const infodark = '#1a86c0'
 
-// const successlight = '#3CB987'
-const successnormal = '#00a478'
+// const successlight = '#2DBE60'
+const successnormal = '#2DBE60'
 // const successdark = '#006750'
 
 // const warninglight = '#FDE47A'
@@ -85,14 +85,14 @@ export const themeconfig = createTheme({
   palette: {
     type: 'light',
     primary: {
-      main: '#00a478',
-      light: '#3CB987',
+      main: '#2DBE60',
+      light: '#2DBE60',
       dark: '#005543',
       contrastText: 'rgba(255,255,255,0.87)',
     },
     secondary: {
       main: '#5e798d',
-      contrastText: '#00a478',
+      contrastText: '#2DBE60',
     },
     accent1: {
       light: accent1,
@@ -131,8 +131,8 @@ export const themeconfig = createTheme({
       contrastText: 'rgba(255,255,255,0.87)',
     },
     success: {
-      main: '#00a478',
-      light: '#3CB987',
+      main: '#2DBE60',
+      light: '#2DBE60',
       dark: '#006750',
       contrastText: 'rgba(255,255,255,0.87)',
     },
@@ -193,7 +193,7 @@ export const themeconfig = createTheme({
     },
     MuiButton: {
       defaultProps: {
-        // disableElevation: true,
+        disableElevation: true,
         variant: 'contained',
         size: 'medium',
       },

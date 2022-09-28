@@ -16,7 +16,7 @@ const Footer = () => {
       <Box style={{ position: `relative` }}>
         <Container maxWidth="lg" className="footer-CTA-move">
           <Box className="footer-CTA-background" sx={{ background: '#222F39', position: 'relative', overflow: 'clip' }}>
-            <Stack
+            {/* <Stack
               direction="row"
               justifyContent="space-between"
               alignItems="center"
@@ -72,37 +72,37 @@ const Footer = () => {
               </Stack>
               <img src='/images/decoration_v3.png' style={{ width: '100px', position: 'absolute', top: 0, right: 0, transform: 'rotate(180deg)', zIndex: '0' }}></img>
 
-            </Stack>
+            </Stack> */}
 
-            {/* <div style={{ fontSize: '1.5rem', fontWeight: '800', padding: '8px 4px', margin: '12px 0px', zIndex: '99'}}>
-                Kini memiliki bisnis dan properti jadi jauh lebih mudah.
-                <br />
-                Unduh aplikasi LandX sekarang!
-              </div>
-              <Grid container spacing={2} style={{ paddingBottom: 25 }}>
-                <Grid item xs={12} sm={6} className='display-f-center display-fj-end'>
-                  <a href="https://play.google.com/store/apps/details?id=store.numoney.landxapp">
-                    <img
-                      src="/images/logo_playstore.webp"
-                      alt="Play Store"
-                      title="Play Store"
-                      style={{ height: `60px`, width: `203px` }}
-                    />
-                  </a>
-                </Grid>
-                <Grid item xs={12} sm={6} className='display-f-center display-fj-start'>
-                  <a href="https://apps.apple.com/id/app/landx/id1453823676">
-                    <img
-                      src="/images/logo_appstore.webp"
-                      alt="App Store"
-                      title="App Store"
-                      className="app-store"
-                      style={{ height: `60px`, width: `180px` }}
-                    />
-                  </a>
-                </Grid>
+            <Typography style={{ fontSize: '1.5rem', fontWeight: '800', padding: '8px 4px', margin: '12px 0px', zIndex: '99' }}>
+              Kini memiliki bisnis dan properti jadi jauh lebih mudah.
+              <br />
+              Unduh aplikasi LandX sekarang!
+            </Typography>
+            <Grid container spacing={2} style={{ paddingBottom: 25 }}>
+              <Grid item xs={12} sm={6} className='display-f-center display-fj-end'>
+                <a href="https://play.google.com/store/apps/details?id=store.numoney.landxapp">
+                  <img
+                    src="/images/logo_playstore.webp"
+                    alt="Play Store"
+                    title="Play Store"
+                    style={{ height: `60px`, width: `203px` }}
+                  />
+                </a>
               </Grid>
-            <img src='/images/decoration_v3.png' style={{ position: 'absolute', bottom: 0, left: 0, zIndex: '0', opacity: '0.8' }}></img>
+              <Grid item xs={12} sm={6} className='display-f-center display-fj-start'>
+                <a href="https://apps.apple.com/id/app/landx/id1453823676">
+                  <img
+                    src="/images/logo_appstore.webp"
+                    alt="App Store"
+                    title="App Store"
+                    className="app-store"
+                    style={{ height: `60px`, width: `180px` }}
+                  />
+                </a>
+              </Grid>
+            </Grid>
+            {/* <img src='/images/decoration_v3.png' style={{ position: 'absolute', bottom: 0, left: 0, zIndex: '0', opacity: '0.8' }}></img>
             <img src='/images/decoration_v3.png' style={{ position: 'absolute', top: 0, right: 0, transform: 'rotate(180deg)', zIndex: '0' }}></img> */}
           </Box>
         </Container>

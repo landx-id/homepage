@@ -63,7 +63,16 @@ const IndexPage = () => {
   useEffect(() => {
     handleListing()
     handleInvestors()
+
+    // SET NEW LOGO POSITION
+    setTimeout(() => {
+      let topLogo = document.getElementById('new-logo-top')
+      topLogo.style.top = widthWindows > 1054 ? '45px' : '-20px'
+      console.log('nice')
+    }, 30000);
   }, [])
+
+
 
   useEffect(() => {
     setDataListing([...preDataListing])
@@ -171,7 +180,9 @@ const IndexPage = () => {
           description="LandX merupakan platform equity crowdfunding yang telah berizin dan diawasi OJK yang aman untuk investasi online jangka panjang kamu|Investasi online OJK"
         />
 
-        <Stack
+        {/* DONT DELETE */}
+
+        {/* <Stack
           direction="row"
           justifyContent="center"
           alignItems="center"
@@ -263,11 +274,42 @@ const IndexPage = () => {
               />
             </video>
           </Stack>
-        </Stack>
+        </Stack> */}
 
-        {/* <div className="homepage">
+        <div className="homepage" style={{ position: 'relative', overflow: 'clip' }}>
+          <img src='/images/landx-v3-logo.svg'
+            style={{
+              position: 'absolute',
+              width: '200px',
+              margin: '0 auto 0 auto',
+              // top: '-32',
+              // left: '50%',
+              // transform: 'translate(-50%, -50%)'
+              left: 0,
+              right: 0,
+              top: widthWindows > 1054 ? 95 : -20,
+            }}
+            id='new-logo-top'>
+          </img>
+
+          <img src='/images/landx-v3-logo.svg'
+            style={{
+              position: 'absolute',
+              width: '200px',
+              margin: '0 auto 0 auto',
+              // top: '-32',
+              // left: '50%',
+              // transform: 'translate(-50%, -50%)'
+              left: 0,
+              right: 0,
+              bottom: -20,
+            }}>
+          </img>
+
           <Container>
             <Grid container className="container-banner">
+
+
               <Grid item xs={12} md={6}>
                 <Grid container>
                   <Grid item sm={11} xl={12}>
@@ -328,7 +370,7 @@ const IndexPage = () => {
               </Grid>
             </Grid>
           </Container>
-        </div> */}
+        </div>
 
         <section className="container-value-investor">
           <Container>
