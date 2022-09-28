@@ -6,6 +6,7 @@ import {
   Typography,
   Button,
   CircularProgress,
+  Stack
 } from "@mui/material"
 import Layout from "../components/layout/layout"
 import Seo from "../components/seo/seo"
@@ -34,7 +35,7 @@ import "./index.scss"
 import "./utils.scss"
 
 const IndexPage = () => {
-  const [widthWindows, setWidthWindows] = useState("")
+  const [widthWindows, setWidthWindows] = useState(0)
   const [dataProject, setDataProject] = useState([])
   const [dataListing, setDataListing] = useState([])
   const [preDataListing, setPreDataListing] = useState([])
@@ -62,7 +63,21 @@ const IndexPage = () => {
   useEffect(() => {
     handleListing()
     handleInvestors()
+
+    const windowWidth = window.innerWidth
+
+    // SET NEW LOGO POSITION
+    let topBar = document.getElementById('navbar')
+
+    let topLogo = document.getElementById('new-logo-top')
+    topLogo.style.top = windowWidth < 1055 ? '-20px' : (topBar.getBoundingClientRect().top + topBar.clientHeight + -40) + 'px'
+
+    setTimeout(() => {
+      topLogo.style.top = windowWidth < 1055 ? '-20px' : (topBar.getBoundingClientRect().top + topBar.clientHeight - 30) + 'px'
+    }, 30200);
   }, [])
+
+
 
   useEffect(() => {
     setDataListing([...preDataListing])
@@ -170,8 +185,132 @@ const IndexPage = () => {
           description="LandX merupakan platform equity crowdfunding yang telah berizin dan diawasi OJK yang aman untuk investasi online jangka panjang kamu|Investasi online OJK"
         />
 
-        <div className="homepage">
-          <Container>
+        {/* DONT DELETE */}
+
+        {/* <Stack
+          direction="row"
+          justifyContent="center"
+          alignItems="center"
+          spacing={0}
+          padding={'16px'}
+          width='100%'
+          bgcolor={'#222F39'}
+          flexWrap='nowrap'
+          minHeight={'100vh'}
+          position='relative'
+          maxWidth={'100vw'}
+          overflow='clip'
+        >
+
+          <img
+            src='/images/decoration_2_v3.png'
+            style={{
+              height: widthWindows < 500 ? '50%' : '100%',
+              position: 'absolute',
+              top: 0,
+              right:  widthWindows < 500 ? '-50vw' : '-42px',
+              zIndex: '0',
+              opacity: '0.5'
+            }}>
+          </img>
+
+
+
+          <img
+            src='/images/decoration_3_v3.png'
+            style={{
+              // height: window.innerWidth < 500 ? '50%' : '100%',
+              position: 'absolute',
+              bottom: 0,
+              // right:  window.innerWidth < 500 ? '-50vw' : '-42px',
+              zIndex: '0',
+            }}>
+          </img>
+
+
+          <img
+            src='/images/decoration_3_v3.png'
+            style={{
+              width: widthWindows < 500 ? '50vh' : '100vh',
+              position: 'absolute',
+              bottom: '20vh',
+              left:   widthWindows < 769 ? '-40vw' : -300,
+              transform: 'rotate(90deg)',
+              zIndex: '0',
+            }}>
+          </img>
+
+          <Stack
+            direction="row"
+            justifyContent="center"
+            alignItems="center"
+            spacing={1}
+            flexWrap={widthWindows < 960 ? 'wrap-reverse' : 'nowrap'}
+            zIndex={2}
+          >
+
+            <Stack
+              direction="column"
+              justifyContent="flex-start"
+              alignItems="flex-start"
+              spacing={2}
+              padding='32px'
+              maxWidth={'700px'}
+              flex='auto'
+              textAlign={widthWindows < 960 ? 'center' : 'left'}
+            >
+
+              <Typography variant="h1" fontSize={'3rem'} color={'white'} padding='16px'>
+                Investasi dan Miliki Bisnis Menguntungkan Mulai dari Rp
+                1.000.000
+              </Typography>
+              <Typography className="heroDescription" color={'white'} padding='16px'>
+                Investasi secara patungan online ke perusahaan-perusahaan
+                UMKM di Indonesia pilihan kamu melalui platform securities
+                crowdfunding LandX.
+              </Typography>
+
+            </Stack>
+
+            <video className="video-frame" controls>
+              <source
+                src="https://landx-asset.s3.us-east-2.amazonaws.com/homepage-video.mp4"
+                type="video/mp4"
+              />
+            </video>
+          </Stack>
+        </Stack> */}
+
+        <div className="homepage" style={{ position: 'relative', overflow: 'clip' }}>
+          <img src='/images/landx-v3-logo.svg'
+            style={{
+              position: 'absolute',
+              width: '200px',
+              margin: '0 auto 0 auto',
+              // top: '-32',
+              // left: '50%',
+              // transform: 'translate(-50%, -50%)'
+              left: 0,
+              right: 0,
+            }}
+            id='new-logo-top'>
+          </img>
+
+          <img src='/images/landx-v3-logo.svg'
+            style={{
+              position: 'absolute',
+              width: '200px',
+              margin: '0 auto 0 auto',
+              // top: '-32',
+              // left: '50%',
+              // transform: 'translate(-50%, -50%)'
+              left: 0,
+              right: 0,
+              bottom: -20,
+            }}>
+          </img>
+
+          <Container sx={{paddingTop: '64px'}}>
             <Grid container className="container-banner">
               <Grid item xs={12} md={6}>
                 <Grid container>
@@ -541,11 +680,11 @@ const IndexPage = () => {
               </Grid>
 
               <div className="utils flex center-center mt-48 flex-sm-direction-column">
-                <Button variant="contained" color="success" href="https://kinerja.landx.id/" className="utils mr-24 m-sm-0 min-width-sm-245 mb-sm-16 font-w-bold">
+                <Button variant="contained" color="success" href="https://kinerja.landx.id/" className="shadow-v3 utils mr-24 m-sm-0 min-width-sm-245 mb-sm-16 font-w-bold">
                   Buka Kinerja Aset
                 </Button>
 
-                <Button variant="outlined" color="success" href="/kinerja-penerbit" className="utils min-width-sm-245">
+                <Button variant="outlined" disableElevation={true} color="success" href="/kinerja-penerbit" className="utils min-width-sm-245">
                   Pelajari Selengkapnya
                 </Button>
               </div>

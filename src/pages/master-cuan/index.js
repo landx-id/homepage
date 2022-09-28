@@ -391,29 +391,6 @@ const MasterCuan = () => {
             </Grid>
           </div>
 
-          <div className="banner-download-container">
-            <Grid container spacing={2}>
-              <Grid item xs={3}>
-                <div className="logo-container">
-                  <img src="/master-cuan/mini-logo.webp" alt="Master Cuan: Makannya Bikin Kenyang, Dividennya Bikin Mapan!" title="Jadi Pemilik F&B SEKARANG JUGA! Yuk investasi ke berbagai bisnis fnb menguntungkan bersama bareng LandX" className="img-mini-logo" />
-                </div>
-              </Grid>
-              <Grid item xs={9}>
-                <Typography className="text-title-download">
-                  Download Aplikasi LandX
-                </Typography>
-                <Typography className="text-content">
-                  Kini memiliki bisnis dan properti jadi jauh lebih mudah. Unduh aplikasi LandX sekarang
-                </Typography>
-              </Grid>
-            </Grid>
-            <Grid item xs={12}>
-              <a href={linkInstall} style={{ textDecoration: 'none' }}>
-                <Button variant='contained' className='btn-install'>Install Sekarang</Button>
-              </a>
-            </Grid>
-          </div>
-
           <div className="customer-container">
             <Grid container>
               <Grid item xs={12}>

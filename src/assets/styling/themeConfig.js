@@ -13,14 +13,14 @@ import { createTheme } from '@mui/material/styles'
 // const brandgrey800 = '#344450'
 // const brandgrey900 = '#222f39'
 
-const brandgreen50 = '#e4f6e8'
-// const brandgreen100 = '#bde8c7'
+const brandgreen50 = '#2DBE60'
+// const brandgreen100 = '#2DBE60'
 // const brandgreen200 = '#91d8a2'
 // const brandgreen300 = '#5fca7d'
-// const brandgreen400 = '#2dbe60'
+// const brandgreen400 = '#2DBE60'
 // const brandgreen500 = '#00b242'
-// const brandgreen600 = '#00a339'
-// const brandgreen700 = '#00912d'
+// const brandgreen600 = '#2DBE60'
+// const brandgreen700 = '#006750'
 // const brandgreen800 = '#008021'
 // const brandgreen900 = '#00600c'
 
@@ -45,9 +45,9 @@ const accent3dark = '#493B99'
 const infonormal = '#64b6e2'
 // const infodark = '#1a86c0'
 
-// const successlight = '#BDE8C7'
+// const successlight = '#2DBE60'
 const successnormal = '#2DBE60'
-// const successdark = '#00912D'
+// const successdark = '#006750'
 
 // const warninglight = '#FDE47A'
 const warningnormal = '#F5A623'
@@ -86,8 +86,8 @@ export const themeconfig = createTheme({
     type: 'light',
     primary: {
       main: '#2DBE60',
-      light: '#BDE8C7',
-      dark: '#00912D',
+      light: '#2DBE60',
+      dark: '#005543',
       contrastText: 'rgba(255,255,255,0.87)',
     },
     secondary: {
@@ -132,8 +132,8 @@ export const themeconfig = createTheme({
     },
     success: {
       main: '#2DBE60',
-      light: '#BDE8C7',
-      dark: '#00912D',
+      light: '#2DBE60',
+      dark: '#006750',
       contrastText: 'rgba(255,255,255,0.87)',
     },
     neutral: {
@@ -200,6 +200,7 @@ export const themeconfig = createTheme({
       styleOverrides: {
         root: {
           // borderRadius: radiusregular,
+          // boxShadow: '10px 10px 7px -13px rgba(0,0,0,0.86)',
           fontSize: '0.85rem',
           letterSpacing: '2px'
         }

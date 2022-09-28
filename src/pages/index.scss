@@ -2,7 +2,8 @@
   background-image: linear-gradient(rgba(255, 255, 255, 0.44),
       rgba(255, 255, 255, 0.44)),
     url(../../static/images/header_background.webp);
-  min-height: 752px;
+  background-size: cover;
+  min-height: 100vh;
   width: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -13,7 +14,7 @@
   .heroTitle {
     font-size: 42px;
     font-weight: 500;
-    color: #00a339;
+    color: #2DBE60;
   }
 
   .heroDescription {
@@ -220,6 +221,12 @@
   align-items: center;
 }
 
+@media screen and (max-width: 1055px) {
+  .homepage {
+    min-height: 755px;
+  }
+}
+
 @media screen and (max-width: 1200px) {
   .container-slider-center {
     margin-left: auto !important;
@@ -259,7 +266,7 @@
   }
 
   .container-yt {
-    margin-top: 300px;
+    // margin-top: 300px;
     justify-content: center;
   }
 

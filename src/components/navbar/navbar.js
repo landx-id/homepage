@@ -44,11 +44,11 @@ const ResponsiveAppBar = () => {
 
   return (
     <>
-      <AppBar position={widthWindows < 1055 ? "relative" : "static"} sx={{ backgroundColor: '#fff', color: '#000', boxShadow: 'none' }} className='container-navbar'>
+      <AppBar position={widthWindows < 1055 ? "relative" : "static"} sx={{ backgroundColor: '#fff', color: '#000', boxShadow: 'none' }} className='container-navbar' id='navbar'>
         <Container>
           <Toolbar style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingLeft: '0', paddingRight: '0' }}>
             <Link to='/'>
-              <img src="/images/landx-logo.webp" style={{ marginBottom: '0', height: `30px`, width: `91px` }} alt="Logo LandX Platform Securities Crowdfunding yang diawasi dan berizin OJK - Temukan bisnis untuk investasi terbaik di LandX" title="LandX adalah startup crowdfunding Indonesia berbasis yang memberikan kesempatan untuk berinvestasi ke dalam bisnis dengan modal kecil" />
+              <img src="/images/landx-logo.webp" style={{ marginBottom: '0', scale: '0.75' }} alt="Logo LandX Platform Securities Crowdfunding yang diawasi dan berizin OJK - Temukan bisnis untuk investasi terbaik di LandX" title="LandX adalah startup crowdfunding Indonesia berbasis yang memberikan kesempatan untuk berinvestasi ke dalam bisnis dengan modal kecil" />
             </Link>
             {widthWindows > 1055 ?
               <>
