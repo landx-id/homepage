@@ -281,7 +281,7 @@ const IndexPage = () => {
           </Stack>
         </Stack> */}
 
-        <div className="homepage" style={{ position: 'relative', overflow: 'clip' }}>
+        <div className="homepage" style={{ position: 'relative', overflow: 'hidden' }}>
           <img src='/images/landx-v3-logo.svg'
             style={{
               position: 'absolute',
