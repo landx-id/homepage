@@ -15,7 +15,12 @@ const Footer = () => {
     <Box className="footer-background">
       <Box style={{ position: `relative` }}>
         <Container maxWidth="lg" className="footer-CTA-move">
-          <Box className="footer-CTA-background" sx={{ background: '#222F39', position: 'relative', overflow: 'clip' }}>
+          <Box
+            className="footer-CTA-background"
+            sx ={{padding: '4px'}}
+            // DONT DELETE YET
+            // sx={{ background: '#222F39', position: 'relative', overflow: 'clip' }}
+          >
             {/* <Stack
               direction="row"
               justifyContent="space-between"
@@ -74,7 +79,7 @@ const Footer = () => {
 
             </Stack> */}
 
-            <Typography style={{ fontSize: '1.5rem', fontWeight: '800', padding: '8px 4px', margin: '12px 0px', zIndex: '99' }}>
+            <Typography style={{ fontSize: '1.3rem', fontWeight: '800', padding: '8px 4px', margin: '12px 0px', zIndex: '99' }}>
               Kini memiliki bisnis dan properti jadi jauh lebih mudah.
               <br />
               Unduh aplikasi LandX sekarang!
